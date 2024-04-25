@@ -1,0 +1,24 @@
+@import "../Styles/main.css";
+
+header{
+    width: 100%;
+    max-width: 100%;
+    height: 538px;
+}
+.header--portada{
+    width: 100%;
+    max-width: 100%;
+    height: 400px;
+    background-image: url("img/fotoPortada.png");
+    background-size: cover;
+}
+.header--fotoPerfil{
+    margin-left: 100px;
+    display: flex;
+    justify-content: start;
+    align-items:center;
+}
+.header--fotoPerfil img{
+    width: 250px;
+    position: absolute;
+} 
