@@ -1,0 +1,59 @@
+
+
+h3{
+    text-align: center;
+    font-weight: 400; 
+    font-size: 31.25px;
+}
+
+.name{
+    text-align: center;
+    margin: 5px;
+    
+    
+
+}
+.name input{
+    border: 1px solid rgba(237, 132,19, 1);
+    border-radius: 5px;
+    width: 250px;
+    
+
+}
+
+.email {
+    text-align: center;
+    margin: 5px;
+    
+}
+
+.email input {
+    border: 1px solid rgba(237, 132,19, 1);
+    border-radius: 5px;
+    width: 250px;
+}
+
+.message {
+    text-align: center;
+    margin: 5px;
+}
+
+.message textarea{
+    border: 1px solid rgba(237, 132,19, 1);
+    border-radius: 5px;
+    width: 250px;
+    padding: 3px;
+}
+
+.button{
+    width: 70px;
+    padding: 4px;
+    color: white;
+    border-radius: 5px;
+    background-color: rgba(237, 132,19, 1);
+    margin-left: 34em;
+}
+
+.button:hover{
+    background-color: rgba(210, 98, 13, 1)
+}
