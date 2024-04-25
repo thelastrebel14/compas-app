@@ -1,0 +1,18 @@
+/* Ruta de colores */
+:root{
+    --main-color: ##D2600D;
+    --hover-color: #D2620D;
+    --active-color: #AE430F;
+    --background-color: #F8F8F8;
+    --secondaryBg-color: #F2F2F2;
+    --disabled-color: #FCECC9;
+    --navbar-color: #FEF9EC;
+    --navbarText-color: #AE420F;
+    --navbarSelected: #742B13;
+}
+/* Configuración por default */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
