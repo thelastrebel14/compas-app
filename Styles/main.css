@@ -1,5 +1,7 @@
-/* Ruta de colores */
-:root{
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+/* Variables */
+:root {
     --main-color: ##D2600D;
     --hover-color: #D2620D;
     --active-color: #AE430F;
@@ -11,52 +13,79 @@
     --navbarSelected: #742B13;
 }
 
-/* Configuración por default */
-*{
+/* Configuraciones del navegador */
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-/*  Estilos de Texto. Fuente: Plus Jakarta Sans.   */
-
-h1, h2, h3, h4, h5, p, label {
+/* Configuraciones del Body */
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
     font-family: "Plus Jakarta Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-  }
+}
+
+main {
+    margin: 0 100px 0 100px;
+}
+
+/*  Estilos de Texto. Fuente: Plus Jakarta Sans.   */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+label {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
 
 h1 {
-    font-weight: 400; /* <weight>: Use a value from 200 to 800 */
+    font-weight: 400;
+    /* <weight>: Use a value from 200 to 800 */
     font-size: 48px;
 }
 
 h2 {
-    font-weight: 400; /* <weight>: Use a value from 200 to 800 */
+    font-weight: 400;
+    /* <weight>: Use a value from 200 to 800 */
     font-size: 39.06px;
 }
 
 h3 {
-    font-weight: 400; /* <weight>: Use a value from 200 to 800 */
+    font-weight: 400;
+    /* <weight>: Use a value from 200 to 800 */
     font-size: 31.25px;
 }
 
 h4 {
-    font-weight: 400; /* <weight>: Use a value from 200 to 800 */
+    font-weight: 400;
+    /* <weight>: Use a value from 200 to 800 */
     font-size: 25px;
 }
 
 h5 {
-    font-weight: 400; /* <weight>: Use a value from 200 to 800 */
+    font-weight: 400;
+    /* <weight>: Use a value from 200 to 800 */
     font-size: 20px;
 }
 
 p {
-    font-weight: 400; /* <weight>: Use a value from 200 to 800 */
+    font-weight: 400;
+    /* <weight>: Use a value from 200 to 800 */
     font-size: 16px;
 }
 
 label {
-    font-weight: 400; /* <weight>: Use a value from 200 to 800 */
+    font-weight: 400;
+    /* <weight>: Use a value from 200 to 800 */
     font-size: 12.8px;
 }
