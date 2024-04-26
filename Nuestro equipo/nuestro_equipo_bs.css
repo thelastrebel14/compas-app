@@ -1,0 +1,44 @@
+@import url(../Styles/main.css);
+
+.nuestro-equipo {
+    margin: 0px 100px;
+    text-align: center;
+}
+.nuestro-equipo h2{
+    margin-bottom: 30px;
+}
+
+.cards-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(204px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(1fr, 330px));
+    align-items: space-between;
+    justify-content: space-between;
+    gap: 30px 60px;
+}
+
+.card{
+    display: inline-block;
+    align-items: center;
+}
+
+.card li{
+    list-style-type: none;
+    margin: 4px;
+    text-align: left;
+}
+
+.card ul{
+    margin: 0;
+    padding: 0;
+}
+
+.card img{
+    margin: 10px;
+    height: 126px;
+    border-radius: 10px;
+}
+
+.card-link{
+    font-size: 1.5rem;
+}
