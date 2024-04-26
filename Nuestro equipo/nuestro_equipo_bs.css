@@ -1,44 +1,45 @@
-@import url(../Styles/main.css);
 
+/* Se importan los diseños principales de main.css */
+@import url(../Styles/main.css); 
+
+
+
+/* !!!Eliminar el margin cuando se incorpore a el archivo principal!!! */
 .nuestro-equipo {
-    margin: 0px 100px;
+    margin: 0px 100px; /* Eliminar este estílo */
     text-align: center;
 }
+
+/* Separa el contenido del titulo principal */
 .nuestro-equipo h2{
     margin-bottom: 30px;
 }
 
+
+/* Muestra las cartas en forma de Grid con diseño responsivo sin media querry */
 .cards-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(204px, 1fr));
     grid-template-rows: repeat(auto-fit, minmax(1fr, 330px));
-    align-items: space-between;
-    justify-content: space-between;
     gap: 30px 60px;
 }
 
-.card{
-    display: inline-block;
-    align-items: center;
-}
-
+/* Elimina estílo de los itmes de lista y alinea a la izquierda para mejor visibilidad */
 .card li{
     list-style-type: none;
     margin: 4px;
     text-align: left;
 }
 
-.card ul{
-    margin: 0;
-    padding: 0;
-}
 
+/* Agrega estílo a las imágenes */
 .card img{
     margin: 10px;
     height: 126px;
     border-radius: 10px;
 }
 
+/* Incrementa el tamaño de los iconos */
 .card-link{
     font-size: 1.5rem;
 }
