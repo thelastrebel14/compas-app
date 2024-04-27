@@ -1,0 +1,65 @@
+@import url(../Styles/main.css);
+:root
+{
+    --background-navbar: #F2F2F2; 
+    --textColor-navbar: #AE420F;
+    --hover-text-navbar:#742B13;
+    --background-button: #ED8413;
+    --hover-button:#D2620D;
+    --textColor-button:white;
+}
+body
+{
+    font-family: "Plus Jakarta Sans",sans-serif;
+}
+.img-sett
+{
+    margin: 0px;
+    width: 48px;
+    margin-left: 46px;
+    padding: 0;
+}
+.navbar
+{
+    background-color: var(--background-navbar);
+    height: 70px;
+    padding: 0px;
+}
+.sidebar
+{
+    background-color: var(--background-navbar);
+
+}
+.btn-config
+{
+    
+    margin-top: 2px;
+    padding: 0px;
+    width: 102px;
+    height: 37px;
+    font-size: 14px;
+    border-radius: 6px;
+    background-color:var(--background-button);
+    color: var(--textColor-button);
+    
+}
+.btn-config:hover
+{
+    background-color: var(--hover-button);
+    color: var(--textColor-button);
+}
+.colorText 
+{
+    color:#AE420F; 
+    font-size: 20px;
+}
+.colorText:hover
+{
+    color:var(--hover-text-navbar); 
+}
+
+.text-config
+{
+    font-size: 20px;
+}
+    
