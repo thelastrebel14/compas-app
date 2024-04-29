@@ -1,4 +1,5 @@
 
+@import url(../main.css);
 
 h3{
     text-align: center;
@@ -9,16 +10,24 @@ h3{
 .name{
     text-align: center;
     margin: 5px;
-    
-    
 
 }
 .name input{
-    border: 1px solid rgba(237, 132,19, 1);
+    border: 1px solid var(--main-color);
     border-radius: 5px;
     width: 250px;
-    
+}
 
+.phone {
+    text-align: center;
+    margin: 5px;
+    
+}
+
+.phone input {
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+    width: 250px;
 }
 
 .email {
@@ -28,7 +37,7 @@ h3{
 }
 
 .email input {
-    border: 1px solid rgba(237, 132,19, 1);
+    border: 1px solid var(--main-color);
     border-radius: 5px;
     width: 250px;
 }
@@ -39,34 +48,38 @@ h3{
 }
 
 .message textarea{
-    border: 1px solid rgba(237, 132,19, 1);
+    border: 1px solid var(--main-color);
     border-radius: 5px;
     width: 250px;
     padding: 3px;
 }
 
 .button{
-    width: 70px;
+    width: 100px;
     padding: 4px;
     color: white;
     border-radius: 5px;
-    background-color: rgba(237, 132,19, 1);
-    margin-left: 53em;
+    background-color: var(--main-color);
+    margin-left: 35.5%;
+    border: none;
 }
 
 .button:hover{
-    background-color: rgba(210, 98, 13, 1)
+    background-color: var(--hover-color)
 }
 
-.form {
-    width: max(50%);
+@media screen and (max-width: 800) {
+    .button  {
+        margin-left: 46.5% ;
+        
+        
+    
+    }
+}
+
+.section-contacto {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.form-conteiner{
-    display: flex;
-    justify-content: ;
 }

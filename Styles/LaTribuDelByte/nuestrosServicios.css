@@ -1,22 +1,18 @@
-@import "../Styles/main.css";
+/* @import "../Styles/main.css"; */
 
-body{
-    display: grid;
-    justify-items: center;
-}
 
 .nuestrosServicios{
     text-align: center;
-    width: 1000px;
-    height: 400px;
+    width: auto;
+    height: auto;
     margin: 20px;
     align-content: center;
 }
 
 .service-block{
     text-align: center;
-    width: 160px;
-    height: 100px;
+    width: auto;
+    height: auto;
     margin: 30px 20px;
     display: inline-block; 
     align-content: center;
@@ -33,14 +29,14 @@ body{
 
 .material-symbols-outlined:hover{
     font-size: 60px;
-    color: #D2620D;
+    color: var( --main-color);
 }
 
 .nuestrosProyectos{
     text-align: center;
     margin: 20px;
-    width: 1000px;
-    height: 350px;
+    width: auto;
+    height: auto;
     display: grid;
     justify-items: center;
     align-content: center;
@@ -51,6 +47,6 @@ body{
     height: 220px;
     margin: 30px;
     align-content: center;
-    background-color: #F2F2F2;
+    background-color: var(--secondaryBg-color);
     border-radius: 10px;
 }

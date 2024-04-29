@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
-
 /* Variables */
 :root {
-    --main-color: ##D2600D;
+    --main-color: #ED8413;
     --hover-color: #D2620D;
     --active-color: #AE430F;
     --background-color: #F8F8F8;
@@ -29,11 +28,9 @@ body {
     font-family: "Plus Jakarta Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+    padding: 70px 100px 0 100px;
 }
 
-main {
-    margin: 0 100px 0 100px;
-}
 
 /*  Estilos de Texto. Fuente: Plus Jakarta Sans.   */
 
@@ -89,4 +86,13 @@ label {
     font-weight: 400;
     /* <weight>: Use a value from 200 to 800 */
     font-size: 12.8px;
+}
+
+section {
+    margin: 16px 0;
+}
+
+.tribu-logo {
+    width: 20vw;
+    margin: 16px 0;
 }

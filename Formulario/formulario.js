@@ -5,17 +5,19 @@ const formulario = document.getElementById('formulario');
         event.preventDefault();
 
         const nombre = document.getElementById('nombre').value;
+        const phone = document.getElementById('Numero de telefono').value
         const correo = document.getElementById('correo').value;
         const mensaje = document.getElementById('mensaje').value;
 
         // Enviar los datos del formulario al servidor usando fetch
-        fetch('url_de_tu_servicio_backend', {
+        fetch('/enviarSolicitudDeContacto', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 nombre: nombre,
+                phone: phone,
                 correo: correo,
                 mensaje: mensaje
             })
