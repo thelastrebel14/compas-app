@@ -28,11 +28,9 @@ body {
     font-family: "Plus Jakarta Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+    padding: 70px 100px 0 100px;
 }
 
-main {
-    margin: 0 100px 0 100px;
-}
 
 /*  Estilos de Texto. Fuente: Plus Jakarta Sans.   */
 
@@ -91,5 +89,10 @@ label {
 }
 
 section {
+    margin: 16px 0;
+}
+
+.tribu-logo {
+    width: 20vw;
     margin: 16px 0;
 }

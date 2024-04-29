@@ -1,5 +1,5 @@
 
- @import url(../Styles/main.css);
+@import url(../main.css);
 
 h3{
     text-align: center;
@@ -29,10 +29,6 @@ h3{
     border-radius: 5px;
     width: 250px;
 }
-
-
-
-
 
 .email {
     text-align: center;
@@ -64,7 +60,8 @@ h3{
     color: white;
     border-radius: 5px;
     background-color: var(--main-color);
-    margin-left: 46.5%;
+    margin-left: 35.5%;
+    border: none;
 }
 
 .button:hover{
@@ -80,3 +77,9 @@ h3{
     }
 }
 
+.section-contacto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
