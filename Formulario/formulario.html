@@ -6,41 +6,30 @@
     <link rel="icon" href="src/assets/img/logo.ico" type="image/x-icon" />
     <link rel="stylesheet" href="styles-form.css" />
     <title>Compás</title>
-  </head>
-  <body>
-    <div class="form-conteiner">
-      <!--inicia formulario-->
-      <form class="form">
-        <h3>Contáctanos</h3>
-        <div class="name">
-          <label for="nombre"></label>
-          <input type="text" class="form-control" placeholder="Nombre" />
-        </div>
-        <div class="email">
-          <label for="email"></label>
-          <input
-            type="email"
-            class="form-control"
-            id="correo"
-            placeholder="Correo"
-          />
-        </div>
-        <div class="message">
-          <label for="text"></label>
-          <textarea
-            class="text"
-            ,
-            id="messageExample"
-            rows="8"
-            placeholder="Mensaje"
-          ></textarea>
-        </div>
-        <button class="button" type="submit">Enviar</button>
-      </form>
-      <!--termina formulario-->
-    </div>
-    <span>Esta es una prueba</span>
-
-    <script src="formulario.js"></script>
-  </body>
+</head>
+<body>
+    <div> <!--inicia formulario-->
+        <form class="form">
+          <h3>Contáctanos</h3>
+          <div class="name">
+            <label for="nombre"></label>
+            <input type="text" class="form-control" placeholder="Nombre">
+          </div>  
+          <div class="phone">
+            <label for="phone"></label>
+            <input type="phone" class="form-control" id="correo" placeholder="numero de telefono">
+          </div>
+          <div class="email">
+            <label for="email"></label>
+            <input type="email" class="form-control" id="correo" placeholder="Correo">
+          </div>
+          <div class="message">
+            <label for= "text"></label>
+            <textarea class="text",  id="messageExample" rows="8" placeholder="Mensaje"></textarea>
+          </div>
+          <button class="button" type="submit">Enviar</button>
+        </form> <!--termina formulario-->       
+    
+  <script src="formulario.js"></script>
+</body>
 </html>
