@@ -7,12 +7,14 @@
     margin-left: 46px;
     padding: 0;
 }
+
 .navbar
 {
     background-color: var(--secondaryBg-color);
     height: 70px;
     padding: 0px;
 }
+
 .sidebar
 {
     background-color: var(--secondaryBg-color);
@@ -30,18 +32,20 @@
     border-radius: 6px;
     background-color: var(--main-color);
     color: var(--secondaryBg-color);
-    
 }
+
 .btn-config:hover
 {
     background-color: var(--hover-color);
     color: var(--secondaryBg-color);
 }
+
 .colorText 
 {
     color: var(--navbarText-color); 
     font-size: 20px;
 }
+
 .colorText:hover
 {
     color: var(--navbarSelected); 
