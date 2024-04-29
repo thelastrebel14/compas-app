@@ -33,7 +33,7 @@ body{
 
 .material-symbols-outlined:hover{
     font-size: 60px;
-    color: #D2620D;
+    color: var( --main-color);
 }
 
 .nuestrosProyectos{
@@ -51,6 +51,6 @@ body{
     height: 220px;
     margin: 30px;
     align-content: center;
-    background-color: #F2F2F2;
+    background-color: var(--background-color);
     border-radius: 10px;
 }

@@ -2,8 +2,6 @@
 /* Se importan los diseños principales de main.css */
 @import url(../Styles/main.css); 
 
-
-
 /* !!!Eliminar el margin cuando se incorpore a el archivo principal!!! */
 .nuestro-equipo {
     margin: 0px 100px; /* Eliminar este estílo */

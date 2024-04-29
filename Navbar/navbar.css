@@ -1,4 +1,5 @@
 @import url(../Styles/main.css);
+
 :root
 {
     --background-navbar: #F2F2F2; 
@@ -62,4 +63,4 @@ body
 {
     font-size: 20px;
 }
-    
+
