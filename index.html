@@ -4,25 +4,457 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="src/assets/img/logo.ico" type="image/x-icon">
+    
     <title>Compás</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
     <!-- fontStyles: google fonts - Plus Jakarta Sans -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./Styles/main.css">
     <!-- fontStyles   -->
+    <!-- -----  Google icons import  ------ -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./Styles/main.css">
+    <link rel="stylesheet" href="./Styles/LaTribuDelByte/navbar.css"/>
+    <link rel="stylesheet" href="./Styles/LaTribuDelByte/nosotros.css"/>
+    <link rel="stylesheet" href="./Styles/LaTribuDelByte/footer.css"/>
+    <link rel="stylesheet" href="./Styles/LaTribuDelByte/nuestroEquipo.css"/>
+    <link rel="stylesheet" href="./Styles/LaTribuDelByte/nuestrosServicios.css"/>
+    <link rel="stylesheet" href="./Styles/LaTribuDelByte/nuestrosProyectos.css"/>
+    <link rel="stylesheet" href="./Styles/LaTribuDelByte/contacto.css"/>
 </head>
 
 <body>
-    <!-- <h1>H1 Hola mundo 48.83px</h1>
-    <h2>H2 Hola mundo 39.06px</h2>
-    <h3>H3 Hola mundo 31.25px</h3>
-    <h4>H4 Hola mundo 25px</h4>
-    <h5>H5 Hola mundo 20px</h5>
-    <p>P Hola mundo 16px</p>
-    <label for="">Label Hola mundo 12.8px</label> -->
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+          <!-- Insertamos imagen del logo de la tribu del byte -->
+          <img src="../src/assets/img/LaTriburec.png" alt="logo" class="navbar-brand img-sett">
 
-    
+          <!-- Este es el botón toggle, aparece cuando la ventana está muy pequeña -->
+          <button class="navbar-toggler shadow-none border-0 burguer-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- El cuerpo que aparece al dar clic en el botón toggle -->
+          <div class="offcanvas offcanvas-start sidebar shadow-none" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+
+            <!-- Titulo del botón toggle -->
+            <div class="offcanvas-header border-bottom">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">La tribu del byte</h5>
+              <button type="button" class="btn-close btn-close-black shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <!-- Opciones que tendrá el botón toggle -->
+            <div class="offcanvas-body d-flex flex-column flex-lg-row p-4"> <!-- Se coloca las adaptaciones que tendrá con distintos tamaños de pantallas-->
+              <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-0 text-config"> <!-- Alineación de objetos -->
+                <li class="nav-item mx-2">
+                  <a class="nav-link colorText" href="#nuestroE";>Nuestro Equipo</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link colorText" href="#servicios">Servicios</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link colorText" href="#proyectos">Proyectos</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link colorText" href="#contacto">Contacto</a>
+                </li>
+              </ul>
+              <div class="d-flex justify-content-center align-content-center">
+                <button class="btn btn-config shadow-none border-0">Compás App</button>
+              </div>
+            <div>
+          </div>
+        </div>
+    </nav>
+    <!--Nosotros-->
+    <section class="section-nosotros">
+        <h3>¿Quiénes somos?</h3>
+        <img src="../src/assets/img/LaTriburec.png" alt="logo" class="tribu-logo">
+        
+        <p>
+            Somos el punto de encuentro para todo tipo de músicos. En un mundo saturado de ruido, queremos ser tu lugar seguro, donde tu voz se escuche y tu talento brille.
+        </p>
+        <p>
+            Nos enorgullece ser un espacio inclusivo y diverso, donde artistas de todos los géneros y estilos pueden conectar, colaborar y crecer juntos.
+            Nuestra misión es simple pero poderosa: proporcionarte las herramientas, recursos y conexiones que necesitas para llevar tu música al siguiente nivel.
+        </p>
+        <p>
+            En La tribu del Byte, creemos en el poder de la música para unir a las personas, romper barreras y cambiar el mundo. Únete a nuestra comunidad y sé parte de esta vibrante revolución musical.
+        </p>
+    </section>
+    <!--Nuestro Equipo-->
+    <section class="nuestro-equipo" id="nuestroE">
+        <!--Contenedor de toda la sección-->
+        <h2>Nuestro Equipo</h2>
+        <div class="cards-container">
+          <!--Contenedor de todas las cartas-->
+          <div class="card text-center" style="background-color: #f2f2f2">
+            <!--Inicio de carta-->
+            <img
+              src="./src/assets/equipo/andrea_garibaldi.jpg"
+              class="card-img-center"
+              alt="Imagen del Integrante"
+            />
+            <div class="card-body">
+              <!--Contenedor de el texto de la carta-->
+              <h5 class="card-title">Andrea Garibaldi</h5>
+              <p class="card-text">Fullstack Developer</p>
+            </div>
+            <ul>
+              <li>JavaScript</li>
+              <li>Java</li>
+              <li>SQL</li>
+              <li>React</li>
+            </ul>
+            <div class="card-body">
+              <!--Contenedor de los links-->
+              <a href="#" class="card-link" target="_blank"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <!--Link logo de LinkedIn-->
+              <a href="#" class="card-link" target="_blank"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <!--Link logo de Github-->
+            </div>
+          </div>
+          <!--Fin de carta-->
+          <div class="card text-center" style="background-color: #f2f2f2">
+            <!--Inicio de carta-->
+            <img
+              src="./src/assets/equipo/mario_sandoval.jpg"
+              class="card-img-center"
+              alt="Imagen del Integrante"
+            />
+            <div class="card-body">
+              <!--Contenedor de el texto de la carta-->
+              <h5 class="card-title">Mario Sandoval</h5>
+              <p class="card-text">Fullstack Developer</p>
+            </div>
+            <ul>
+              <li>JavaScript</li>
+              <li>Java</li>
+              <li>SQL</li>
+              <li>React</li>
+            </ul>
+            <div class="card-body">
+              <!--Contenedor de los links-->
+              <a href="#" class="card-link" target="_blank"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <!--Link logo de LinkedIn-->
+              <a href="#" class="card-link" target="_blank">
+                <i class="fa-brands fa-github"></i>
+                </a>
+              <!--Link logo de Github-->
+            </div>
+          </div>
+          <!--Fin de carta-->
+          <div class="card text-center" style="background-color: #f2f2f2">
+            <!--Inicio de carta-->
+            <img
+              src="./src/assets/equipo/patricio_pina.jpg"
+              class="card-img-center"
+              alt="Imagen del Integrante"
+            />
+            <div class="card-body">
+              <!--Contenedor de el texto de la carta-->
+              <h5 class="card-title">Patricio Piña</h5>
+              <p class="card-text">Fullstack Developer</p>
+            </div>
+            <ul>
+              <li>JavaScript</li>
+              <li>Java</li>
+              <li>SQL</li>
+              <li>React</li>
+            </ul>
+            <div class="card-body">
+              <!--Contenedor de los links-->
+              <a href="#" class="card-link" target="_blank"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <!--Link logo de LinkedIn-->
+              <a href="#" class="card-link" target="_blank"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <!--Link logo de Github-->
+            </div>
+          </div>
+          <!--Fin de carta-->
+          <div class="card text-center" style="background-color: #f2f2f2">
+            <!--Inicio de carta-->
+            <img
+              src="./src/assets/equipo/javier_cadena.jpg"
+              class="card-img-center"
+              alt="Imagen del Integrante"
+            />
+            <div class="card-body">
+              <!--Contenedor de el texto de la carta-->
+              <h5 class="card-title">Javier Cadena</h5>
+              <p class="card-text">Fullstack Developer</p>
+            </div>
+            <ul>
+              <li>JavaScript</li>
+              <li>Java</li>
+              <li>SQL</li>
+              <li>React</li>
+            </ul>
+            <div class="card-body">
+              <!--Contenedor de los links-->
+              <a href="#" class="card-link" target="_blank"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <!--Link logo de LinkedIn-->
+              <a href="#" class="card-link" target="_blank"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <!--Link logo de Github-->
+            </div>
+          </div>
+          <!--Fin de carta-->
+          <div class="card text-center" style="background-color: #f2f2f2">
+            <!--Inicio de carta-->
+            <img
+              src="./src/assets/equipo/moises_reyes.jpg"
+              class="card-img-center"
+              alt="Imagen del Integrante"
+            />
+            <div class="card-body">
+              <!--Contenedor de el texto de la carta-->
+              <h5 class="card-title">Moisés Reyes</h5>
+              <p class="card-text">Fullstack Developer</p>
+            </div>
+            <ul>
+              <li>JavaScript</li>
+              <li>Java</li>
+              <li>SQL</li>
+              <li>React</li>
+            </ul>
+            <div class="card-body">
+              <!--Contenedor de los links-->
+              <a href="#" class="card-link" target="_blank"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <!--Link logo de LinkedIn-->
+              <a href="#" class="card-link" target="_blank"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <!--Link logo de Github-->
+            </div>
+          </div>
+          <!--Fin de carta-->
+          <div class="card text-center" style="background-color: #f2f2f2">
+            <!--Inicio de carta-->
+            <img
+              src="./src/assets/equipo/jorge_maza.jpg"
+              class="card-img-center"
+              alt="Imagen del Integrante"
+            />
+            <div class="card-body">
+              <!--Contenedor de el texto de la carta-->
+              <h5 class="card-title">Jorge Maza</h5>
+              <p class="card-text">Fullstack Developer</p>
+            </div>
+            <ul>
+              <li>JavaScript</li>
+              <li>Java</li>
+              <li>SQL</li>
+              <li>React</li>
+            </ul>
+            <div class="card-body">
+              <!--Contenedor de los links-->
+              <a href="#" class="card-link" target="_blank"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <!--Link logo de LinkedIn-->
+              <a href="#" class="card-link" target="_blank"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <!--Link logo de Github-->
+            </div>
+          </div>
+          <!--Fin de carta-->
+          <div class="card text-center" style="background-color: #f2f2f2">
+            <!--Inicio de carta-->
+            <img
+              src="./src/assets/equipo/mark_salazar.jpg"
+              class="card-img-center"
+              alt="Imagen del Integrante"
+            />
+            <div class="card-body">
+              <!--Contenedor de el texto de la carta-->
+              <h5 class="card-title">Mark Salazar</h5>
+              <p class="card-text">Fullstack Developer</p>
+            </div>
+            <ul>
+              <li>JavaScript</li>
+              <li>Java</li>
+              <li>SQL</li>
+              <li>React</li>
+            </ul>
+            <div class="card-body">
+              <!--Contenedor de los links-->
+              <a href="#" class="card-link" target="_blank"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <!--Link logo de LinkedIn-->
+              <a href="#" class="card-link" target="_blank"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <!--Link logo de Github-->
+            </div>
+          </div>
+          <!--Fin de carta-->
+          <div class="card text-center" style="background-color: #f2f2f2">
+            <!--Inicio de carta-->
+            <img
+              src="./src/assets/equipo/gabriel_martinez.jpg"
+              class="card-img-center"
+              alt="Imagen del Integrante"
+            />
+            <div class="card-body">
+              <!--Contenedor de el texto de la carta-->
+              <h5 class="card-title">Gabriel Martínez</h5>
+              <p class="card-text">Fullstack Developer</p>
+            </div>
+            <ul>
+              <li>JavaScript</li>
+              <li>Java</li>
+              <li>SQL</li>
+              <li>React</li>
+            </ul>
+            <div class="card-body">
+              <!--Contenedor de los links-->
+              <a href="#" class="card-link" target="_blank"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <!--Link logo de LinkedIn-->
+              <a href="#" class="card-link" target="_blank"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <!--Link logo de Github-->
+            </div>
+          </div>
+          <!--Fin de carta-->
+        </div>
+        <!--Cierre del contenedor de todas las cartas-->
+      </section>
+      <!--Cierre del contenedor de toda la sección-->
+    <!--Nuestros Servicios-->
+    <section class="nuestrosServicios" id="servicios">
+        <h3>Nuestros Servicios</h3>
+        <div class="service-block">
+            <span class="material-symbols-outlined">
+                code
+            </span>
+            <p>Developer</p>
+        </div>
+        <div class="service-block">
+            <span class="material-symbols-outlined">
+                edit_document
+            </span>
+            <p>Copyright</p>
+        </div>
+        <div class="service-block">
+            <span class="material-symbols-outlined">
+                finance_mode
+            </span>
+            <p>Sales Managers</p>
+        </div>
+        <div class="service-block">
+            <span class="material-symbols-outlined">
+                deployed_code_account
+            </span>
+            <p>Freelancers</p>
+        </div>
+        <div class="service-block">
+            <span class="material-symbols-outlined">
+                groups
+            </span>
+            <p>Teams</p>
+        </div>
+        <div class="service-block">
+            <span class="material-symbols-outlined">
+                draw
+            </span>
+            <p>Product Designers</p>
+        </div>
+        <div class="service-block">
+            <span class="material-symbols-outlined">
+                strategy
+            </span>
+            <p>UX Strategists</p>
+        </div>
+        <div class="service-block">
+            <span class="material-symbols-outlined">
+                assignment_add
+            </span>
+            <p>Project Managers</p>
+        </div>
+    </section>
+    <!-- ----------------------   Nuestros Proyectos   --------------------  -->
+    <div id="proyectos" class="nuestrosProyectos">
+      <h3>Nuestros Proyectos</h3>
+      <div class="compas-Card">
+          <img src="../src/assets/img/logo.ico" alt="">
+          <h5>Red Social</h5>
+          <h5>Compás</h5>
+          <span class="material-symbols-outlined">
+              link
+          </span>
+      </div>
+  </div>
+  <!-- -----------------    Fin de Nuestros Proyectos   -----------------  -->
+  
+    <!--Contacto-->
+
+    <section id="contacto" class="section-contacto"> <!--inicia formulario-->
+        <form class="form">
+            <h3>Contáctanos</h3>
+            <div class="name">
+              <label for="nombre"></label>
+              <input type="text" class="form-control" placeholder="Nombre">
+            </div>  
+            <div class="phone">
+              <label for="phone"></label>
+              <input type="phone" class="form-control" id="correo" placeholder="Numero de telefono">
+            </div>
+            <div class="email">
+              <label for="email"></label>
+              <input type="email" class="form-control" id="correo" placeholder="Correo">
+            </div>
+            <div class="message">
+              <label for= "text"></label>
+              <textarea class="text" id="messageExample" rows="8" placeholder="Mensaje"></textarea>
+            </div>
+            <button class="button" type="submit">Enviar</button>
+          </form>
+    </section>
+    <!--Footer-->
+    <footer class="footer">
+        <a href="#">Acerca de</a>
+        <a href="#">Términos y condiciones</a>
+        <a href="#">Seguridad y privacidad</a>
+        <div class="copyright"> <!--Un div para alinear el icono con el texto de copyright-->
+            <span class="material-symbols-outlined"> <!--Icono de copyright-->
+                Copyright
+            </span>
+            <p>Compás App 2024</p>
+        </div>
+    </footer>
+    <!--Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/f54f9642cb.js" crossorigin="anonymous"></script>
 </body>
 </html>

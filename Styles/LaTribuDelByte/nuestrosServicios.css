@@ -1,0 +1,52 @@
+/* @import "../Styles/main.css"; */
+
+
+.nuestrosServicios{
+    text-align: center;
+    width: auto;
+    height: auto;
+    margin: 20px;
+    align-content: center;
+}
+
+.service-block{
+    text-align: center;
+    width: auto;
+    height: auto;
+    margin: 30px 20px;
+    display: inline-block; 
+    align-content: center;
+}
+
+.material-symbols-outlined {
+    font-size: 50px;
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+.material-symbols-outlined:hover{
+    font-size: 60px;
+    color: var( --main-color);
+}
+
+.nuestrosProyectos{
+    text-align: center;
+    margin: 20px;
+    width: auto;
+    height: auto;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+}
+
+.compas-Card{
+    width: 160px;
+    height: 220px;
+    margin: 30px;
+    align-content: center;
+    background-color: var(--secondaryBg-color);
+    border-radius: 10px;
+}

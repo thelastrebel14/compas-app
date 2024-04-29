@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../src/assets/img/logo.ico">
+    <title>Navbar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="../Nuestro equipo/nuestro_equipo_bs.css">
+    <link rel="stylesheet" href="./navbar.css">
+  </head>
+  <body class="vh-100 overflow-hidden">
+
+    <!-- Aquí empieza el Navbar de boostrap -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+          <!-- Insertamos imagen del logo de la tribu del byte -->
+          <img src="../src/assets/img/LaTriburec.png" alt="logo" class="navbar-brand img-sett">
+
+          <!-- Este es el botón toggle, aparece cuando la ventana está muy pequeña -->
+          <button class="navbar-toggler shadow-none border-0" style="background-color: #ED8413;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- El cuerpo que aparece al dar clic en el boton toggle -->
+          <div class="offcanvas offcanvas-start sidebar shadow-none" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+
+            <!-- Titulo del boton toggle -->
+            <div class="offcanvas-header border-bottom">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">La tribu del byte</h5>
+              <button type="button" class="btn-close btn-close-black shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <!-- Opciónes que tendrá el botón toggle -->
+            <div class="offcanvas-body d-flex flex-column flex-lg-row p-4"> <!-- Se coloca las adaptaciones que tendrá con distintos tamaños de pantallas-->
+              <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-0 text-config"> <!-- Alineación de objetos -->
+                <li class="nav-item mx-2">
+                  <a class="nav-link colorText" href="#";>Nuestro Equipo</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link colorText" href="#">Servicios</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link colorText" href="#">Proyectos</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link colorText" href="#">Contactanos</a>
+                </li>
+              </ul>
+              <div class="d-flex justify-content-center align-content-center">
+                <button class="btn btn-config shadow-none border-0">Compás App</button>
+              </div>
+            <div>
+          </div>
+        </div>
+      </nav>
+    
+    
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
