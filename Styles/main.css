@@ -28,10 +28,6 @@ body {
     font-family: "Plus Jakarta Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 main {
@@ -92,4 +88,9 @@ label {
     font-weight: 400;
     /* <weight>: Use a value from 200 to 800 */
     font-size: 12.8px;
+}
+
+section {
+    margin: 16px 0;
+
 }
