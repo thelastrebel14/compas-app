@@ -1,8 +1,4 @@
-:root { /*Se define una lista de colores que luego serán utilizados a lo largo del proyecto con nombres fáciles de recordar*/
-    --background: #f8f8f8;
-    --secundario: #f2f2f2;
-}
-
+@import url(../Styles/main.css);
 html { /*Se establece border-box en todo el proyecto para facilitar la implementación de paddings y otros elementos fácilmente*/
     box-sizing: border-box;
 }
@@ -11,15 +7,6 @@ html { /*Se establece border-box en todo el proyecto para facilitar la implement
     box-sizing: inherit;
 }
 
-body { /*Se establecen características generales para todo el documento. El tamaño de letra, la fuente y el color de fondo*/
-    font-size: 16px;
-    font-family: "Plus Jakarta Sans", sans-serif;
-    background-color: var(--background);
-}
-
-h3 { /*Se define tamaño de la fuente del subtítulo "Nuestros Proyectos"*/
-    font-size: 39px;
-}
 
 #logo-proyectos { /*Se ajusta el tamaño del logo de Compás App*/
     width: 150px;
@@ -35,7 +22,7 @@ h3 { /*Se define tamaño de la fuente del subtítulo "Nuestros Proyectos"*/
 .tarjeta-proyectos { /*Se establece el tamaño, color de fondo y alineación de la tarjeta donde se ubica el logo y el un enlace hacia la plataforma de Compás App*/
     width: 200px;
     height: 290px;
-    background-color: var(--secundario);
+    background-color: var(--secondaryBg-color);
     display: flex;
     flex-direction: column;
     align-items: center;
