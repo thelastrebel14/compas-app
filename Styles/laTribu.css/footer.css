@@ -1,6 +1,4 @@
-:root { /*Se define una lista de colores que luego serán utilizados a lo largo del proyecto con nombres fáciles de recordar*/
-    --background: #f8f8f8;
-}
+@import url('../Styles/main.css');
 
 html { /*Se establece border-box en todo el proyecto para facilitar la implementación de paddings y otros elementos fácilmente*/
     box-sizing: border-box;
@@ -13,7 +11,7 @@ html { /*Se establece border-box en todo el proyecto para facilitar la implement
 body { /*Se establecen características generales para todo el documento. El tamaño de letra, la fuente y el color de fondo*/
     font-size: 16px;
     font-family: "Plus Jakarta Sans", sans-serif;
-    background-color: var(--background);
+    background-color: var(--background-color);
 }
 
 .footer { /*Se definen características específicas para el footer*/
