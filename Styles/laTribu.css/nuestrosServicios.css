@@ -1,11 +1,13 @@
 @import "../Styles/main.css";
 
-body{
+/* body{
     display: grid;
     justify-items: center;
-}
+} */
 
 .nuestrosServicios{
+    display: grid;
+    justify-items: center;
     text-align: center;
     width: 1000px;
     height: 400px;

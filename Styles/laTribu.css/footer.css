@@ -1,5 +1,4 @@
-@import url(../Styles/main.css);
-
+@import url('../Styles/main.css');
 
 html { /*Se establece border-box en todo el proyecto para facilitar la implementación de paddings y otros elementos fácilmente*/
     box-sizing: border-box;
