@@ -10,16 +10,12 @@ h3{
 .name{
     text-align: center;
     margin: 5px;
-    
-    
 
 }
 .name input{
     border: 1px solid var(--main-color);
     border-radius: 5px;
     width: 250px;
-    
-
 }
 
 .phone {
