@@ -7,15 +7,6 @@ html { /*Se establece border-box en todo el proyecto para facilitar la implement
     box-sizing: inherit;
 }
 
-body { /*Se establecen características generales para todo el documento. El tamaño de letra, la fuente y el color de fondo*/
-    font-size: 16px;
-    font-family: "Plus Jakarta Sans", sans-serif;
-    background-color: var(--background-color);
-}
-
-h3 { /*Se define tamaño de la fuente del subtítulo "Nuestros Proyectos"*/
-    font-size: 39px;
-}
 
 #logo-proyectos { /*Se ajusta el tamaño del logo de Compás App*/
     width: 150px;
