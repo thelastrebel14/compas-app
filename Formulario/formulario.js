@@ -5,6 +5,7 @@ const formulario = document.getElementById('formulario');
         event.preventDefault();
 
         const nombre = document.getElementById('nombre').value;
+        const phone = document.getElementById('Numero de telefono').value
         const correo = document.getElementById('correo').value;
         const mensaje = document.getElementById('mensaje').value;
 
@@ -16,6 +17,7 @@ const formulario = document.getElementById('formulario');
             },
             body: JSON.stringify({
                 nombre: nombre,
+                phone: phone,
                 correo: correo,
                 mensaje: mensaje
             })
