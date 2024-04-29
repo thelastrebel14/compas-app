@@ -4,12 +4,12 @@
 
 /* !!!Eliminar el margin cuando se incorpore a el archivo principal!!! */
 .nuestro-equipo {
-    margin: 0px 100px; /* Eliminar este estílo */
     text-align: center;
 }
 
 /* Separa el contenido del titulo principal */
 .nuestro-equipo h2{
+    margin-top: 60px;
     margin-bottom: 30px;
 }
 
@@ -32,7 +32,7 @@
 
 /* Agrega estílo a las imágenes */
 .card img{
-    margin: 10px;
+    margin: 10px 20px;
     height: 126px;
     border-radius: 10px;
 }
