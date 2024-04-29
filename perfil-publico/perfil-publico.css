@@ -1,5 +1,6 @@
 @import "../Styles/main.css";
 
+/* ------------Header (Portada y foto de perfil) ------------*/
 header{
     width: 100%;
     max-width: 100%;
@@ -22,3 +23,69 @@ header{
     width: 250px;
     position: absolute;
 } 
+
+/* ------------Información del perfil de usuario ------------*/
+
+.profile{
+    display: flex;
+}
+
+.profile--info--nombreySeguidores{
+    display: flex;
+    align-items: center;
+}
+.profile--info--nombreySeguidores--nombre{
+    margin-right: 14px;
+    max-width: 372px;
+}
+.profile--info--nombreySeguidores--nombre h1{
+    font-weight: bold;
+}
+
+.profile--info--nombreySeguidores--seguidores h5{
+    font-weight: bold;
+    color: var(--grey);
+}
+
+.profile--info--ubicacion{
+    margin-top: 16px;
+}
+
+.profile--info--enfoque{
+    margin-top: 24px;
+    display: flex;
+}
+
+.profile--info--enfoque--instrumentos{
+    margin-right: 60px;
+}
+
+.profile--info--enfoque--instrumentos h5{
+    font-weight: 500;
+}
+
+.profile--info--enfoque--instrumentos p{
+    font-weight: bold;
+    color: var(--grey);
+}
+
+.profile--info--enfoque--generos{
+    margin-right: 60px;
+}
+
+.profile--info--enfoque--generos h5{
+    font-weight: 500;
+}
+
+.profile--info--enfoque--generos p{
+    font-weight: bold;
+    color: var(--grey);
+}
+
+.profile--info--demo{
+    margin-top: 38px;
+    background-color: var(--black);
+    width: 700px;
+    height: 110px;
+    border-radius: 10px;
+}

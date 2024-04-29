@@ -2,7 +2,7 @@
 
 /* Variables */
 :root {
-    --main-color: ##D2600D;
+    --main-color: #D2600D;
     --hover-color: #D2620D;
     --active-color: #AE430F;
     --background-color: #F8F8F8;
@@ -12,6 +12,7 @@
     --navbarText-color: #AE420F;
     --navbarSelected: #742B13;
     --grey: #8F7979;
+    --black: #000;
 }
 
 /* Configuraciones del navegador */
