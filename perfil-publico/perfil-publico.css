@@ -1,5 +1,6 @@
 @import "../Styles/main.css";
 
+/* ------------Header (Portada y foto de perfil) ------------*/
 header{
     width: 100%;
     max-width: 100%;
@@ -22,3 +23,229 @@ header{
     width: 250px;
     position: absolute;
 } 
+
+/* ------------Información del perfil de usuario ------------*/
+
+.profile{
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile--info--nombreySeguidores{
+    display: flex;
+    align-items: center;
+}
+.profile--info--nombreySeguidores--nombre{
+    margin-right: 14px;
+    max-width: 372px;
+}
+.profile--info--nombreySeguidores--nombre h1{
+    font-weight: bold;
+}
+
+.profile--info--nombreySeguidores--seguidores h5{
+    font-weight: bold;
+    color: var(--grey);
+}
+
+.profile--info--ubicacion{
+    margin-top: 16px;
+}
+
+.profile--info--enfoque{
+    margin-top: 24px;
+    display: flex;
+}
+
+.profile--info--enfoque--instrumentos{
+    margin-right: 60px;
+}
+
+.profile--info--enfoque--instrumentos h5{
+    font-weight: 500;
+}
+
+.profile--info--enfoque--instrumentos p{
+    font-weight: bold;
+    color: var(--grey);
+}
+
+.profile--info--enfoque--generos{
+    margin-right: 60px;
+}
+
+.profile--info--enfoque--generos h5{
+    font-weight: 500;
+}
+
+.profile--info--enfoque--generos p{
+    font-weight: bold;
+    color: var(--grey);
+}
+
+.profile--info--demo{
+    margin-top: 38px;
+    background-color: var(--black);
+    width: 700px;
+    height: 110px;
+    border-radius: 10px;
+}
+
+.profile--info--demo{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 15px 28px 15px 22px;
+}
+
+.profile--info--demo--img{
+    background-image: url('img/perfil-demo-img.jpg');
+    background-size: cover;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+.profile--info--demo--titulo h3,
+.profile--info--demo--titulo h5{
+    color: var(--white);
+}
+
+
+
+/* .profile--follow{
+    margin-left: 114px;
+} */
+.profile--follow--buttons{
+    display: flex;
+}
+
+.profile--follow--buttons--seguir{
+    background-color: var(--main-color);
+    color: var(--white);
+    margin-right: 52px;
+}
+.profile--follow--buttons--seguir:hover{
+    background-color: var(--hover-color);
+}
+
+.profile--follow--buttons--donar{
+    background-color: transparent;
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+}
+
+.profile--follow--mensaje{
+    margin-top: 32px;
+}
+.profile--follow--mensaje h4{
+    font-weight: bold;
+}
+
+.profile--follow--mensaje h4 span{
+    margin-left: 32px;
+}
+
+.profile--follow--redes{
+    font-display: flex;
+}
+
+.profile--follow--redes img{
+    width: 40px;
+    margin-right: 36px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+/* ----------Sección de demos------------- */
+.demos{
+    margin-top: 50px;
+}
+
+.demos h2{
+    font-weight: bold;
+}
+.demos--cards{
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.demos--cards--item{
+    height: 286px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.demos--cards--item:first-child{
+    background-image: url("img/demos1.jpg");
+}
+
+.demos--cards--item:nth-child(2){
+    background-image: url("img/perfil-demo-img.jpg");
+}
+
+.demos--cards--item:nth-child(3){
+    background-image: url("img/demos1.jpg");
+}
+
+.demos--cards--item--content{
+    padding: 70px 54px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+.demos--cards--item--content--info label,
+.demos--cards--item--content--info h4{
+    width: 158px;
+    max-width: 158px;
+    text-align: center;
+    color: var(--white);
+}
+
+.demos--cards--item--content--info h4{
+    margin-top: 4px;
+    margin-bottom: 18px;
+}
+
+.demos--cards--item--content--info button{
+    background-color: var(--main-color);
+    color: var(--white);
+}
+
+.demos--cards--item--content--info button:hover{
+    background-color: var(--hover-color);
+}
+
+/* ------Acerca de -------- */
+.acerca{
+    margin-top: 50px;
+}
+
+.acerca h2{
+    font-weight: bold;
+}
+
+.acerca .linea{
+    margin: 16px 0 32px 0;
+}
+
+.acerca--info {
+    width: 600px;
+    max-width: 600px;
+}
+
+.acerca--info p:nth-child(2){
+    font-weight: bold;
+    color: var(--grey);
+    cursor: pointer;
+}
+
