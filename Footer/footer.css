@@ -1,5 +1,3 @@
-/* @import url('../Styles/main.css'); */
-
 :root { /*Se define una lista de colores que luego serán utilizados a lo largo del proyecto con nombres fáciles de recordar*/
     --background: #f8f8f8;
 }
@@ -18,21 +16,8 @@ body { /*Se establecen características generales para todo el documento. El tam
     background-color: var(--background);
 }
 
-h4 {
-    padding: 200, 0;
-    color: black;
-    text-align: center;
-}
-
-.footer--hr {
-    width: 100%;
-    height: 4px;
-    background-color: #742B13;
-}
-
 .footer { /*Se definen características específicas para el footer*/
-    margin: 100, 100;
-    padding: 200, 0;
+    margin: 50, 100;
     font-weight: bold;
     display: flex; 
     align-items: center;
@@ -49,17 +34,10 @@ h4 {
 
 .footer a { /*Se edita el texto de los enlaces del footer para que sean de color negro y sin subrayado de enlace*/
     text-decoration: none;
-    color: gray;
+    color: black;
 }
 
 .copyright { /*Se alinea el icono de copyright con el texto que le precede*/
     display: flex;
-    flex-direction: row;
-    align-content: center;
-    color: gray;
-}
-
-.copyright p {
-    font-weight: bold;
-    color: gray;
+    align-items: center;
 }
