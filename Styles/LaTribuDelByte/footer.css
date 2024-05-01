@@ -1,4 +1,4 @@
-@import url('../Styles/main.css');
+/* @import url('../Styles/main.css'); */
 
 html { /*Se establece border-box en todo el proyecto para facilitar la implementación de paddings y otros elementos fácilmente*/
     box-sizing: border-box;
@@ -17,7 +17,7 @@ body { /*Se establecen características generales para todo el documento. El tam
 .footer { /*Se definen características específicas para el footer*/
     margin: 50, 100;
     font-weight: bold;
-    display: flex; 
+    display: flex;
     align-items: center;
     flex-direction: column;
 }

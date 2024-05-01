@@ -1,36 +1,21 @@
-@import url(../Styles/main.css);
-html { /*Se establece border-box en todo el proyecto para facilitar la implementación de paddings y otros elementos fácilmente*/
-    box-sizing: border-box;
+/* @import url(../Styles/main.css); */
+
+.nuestrosProyectos{
+    text-align: center;
+    margin: 20px;
+    width: auto;
+    height: auto;
+    display: grid;
+    justify-items: center;
+    align-content: center;
 }
 
-*, *:before, *:after { /*Una extensión del border-box que amplia su uso*/
-    box-sizing: inherit;
-}
-
-
-#logo-proyectos { /*Se ajusta el tamaño del logo de Compás App*/
-    width: 150px;
-}
-
-.nuestros-proyectos { /*Se establecen características de la sección "Nuestros Proyectos"*/
-    margin: 0, 100;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.tarjeta-proyectos { /*Se establece el tamaño, color de fondo y alineación de la tarjeta donde se ubica el logo y el un enlace hacia la plataforma de Compás App*/
-    width: 200px;
-    height: 290px;
+.compas-Card{
+    width: 160px;
+    height: 220px;
+    margin: 30px;
+    align-content: center;
     background-color: var(--secondaryBg-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#icono-enlace { /*Se alinea el icono hacia el enlace externo con respecto al resto de la tarjeta donde ubica*/
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    border-radius: 10px;
 }
 
