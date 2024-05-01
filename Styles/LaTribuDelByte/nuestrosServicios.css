@@ -1,11 +1,10 @@
 /* @import "../Styles/main.css"; */
 
-
 .nuestrosServicios{
     text-align: center;
     width: auto;
     height: auto;
-    margin: 20px;
+    margin: 50px 20px;
     align-content: center;
 }
 
@@ -28,25 +27,6 @@
 }
 
 .material-symbols-outlined:hover{
-    font-size: 60px;
+    /*font-size: 60px;*/
     color: var( --main-color);
-}
-
-.nuestrosProyectos{
-    text-align: center;
-    margin: 20px;
-    width: auto;
-    height: auto;
-    display: grid;
-    justify-items: center;
-    align-content: center;
-}
-
-.compas-Card{
-    width: 160px;
-    height: 220px;
-    margin: 30px;
-    align-content: center;
-    background-color: var(--secondaryBg-color);
-    border-radius: 10px;
 }
