@@ -1,20 +1,4 @@
-/* @import url('../Styles/main.css'); */
-
-:root { /*Se define una lista de colores que luego serán utilizados a lo largo del proyecto con nombres fáciles de recordar*/
-    --main-color: #ED8413;
-    --hover-color: #D2620D;
-    --active-color: #AE430F;
-    --background-color: #F8F8F8;
-    --secondaryBg-color: #F2F2F2;
-    --disabled-color: #FCECC9;
-    --navbar-color: #FEF9EC;
-    --navbarText-color: #AE420F;
-    --navbarSelected: #742B13;
-    --grey: #8F7979;
-    --black: #000;
-    --white: #fff;
-    --disabled-text: #F7C566;
-}
+@import url('../Styles/main.css');
 
 html { /*Se establece border-box en todo el proyecto para facilitar la implementación de paddings y otros elementos fácilmente*/
     padding: 0;
