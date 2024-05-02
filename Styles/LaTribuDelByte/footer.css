@@ -32,11 +32,9 @@ h4 {
 .footer { /*Se definen características específicas para el footer*/
 
     display: flex; 
-=========
     margin: 50, 100;
     font-weight: bold;
     display: flex;
->>>>>>>>> Temporary merge branch 2
     align-items: center;
     flex-direction: column;
 }
