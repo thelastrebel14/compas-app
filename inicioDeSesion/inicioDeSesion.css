@@ -1,0 +1,57 @@
+@import url(../Styles/main.css);
+
+
+
+.inicioDeSesion{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+}
+
+.inicioDeSesion--formContainer{
+    text-align: center;
+    padding: 22px;
+}
+
+.inicioDeSesion--formContainer form{
+    padding: 22px;
+}
+
+.inicioDeSesion--imagen img{
+    width: 400px;
+}
+
+.inicioDeSesion--imagen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inicioDeSesion--form--buttons{
+    margin: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.inicioDeSesion--form--buttons button{
+    margin: 11px;
+}
+
+.inicioDeSesion--form--buttons button:hover{
+    transform: scale(1.05);
+    transition: transform 300ms;
+    margin: 11px;
+}
+
+.inicioDeSesion--form--buttons a{
+    margin: 11px;
+}
+
+.inicioDeSesion--form--buttons a:hover{
+    transform: scale(1.02);
+    transition: transform 300ms;
+    margin: 11px;
+}

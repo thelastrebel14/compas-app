@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro de usuario</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="registroDeUsuario.css" />
+  </head>
+  <body>
+    <main>
+      <h1 class="registroDeUsuario--heading">
+        Estas a un paso de unirte a Compás
+      </h1>
+      <form>
+        <div class="container">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputName"
+                  placeholder="Nombre completo"
+                />
+                <label for="inputName" class="form-label"
+                  >Nombre completo</label
+                >
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="inputAge"
+                  placeholder="Edad"
+                />
+                <label for="inputAge" class="form-label">Edad</label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputGender"
+                  placeholder="Género"
+                />
+                <label for="inputGender" class="form-label">Género</label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="inputEmail"
+                  placeholder="Correo electrónico"
+                />
+                <label for="inputEmail" class="form-label"
+                  >Correo electrónico</label
+                >
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="inputPassword"
+                  placeholder="Contraseña"
+                />
+                <label for="inputPassword" class="form-label">Contraseña</label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="inputPassword"
+                  placeholder="Confirmar Contraseña"
+                />
+                <label for="inputPassword" class="form-label"
+                  >Confirmar Contraseña</label
+                >
+              </div>
+            </div>
+
+            <div class="linea"></div>
+
+            <label>Dirección</label>
+            <div class="col-md-2">
+              <div class="form-floating">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputZip"
+                  placeholder="Código postal"
+                />
+                <label for="inputZip" class="form-label">Código postal</label>
+              </div>
+            </div>
+
+            <div class="col-md-5">
+              <select id="inputState" class="form-control">
+                <option selected><label>Estado</label></option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="col-md-5">
+              <select id="inputState" class="form-control">
+                <option selected><label>Ciudad</label></option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="linea"></div>
+            <!-- Seleccion de tipo de usuario con radio buttons -->
+            <label>Selecciona el tipo de usuario que eres</label>
+            <section id="seleccionUsuario" class="d-flex flex-row">
+              <!-- Radio Soy músico -->
+              <section class="w-50 p-20px">
+                <div class="col-md-6 form-check m-3">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="flexRadioDefault"
+                    id="soyMusico"
+                    checked
+                  />
+                  <label class="form-check-label" for="soyMusico">
+                    Soy músico
+                  </label>
+                </div>
+                <section id="musicoInputs">
+                  <div class="col-md-6 form-floating m-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputInstrumentos"
+                      placeholder="Instrumentos músicales"
+                    />
+                    <label for="inputInstrumentos" class="form-label"
+                      >Instrumentos músicales</label
+                    >
+                  </div>
+                  <div class="col-md-6 form-floating m-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputGenerosMusicales"
+                      placeholder="Géneros músicales"
+                    />
+                    <label for="inputGenerosMusicales" class="form-label"
+                      >Géneros músicales</label
+                    >
+                  </div>
+                </section>
+              </section>
+
+              <!-- Radio Soy escenario -->
+              <section class="w-50 column-gap-3">
+                <div class="col-md-6 form-check m-3">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="flexRadioDefault"
+                    id="soyEscenario"
+                  />
+                  <label class="form-check-label" for="soyEscenario">
+                    Soy escenario
+                  </label>
+                </div>
+                <section id="escenarioInputs" hidden>
+                  <div class="col-md-6 form-floating m-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputEscenario"
+                      placeholder="Tipo de escenario"
+                    />
+                    <label for="inputEscenario" class="form-label"
+                      >Tipo de escenario</label
+                    >
+                  </div>
+                </section>
+              </section>
+            </section>
+            <section class="linea"></section>
+            <section class="registroDeUsuario--form--buttons text-end">
+              <button class="boton flat" id="registrarme">Registrarme</button>
+              <button class="boton outlined" id="cancelar">Cancelar</button>
+            </section>
+          </div>
+        </div>
+      </form>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="registroDeUsuario.js"></script>
+  </body>
+</html>
