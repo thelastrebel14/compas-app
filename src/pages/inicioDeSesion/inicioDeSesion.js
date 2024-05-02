@@ -5,14 +5,6 @@ const inicioDeSesion = {
     contraseña,
 }
 
-const email = document.getElementById("correoInput");
-const password = document.getElementById("passwordInput");
-const submit = document.getElementById("submitButton");
 
-function iniciarSesion(){
-    submit.addEventListener("mouseover", (e) => {
-        e.target.style.backgroundColor = "lightgreen"
-    })
-}
 
 
