@@ -106,13 +106,15 @@
     height: 60vh;
 }
 
-.material-symbols-outlined {
-    font-size: 4em;
+.custom-arrow {
+    font-size: 3em;
     color: var(--main-color);
 }
 
 .carousel-control-next,
 .carousel-control-prev {
+    justify-content: center;
+    align-items: center;
     width: 5vw;
 }
 
