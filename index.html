@@ -1,28 +1,17 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="src/assets/img/logo.ico" type="image/x-icon">
-    
     <title>Compás</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <!-- fontStyles: google fonts - Plus Jakarta Sans -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-    <!-- fontStyles   -->
-    <!-- -----  Google icons import  ------ -->
+    
+    <!------------------  Google icons import  --------------------->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     
-    <!--Bootstrap-->
+    <!-------------------------------  Bootstrap  ---------------------------->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Estilos -->
+    <!---------------------------------  Estilos  ----------------------------->
     <link rel="stylesheet" href="./Styles/main.css">
     <link rel="stylesheet" href="./Styles/LaTribuDelByte/navbar.css"/>
     <link rel="stylesheet" href="./Styles/LaTribuDelByte/nosotros.css"/>
@@ -34,7 +23,7 @@
 </head>
 
 <body>
-    <!--Navbar-->
+    <!----------------------------              Navbar       ------------------------------->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
           <!-- Insertamos imagen del logo de la tribu del byte -->
@@ -77,26 +66,33 @@
           </div>
         </div>
     </nav>
-    <!--Nosotros-->
-    <section class="section-nosotros">
+    <main>
+      <!----------------------------       Nosotros    ------------------------------->
+      <section class="section-nosotros">
         <h3>¿Quiénes somos?</h3>
-        <img src="./src/assets/img/LaTriburec.png" alt="logo" class="tribu-logo">
+        <img src="../src/assets/img/LaTriburec.png" alt="logo" class="tribu-logo">
+        <div class="section-nosotros-description">
+          <p>
+            Somos el punto de encuentro para todo tipo de músicos. En un mundo saturado de ruido, queremos ser tu lugar seguro,
+            donde tu voz se escuche y tu talento brille.
+          </p>
+          <p>
+            Nos enorgullece ser un espacio inclusivo y diverso, donde artistas de todos los géneros y estilos pueden conectar,
+            colaborar y crecer juntos.
+            Nuestra misión es simple pero poderosa: proporcionarte las herramientas, recursos y conexiones que necesitas para
+            llevar tu música al siguiente nivel.
+          </p>
+          <p>
+            En La tribu del Byte, creemos en el poder de la música para unir a las personas, romper barreras y cambiar el mundo.
+            Únete a nuestra comunidad y sé parte de esta vibrante revolución musical.
+          </p>
+        </div>
         
-        <p>
-            Somos el punto de encuentro para todo tipo de músicos. En un mundo saturado de ruido, queremos ser tu lugar seguro, donde tu voz se escuche y tu talento brille.
-        </p>
-        <p>
-            Nos enorgullece ser un espacio inclusivo y diverso, donde artistas de todos los géneros y estilos pueden conectar, colaborar y crecer juntos.
-            Nuestra misión es simple pero poderosa: proporcionarte las herramientas, recursos y conexiones que necesitas para llevar tu música al siguiente nivel.
-        </p>
-        <p>
-            En La tribu del Byte, creemos en el poder de la música para unir a las personas, romper barreras y cambiar el mundo. Únete a nuestra comunidad y sé parte de esta vibrante revolución musical.
-        </p>
-    </section>
-    <!--Nuestro Equipo-->
-    <section class="nuestro-equipo" id="nuestroE">
+      </section>
+      <!-------------------------------    Nuestro Equipo   --------------------------------->
+      <section class="nuestro-equipo" id="nuestroE">
         <!--Contenedor de toda la sección-->
-        <h2>Nuestro Equipo</h2>
+        <h3>Nuestro Equipo</h3>
         <div class="cards-container">
           <!--Contenedor de todas las cartas-->
           <div class="card text-center" style="background-color: #f2f2f2">
@@ -351,8 +347,8 @@
         <!--Cierre del contenedor de todas las cartas-->
       </section>
       <!--Cierre del contenedor de toda la sección-->
-    <!--Nuestros Servicios-->
-    <section class="nuestrosServicios" id="servicios">
+      <!---------------------------      Nuestros Servicios  -------------------------------->
+      <section class="nuestrosServicios" id="servicios">
         <h3>Nuestros Servicios</h3>
         <div class="service-block">
             <span class="material-symbols-outlined">
@@ -402,9 +398,9 @@
             </span>
             <p>Project Managers</p>
         </div>
-    </section>
-    <!-- ----------------------   Nuestros Proyectos   --------------------  -->
-    <div id="proyectos" class="nuestrosProyectos">
+      </section>
+      <!-- ----------------------   Nuestros Proyectos   --------------------  -->
+      <section id="proyectos" class="nuestrosProyectos">
       <h3>Nuestros Proyectos</h3>
       <div class="compas-Card">
           <img src="../src/assets/img/logo.ico" alt="">
@@ -414,34 +410,36 @@
               link
           </span>
       </div>
-  </div>
-  <!-- -----------------    Fin de Nuestros Proyectos   -----------------  -->
-  
-    <!--Contacto-->
+      </section>
+      <!-- ------------------    Fin de Nuestros Proyectos   -----------------  -->
 
-    <section id="contacto" class="section-contacto"> <!--inicia formulario-->
+      <!----------------------       Contacto    ---------------------------------->
+
+      <section id="contacto" class="section-contacto"> <!--inicia formulario-->
         <form class="form">
             <h3>Contáctanos</h3>
             <div class="name">
               <label for="nombre"></label>
-              <input type="text" class="form-control" placeholder="Nombre">
+              <input type="text" class="form-control" id="nombre" placeholder="Nombre">
             </div>  
             <div class="phone">
-              <label for="phone"></label>
-              <input type="phone" class="form-control" id="correo" placeholder="Numero de telefono">
+              <label for="phoneNum"></label>
+              <input type="phone" class="form-control" id="phoneNum" placeholder="Numero de telefono">
             </div>
             <div class="email">
-              <label for="email"></label>
-              <input type="email" class="form-control" id="correo" placeholder="Correo">
+              <label for="e-mail"></label>
+              <input type="email" class="form-control" id="e-mail" placeholder="Correo">
             </div>
             <div class="message">
               <label for= "text"></label>
-              <textarea class="text" id="messageExample" rows="8" placeholder="Mensaje"></textarea>
+              <textarea class="text" id="text" rows="8" placeholder="Mensaje"></textarea>
             </div>
             <button class="button" type="submit">Enviar</button>
           </form>
-    </section>
-    <!--Footer-->
+      </section>
+    </main>
+    
+    <!------------------------     Footer  ---------------------------------------->
     <footer class="footer">
         <a href="#">Acerca de</a>
         <a href="#">Términos y condiciones</a>
@@ -453,7 +451,7 @@
             <p>Compás App 2024</p>
         </div>
     </footer>
-    <!--Bootstrap-->
+    <!---------------------    Bootstrap    ---------------------------------->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/f54f9642cb.js" crossorigin="anonymous"></script>
 </body>

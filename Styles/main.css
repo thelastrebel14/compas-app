@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
 /* Variables */
 :root {
     --main-color: #ED8413;
@@ -170,6 +171,12 @@ section {
 
 /* ----------LINEA DIVISORA ------- */
 .linea {
+    width: 100%;
+    height: 2px;
+    background-color: #d6d6d6;
+}
+
+hr {
     width: 100%;
     height: 2px;
     background-color: #d6d6d6;
