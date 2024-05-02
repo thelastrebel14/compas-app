@@ -1,4 +1,4 @@
-@import url('../Styles/main.css');
+/* @import url('../Styles/main.css'); */
 
 html { /*Se establece border-box en todo el proyecto para facilitar la implementación de paddings y otros elementos fácilmente*/
     padding: 0;
@@ -30,7 +30,13 @@ h4 {
 }
 
 .footer { /*Se definen características específicas para el footer*/
+
     display: flex; 
+
+    margin: 50, 100;
+    font-weight: bold;
+    display: flex;
+
     align-items: center;
     flex-direction: column;
 }
