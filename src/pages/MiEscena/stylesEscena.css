@@ -95,3 +95,27 @@
     border-radius: 5px;
     display: flex;
 }
+
+/* Carusel personalizado*/
+
+.carousel{
+    height: 60vh;
+}
+
+.carousel-img {
+    height: 60vh;
+}
+
+.material-symbols-outlined {
+    font-size: 4em;
+    color: var(--main-color);
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    width: 5vw;
+}
+
+.carousel-indicators .active{
+    background-color: var(--active-color);;
+}
