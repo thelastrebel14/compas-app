@@ -1,6 +1,6 @@
 
 /* Se importan los diseños principales de main.css */
-@import url(../Styles/main.css); 
+/* @import url(../Styles/main.css);  */
 
 /* !!!Eliminar el margin cuando se incorpore a el archivo principal!!! */
 .nuestro-equipo {
@@ -8,8 +8,8 @@
 }
 
 /* Separa el contenido del titulo principal */
-.nuestro-equipo h2{
-    margin-bottom: 30px;
+.nuestro-equipo h3{
+    margin-bottom: 50px;
 }
 
 
@@ -18,7 +18,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(204px, 1fr));
     grid-template-rows: repeat(auto-fit, minmax(1fr, 330px));
-    gap: 30px 60px;
+    gap: 30px 100px;
 }
 
 /* Elimina estílo de los itmes de lista y alinea a la izquierda para mejor visibilidad */
