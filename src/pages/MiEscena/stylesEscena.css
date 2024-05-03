@@ -78,21 +78,15 @@
    
 }
 
-
-
 .flat:hover{
     background-color: var(--hover-color);
     border: 2px solid var(--hover-color); 
 }
 
 
-
-
 .comment{
     width: 85%;
     font-size: 20.5px;
-
-
 }
 
 .material-symbols-outlined{
@@ -107,8 +101,6 @@
     right: 10%;
     padding-top: 20px;
 }
-
-
 .seBusca {
     height: 100%;
     width: 15%;
@@ -117,9 +109,7 @@
     right: 10%;
     padding-top: 10px;
 }
-
-
-
+Javier
 @media screen and (max-width: 600px) {
    .flat {
         visibility: visible;
@@ -127,4 +117,37 @@
         width: 15%;
     }
     
+=======
+.comment{
+    width: 95%;
+    margin: 5px 5px 5px 5px; 
+    border-radius: 5px;
+    display: flex;
+}
+
+/* Carusel personalizado*/
+
+.carousel{
+    height: 60vh;
+}
+
+.carousel-img {
+    height: 60vh;
+}
+
+.custom-arrow {
+    font-size: 3em;
+    color: var(--main-color);
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    justify-content: center;
+    align-items: center;
+    width: 5vw;
+}
+
+.carousel-indicators .active{
+    background-color: var(--active-color);;
+
 }
