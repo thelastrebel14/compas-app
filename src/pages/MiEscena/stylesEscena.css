@@ -75,7 +75,6 @@
     padding: 5px  10px;
     border-radius: 5px;
     margin-bottom: 5px;
-   
 }
 
 .flat:hover{
@@ -97,27 +96,56 @@
     height: 100%;
     width: 15%;
     position: absolute;
-    top: 50%;
+    top: 60%;
     right: 10%;
-    padding-top: 20px;
+    margin-top: 26%;
+    background-color: var(--background-color);
+    align-items: center;
+    padding-right: 10px;
+    
 }
-.seBusca {
-    height: 100%;
-    width: 15%;
-    position: absolute;
-    top: 50%;
-    right: 10%;
-    padding-top: 10px;
+
+
+#carouselExampleArtistas{
+
+    
+    height: 30%;
 }
-Javier
+
+#carouselExampleSeBusca{
+    padding: 10px;
+    height: 30%;
+}
+
+#carouselExampleEscenarios{
+    height: 30%;
+
+
+}
+
+
+
+
+.carousel-img1{
+
+    
+    width:100%;
+    
+}
+
+
+
+
+
+
 @media screen and (max-width: 600px) {
-   .flat {
+    .flat {
         visibility: visible;
         background-color: var(--main-color);
         width: 15%;
     }
+}
     
-=======
 .comment{
     width: 95%;
     margin: 5px 5px 5px 5px; 
