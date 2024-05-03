@@ -90,6 +90,7 @@ p {
     font-size: 16px;
 }
 
+span,
 label {
     font-weight: 400;
     /* <weight>: Use a value from 200 to 800 */
