@@ -6,6 +6,24 @@ const crearPublicacion ={
     tipoContenido: "multimedia",
     createdAt: "2024-04-30T12:00:00Z",
 }
+
+const crearPublicacionTextoMultimediaFomulario = {
+    textoPublicacion: String, // texto
+    archivoMultimedia: archivo,// Opcional, puede no mandar ni foto ni video
+}
+
+const crearPublicacionBusquedaArtistasOEscenarios = {
+    tituloPublicacion: String,
+    textoPublicacion: String,
+    tipoDeBusqueda, // Radiobutton: Artista o Escenario
+    géneroMusical, // Checkbox con opciones de géneros musicales
+    instrumentos, // Checkbox con opciones de instrumentos
+    codigoPostal, // numero
+    municipio, // texto
+    estado, // texto
+    imagen // Opcional
+}
+
 // JSON Crear comentario
 const comentarPublicacion ={
     idAutor : 1,
