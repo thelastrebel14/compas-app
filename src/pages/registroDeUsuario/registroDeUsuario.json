@@ -1,0 +1,222 @@
+[
+    {
+        "datos": {
+            "nombre": "Elizabeth Pérez",
+            "edad": 32,
+            "genero": "Femenino",
+            "correo": "mebojat976@idsho.com",
+            "contraseña": "gCUqR4mvVIcw"
+        },
+        "localizacion":{
+            "estado": "Campeche",
+            "cuidad": "Campeche",
+            "coodigoPostal": 24010 
+        },
+        "tipoUsuario":{
+            "isMusico": true,
+            "instrumentosMusicales": ["batería"],
+            "generosMusicales": ["rock", "pop"],
+    
+            "isEscenario": false,
+            "tipoDeEscenario": null
+        }
+    },
+    {
+        "datos": {
+            "nombre": "Mateo Rodríguez",
+            "edad": 28,
+            "genero": "Masculino",
+            "correo": "gisoh47853@haislot.com",
+            "contraseña": "OLTB9u73ppqT"
+        },
+        "localizacion":{
+            "estado": "Mérida",
+            "cuidad": "Yucatan",
+            "coodigoPostal": 97000 
+        },
+        "tipoUsuario":{
+            "isMusico": true,
+            "instrumentosMusicales": ["saxofón"],
+            "generosMusicales": ["jazz", "r&b"],
+    
+            "isEscenario": false,
+            "tipoDeEscenario": null
+        }
+    },
+    {
+        "datos": {
+            "nombre": "Ana María Cruz",
+            "edad": 23,
+            "genero": "Femenino",
+            "correo": "rigin77615@haislot.com",
+            "contraseña": "6fntUrhYjj4U"
+        },
+        "localizacion":{
+            "estado": "Puebla",
+            "cuidad": "Puebla",
+            "coodigoPostal": 72180
+        },
+        "tipoUsuario":{
+            "isMusico": true,
+            "instrumentosMusicales": ["bajo"],
+            "generosMusicales": ["rock", "pop"],
+    
+            "isEscenario": false,
+            "tipoDeEscenario": null
+        }
+    },
+    {
+        "datos": {
+            "nombre": "Juan Carlos Sánchez",
+            "edad": 35,
+            "genero": "Masculino",
+            "correo": "bofake1204@idsho.com",
+            "contraseña": "yS4~pQ$Vi<ec)"
+        },
+        "localizacion":{
+            "estado": "Jalisco",
+            "cuidad": "Guadalajara",
+            "coodigoPostal": 44638 
+        },
+        "tipoUsuario":{
+            "isMusico": false,
+            "instrumentosMusicales": null,
+            "generosMusicales": null,
+    
+            "isEscenario": true,
+            "tipoDeEscenario": "bar"
+        }
+    },
+    {
+        "datos": {
+            "nombre": "Luna Vargas",
+            "edad": 26,
+            "genero": "Femenino",
+            "correo": "terona9070@idsho.com",
+            "contraseña": "Qh8lSF$VAM"
+        },
+        "localizacion":{
+            "estado": "Ciudad Juarez",
+            "cuidad": "Chihuahua",
+            "coodigoPostal": 32030 
+        },
+        "tipoUsuario":{
+            "isMusico": true,
+            "instrumentosMusicales": ["violin", "piano"],
+            "generosMusicales": ["clasico", "pop"],
+    
+            "isEscenario": false,
+            "tipoDeEscenario": null
+        }
+    },
+    {
+        "datos": {
+            "nombre": "Javier Chávez",
+            "edad": 27,
+            "genero": "Masculino",
+            "correo": "terona9070@idsho.com",
+            "contraseña": "qn.64FX4wJ0"
+        },
+        "localizacion":{
+            "estado": "Estado De Mexico",
+            "cuidad": "Naucalpan",
+            "coodigoPostal": 53270 
+        },
+        "tipoUsuario":{
+            "isMusico": true,
+            "instrumentosMusicales": ["guitarra"],
+            "generosMusicales": ["pop"],
+    
+            "isEscenario": false,
+            "tipoDeEscenario": null
+        }
+    },
+    {
+        "datos": {
+            "nombre": "Pepe Gómez",
+            "edad": 41,
+            "genero": "Masculino",
+            "correo": "cacoc73647@idsho.com",
+            "contraseña": "t8acdcQ.tZ"
+        },
+        "localizacion":{
+            "estado": "Veracruz",
+            "cuidad": "Veracruz",
+            "coodigoPostal": 94299 
+        },
+        "tipoUsuario":{
+            "isMusico": true,
+            "instrumentosMusicales": ["guitarra", "bajo"],
+            "generosMusicales": ["rock", "pop"],
+    
+            "isEscenario": false,
+            "tipoDeEscenario": null
+        }
+    },
+    {
+        "datos": {
+            "nombre": "Alberto Martínez",
+            "edad": 36,
+            "genero": "Masculino",
+            "correo": "kawipit473@idsho.com",
+            "contraseña": "kJ)EkgAq$L"
+        },
+        "localizacion":{
+            "estado": "Durango",
+            "cuidad": "Durango",
+            "coodigoPostal": 34270 
+        },
+        "tipoUsuario":{
+            "isMusico": true,
+            "instrumentosMusicales": ["piano electrico"],
+            "generosMusicales": ["electronica", "pop"],
+    
+            "isEscenario": false,
+            "tipoDeEscenario": null
+        }
+    },
+    {
+        "datos": {
+            "nombre": "Octavio Ramírez",
+            "edad": 21,
+            "genero": "Masculino",
+            "correo": "moriv93373@idsho.com",
+            "contraseña": "7R36q2FgtvPH"
+        },
+        "localizacion":{
+            "estado": "Nuevo Leon",
+            "cuidad": "Monterrey",
+            "coodigoPostal": 64209 
+        },
+        "tipoUsuario":{
+            "isMusico": false,
+            "instrumentosMusicales": null,
+            "generosMusicales": null,
+    
+            "isEscenario": true,
+            "tipoDeEscenario": "salón de fiestas"
+        }
+    },
+    {
+        "datos": {
+            "nombre": "Verónica Piña",
+            "edad": 24,
+            "genero": "Femenino",
+            "correo": "taciti4396@togito.com",
+            "contraseña": "P-+6Zmp8g_cD"
+        },
+        "localizacion":{
+            "estado": "Guanajuato",
+            "cuidad": "Silao",
+            "coodigoPostal": 36100 
+        },
+        "tipoUsuario":{
+            "isMusico": false,
+            "instrumentosMusicales": null,
+            "generosMusicales": null,
+    
+            "isEscenario": true,
+            "tipoDeEscenario": "restaurante"
+        }
+    }
+]
