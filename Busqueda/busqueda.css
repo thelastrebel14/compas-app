@@ -1,1 +1,41 @@
 @import url("../Styles/main.css");
+
+.navbar
+{
+    background-color: var(--navbar-color);
+    height: 70px;
+    padding: 0px;
+}
+
+.imagen--compasApp
+{
+    margin-left: 26px;
+}
+.buscador
+{
+    width: 161px;
+    height: 40px;
+    padding: 0px;
+}
+.buscador--configuracion
+{
+    width: 161px;
+    height: 40px;
+}
+.perfil
+{
+    width: 60px;
+    height: 60px;
+}
+.margen
+{
+    margin-right: 206px;
+}
+.texto-configuracion
+{
+    color: var(--navbarText-color);
+}
+.texto-configuracion:hover
+{
+    color: var(--navbarSelected);
+}
