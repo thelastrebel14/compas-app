@@ -156,6 +156,10 @@ header{
     margin-top: 20px;
     cursor: pointer;
 }
+/* -------------------------------    sección About   ------------------------  */
+.symbol-edit{
+    font-size: 50px;
+}
 
 /* ----------Sección de demos------------- */
 .demos{
@@ -248,4 +252,3 @@ header{
     color: var(--grey);
     cursor: pointer;
 }
-

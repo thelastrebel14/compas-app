@@ -90,6 +90,7 @@ p {
     font-size: 16px;
 }
 
+span,
 label {
     font-weight: 400;
     /* <weight>: Use a value from 200 to 800 */
@@ -102,7 +103,7 @@ section {
 
 .tribu-logo {
     width: 20vw;
-    margin: 30px 515px;
+    margin: 16px 0;
 }
 
 /* -----------BOTONES---------- */
@@ -171,6 +172,12 @@ section {
 
 /* ----------LINEA DIVISORA ------- */
 .linea {
+    width: 100%;
+    height: 2px;
+    background-color: #d6d6d6;
+}
+
+hr {
     width: 100%;
     height: 2px;
     background-color: #d6d6d6;
