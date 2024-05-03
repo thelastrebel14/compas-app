@@ -1,0 +1,31 @@
+@import url(../../../Styles/main.css);
+@import "bootstrap/scss/variables";
+
+/* .registroDeUsuario--form{
+    display: grid;
+    grid-template-rows: ;
+} */
+
+.registroDeUsuario--heading{
+    text-align: center;
+    margin-top: 46px;
+    margin-bottom: 70px ;
+}
+
+.registroDeUsuario--form--buttons{
+    padding: 0px 50px;
+}
+
+#registrarme {
+    margin: 0px 15px;
+}
+
+#cancelar {
+    margin: 0px 15px;
+}
+
+#inputState {
+    height: 58px;
+    font-size: 12.8px;
+}
+
