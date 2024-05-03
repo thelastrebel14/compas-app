@@ -12,7 +12,7 @@
     width: 35%; /* Ancho del contenedor */
     margin-left: 5%; /* Margen izquierdo para centrar el contenedor horizontalmente */
     background-color: var(--background-color); /* Color de fondo del contenedor */
-    /*border: 1px solid  var(--main-color); /* Borde del contenedor */
+    /border: 1px solid  var(--main-color); / Borde del contenedor */
     align-items: flex-start;
     padding-bottom: 2px;
     display:flow-root;
@@ -97,27 +97,20 @@
     height: 100%;
     width: 15%;
     position: absolute;
-    top: 50%;
+    top: 60%;
     right: 10%;
-    padding-top: 20px;
+    padding-top: 27%;
 }
-.seBusca {
-    height: 100%;
-    width: 15%;
-    position: absolute;
-    top: 50%;
-    right: 10%;
-    padding-top: 10px;
-}
-Javier
+
+
 @media screen and (max-width: 600px) {
-   .flat {
+    .flat {
         visibility: visible;
         background-color: var(--main-color);
         width: 15%;
     }
+}
     
-=======
 .comment{
     width: 95%;
     margin: 5px 5px 5px 5px; 
