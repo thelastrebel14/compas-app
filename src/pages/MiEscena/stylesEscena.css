@@ -12,7 +12,7 @@
     width: 35%; /* Ancho del contenedor */
     margin-left: 5%; /* Margen izquierdo para centrar el contenedor horizontalmente */
     background-color: var(--background-color); /* Color de fondo del contenedor */
-    border: 1px solid  var(--main-color); /* Borde del contenedor */
+    /*border: 1px solid  var(--main-color); /* Borde del contenedor */
     align-items: flex-start;
     padding-bottom: 2px;
     display:flow-root;
@@ -53,6 +53,8 @@
 
 }
 
+
+
 .descript{
     margin-left: 8px;
 }
@@ -60,27 +62,6 @@
 .mexicanMusic{
     margin: 10px;
     width: 80%;
-    
-
-
-}
-
-
-.flat {
-    color: #fff;
-    background-color: var(--main-color);
-    border: 2px solid var(--main-color);
-    font-size: 16px;
-    margin-left: 5px;
-    padding: 5px  10px;
-    border-radius: 5px;
-    margin-bottom: 5px;
-   
-}
-
-.flat:hover{
-    background-color: var(--hover-color);
-    border: 2px solid var(--hover-color); 
 }
 
 
@@ -99,18 +80,35 @@
     position: absolute;
     top: 60%;
     right: 10%;
-    padding-top: 27%;
-}
-
-
-@media screen and (max-width: 600px) {
-    .flat {
-        visibility: visible;
-        background-color: var(--main-color);
-        width: 15%;
-    }
-}
+    margin-top: 26%;
+    background-color: var(--background-color);
+    align-items: center;
+    padding-right: 10px;
     
+}
+
+
+#carouselExampleArtistas{
+    height: 30%;
+    margin-right: -100px;
+}
+
+#carouselExampleSeBusca{
+    padding: 10px;
+    height: 30%;
+}
+
+#carouselExampleEscenarios{
+    height: 30%;
+}
+.carousel-img1{
+
+    align-items: center;
+    width:100%;
+    padding-top: 5px;
+}
+
+
 .comment{
     width: 95%;
     margin: 5px 5px 5px 5px; 
@@ -120,11 +118,11 @@
 
 /* Carusel personalizado*/
 
-.carousel{
+.carousel-principal{
     height: 60vh;
 }
 
-.carousel-img {
+.carousel-principal-img {
     height: 60vh;
 }
 
@@ -141,68 +139,14 @@
 }
 
 .carousel-indicators .active{
-    background-color: var(--active-color);;
-
+    background-color: var(--active-color);
 }
 
-.nueva--publicacion {
-    background-color: var(--secondaryBg-color);
-    width: 100%;
-}
 
-#imgPublicacion {
-    width: 60px;
-}
-
-.botones--publicacion {
+/* Publicaciones */
+.contenedor-botones-publicacion {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-}
-
-.nueva--publicacion--alinear {
-    padding-top: 20px;
-    padding-right: 70px;
-    padding-bottom: 20px;
-    padding-left: 70px;
-    display: flex;
-    flex-direction: row;
-}
-
-.nueva--publicacion input {
-    border-color: var(--hover-color);
-}
-
-.nueva--publicacion hr {
-    border-width: 2px;
-    color: var(--black);
-}
-
-.nueva--publicacion img {
-    padding-top: 4px;
-    padding-right: 4px;
-    padding-bottom: 4px;
-    padding-left: 4px;
-}
-
-.modal-content {
-    background-color: var(--background-color);
-}
-
-.modal-title h4 {
-    text-align: center;
-}
-
-.modal-content label {
-    font-size: 20px;
-}
-
-.nueva--publicacion--modal--perfil {
-    display: flex;
-    flex-direction: row;
+    justify-content: center;
     align-items: center;
-}
-
-.nueva--publicacion--modal--formulario input {
-    width: 200px;
 }
