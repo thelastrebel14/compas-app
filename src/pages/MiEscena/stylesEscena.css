@@ -60,9 +60,6 @@
 .mexicanMusic{
     margin: 10px;
     width: 80%;
-    
-
-
 }
 
 
@@ -156,4 +153,13 @@
 
 .carousel-indicators .active{
     background-color: var(--active-color);
+}
+
+
+/* Publicaciones */
+.contenedor-botones-publicacion {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
