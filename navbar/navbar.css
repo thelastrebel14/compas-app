@@ -42,7 +42,7 @@
     margin-right: 206px;
 }
 /* Configuración del color de texto */
-.texto--configuracion, .texto--drop--perfil
+.texto--configuracion, .texto--drop--perfil, .texto--drop--sesion
 {
     color: var(--navbarText-color);
 }
@@ -51,12 +51,7 @@
 {
     color: var(--navbarSelected);
 }
-.texto--drop--sesion
+.texto--drop--sesion:hover
 {
     color: red;
-}
-
-#hola
-{
-    margin-top: 116px;
 }
