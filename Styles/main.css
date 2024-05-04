@@ -90,10 +90,23 @@ p {
     font-size: 16px;
 }
 
+span,
 label {
     font-weight: 400;
     /* <weight>: Use a value from 200 to 800 */
     font-size: 12.8px;
+}
+
+.boldTx{
+    font-weight: bold;
+}
+
+.semiBoldTx{
+    font-weight: 500;
+}
+
+.lightTx{
+    font-weight: 100;
 }
 
 section {

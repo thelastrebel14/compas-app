@@ -1,28 +1,48 @@
 import publicaciones from "./mockDataMiEscena"; // publicaciones tiene los datos de prueba para las publicaciones
 
-const Co = document.getElementById('formulario');
-    const mensaje = document.getElementById('mensaje');
+const Co = document.getElementById('miEscena');
+    const mensaje = document.getElementById('comment');
 
     formulario.addEventListener('submit', function(event) {
         event.preventDefault();
 
-        const nombre = document.getElementById('nombre').value;
-        const phone = document.getElementById('Numero de telefono').value
-        const correo = document.getElementById('correo').value;
-        const mensaje = document.getElementById('mensaje').value;
+        const like = document.getElementById().value;
+        const share = document.getElementById().value
+        const colaborate = document.getElementById().value;
+        const comment = document.getElementById().value;
 
         // Enviar los datos del formulario al servidor usando fetch
-        fetch('/enviarSolicitudDeContacto', {
+        fetch('/enviarSolicitudDeCoraboracion', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                nombre: nombre,
-                phone: phone,
-                correo: correo,
-                mensaje: mensaje
-            })
+                'Content-Type': 'miEscenaColaborar/json'
+                'Content-Type' : 'miEscenacompartir/json'
+                'Content-Type' : 'miEscenaMegusta/json'
+                'Content-Type' : 'miEscenaComentarios.json'
+            },  
+            body: JSON.stringify(
+                colaborar ={
+                    idAutor : 1,
+                    idComentario : 1,
+                    idDestinatario : 1,
+                    mensaje : "Este es un mensaje",
+                }
+                compartir ={
+                    idPublicacion : 1,
+                    idAutor : 1,
+                
+                }
+                reaccionar ={
+                    idPublicacion : 1,
+                    idAutor : 1,
+                
+                }
+                comentarPublicacion ={
+                    idAutor : 1,
+                    idComentario : 1,
+                    idPublicacion : 1,
+                    comentario : "Este es un comentario",
+                    })
         })
         .then(response => response.json())
         .then(data => {
