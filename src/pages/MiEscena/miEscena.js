@@ -4,33 +4,33 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 // const Co = document.getElementById('miEscena');
-const mensaje = document.getElementById('comentario');
+// const mensaje = document.getElementById('comentario');
 
-// --------- agregar comentarios --------------
-mensaje.addEventListener("change", (event) => {
-    event.preventDefault();
-    // const like = document.getElementById().value;
-    // const share = document.getElementById().value
-    // const colaborate = document.getElementById().value;
-    // const comment = document.getElementById().value;
+// // --------- agregar comentarios --------------
+// mensaje.addEventListener("change", (event) => {
+//     event.preventDefault();
+//     // const like = document.getElementById().value;
+//     // const share = document.getElementById().value
+//     // const colaborate = document.getElementById().value;
+//     // const comment = document.getElementById().value;
     
-    // agarramos el elemento que contendra los comentarios
-    const comentariosDisplay = document.getElementById("comentariosDisplay");
+//     // agarramos el elemento que contendra los comentarios
+//     const comentariosDisplay = document.getElementById("comentariosDisplay");
 
 
-    // obtiene el texto del comentario
-    let comentarioText = event.target.value;
+//     // obtiene el texto del comentario
+//     let comentarioText = event.target.value;
 
-    //crea el elemento del comentario y le agrega el texto
-    let comentarioP = document.createElement("p");
-    comentarioP.textContent = comentarioText;
+//     //crea el elemento del comentario y le agrega el texto
+//     let comentarioP = document.createElement("p");
+//     comentarioP.textContent = comentarioText;
 
-    // inserta el comentario en el contenedor
-    comentariosDisplay.appendChild(comentarioP);
+//     // inserta el comentario en el contenedor
+//     comentariosDisplay.appendChild(comentarioP);
 
-    //vacia el contenido del area de comentarios
-    mensaje.value = "";
-})
+//     //vacia el contenido del area de comentarios
+//     mensaje.value = "";
+// })
 
 
 
@@ -85,36 +85,36 @@ mensaje.addEventListener("change", (event) => {
 // ------- contador de Me entona ---------
 
 // selecciona los elementos que se usaran
-const meEntonaBoton = document.getElementById("meEntonaBoton");
-const contadorMeEntona = document.getElementById("contadorMeEntona");
+// const meEntonaBoton = document.getElementById("meEntonaBoton");
+// const contadorMeEntona = document.getElementById("contadorMeEntona");
 
-// inicializar las variables
-let contador = 0;
-//determinar si la persona puede o no dar like (default: si puede)
-let puedeDarMeEntona = true;
+// // inicializar las variables
+// let contador = 0;
+// //determinar si la persona puede o no dar like (default: si puede)
+// let puedeDarMeEntona = true;
 
-//espera un evento para dar like
-meEntonaBoton.addEventListener("click", (event) => {
-    //checa si la persona puede dar like
-    if(puedeDarMeEntona){
-        contador++;
-        puedeDarMeEntona = false;
-    }
-    else{
-        contador--;
-        puedeDarMeEntona = true;
-    }
+// //espera un evento para dar like
+// meEntonaBoton.addEventListener("click", (event) => {
+//     //checa si la persona puede dar like
+//     if(puedeDarMeEntona){
+//         contador++;
+//         puedeDarMeEntona = false;
+//     }
+//     else{
+//         contador--;
+//         puedeDarMeEntona = true;
+//     }
 
-    // agrega el contador de likes
-    contadorMeEntona.textContent = contador;
+//     // agrega el contador de likes
+//     contadorMeEntona.textContent = contador;
     
-    if (contadorMeEntona.textContent == "0"){
-        contadorMeEntona.textContent = "";
-    }
+//     if (contadorMeEntona.textContent == "0"){
+//         contadorMeEntona.textContent = "";
+//     }
     
 
-    meEntonaBoton.parentElement.append(contadorDisplay)
-});
+//     meEntonaBoton.parentElement.append(contadorDisplay)
+// });
 
 /* Agrega una función que haga lo siguiente:
     Se ejecute al cargar la página mi escena
@@ -251,38 +251,31 @@ function obtenerPublicaciones() {
     });
 
     // Realizar la solicitud fetch
-    fetch(url)
-    .then(response => {
-        // Verificar si la respuesta fue exitosa (código de estado 200)
-        if (response.ok) {
-            // Devolver los datos en formato JSON
-            return response.json();
-        }
-        // Si la respuesta no es exitosa, lanzar un error
-        throw new Error('Error al obtener las publicaciones');
-    })
-    .then(data => {
-        // Manejar los datos de las publicaciones
-        data.forEach(element => {
-            crearElementoPublicacion(element);
+    // fetch(url)
+    // .then(response => {
+    //     // Verificar si la respuesta fue exitosa (código de estado 200)
+    //     if (response.ok) {
+    //         // Devolver los datos en formato JSON
+    //         return response.json();
+    //     }
+    //     // Si la respuesta no es exitosa, lanzar un error
+    //     throw new Error('Error al obtener las publicaciones');
+    // })
+    // .then(data => {
+    //     // Manejar los datos de las publicaciones
+    //     data.forEach(element => {
+    //         crearElementoPublicacion(element);
             
-        });
-        console.log('Datos de las publicaciones:', data);
-        // Llamar a una función para procesar los datos, por ejemplo, mostrar las publicaciones en la página
-        mostrarPublicaciones(data);
-    })
-    .catch(error => {
-        // Manejar errores
-        console.error('Error:', error);
-    });
+    //     });
+    //     console.log('Datos de las publicaciones:', data);
+    //     // Llamar a una función para procesar los datos, por ejemplo, mostrar las publicaciones en la página
+    //     mostrarPublicaciones(data);
+    // })
+    // .catch(error => {
+    //     // Manejar errores
+    //     console.error('Error:', error);
+    // });
 }
-
-// Llamar a la función para obtener las publicaciones cuando la página se cargue
-document.addEventListener("DOMContentLoaded", function() {
-    obtenerPublicaciones();
-});
-
-
 
 /*
     Agregar una función que haga lo siguiente:
