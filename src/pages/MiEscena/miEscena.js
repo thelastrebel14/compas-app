@@ -1,6 +1,6 @@
 //import publicaciones from "./mockDataMiEscena"; // publicaciones tiene los datos de prueba para las publicaciones
 document.addEventListener("DOMContentLoaded", function() {
-    crearElementoPublicacion();
+    obtenerPublicaciones()
   });
 
 // const Co = document.getElementById('miEscena');
@@ -242,7 +242,6 @@ const publicaciones = [
     }
 ];
 
-
 function obtenerPublicaciones() {
     var url = 'https://ejemploDeapi.com';
     
@@ -401,6 +400,3 @@ function crearElementoPublicacion(datosPublicacion) {
     // Agregar el nuevo elemento al contenedor
     contenedor.appendChild(publicacionContenedor);
 }
-  
-  // Llamar a la función para crear el elemento dinámico
-  crearElemento();
