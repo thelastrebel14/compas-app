@@ -4,8 +4,8 @@ const crearPublicacionTextoMultimedia = {
     }
     
     const crearPublicacionBusquedaArtistasOEscenarios = {
-    tituloPublicacion, // String,
-    textoPublicacion, // String,
+    tituloPublicacion, // Texto,
+    textoPublicacion, // Texto,
     tipoDeBusqueda, // Radiobutton: Artista o Escenario
     generoMusical, // Checkbox con opciones de generos
     instrumentos, // Checkbox con opciones de instrumentos

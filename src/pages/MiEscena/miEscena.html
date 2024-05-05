@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!------------------  Google icons import  --------------------->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
 
     <!-------------------------------  Bootstrap  ---------------------------->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
 
     <title>Mi Escena</title>
     <!---------------------------------  Estilos  ----------------------------->
-    <link rel="stylesheet" href="../../../Styles/main.css">
-    <link rel="stylesheet" href="stylesEscena.css">
-</head>
+    <link rel="stylesheet" href="../../../Styles/main.css" />
+    <link rel="stylesheet" href="stylesEscena.css" />
+  </head>
 
-<body>
+  <body>
     <main>
         <h1>Mi Escena</h1>
         <h3>Encuentra músicos y escenarios cerca de ti</h3>
@@ -53,7 +58,7 @@
             </button>
         </div>
 
-        <!--Abre sección de nueva publicación-->
+             <!--Abre sección de nueva publicación-->
         <section class="nueva--publicacion">
             <div class="nueva--publicacion--alinear">
                 <img src="../../assets/img/Carlos Santana.jpg" class="img-fluid rounded-circle" alt="Carlos Santana"
@@ -62,7 +67,7 @@
             </div>
             <hr>
             <div class="botones--publicacion">
-                <button type="button" class="boton flat" data-bs-toggle="modal" data-bs-target="#modalFoto">
+                <button class="boton flat" data-bs-toggle="modal" data-bs-target="#modalFotoVideo">
                     Foto/Vídeo
                 </button>
                 <button type="button" class="boton flat" data-bs-toggle="modal" data-bs-target="#modalArtistas">
@@ -71,16 +76,14 @@
             </div>
 
             <!-- Modal para "Foto/Vídeo" -->
-            <div class="modal" id="modalFoto">
+            <div class="modal" id="modalFotoVideo">
                 <div class="modal-dialog">
                     <div class="modal-content">
-
                         <!-- Modal Header -->
                         <div class="modal-header">
                             <h4 class="modal-title">Crear publicación</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
-
                         <!-- Modal body -->
                         <div class="modal-body">
                             <div class="nueva--publicacion--modal--perfil">
@@ -89,19 +92,19 @@
                             <h4>Carlos Santana</h4>
                             </div>
                             <br>
-                            <input type="text" class="comment" placeholder="¿Qué estás pensando?"/>
+                        <form action="" id="formularioFotoVideo">
+                            <input type="text" class="comment" name="publicacionTexto" placeholder="¿Qué evento estás planeando?"/>
                             <br> 
-                            <button class="boton flat">Selecciona tu foto o vídeo*</button> 
-                            <br>
-                            <p>*Opcional</p>
-                        </div>
-
-                        <!-- Modal footer -->
-                        <div class="modal-footer">
-                            <button type="button" class="boton flat" data-bs-dismiss="modal">Publicar</button>
+                            <input type="file" name="publicacionMultimedia">
+                            <br> <br>
+                            <p>*Los archivos multimedia son opcionales</p>
+                            <!-- Modal footer -->
+                            <div>
+                            <button type="submit" class="boton flat" data-bs-dismiss="modal">Publicar</button>
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </form>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -110,13 +113,11 @@
             <div class="modal" id="modalArtistas">
                 <div class="modal-dialog">
                     <div class="modal-content">
-
                         <!-- Modal Header -->
                         <div class="modal-header">
                             <h4 class="modal-title">Crear publicación</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
-
                         <!-- Modal body -->
                         <div class="modal-body">
                             <div class="nueva--publicacion--modal--perfil">
@@ -125,7 +126,7 @@
                             <h4>Carlos Santana</h4>
                             </div>
                             <br>
-                            <form action="">
+                            <form action="" id="formularioArtista">
                                 <fieldset>
                                 <div>
                                     <legend>Encuentra artistas o escenarios cerca de ti llenando el siguiente formulario</legend>
@@ -133,12 +134,12 @@
                                 <br>
                                     <div class="nueva--publicacion--modal--formulario">
                                     <label>Título de la publicación</label>
-                                    <input type="text" placeholder="Busco guitarrista en..."/>
+                                    <input type="text" name="tituloPublicacion" placeholder="Busco guitarrista en..."/>
                                     </div>
                                 <br>
                                     <div class="nueva--publicacion--modal--formulario">
                                     <label>Cuerpo de la publicación</label>
-                                    <input type="text" placeholder="Más detalles"/>
+                                    <input type="text" name="cuerpoPublicacion" placeholder="Más detalles"/>
                                     </div>
                                 <br>
                                 <div>
@@ -146,11 +147,11 @@
                                         <label>¿Buscas un artista o un escenario?</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="busquedaArtista" name="ArtistaOEscenario" value="busquedaArtista"/>
+                                        <input type="radio" id="busquedaArtista" name="artistaOEscenario" value="busquedaArtista"/>
                                         <label for="busquedaArtista">Artista</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="busquedaEscenario" name="ArtistaOEscenario" value="busquedaEscenario" />
+                                        <input type="radio" id="busquedaEscenario" name="artistaOEscenario" value="busquedaEscenario" />
                                         <label for="busquedaEscenario">Escenario</label>
                                     </div>
                                 </div>
@@ -160,19 +161,19 @@
                                         <label>¿Qué género o géneros te interesan?</label>
                                     </div>
                                     <div>
-                                        <input type="checkbox" id="Norteno" name="Norteno" value="Norteno"/>
+                                        <input type="checkbox" id="Norteno" name="generoNorteno" value="Norteno"/>
                                         <label for="Norteno">Norteño</label>
                                     </div>
                                     <div>
-                                        <input type="checkbox" id="Cumbia" name="Cumbia" value="Cumbia" />
+                                        <input type="checkbox" id="Cumbia" name="generoCumbia" value="Cumbia" />
                                         <label for="Cumbia">Cumbia</label>
                                     </div>
                                     <div>
-                                        <input type="checkbox" id="Salsa" name="Salsa" value="Salsa" />
+                                        <input type="checkbox" id="Salsa" name="generoSalsa" value="Salsa" />
                                         <label for="Salsa">Salsa</label>
                                     </div>
                                     <div>
-                                        <input type="checkbox" id="Mariachi" name="Mariachi" value="Mariachi" />
+                                        <input type="checkbox" id="Mariachi" name="generoMariachi" value="Mariachi" />
                                         <label for="Mariachi">Mariachi</label>
                                     </div>
                                 </div>
@@ -182,51 +183,48 @@
                                         <label>¿Qué instrumentos te interesan?</label>
                                     </div>
                                     <div>
-                                        <input type="checkbox" id="Guitarra" name="Guitarra" value="Guitarra"/>
+                                        <input type="checkbox" id="Guitarra" name="instrumentoGuitarra" value="Guitarra"/>
                                         <label for="Guitarra">Guitarra</label>
                                     </div>
                                     <div>
-                                        <input type="checkbox" id="Acordeon" name="Acordeon" value="Acordeon" />
+                                        <input type="checkbox" id="Acordeon" name="instrumentoAcordeon" value="Acordeon" />
                                         <label for="Acordeon">Acordeón</label>
                                     </div>
                                     <div>
-                                        <input type="checkbox" id="Bateria" name="Bateria" value="Bateria" />
+                                        <input type="checkbox" id="Bateria" name="instrumentoBateria" value="Bateria" />
                                         <label for="Bateria">Batería</label>
                                     </div>
                                     <div>
-                                        <input type="checkbox" id="Sintetizador" name="Sintetizador" value="Sintetizador" />
+                                        <input type="checkbox" id="intetizador" name="instrumentoSintetizador" value="Sintetizador" />
                                         <label for="Sintetizador">Sintetizador</label>
                                     </div>
                                 </div>
                                 <br>
                                 <div>
                                     <label>Código postal</label>
-                                    <input type= "tel" placeholder="Código postal"/>
+                                    <input type= "tel" name="codigoPostal" placeholder="Código postal"/>
                                 </div>
                                 <br>
                                 <div>
                                     <label>Ciudad o municipio</label>
-                                    <input type="text" placeholder="Ciudad o municipio"/>
+                                    <input type="text" name="ciudadOMunicipio" placeholder="Ciudad o municipio"/>
                                 </div>
                                 <br>
                                 <div>
                                     <label>Entidad federativa</label>
-                                    <input type="text" placeholder="Entidad federativa"/>
+                                    <input type="text" name="entidadFederativa" placeholder="Entidad federativa"/>
                                 </div>
                                 <br>
-                                <button class="boton flat">Selecciona una foto o vídeo*</button> 
-                                <br>
-                                <p>*Opcional</p>
+                                <input type="file" name="artistaMultimedia">
+                                <br> <br>
+                                <p>*Los archivos multimedia son opcionales</p>
                                 </fieldset>
+                                <div class="modal-footer">
+                                    <button type="button" class="boton flat" data-bs-dismiss="modal">Publicar</button>
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                                </div>
                             </form>
                         </div>
-
-                        <!-- Modal footer -->
-                        <div class="modal-footer">
-                            <button type="button" class="boton flat" data-bs-dismiss="modal">Publicar</button>
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -254,10 +252,11 @@
                         <hr>
                         <div class="botones-publicacion-contenedor">
                             <div class="reacciones-contenedor">
+                                <label id="contadorMeEntona"></label>
                                 <span class="material-symbols-outlined">
                                     artist
                                 </span>
-                                <button class="boton flat boton-reaccion">Me entona</button>
+                                <button class="boton flat boton-reaccion" id="meEntonaBoton">Me entona</button>
                             </div>
                             <div class="reacciones-contenedor">
                                 <span class="material-symbols-outlined">
@@ -269,6 +268,109 @@
                                 <span class="material-symbols-outlined">
                                     adaptive_audio_mic
                                 </span>
+                                <button class="boton flat  boton-reaccion"> Colaborar </button>
+                            </div>
+                            <br>
+                            <form action="" id="formularioArtista">
+                                <fieldset>
+                                <div>
+                                    <legend>Encuentra artistas o escenarios cerca de ti llenando el siguiente formulario</legend>
+                                </div>
+                                <br>
+                                    <div class="nueva--publicacion--modal--formulario">
+                                    <label>Título de la publicación</label>
+                                    <input type="text" name="tituloPublicacion" placeholder="Busco guitarrista en..."/>
+                                    </div>
+                                <br>
+                                    <div class="nueva--publicacion--modal--formulario">
+                                    <label>Cuerpo de la publicación</label>
+                                    <input type="text" name="cuerpoPublicacion" placeholder="Más detalles"/>
+                                    </div>
+                                <br>
+                                <div>
+                                    <div>
+                                        <label>¿Buscas un artista o un escenario?</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="busquedaArtista" name="artistaOEscenario" value="busquedaArtista"/>
+                                        <label for="busquedaArtista">Artista</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="busquedaEscenario" name="artistaOEscenario" value="busquedaEscenario" />
+                                        <label for="busquedaEscenario">Escenario</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div>
+                                    <div>
+                                        <label>¿Qué género o géneros te interesan?</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="Norteno" name="generoNorteno" value="Norteno"/>
+                                        <label for="Norteno">Norteño</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="Cumbia" name="generoCumbia" value="Cumbia" />
+                                        <label for="Cumbia">Cumbia</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="Salsa" name="generoSalsa" value="Salsa" />
+                                        <label for="Salsa">Salsa</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="Mariachi" name="generoMariachi" value="Mariachi" />
+                                        <label for="Mariachi">Mariachi</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div>
+                                    <div>
+                                        <label>¿Qué instrumentos te interesan?</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="Guitarra" name="instrumentoGuitarra" value="Guitarra"/>
+                                        <label for="Guitarra">Guitarra</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="Acordeon" name="instrumentoAcordeon" value="Acordeon" />
+                                        <label for="Acordeon">Acordeón</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="Bateria" name="instrumentoBateria" value="Bateria" />
+                                        <label for="Bateria">Batería</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="intetizador" name="instrumentoSintetizador" value="Sintetizador" />
+                                        <label for="Sintetizador">Sintetizador</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div>
+                                    <label>Código postal</label>
+                                    <input type= "tel" name="codigoPostal" placeholder="Código postal"/>
+                                </div>
+                                <br>
+                                <div>
+                                    <label>Ciudad o municipio</label>
+                                    <input type="text" name="ciudadOMunicipio" placeholder="Ciudad o municipio"/>
+                                </div>
+                                <br>
+                                <div>
+                                    <label>Entidad federativa</label>
+                                    <input type="text" name="entidadFederativa" placeholder="Entidad federativa"/>
+                                </div>
+                                <br>
+                                <input type="file" name="artistaMultimedia">
+                                <br> <br>
+                                <p>*Los archivos multimedia son opcionales</p>
+                                </fieldset>
+                                <div class="modal-footer">
+                                    <button type="button" class="boton flat" data-bs-dismiss="modal">Publicar</button>
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                                 <button class="boton flat boton-reaccion">Colaborar</button>
                             </div>
                         </div>
@@ -276,9 +378,9 @@
                         <input type="text" class="form-control input-comentario" id="comentario" placeholder="Comentar" name="comentario">
                         
                         <div class="comentarios-contenedor">
-                            
+                            <div id="comentariosDisplay"></div>
                         </div>
-                    </div>
+                    <div id="contenedor"></div>
                 </div>
             </div>
             <div> <!-- Anuncios-->
@@ -382,7 +484,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script type="module" src="miEscena.js"></script>
+    <script src="miEscena.js"></script>
+    <script src="nuevaPublicacion.js"></script>
+
+    <script type="module" src="./miEscena.js"></script>
 </body>
 
 </html>
