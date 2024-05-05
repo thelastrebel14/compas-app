@@ -1,11 +1,12 @@
-@import url(//Styles/main.css); 
+@import url("../../../Styles/main.css"); 
 
-
+/* 
 .title{
     margin-left: 5%;
     font-size: 39.06px;
     font-family: var(label);
-}
+} */
+
 .contenedor {
     display: flex;
     align-items: center; /* Centra los elementos verticalmente */
@@ -17,7 +18,6 @@
     padding-bottom: 2px;
     display:flow-root;
     margin-bottom: 5%;
-    
 }
 
 .kawai {
@@ -143,13 +143,7 @@
 }
 
 
-/* Publicaciones */
-.contenedor-botones-publicacion {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .nueva--publicacion {
     background-color: var(--secondaryBg-color);
@@ -211,4 +205,100 @@
 
 .nueva--publicacion--modal--formulario input {
     width: 200px;
+}
+
+/* Dashboard, contiene las siguientes secciones:
+    Tu Ritmo
+    Anuncios
+        Artistas
+        Se busca
+        Escenarios
+*/
+
+.dashboard-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/*Tu Ritmo*/
+
+.publicacion-contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start; /* Centra los elementos verticalmente */
+    width: 40vw; /* Ancho del contenedor */
+    height: auto;
+    background-color: var(--secondaryBg-color); /* Color de fondo del contenedor */
+    padding: 16px;
+    border-radius: 10px;
+}
+
+.autor-contenedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+.autor-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.img-usuario {
+    margin-right: 6px;
+    height: auto;
+    width: 60px;
+}
+
+.img-publicacion {
+    width: 35vw;
+    height: auto;
+}
+
+.contenido-publicacion-contenedor{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.botones-publicacion-contenedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.reacciones-contenedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.input-comentario {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.comentarios-contenedor {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+@media (max-width: 1090px) {
+    .boton {
+        display: none;
+    }
 }

@@ -232,43 +232,58 @@
         </section>
         <!--Cierra sección de nueva publicación-->
 
+        <section class="dashboard-container">
+            <div> <!-- Tu Ritmo-->
+                <h2>Tu Ritmo</h2>
+                <div id="publicacionesMiEscena-contenedor">
+                    <div class="publicacion-contenedor">
+                        <div class="autor-contenedor">
+                            <img src="https://th.bing.com/th/id/OIP.fMaa216CcNx57aG5oYldiQHaHc?w=204&h=205&c=7&r=0&o=5&dpr=1.3&pid=1.7" class="rounded-circle img-usuario" alt="Usuario">
+                            <div class="autor-info">
+                                <h5>Kawai Man</h5>
+                                <label> Guitarra | Bajo sexto | voz-principal</label>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="contenido-publicacion-contenedor">
+                            <p> Aqui en el evento del domingo con mis Compadres.</p>
+                            <img class="img-publicacion" src="https://th.bing.com/th/id/OIP.z584B0fwnJ4cYMMBWAzVigHaJ4?pid=ImgDet&w=179&h=238&c=7&dpr=1.3">
+                        </div>
+                        <hr>
+                        <div class="botones-publicacion-contenedor">
+                            <div class="reacciones-contenedor">
+                                <span class="material-symbols-outlined">
+                                    artist
+                                </span>
+                                <button class="boton flat"> Me entona </button>
+                            </div>
+                            <div class="reacciones-contenedor">
+                                <span class="material-symbols-outlined">
+                                    music_cast
+                                </span>
+                                <button class="boton flat"> Compartir </button>
+                            </div>
+                            <div class="reacciones-contenedor">
+                                <span class="material-symbols-outlined">
+                                    adaptive_audio_mic
+                                </span>
+                                <button class="boton flat"> Colaborar </button>
+                            </div>
+                        </div>
+                        <hr>
+                        <input type="text" class="form-control input-comentario" id="comentario" placeholder="Comentar" name="comentario">
+                        
+                        <div class="comentarios-contenedor">
 
-        <div><!--Tu Ritmo-->
-            <h2 class="title">Tu Ritmo</h2>
-            <div class="contenedor">
-                <img class="kawai" src="https://th.bing.com/th/id/OIP.fMaa216CcNx57aG5oYldiQHaHc?w=204&h=205&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="señor kawaii" class="kawai">
-                <p class="name">Kawai Man</p>
-                <p class="instruments"> Guitarra|Bajo sexto|voz-principal</p>
-                <hr class="linea">
-                <p class="descript"> Aqui en el evento del domingo con mis Compadres.</p>
-                <img class="mexicanMusic" src="https://th.bing.com/th/id/OIP.z584B0fwnJ4cYMMBWAzVigHaJ4?pid=ImgDet&w=179&h=238&c=7&dpr=1.3">
-                <div class="contenedor-botones-publicacion">
-                    <span class="material-symbols-outlined">
-                        artist
-                        </span>
-                    <button class="boton flat"> Me entona </button>
-                    <span class="material-symbols-outlined">
-                        music_cast
-                        </span>
-                    <button class="boton flat"> Compartir </button>
-                    <span class="material-symbols-outlined">
-                        adaptive_audio_mic
-                    </span>
-                    <button class="boton flat"> Colaborar </button>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <label for="comment"></label>
-                    <input type="text" class="comment" placeholder="Comentar">
-                </div>
-                    
-                    
+            </div>
+            <div> <!-- Anuncios-->
+                <h2>Anuncios</h2>
                 
             </div>
-            <!-- Contenido dentro del contenedor -->
-            
-            
-            
-        </div> <!--Tu Ritmo-->
+        </section>
         <div class="artistas"><!--Anuncios-->
             <ul>
                 <h3>Anuncios</h3>
@@ -370,7 +385,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="miEscena.js"></script>
+    <script type="module" src="miEscena.js"></script>
 </body>
 
 </html>
