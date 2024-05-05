@@ -1,7 +1,7 @@
 @import url(../../../Styles/main.css);
 
 
-
+/* acomodo del contenido principal */
 .inicioDeSesion{
     display: flex;
     flex-direction: row;
@@ -10,25 +10,24 @@
     height: 100vh;
 }
 
+
+/* alineacion del contenido del formulario */
 .inicioDeSesion--formContainer{
     text-align: center;
     padding: 22px;
 }
 
+/* espaciado en el formulario */
 .inicioDeSesion--formContainer form{
     padding: 22px;
 }
 
+/* ajustar tamaño de la imagen */
 .inicioDeSesion--imagen img{
     width: 400px;
 }
 
-.inicioDeSesion--imagen{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
+/* alineacion de los botones */
 .inicioDeSesion--form--buttons{
     margin: 22px;
     display: flex;
@@ -36,22 +35,44 @@
     justify-content: center;
     align-items: center;
 }
-.inicioDeSesion--form--buttons button{
+
+/* espaciado entre los botones */
+.inicioDeSesion--form--buttons button, .inicioDeSesion--form--buttons a{
     margin: 11px;
 }
 
+/* animacion de los botones */
 .inicioDeSesion--form--buttons button:hover{
     transform: scale(1.05);
     transition: transform 300ms;
     margin: 11px;
 }
 
-.inicioDeSesion--form--buttons a{
-    margin: 11px;
-}
-
+/* animacion del boton de registro */
 .inicioDeSesion--form--buttons a:hover{
     transform: scale(1.02);
     transition: transform 300ms;
     margin: 11px;
+}
+
+
+@media screen and (max-width:900px) {
+    .inicioDeSesion--imagen img{
+        position: fixed;
+        margin: 50px;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 500px;
+        opacity: 0.7;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .inicioDeSesion--imagen img{
+        position: fixed;
+        z-index: -1;
+        top: 0;
+    }
 }
