@@ -3,15 +3,35 @@ document.addEventListener("DOMContentLoaded", function() {
     crearElementoPublicacion();
   });
 // const Co = document.getElementById('miEscena');
-//     const mensaje = document.getElementById('comment');
+const mensaje = document.getElementById('comentario');
 
-//     formulario.addEventListener('submit', function(event) {
-//         event.preventDefault();
+// --------- agregar comentarios --------------
+mensaje.addEventListener("change", (event) => {
+    event.preventDefault();
+    // const like = document.getElementById().value;
+    // const share = document.getElementById().value
+    // const colaborate = document.getElementById().value;
+    // const comment = document.getElementById().value;
+    
+    // agarramos el elemento que contendra los comentarios
+    const comentariosDisplay = document.getElementById("comentariosDisplay");
 
-//         const like = document.getElementById().value;
-//         const share = document.getElementById().value
-//         const colaborate = document.getElementById().value;
-//         const comment = document.getElementById().value;
+
+    // obtiene el texto del comentario
+    let comentarioText = event.target.value;
+
+    //crea el elemento del comentario y le agrega el texto
+    let comentarioP = document.createElement("p");
+    comentarioP.textContent = comentarioText;
+
+    // inserta el comentario en el contenedor
+    comentariosDisplay.appendChild(comentarioP);
+
+    //vacia el contenido del area de comentarios
+    mensaje.value = "";
+})
+
+
 
 //         // Enviar los datos del formulario al servidor usando fetch
 //         fetch('/enviarSolicitudDeCoraboracion', {
@@ -61,23 +81,39 @@ document.addEventListener("DOMContentLoaded", function() {
 //         });
 //     });
 
+// ------- contador de Me entona ---------
 
+// selecciona los elementos que se usaran
+const meEntonaBoton = document.getElementById("meEntonaBoton");
+const contadorMeEntona = document.getElementById("contadorMeEntona");
 
+// inicializar las variables
+let contador = 0;
+//determinar si la persona puede o no dar like (default: si puede)
+let puedeDarMeEntona = true;
+
+//espera un evento para dar like
+meEntonaBoton.addEventListener("click", (event) => {
+    //checa si la persona puede dar like
+    if(puedeDarMeEntona){
+        contador++;
+        puedeDarMeEntona = false;
+    }
+    else{
+        contador--;
+        puedeDarMeEntona = true;
+    }
+
+    // agrega el contador de likes
+    contadorMeEntona.textContent = contador;
+    
+    if (contadorMeEntona.textContent == "0"){
+        contadorMeEntona.textContent = "";
+    }
     
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    meEntonaBoton.parentElement.append(contadorDisplay)
+});
 
 /* Agrega una función que haga lo siguiente:
     Se ejecute al cargar la página mi escena
@@ -86,7 +122,18 @@ document.addEventListener("DOMContentLoaded", function() {
     Insertar los elementos en un div con id contenedor-publicaciones (Revisa InnerHTML)
     Puedes usar localStorage o fetch para buscar publicaciones (Esto se entrega)
 */
-
+document.addEventListener('DOMContentLoaded', async () => {
+    try{
+        // Obtener las publicaciones
+        const response = await fetch("./mockDataMiEscena");
+        const publicaciones = await response.json();
+        console.log(publicaciones)
+        
+    }
+    catch (error){
+        console.log(error);
+    }
+})
 /*
     Agregar una función que haga lo siguiente:
     Se ejecute al hacer click en el botón de guardar dentro del modal de foto/video
@@ -209,7 +256,7 @@ function crearElementoPublicacion() {
   
     // Agregar el nuevo elemento al contenedor
     contenedor.appendChild(publicacionContenedor);
-  }
+}
   
   // Llamar a la función para crear el elemento dinámico
   crearElemento();
