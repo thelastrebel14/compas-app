@@ -60,7 +60,7 @@
             </div>
             <hr>
             <div class="botones--publicacion">
-                <button type="button" class="boton flat" data-bs-toggle="modal" data-bs-target="#modalFoto">
+                <button class="boton flat" data-bs-toggle="modal" data-bs-target="#modalFotoVideo">
                     Foto/Vídeo
                 </button>
                 <button type="button" class="boton flat" data-bs-toggle="modal" data-bs-target="#modalArtistas">
@@ -69,16 +69,14 @@
             </div>
 
             <!-- Modal para "Foto/Vídeo" -->
-            <div class="modal" id="modalFoto">
+            <div class="modal" id="modalFotoVideo">
                 <div class="modal-dialog">
                     <div class="modal-content">
-
                         <!-- Modal Header -->
                         <div class="modal-header">
                             <h4 class="modal-title">Crear publicación</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
-
                         <!-- Modal body -->
                         <div class="modal-body">
                             <div class="nueva--publicacion--modal--perfil">
@@ -87,19 +85,19 @@
                             <h4>Carlos Santana</h4>
                             </div>
                             <br>
-                            <input type="text" class="comment" placeholder="¿Qué estás pensando?"/>
+                        <form action="" id="formularioFotoVideo">
+                            <input type="text" class="comment" name="publicacionTexto" placeholder="¿Qué evento estás planeando?"/>
                             <br> 
-                            <button class="boton flat">Selecciona tu foto o vídeo*</button> 
-                            <br>
-                            <p>*Opcional</p>
-                        </div>
-
-                        <!-- Modal footer -->
-                        <div class="modal-footer">
-                            <button type="button" class="boton flat" data-bs-dismiss="modal">Publicar</button>
+                            <input type="file" name="publicacionMultimedia">
+                            <br> <br>
+                            <p>*Los archivos multimedia son opcionales</p>
+                            <!-- Modal footer -->
+                            <div>
+                            <button type="submit" class="boton flat" data-bs-dismiss="modal">Publicar</button>
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </form>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -123,7 +121,7 @@
                             <h4>Carlos Santana</h4>
                             </div>
                             <br>
-                            <form action="">
+                            <form action="" id="formularioArtista">
                                 <fieldset>
                                 <div>
                                     <legend>Encuentra artistas o escenarios cerca de ti llenando el siguiente formulario</legend>
@@ -131,12 +129,12 @@
                                 <br>
                                     <div class="nueva--publicacion--modal--formulario">
                                     <label>Título de la publicación</label>
-                                    <input type="text" placeholder="Busco guitarrista en..."/>
+                                    <input type="text" name="tituloPublicacion" placeholder="Busco guitarrista en..."/>
                                     </div>
                                 <br>
                                     <div class="nueva--publicacion--modal--formulario">
                                     <label>Cuerpo de la publicación</label>
-                                    <input type="text" placeholder="Más detalles"/>
+                                    <input type="text" name="cuerpoPublicacion" placeholder="Más detalles"/>
                                     </div>
                                 <br>
                                 <div>
@@ -144,11 +142,11 @@
                                         <label>¿Buscas un artista o un escenario?</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="busquedaArtista" name="ArtistaOEscenario" value="busquedaArtista"/>
+                                        <input type="radio" id="busquedaArtista" name="artistaOEscenario" value="busquedaArtista"/>
                                         <label for="busquedaArtista">Artista</label>
                                     </div>
                                     <div>
-                                        <input type="radio" id="busquedaEscenario" name="ArtistaOEscenario" value="busquedaEscenario" />
+                                        <input type="radio" id="busquedaEscenario" name="artistaOEscenario" value="busquedaEscenario" />
                                         <label for="busquedaEscenario">Escenario</label>
                                     </div>
                                 </div>
@@ -158,19 +156,19 @@
                                         <label>¿Qué género o géneros te interesan?</label>
                                     </div>
                                     <div>
-                                        <input type="checkbox" id="Norteno" name="Norteno" value="Norteno"/>
+                                        <input type="checkbox" id="Norteno" name="generoNorteno" value="Norteno"/>
                                         <label for="Norteno">Norteño</label>
                                     </div>
                                     <div>
-                                        <input type="checkbox" id="Cumbia" name="Cumbia" value="Cumbia" />
+                                        <input type="checkbox" id="Cumbia" name="generoCumbia" value="Cumbia" />
                                         <label for="Cumbia">Cumbia</label>
                                     </div>
                                     <div>
-                                        <input type="checkbox" id="Salsa" name="Salsa" value="Salsa" />
+                                        <input type="checkbox" id="Salsa" name="generoSalsa" value="Salsa" />
                                         <label for="Salsa">Salsa</label>
                                     </div>
                                     <div>
-                                        <input type="checkbox" id="Mariachi" name="Mariachi" value="Mariachi" />
+                                        <input type="checkbox" id="Mariachi" name="generoMariachi" value="Mariachi" />
                                         <label for="Mariachi">Mariachi</label>
                                     </div>
                                 </div>
@@ -180,51 +178,48 @@
                                         <label>¿Qué instrumentos te interesan?</label>
                                     </div>
                                     <div>
-                                        <input type="checkbox" id="Guitarra" name="Guitarra" value="Guitarra"/>
+                                        <input type="checkbox" id="Guitarra" name="instrumentoGuitarra" value="Guitarra"/>
                                         <label for="Guitarra">Guitarra</label>
                                     </div>
                                     <div>
-                                        <input type="checkbox" id="Acordeon" name="Acordeon" value="Acordeon" />
+                                        <input type="checkbox" id="Acordeon" name="instrumentoAcordeon" value="Acordeon" />
                                         <label for="Acordeon">Acordeón</label>
                                     </div>
                                     <div>
-                                        <input type="checkbox" id="Bateria" name="Bateria" value="Bateria" />
+                                        <input type="checkbox" id="Bateria" name="instrumentoBateria" value="Bateria" />
                                         <label for="Bateria">Batería</label>
                                     </div>
                                     <div>
-                                        <input type="checkbox" id="Sintetizador" name="Sintetizador" value="Sintetizador" />
+                                        <input type="checkbox" id="intetizador" name="instrumentoSintetizador" value="Sintetizador" />
                                         <label for="Sintetizador">Sintetizador</label>
                                     </div>
                                 </div>
                                 <br>
                                 <div>
                                     <label>Código postal</label>
-                                    <input type= "tel" placeholder="Código postal"/>
+                                    <input type= "tel" name="codigoPostal" placeholder="Código postal"/>
                                 </div>
                                 <br>
                                 <div>
                                     <label>Ciudad o municipio</label>
-                                    <input type="text" placeholder="Ciudad o municipio"/>
+                                    <input type="text" name="ciudadOMunicipio" placeholder="Ciudad o municipio"/>
                                 </div>
                                 <br>
                                 <div>
                                     <label>Entidad federativa</label>
-                                    <input type="text" placeholder="Entidad federativa"/>
+                                    <input type="text" name="entidadFederativa" placeholder="Entidad federativa"/>
                                 </div>
                                 <br>
-                                <button class="boton flat">Selecciona una foto o vídeo*</button> 
-                                <br>
-                                <p>*Opcional</p>
+                                <input type="file" name="artistaMultimedia">
+                                <br> <br>
+                                <p>*Los archivos multimedia son opcionales</p>
                                 </fieldset>
+                                <div class="modal-footer">
+                                    <button type="button" class="boton flat" data-bs-dismiss="modal">Publicar</button>
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                                </div>
                             </form>
                         </div>
-
-                        <!-- Modal footer -->
-                        <div class="modal-footer">
-                            <button type="button" class="boton flat" data-bs-dismiss="modal">Publicar</button>
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -371,6 +366,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="miEscena.js"></script>
+    <script src="nuevaPublicacion.js"></script>
 </body>
 
 </html>
