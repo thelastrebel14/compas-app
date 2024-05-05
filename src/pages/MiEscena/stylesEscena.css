@@ -88,19 +88,14 @@
 }
 
 
-#carouselExampleArtistas{
-    height: 30%;
-    margin-right: -100px;
-}
-
-#carouselExampleSeBusca{
+/* #carouselExampleSeBusca{
     padding: 10px;
     height: 30%;
-}
+} */
 
-#carouselExampleEscenarios{
+/* #carouselExampleEscenarios{
     height: 30%;
-}
+} */
 .carousel-img1{
 
     align-items: center;
@@ -123,6 +118,15 @@
 }
 
 .carousel-principal-img {
+    height: 60vh;
+}
+
+.carousel-anuncios{
+    height: 60vh;
+    width: 30vw;
+}
+
+.carousel-anuncios-img {
     height: 60vh;
 }
 
@@ -219,6 +223,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 100%;
 }
 
 /*Tu Ritmo*/
@@ -233,6 +238,7 @@
     background-color: var(--secondaryBg-color); /* Color de fondo del contenedor */
     padding: 16px;
     border-radius: 10px;
+    margin-bottom: 16px;
 }
 
 .autor-contenedor {
@@ -280,7 +286,7 @@
 .reacciones-contenedor {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 100%;
 }
@@ -297,8 +303,14 @@
     margin-bottom: 16px;
 }
 
+.boton-reaccion{
+    margin-left: 16px;
+}
+
 @media (max-width: 1090px) {
     .boton {
         display: none;
     }
 }
+
+/* Anuncios*/
