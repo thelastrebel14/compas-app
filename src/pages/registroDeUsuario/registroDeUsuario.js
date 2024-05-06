@@ -134,8 +134,7 @@ botonRegistro.addEventListener("click", (e) => {
     (isEscenario = registroIsEscenario),
     (tipoDeEscenario = registroTipoDeEscenario)
   );
-  console.log(usuario);
-  console.log(JSON.stringify(usuario));
+  const usuarioJSON = JSON.stringify(usuario);
 });
 
 const inputCiudad = document.getElementById("inputCiudad");
