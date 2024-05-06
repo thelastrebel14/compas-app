@@ -89,7 +89,7 @@ body
     } 
 }
 
-.boton
+.boton--filtrar
 {
     width: 60px;
     height: 37px;
@@ -121,3 +121,15 @@ body
     /* Support for IE. */
     font-feature-settings: 'liga';
   }
+
+.filtro
+{
+  margin-top: 41px;
+}
+.boton--filtros
+{
+  width: 146px;
+  height: 37px;
+  margin: 5px 14px;
+  border-radius: 10px;
+}
