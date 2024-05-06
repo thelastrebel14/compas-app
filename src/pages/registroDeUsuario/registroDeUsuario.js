@@ -57,18 +57,21 @@ async function rellenoCodigoPostal(){
         }
 
         const data = await response.json();
-        const opcionEstado = document.getElementById("cpEstado")
-        const opcionMunicipio = document.getElementById("cpMunicipio")
+        const opcionEstado = document.getElementById("inputEstado")
+        const opcionMunicipio = document.getElementById("inputCiudad")
         
-        opcionEstado.text = data
-        opcionEstado.selected = true
         
-        opcionMunicipio.text = data
-        opcionMunicipio.selected = true
 
         // console.log(opcionEstado.text)
         // console.log(opcionMunicipio.text)
-        console.log(data)
+        data.forEach(element => {
+            let nuevaOpcionEstado = document.createElement("option")
+            let nuevaOpcionMunicipio = document.createElement("option")
+            nuevaOpcionEstado.textContent = element.response.estado
+            nuevaOpcionMunicipio.textContent = element.response.municipio
+            opcionEstado.appendChild(nuevaOpcionEstado)
+            opcionMunicipio.appendChild(nuevaOpcionMunicipio)
+        });
     }
     catch(error){
         console.error(error)
