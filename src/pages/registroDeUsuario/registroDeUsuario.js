@@ -60,10 +60,6 @@ async function rellenoCodigoPostal(){
         const opcionEstado = document.getElementById("inputEstado")
         const opcionMunicipio = document.getElementById("inputCiudad")
         
-        
-
-        // console.log(opcionEstado.text)
-        // console.log(opcionMunicipio.text)
         data.forEach(element => {
             let nuevaOpcionEstado = document.createElement("option")
             let nuevaOpcionMunicipio = document.createElement("option")
