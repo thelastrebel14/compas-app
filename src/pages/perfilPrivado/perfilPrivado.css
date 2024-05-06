@@ -1,0 +1,419 @@
+@import "../../../Styles/main.css";
+
+/* ------------Header (Portada y foto de perfil) ------------*/
+header{
+    width: 100%;
+    max-width: 100%;
+    height: 538px;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(10,1fr);
+}
+.header--portada{
+    display: grid;
+    grid-template-columns: repeat(14,1fr);
+    grid-template-rows: repeat(6,1fr);
+    width: 100%;
+    max-width: 100%;
+    height: 400px;
+    background-image: url("img/fotoPortada.png");
+    background-size: cover;
+    grid-column: 1/13;
+    grid-row: 1/7;
+}
+.header--portada--symbolEditCamera{ /*-----------  header--portada--symbolEditCamera ------------------*/
+    height: 55px;
+    width: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+    background-color: var(--secondaryBg-color);
+    border-radius: 50%;
+    font-size: 40px;
+    cursor: pointer;
+    grid-column: 14/15;
+    grid-row: 6/7;
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+.header--portada--symbolEditCamera:hover{
+    background-color: var(--hover-color);
+}
+/*------------------------------  FotoPerfil   -------------------------------- */
+.header--fotoPerfil {
+    margin: 0px 20px;
+    grid-column: 2/5;
+    grid-row: 5/9;
+    width: 250px;
+    height: 250px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+}
+.header--fotoPerfil--img{
+    width: 250px;
+    position: absolute; 
+    grid-column: 3/7;
+    grid-row: 3/6;
+    
+} 
+.header--fotoPerfil--symbolEditCamera{  /*------------------ header--fotoPerfil--symbolEditCamera ------------------- */
+    z-index: 2;
+    height: 60px;
+    width: 60px;
+    grid-column: 3/4;
+    grid-row: 3/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    background-color: var(--secondaryBg-color);
+    border-radius: 50%;
+    font-size: 40px;
+    cursor: pointer;
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+.header--fotoPerfil--symbolEditCamera:hover{
+    background-color: var(--hover-color);
+}
+/* ------------------------------  Información del perfil de usuario   ------------------------------*/
+.profile{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    /* justify-content: space-between; */
+}
+.profile--info{
+    grid-column: 1/10;
+}
+.profile--info--nombreySeguidores{
+    display: flex;
+    align-items: center;
+}
+.profile--info--nombreySeguidores--nombre{
+    margin-right: 14px;
+    max-width: 372px;
+}
+.profile--info--nombreySeguidores--nombre h1{
+    font-weight: bold;
+}
+.profile--info--nombreySeguidores--seguidores h5{
+    font-weight: bold;
+    color: var(--grey);
+}
+.profile--info--ubicacion{
+    margin-top: 16px;
+}
+.profile--info--enfoque{
+    margin-top: 24px;
+    display: flex;
+}
+.profile--info--enfoque--instrumentos{
+    margin-right: 60px;
+}
+.profile--info--enfoque--instrumentos h5{
+    font-weight: 500;
+}
+.profile--info--enfoque--instrumentos p{
+    font-weight: bold;
+    color: var(--grey);
+}
+.profile--info--enfoque--generos{
+    margin-right: 60px;
+}
+.profile--info--enfoque--generos h5{
+    font-weight: 500;
+}
+.profile--info--enfoque--generos p{
+    font-weight: bold;
+    color: var(--grey);
+}
+.profile--info--demo{
+    margin-top: 38px;
+    background-color: var(--black);
+    width: 700px;
+    height: 110px;
+    border-radius: 10px;
+}
+.profile--info--demo{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 15px 28px 15px 22px;
+}
+.profile--info--demo--img{
+    background-image: url('img/perfil-demo-img.jpg');
+    background-size: cover;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+}
+.profile--info--demo--titulo h3,
+.profile--info--demo--titulo h5{
+    color: var(--white);
+}
+ /* .profile--follow{
+    border: solid;  
+    display:flex;
+    flex-direction: column;
+    margin-left: 114px;
+} 
+
+
+.profile--follow--buttons--seguir{
+    background-color: var(--main-color);
+    color: var(--white);
+    margin-right: 52px;
+}
+
+.profile--follow--mensaje{
+    margin-top: 32px;
+}
+.profile--follow--mensaje h4{
+    font-weight: bold;
+}
+
+.profile--follow--mensaje h4 span{
+    margin-left: 32px;
+} */
+.profile--follow{
+    display: flexbox;
+    grid-column: 10/13;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 120px;
+}
+
+.profile--follow--redes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1/4;
+    height: 120px
+}
+img{
+    width: 40px;
+    cursor: pointer;
+    margin: 15px;
+    
+}
+/* -------------------------------    Symbol Profile Info   ------------------------  */
+.symbol-edit{
+    color: var(--hover-color);
+    background-color: var(--secondaryBg-color);
+    font-size: 50px;
+    margin: 25px;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    font-size: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    grid-column: 3/4;
+}
+.symbol-edit:hover{
+    background-color: var(--grey);
+}
+/* ----------Sección de demos   /   Sección de Escenarios------------- */
+.escenarios,
+.demos{
+   margin-top: 46px;
+}
+
+.escenarios hr,
+.demos hr{
+    margin-top: 16px;
+    margin-bottom: 32px;
+}
+
+.escenarios--cards,
+.demos--cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.escenarios--cards--item,
+.demos--cards--item{
+    width: 286px;
+    max-width: 286px;
+    height: 286px;
+    max-height: 286px;
+}
+
+.escenarios--cards--item img,
+.demos--cards--item img{
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.escenarios--item,
+.demos--item{
+    width: 286px;
+    height: 286px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.escenarios--item img,
+.demos--item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+.escenarios--item--info,
+.demos--item--info{
+    border-radius: 10px;
+    position: absolute;
+    text-align: center;
+    color: var(--white);
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.escenarios--item--info .card-title,
+.demos--item--info .card-title{
+    margin: 0;
+    padding: 0;
+}
+
+.escenarios--item--info h4{
+    margin-top: 4px;
+    margin-bottom: 6px;
+}
+
+.escenarios--item--info button,
+.demos--item--info button{
+    margin-top: 18px;
+}
+
+/* ------------------------------------   Acerca de    ------------------------------- */
+.acerca{
+    margin-top: 50px;
+    border: solid;
+}
+
+.acerca .linea{
+    margin: 16px 0 32px 0;
+}
+
+.acerca--info {
+    width: 600px;
+    max-width: 600px;
+}
+
+.acerca--info p:nth-child(2){
+    font-weight: bold;
+    color: var(--grey);
+    cursor: pointer;
+}
+
+/*----------------------------- Sección Recomendaciones -----------------------------------*/
+
+.recomendaciones--carousel .carousel .carousel-inner{
+    display: flex;
+    align-items: center;
+}
+
+.recomendaciones--carousel--item{
+    height: 226px;
+    width: 726px;
+    background-color: grey;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 54px;
+}
+
+.recomendaciones--carousel--item--info{
+    width: 754px;
+}
+
+
+/* ----------------------------     Sección similares    ----------------------------- */
+
+.similares{
+    margin-top: 38px;
+}
+
+.similares hr{
+    margin: 16px 0 32px 0;
+}
+.similares--item{
+    width: 184px;
+    height: 400px;
+}
+
+.sistem--item--info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.similares--item--info h5{
+    font-weight: bold;
+}
+.similares--item img{
+    width: 100%;
+    height: 184px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+}
+.similares--item--info span{
+    margin-top: 6px;
+}
+.similares--item--info span:nth-of-type(2){
+    color: var(--grey);
+}
+.similares--item--info button{
+    margin-top: 25px;
+    width: 128px;
+    position: absolute;
+    bottom: 20px;
+}
+
+
+
+/* -------------------------------    CARRUSEL     ------------------------------------ */
+.carousel{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.carousel--prevArrow,
+.carousel--nextArrow{
+    cursor: pointer;
+}
+
+
+.carousel--cards{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    overflow-x: hidden;
+}
