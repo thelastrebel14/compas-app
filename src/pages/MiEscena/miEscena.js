@@ -278,9 +278,9 @@ function obtenerPublicaciones() {
 
 // Editar publicación
 
-const formularioFotoVideo = document.querySelector('#formularioFotoVideo');
+const editarformularioFotoVideo = document.querySelector('#formularioFotoVideo');
 
-formularioFotoVideo.addEventListener('submit', (e) => {
+editarformularioFotoVideo.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const datosTexto = new FormData(document.getElementById('formularioFotoVideo'));
@@ -293,7 +293,7 @@ formularioFotoVideo.addEventListener('submit', (e) => {
 
     fetch (almacenDatosFotoVideo, {
         method: 'PUT',
-        body: formularioFotoVideo
+        body: editarformularioFotoVideo
     })
 
 //     .then(data => data.json())
@@ -314,9 +314,9 @@ formularioFotoVideo.addEventListener('submit', (e) => {
 
 
 
-const formularioArtista = document.querySelector('#formularioArtista');
+const editarFormularioArtista = document.querySelector('#formularioArtista');
 
-formularioArtista.addEventListener('submit', (e) => {
+editarFormularioArtista.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const datosTituloPublicacion = new FormData(document.getElementById('formularioArtista'));
@@ -484,11 +484,15 @@ function crearElementoPublicacion(datosPublicacion) {
     contenidoPublicacionContenedor.classList.add("contenido-publicacion-contenedor");
     var contenidoPublicacion = document.createElement("p");
     contenidoPublicacion.textContent = datosPublicacion.descripcion;
-    var imgPublicacion = document.createElement("img");
-    imgPublicacion.src = datosPublicacion.archivoMultimedia;
-    imgPublicacion.classList.add("img-publicacion");
+    if(datosPublicacion.tipoPublicacion === 'multimedia') {
+      var imgPublicacion = document.createElement("img");
+        imgPublicacion.src = datosPublicacion.archivoMultimedia;
+        imgPublicacion.classList.add("img-publicacion");  
+    }
+    
     contenidoPublicacionContenedor.appendChild(contenidoPublicacion);
-    contenidoPublicacionContenedor.appendChild(imgPublicacion);
+    if(datosPublicacion.tipoPublicacion === 'multimedia')
+        contenidoPublicacionContenedor.appendChild(imgPublicacion);
   
     // Botones de la publicación
     var botonesPublicacionContenedor = document.createElement("div");
