@@ -97,6 +97,18 @@ label {
     font-size: 12.8px;
 }
 
+.boldTx{
+    font-weight: bold;
+}
+
+.semiBoldTx{
+    font-weight: 500;
+}
+
+.lightTx{
+    font-weight: 100;
+}
+
 section {
     margin: 16px 0;
 }

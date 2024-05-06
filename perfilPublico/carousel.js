@@ -1,14 +1,47 @@
-const prevArrow = document.querySelector(".carousel--prevArrow");
-const nextArrow = document.querySelector(".carousel--nextArrow");
-const carouselCardsContainer = document.querySelector(".carousel--cards");
+// ------------------Carrusel de sección de demos--------------------
+const prevArrowDemos = document.querySelector("#carouselPrevArrowDemos");
+const nextArrowDemos = document.querySelector("#carouselNextArrowDemos");
+const carouselCardsContainerDemos = document.querySelector("#carouselCardsDemos");
 
-prevArrow.addEventListener("click", ()=>{ 
-    carouselCardsContainer.scrollLeft -= 500;
+prevArrowDemos.addEventListener("click", ()=>{ 
+    carouselCardsContainerDemos.scrollLeft -= 500;
 });
 
-nextArrow.addEventListener("click", ()=>{
-    carouselCardsContainer.scrollLeft += 500;
+nextArrowDemos.addEventListener("click", ()=>{
+    carouselCardsContainerDemos.scrollLeft += 500;
 });
+
+// ------------------Carrusel de sección de Escenarios--------------------
+const prevArrowEscenarios = document.querySelector("#carouselPrevArrowEscenarios");
+const nextArrowEscenarios = document.querySelector("#carouselNextArrowEscenarios");
+const carouselCardsContainerEscenarios = document.querySelector("#carouselCardsEscenarios");
+
+prevArrowEscenarios.addEventListener("click", ()=>{ 
+    carouselCardsContainerEscenarios.scrollLeft -= 500;
+    // alert("prev");
+});
+
+nextArrowEscenarios.addEventListener("click", ()=>{
+    carouselCardsContainerEscenarios.scrollLeft += 500;
+    // alert("next");
+});
+
+// ------------------Carrusel de sección de similares--------------------
+const prevArrowSimilares = document.querySelector("#carouselPrevArrowSimilares");
+const nextArrowSimilares = document.querySelector("#carouselNextArrowSimilares");
+const carouselCardsContainerSimilares = document.querySelector("#carouselCardsSimilares");
+
+prevArrowSimilares.addEventListener("click", ()=>{ 
+    carouselCardsContainerSimilares.scrollLeft -= 500;
+    // alert("prev");
+});
+
+nextArrowSimilares.addEventListener("click", ()=>{
+    carouselCardsContainerSimilares.scrollLeft += 500;
+    // alert("next");
+});
+
+
 
 
 
