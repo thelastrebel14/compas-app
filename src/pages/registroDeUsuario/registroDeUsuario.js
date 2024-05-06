@@ -45,7 +45,7 @@ radioSoyMusico.addEventListener("click", mostrarInputs = () => {
 })
 
 
-const cp = (callback) => {
+const cp = () => {
     rellenoCodigoPostal()
 }
 async function rellenoCodigoPostal(){
