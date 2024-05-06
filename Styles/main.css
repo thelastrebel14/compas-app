@@ -37,6 +37,7 @@ body {
 
 main{
     margin: 0 100px 0 100px;
+    padding-top: 75px;
 }
 
 
@@ -97,6 +98,45 @@ label {
     font-size: 12.8px;
 }
 
+/* Estilos base para fuentes */
+h1, h2, h3, h4, h5, p, span, label {
+    font-weight: 400;
+    /* <weight>: Use a value from 200 to 800 */
+    font-size: 16px; /* Tamaño base de fuente para pantallas grandes */
+}
+
+/* Media queries para hacer fuentes responsivas */
+@media (max-width: 767px) {
+    h1 { font-size: 36px; } /* Tamaño de fuente para pantallas pequeñas */
+    h2 { font-size: 30px; }
+    h3 { font-size: 24px; }
+    h4 { font-size: 20px; }
+    h5 { font-size: 18px; }
+    p { font-size: 14px; }
+    span, label { font-size: 10px; } /* Tamaño de fuente para span y label */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    h1 { font-size: 42px; } /* Tamaño de fuente para pantallas medianas */
+    h2 { font-size: 36px; }
+    h3 { font-size: 28px; }
+    h4 { font-size: 22px; }
+    h5 { font-size: 18px; }
+    p { font-size: 16px; }
+    span, label { font-size: 12px; } /* Tamaño de fuente para span y label */
+}
+
+/* Otros media queries para pantallas grandes y extra grandes si es necesario */
+@media (min-width: 992px) {
+    h1 { font-size: 48px; } /* Tamaño de fuente para pantallas grandes */
+    h2 { font-size: 39.06px; }
+    h3 { font-size: 31.25px; }
+    h4 { font-size: 25px; }
+    h5 { font-size: 20px; }
+    p { font-size: 16px; }
+    span, label { font-size: 12.8px; } /* Tamaño de fuente para span y label */
+}
+
 .boldTx{
     font-weight: bold;
 }
@@ -121,8 +161,8 @@ section {
 /* -----------BOTONES---------- */
 .boton {
     display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 8px 16px;
+    font-size: 12.8px;
     font-weight: 500;
     text-align: center;
     text-decoration: none;
