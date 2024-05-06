@@ -1,0 +1,67 @@
+[
+    {
+        "idAutor" : 1,
+        "idComentario" : 1,
+        "idDestinatario" : 1,
+        "mensaje" : "Quiero tocar contigo"
+    },
+    {
+        "idAutor" : 2,
+        "idComentario" : 2,
+        "idDestinatario" : 1,
+        "mensaje" : "Quiero Colaborar"
+    },
+    {
+        "idAutor" : 3,
+        "idComentario" : 3,
+        "idDestinatario" : 1,
+        "mensaje" : "hola"
+    },
+    {
+        "idAutor" : 4,
+        "idComentario" : 4,
+        "idDestinatario" : 1,
+        "mensaje" : "Escuche tu musica"
+    },
+    {
+        "idAutor" : 5,
+        "idComentario" : 5,
+        "idDestinatario" : 1,
+        "mensaje" : "Eres bueno"
+    },
+    {
+        "idAutor" : 6,
+        "idComentario" : 6,
+        "idDestinatario" : 1,
+        "mensaje" : "Cuando podemos hablar?"
+    },
+    {
+        "idAutor" : 7,
+        "idComentario" : 7,
+        "idDestinatario" : 1,
+        "mensaje" : "Cuando tienes tiempo?"
+    },
+    {
+        "idAutor" : 8,
+        "idComentario" : 8,
+        "idDestinatario" : 1,
+        "mensaje" : "Wow"
+    },
+    {
+        "idAutor" : 9,
+        "idComentario" : 9,
+        "idDestinatario" : 1,
+        "mensaje" : "saludos!"
+    },
+    {
+        "idAutor" : 10,
+        "idComentario" : 10,
+        "idDestinatario" : 1,
+        "mensaje" : "Buen dia!"
+    }
+
+
+
+
+
+]

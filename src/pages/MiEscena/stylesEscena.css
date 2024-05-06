@@ -1,24 +1,23 @@
-@import url(//Styles/main.css); 
+@import url("../../../Styles/main.css"); 
 
-
+/* 
 .title{
     margin-left: 5%;
     font-size: 39.06px;
     font-family: var(label);
-}
+} */
+
 .contenedor {
     display: flex;
     align-items: center; /* Centra los elementos verticalmente */
     width: 35%; /* Ancho del contenedor */
     margin-left: 5%; /* Margen izquierdo para centrar el contenedor horizontalmente */
-    background-color: #e6ddd0; /* Color de fondo del contenedor */
-    border: 1px solid #a25400; /* Borde del contenedor */
+    background-color: var(--background-color); /* Color de fondo del contenedor */
+    /*border: 1px solid  var(--main-color); /* Borde del contenedor */
     align-items: flex-start;
     padding-bottom: 2px;
-    display:flow-root
-
-
-
+    display:flow-root;
+    margin-bottom: 5%;
 }
 
 .kawai {
@@ -31,8 +30,8 @@
 }
 
 .name{
-    font-size: 20px;
-    margin: 10px 0 5px 0;
+    font-size: 15px;
+    margin: 8px 0 5px 0;
     font-style: bold;
     display: flex;
 
@@ -40,53 +39,69 @@
 
 .instruments{
 
-    font-size: 15px;
+    font-size: 10px;
     font-style: bold;
     margin: 1px 0 15px 0;
     display: flex;
     
 }
 
+.linea {
+    width: 100%;
+    height: 2px;
+    background-color: #d6d6d6;
+
+}
+
+
+
+.descript{
+    margin-left: 8px;
+}
+
 .mexicanMusic{
     margin: 10px;
     width: 80%;
+}
+
+
+.comment{
+    width: 85%;
+    font-size: 20.5px;
+}
+
+.material-symbols-outlined{
+    margin-left: 10px;
+
+}
+.artistas {
+    height: 100%;
+    width: 15%;
+    position: absolute;
+    top: 60%;
+    right: 10%;
+    margin-top: 26%;
+    background-color: var(--background-color);
+    align-items: center;
+    padding-right: 10px;
     
-
-
 }
 
 
-.like {
-    background-color: #d7862a;
-    border-radius: 5px;
-    margin: 3% 5% 5% 5%;
-    width: 20%;
+/* #carouselExampleSeBusca{
+    padding: 10px;
+    height: 30%;
+} */
+
+/* #carouselExampleEscenarios{
+    height: 30%;
+} */
+.carousel-img1{
+
+    align-items: center;
+    width:100%;
+    padding-top: 5px;
 }
-
-
-
-
-.share {
-    background-color: #d7862a;
-    border-radius: 5px;
-    margin: 3% 5% 5% 5%;
-    width: 20%;
-    
-    
-}
-
-
-
-.colaborate {
-    background-color: #d7862a;
-    border-radius: 5px;
-    margin: 3% 5% 5% 5%;
-    width: 20%;
-}
-
-
-
-
 
 
 .comment{
@@ -98,24 +113,208 @@
 
 /* Carusel personalizado*/
 
-.carousel{
+.carousel-principal{
     height: 60vh;
 }
 
-.carousel-img {
+.carousel-principal-img {
     height: 60vh;
 }
 
-.material-symbols-outlined {
-    font-size: 4em;
+.carousel-anuncios{
+    height: 60vh;
+    width: 30vw;
+}
+
+.carousel-anuncios-img {
+    height: 60vh;
+}
+
+.custom-arrow {
+    font-size: 3em;
     color: var(--main-color);
 }
 
 .carousel-control-next,
 .carousel-control-prev {
+    justify-content: center;
+    align-items: center;
     width: 5vw;
 }
 
 .carousel-indicators .active{
     background-color: var(--active-color);
+}
+
+
+
+
+.nueva--publicacion {
+    background-color: var(--secondaryBg-color);
+    width: 100%;
+}
+
+#imgPublicacion {
+    width: 60px;
+}
+
+.botones--publicacion {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.nueva--publicacion--alinear {
+    padding-top: 20px;
+    padding-right: 70px;
+    padding-bottom: 20px;
+    padding-left: 70px;
+    display: flex;
+    flex-direction: row;
+}
+
+.nueva--publicacion input {
+    border-color: var(--hover-color);
+}
+
+.nueva--publicacion hr {
+    border-width: 2px;
+    color: var(--black);
+}
+
+.nueva--publicacion img {
+    padding-top: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
+}
+
+.modal-content {
+    background-color: var(--background-color);
+}
+
+.modal-title h4 {
+    text-align: center;
+}
+
+.modal-content label {
+    font-size: 20px;
+}
+
+.nueva--publicacion--modal--perfil {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nueva--publicacion--modal--formulario input {
+    width: 200px;
+}
+
+/* Dashboard, contiene las siguientes secciones:
+    Tu Ritmo
+    Anuncios
+        Artistas
+        Se busca
+        Escenarios
+*/
+
+.dashboard-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/*Tu Ritmo*/
+
+.publicacion-contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start; /* Centra los elementos verticalmente */
+    width: 40vw; /* Ancho del contenedor */
+    height: auto;
+    background-color: var(--secondaryBg-color); /* Color de fondo del contenedor */
+    padding: 16px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+
+.autor-contenedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+.autor-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.img-usuario {
+    margin-right: 6px;
+    height: 45px;
+    width: 60px;
+}
+
+.img-publicacion {
+    width: 35vw;
+    height: auto;
+}
+
+.contenido-publicacion-contenedor{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.botones-publicacion-contenedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.reacciones-contenedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.input-comentario {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.comentarios-contenedor {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.boton-reaccion{
+    margin-left: 16px;
+}
+
+@media (max-width: 1090px) {
+    .boton {
+        display: none;
+    }
+}
+
+/* Anuncios*/
+
+.anuncios-element {
+    margin-bottom: 16px;
 }
