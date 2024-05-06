@@ -1,0 +1,135 @@
+@import url("/Styles/main.css");
+
+body
+{
+    background-color: var(--background-color);
+}
+/********************************* Navbar *********************************/
+/* Se coloca el color de fondo del cuerpo principal de la navbar, así como su altura predeterminada */
+.navbar
+{
+    background-color: var(--secondaryBg-color);
+    height: 70px;
+    padding: 0px;
+}
+/* Se coloca el color de fondo del menu de hamburguesa y el menu desplegable de la imagen dropdown */
+.menu--hamburguesa, .dropdown-menu
+{
+    background-color: var(--secondaryBg-color);
+}
+/* Se coloca un margen a la izquierda del logo de Compás para que quede acorde a figma */
+.imagen--compasApp
+{
+    margin-left: 26px;
+}
+/* Se configura el tamaño de configuración */
+.buscador--configuracion
+{
+    width: 161px;
+    height: 40px;
+}
+/* Se configura el color y la sombra que tendrá el buscador al ingresar texto */
+.buscador--configuracion:focus
+{
+    border-color: var(--main-color);
+    box-shadow: 0 0 5px var(--main-color);
+}
+/* Se redimensiona la imagen de perfil */
+.perfil
+{
+    width: 60px;
+    height: 60px;
+}
+/* Un margen que ayuda a centrar */
+.margen
+{
+    margin-right: 206px;
+}
+/* Configuración del color de texto */
+.texto--configuracion, .texto--drop--perfil
+{
+    color: var(--navbarText-color);
+}
+/* Color de texto al pasar el cursor */
+/* Color de texto al pasar el cursor */
+.texto--configuracion:hover, .texto--drop--perfil, .texto--drop--sesion
+{
+    color: var(--navbarSelected);
+}
+.texto--drop--sesion:hover
+{
+    color: red;
+}
+
+/********************************* Barra de busqueda *********************************/
+.barra--busqueda
+{
+    margin-top: 116px;
+}
+
+.barra--busqueda--contenedor--form
+{
+    border-radius: 10px;
+    border-color: var(--active-color);
+    height: 48px;
+}
+.barra--busqueda--contenedor--form:focus
+{
+    border-color: var(--main-color);
+    box-shadow: 0 0 5px var(--main-color);
+}
+
+/* Estilo para hacer la barra de búsqueda responsiva */
+@media (max-width: 576px)   
+{
+    .barra--busqueda--contenedor 
+    {
+        margin-left: 10px;
+        margin-right: 10px;
+    } 
+}
+
+.boton--filtrar
+{
+    width: 60px;
+    height: 37px;
+    border-radius: 10px;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    cursor: pointer;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
+
+.filtro
+{
+  margin-top: 41px;
+}
+.boton--filtros
+{
+  width: 146px;
+  height: 37px;
+  margin: 5px 14px;
+  border-radius: 10px;
+}

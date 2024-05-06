@@ -117,5 +117,5 @@
 }
 
 .carousel-indicators .active{
-    background-color: var(--active-color);;
+    background-color: var(--active-color);
 }
