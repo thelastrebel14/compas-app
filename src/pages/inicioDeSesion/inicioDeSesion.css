@@ -58,21 +58,37 @@
 
 @media screen and (max-width:900px) {
     .inicioDeSesion--imagen img{
-        position: fixed;
+        /* position: fixed;
         margin: 50px;
         z-index: -1;
         top: 0;
         left: 0;
-        width: 500px;
-        opacity: 0.7;
+        width: 300px;
+        opacity: 0.7; */
+        display: none;
+    }
+    .inicioDeSesion{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .inicioDeSesion--formContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .inicioDeSesion--formContainer{
+        background-image: url(./assets/bandaAnimadaInicio.png);
+        background-color: rgba(255, 255, 255, 0.4);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-blend-mode: lighten;
+    }
+    main {
+        margin: 0;
     }
 }
 
 
-@media screen and (max-width: 600px) {
-    .inicioDeSesion--imagen img{
-        position: fixed;
-        z-index: -1;
-        top: 0;
-    }
-}
