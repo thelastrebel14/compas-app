@@ -1,4 +1,6 @@
-@import "/Styles/main.css";
+@import "../../../Styles/main.css";
+@import "./../../assets/elementos/navbar/navbar.css";
+@import "./../../assets/elementos/footer/footer.css";
 
 /* ------------Header (Portada y foto de perfil) ------------*/
 header{
@@ -350,4 +352,3 @@ header{
     gap: 30px;
     overflow-x: hidden;
 }
-
