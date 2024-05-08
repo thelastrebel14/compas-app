@@ -118,24 +118,28 @@
             </button>
         </div>
 
-             <!--Abre sección de nueva publicación-->
+             <!--Comienza sección de nueva publicación-->
         <section class="nueva--publicacion">
             <div class="nueva--publicacion--alinear">
                 <img src="../../assets/img/Carlos Santana.jpg" class="img-fluid rounded-circle" alt="Carlos Santana"
                     id="imgPublicacion">
-                <input type="text" class="comment" placeholder="¿Cómo va tu vibra hoy?" />
+                <div class="form-floating-principal">
+                    <input type="text" data-bs-toggle="modal" data-bs-target="#modalFotoVideo" class="form-control" id="" placeholder="¿Cómo va tu vibra hoy?">
+                </div>
             </div>
             <hr>
             <div class="botones--publicacion">
-                <button class="boton flat" data-bs-toggle="modal" data-bs-target="#modalFotoVideo">
+                <button data-bs-toggle="modal" data-bs-target="#modalFotoVideo">
                     Foto/Vídeo
                 </button>
-                <button type="button" class="boton flat" data-bs-toggle="modal" data-bs-target="#modalArtistas">
+                <button type="button" data-bs-toggle="modal" data-bs-target="#modalArtistas">
                     Estoy buscando artistas
                 </button>
             </div>
+        </section>
 
             <!-- Modal para "Foto/Vídeo" -->
+            <section>
             <div class="modal" id="modalFotoVideo">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -153,23 +157,32 @@
                             </div>
                             <br>
                         <form action="" id="formularioFotoVideo">
-                            <input type="text" class="comment" name="publicacionTexto" placeholder="¿Qué evento estás planeando?"/>
-                            <br> 
-                            <input type="file" name="publicacionMultimedia">
-                            <br> <br>
-                            <p>*Los archivos multimedia son opcionales</p>
+                            <!-- <input type="text" class="comment" name="publicacionTexto" placeholder="¿Qué evento estás planeando?"/> -->
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="" placeholder="¿Qué evento estás planeando?">
+                                <label for="">¿Qué evento estás planeando?</label>
+                            </div>
+                            <br>
+                            <p> Carga una imagen para tu publicación (opcional)</p>
+                            <!-- <input type="file" clase="input-multimedia" name="publicacionMultimedia"> -->
+                            <div class="mb-3">
+                                <input class="form-control" type="file" id="formFile">
+                              </div>
+                            <br>
                             <!-- Modal footer -->
-                            <div>
+                            <div class="modal-alinear-botones">
+                            <button type="button" class="boton outlined" data-bs-dismiss="modal">Cerrar</button>
                             <button type="submit" class="boton flat" data-bs-dismiss="modal">Publicar</button>
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
                             </div>
                         </form>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
             <!-- Modal para "Estoy buscando artistas" -->
+        <section>
             <div class="modal" id="modalArtistas">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -190,19 +203,28 @@
                                 <fieldset>
                                 <div>
                                     <legend>Encuentra artistas o escenarios cerca de ti llenando el siguiente formulario</legend>
+                                    <br>
                                 </div>
                                 <br>
-                                    <div class="nueva--publicacion--modal--formulario">
+                                <!-- <div class="nueva--publicacion--modal--formulario">
                                     <label>Título de la publicación</label>
                                     <input type="text" name="tituloPublicacion" placeholder="Busco guitarrista en..."/>
-                                    </div>
+                                </div> -->
+                                <div class="nueva--publicacion--modal--formulario">
+                                    <label for="">Título de la publicación</label>
+                                    <input type="text" class="form-control" id="" placeholder="Título de la publicación">
+                                </div>
                                 <br>
-                                    <div class="nueva--publicacion--modal--formulario">
+                                <!-- <div class="nueva--publicacion--modal--formulario">
                                     <label>Cuerpo de la publicación</label>
                                     <input type="text" name="cuerpoPublicacion" placeholder="Más detalles"/>
-                                    </div>
+                                </div> -->
+                                <div class="nueva--publicacion--modal--formulario">
+                                    <label for="">Cuerpo de la publicación</label>
+                                    <input type="text" class="form-control" id="" placeholder="Cuerpo de la publicación">
+                                </div>
                                 <br>
-                                <div>
+                                <!-- <div>
                                     <div>
                                         <label>¿Buscas un artista o un escenario?</label>
                                     </div>
@@ -214,9 +236,17 @@
                                         <input type="radio" id="busquedaEscenario" name="artistaOEscenario" value="busquedaEscenario" />
                                         <label for="busquedaEscenario">Escenario</label>
                                     </div>
-                                </div>
+                                </div> -->
+                                <div class="form-floating">
+                                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                      <option selected>¿Buscas un artista o un escenario?</option>
+                                      <option value="1">Artista</option>
+                                      <option value="2">Escenario</option>
+                                    </select>
+                                    <label for="floatingSelect">Selecciona una opción</label>
+                                  </div>
                                 <br>
-                                <div>
+                                <!-- <div>
                                     <div>
                                         <label>¿Qué género o géneros te interesan?</label>
                                     </div>
@@ -236,9 +266,19 @@
                                         <input type="checkbox" id="Mariachi" name="generoMariachi" value="Mariachi" />
                                         <label for="Mariachi">Mariachi</label>
                                     </div>
-                                </div>
+                                </div> -->
+                                <div class="form-floating">
+                                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                      <option selected>¿Qué género te interesa?</option>
+                                      <option value="1">Norteño</option>
+                                      <option value="2">Cumbia</option>
+                                      <option value="3">Salsa</option>
+                                      <option value="4">Mariachi</option>
+                                    </select>
+                                    <label for="floatingSelect">Selecciona una opción</label>
+                                  </div>
                                 <br>
-                                <div>
+                                <!-- <div>
                                     <div>
                                         <label>¿Qué instrumentos te interesan?</label>
                                     </div>
@@ -258,37 +298,61 @@
                                         <input type="checkbox" id="intetizador" name="instrumentoSintetizador" value="Sintetizador" />
                                         <label for="Sintetizador">Sintetizador</label>
                                     </div>
-                                </div>
+                                </div> -->
+                                <div class="form-floating">
+                                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                      <option selected>¿Qué instrumento te interesa?</option>
+                                      <option value="1">Guitarra</option>
+                                      <option value="2">Acordeón</option>
+                                      <option value="3">Batería</option>
+                                      <option value="4">Sintetizador</option>
+                                    </select>
+                                    <label for="floatingSelect">Selecciona una opción</label>
+                                  </div>
                                 <br>
-                                <div>
+                                <!-- <div>
                                     <label>Código postal</label>
                                     <input type= "tel" name="codigoPostal" placeholder="Código postal"/>
+                                </div> -->
+                                <div class="nueva--publicacion--modal--formulario">
+                                    <label for="">Código postal</label>
+                                    <input type="number" class="form-control" id="" placeholder="Código postal">
                                 </div>
                                 <br>
-                                <div>
+                                <!-- <div>
                                     <label>Ciudad o municipio</label>
                                     <input type="text" name="ciudadOMunicipio" placeholder="Ciudad o municipio"/>
+                                </div> -->
+                                <div class="nueva--publicacion--modal--formulario">
+                                    <label for="">Ciudad o municipio</label>
+                                    <input type="text" class="form-control" id="" placeholder="Ciudad o municipio">
                                 </div>
                                 <br>
-                                <div>
+                                <!-- <div>
                                     <label>Entidad federativa</label>
                                     <input type="text" name="entidadFederativa" placeholder="Entidad federativa"/>
+                                </div> -->
+                                <div class="nueva--publicacion--modal--formulario">
+                                    <label for="">Entidad federativa</label>
+                                    <input type="text" class="form-control" id="" placeholder="Entidad federativa">
                                 </div>
+                                <br> 
+                                <p> Carga una imagen para tu publicación (opcional)</p>
+                                <!-- <input type="file" clase="input-multimedia" name="artistaMultimedia"> -->
+                                <div class="mb-3">
+                                    <input class="form-control" type="file" id="formFile">
+                                  </div>
                                 <br>
-                                <input type="file" name="artistaMultimedia">
-                                <br> <br>
-                                <p>*Los archivos multimedia son opcionales</p>
                                 </fieldset>
-                                <div class="modal-footer">
+                                <div class="modal-alinear-botones">
+                                    <button type="button" class="boton outlined" data-bs-dismiss="modal">Cerrar</button>
                                     <button type="button" class="boton flat" data-bs-dismiss="modal">Publicar</button>
-                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-
         </section>
         <!--Cierra sección de nueva publicación-->
 
