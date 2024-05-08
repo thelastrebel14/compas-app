@@ -1,4 +1,4 @@
-@import "../Styles/main.css";
+@import "/Styles/main.css";
 
 /* ------------Header (Portada y foto de perfil) ------------*/
 header{
@@ -99,7 +99,7 @@ header{
 }
 
 .profile--info--demo--img{
-    background-image: url('../../src/assets/perfilPublico/img/perfil-demo-img.jpg');
+    background-image: url('img/perfil-demo-img.jpg');
     background-size: cover;
     width: 80px;
     height: 80px;
@@ -156,96 +156,86 @@ header{
     margin-top: 20px;
     cursor: pointer;
 }
+/* -------------------------------    sección About   ------------------------  */
+.symbol-edit{
+    font-size: 50px;
+}
 
-/* ----------Sección de demos   /   Sección de Escenarios------------- */
-.escenarios,
+/* ----------Sección de demos------------- */
 .demos{
-   margin-top: 46px;
+    margin-top: 50px;
 }
 
-.escenarios hr,
-.demos hr{
-    margin-top: 16px;
-    margin-bottom: 32px;
+.demos h2{
+    font-weight: bold;
 }
-
-.escenarios--cards,
 .demos--cards{
+    margin-top: 32px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    
+    justify-content: space-around;
 }
 
-.escenarios--cards--item,
+
 .demos--cards--item{
-    width: 286px;
-    max-width: 286px;
     height: 286px;
-    max-height: 286px;
-}
-
-.escenarios--cards--item img,
-.demos--cards--item img{
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
-}
-
-.escenarios--item,
-.demos--item{
-    width: 286px;
-    height: 286px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-}
-
-.escenarios--item img,
-.demos--item img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-
-.escenarios--item--info,
-.demos--item--info{
-    border-radius: 10px;
-    position: absolute;
-    text-align: center;
-    color: var(--white);
-    background-color: rgba(0, 0, 0, 0.6);
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.escenarios--item--info .card-title,
-.demos--item--info .card-title{
-    margin: 0;
-    padding: 0;
+.demos--cards--item:first-child{
+    background-image: url("img/demos1.jpg");
 }
 
-.escenarios--item--info h4{
+.demos--cards--item:nth-child(2){
+    background-image: url("img/perfil-demo-img.jpg");
+}
+
+.demos--cards--item:nth-child(3){
+    background-image: url("img/demos1.jpg");
+}
+
+.demos--cards--item--content{
+    padding: 70px 54px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+.demos--cards--item--content--info label,
+.demos--cards--item--content--info h4{
+    width: 158px;
+    max-width: 158px;
+    text-align: center;
+    color: var(--white);
+}
+
+.demos--cards--item--content--info h4{
     margin-top: 4px;
-    margin-bottom: 6px;
+    margin-bottom: 18px;
 }
 
-.escenarios--item--info button,
-.demos--item--info button{
-    margin-top: 18px;
+.demos--cards--item--content--info button{
+    background-color: var(--main-color);
+    color: var(--white);
+}
+
+.demos--cards--item--content--info button:hover{
+    background-color: var(--hover-color);
 }
 
 /* ------Acerca de -------- */
 .acerca{
     margin-top: 50px;
+}
+
+.acerca h2{
+    font-weight: bold;
 }
 
 .acerca .linea{
@@ -262,92 +252,3 @@ header{
     color: var(--grey);
     cursor: pointer;
 }
-
-/* Sección Recomendaciones */
-
-.recomendaciones--carousel .carousel .carousel-inner{
-    display: flex;
-    align-items: center;
-}
-
-.recomendaciones--carousel--item{
-    height: 226px;
-    width: 726px;
-    background-color: grey;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 54px;
-}
-
-.recomendaciones--carousel--item--info{
-    width: 754px;
-}
-
-
-/* ------------Sección similares------------ */
-
-.similares{
-    margin-top: 38px;
-}
-
-.similares hr{
-    margin: 16px 0 32px 0;
-}
-.similares--item{
-    width: 184px;
-    height: 400px;
-}
-
-.sistem--item--info{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.similares--item--info h5{
-    font-weight: bold;
-}
-.similares--item img{
-    width: 100%;
-    height: 184px;
-    object-fit: cover;
-    border-radius: 5px 5px 0 0;
-}
-.similares--item--info span{
-    margin-top: 6px;
-}
-.similares--item--info span:nth-of-type(2){
-    color: var(--grey);
-}
-.similares--item--info button{
-    margin-top: 25px;
-    width: 128px;
-    position: absolute;
-    bottom: 20px;
-}
-
-
-
-/* ---------CARRUSEL----------- */
-.carousel{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.carousel--prevArrow,
-.carousel--nextArrow{
-    cursor: pointer;
-}
-
-
-.carousel--cards{
-    width: 80%;
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    overflow-x: hidden;
-}
-
