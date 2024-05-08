@@ -24,7 +24,7 @@
         <!-- titulo principal -->
         <h1>Te damos la bienvenida</h1>
         <!-- inicia el formulario -->
-        <form action="" method="post">
+        <form action="/src/pages/MiEscena/miEscena.html" method="post">
           <div class="form-floating mb-3">
             <input
               type="email"
@@ -45,13 +45,12 @@
           </div>
           <!-- botones de inicio de sesion y registrarse -->
           <div class="inicioDeSesion--form--buttons">
-            <button class="boton flat" id="submitButton">Iniciar Sesión</button>
+            <button class="boton flat" id="submitButton" onclick="redirigir()">Iniciar Sesión</button>
             <!-- vinculacion a la pagina de registro -->
             <a
               href="../registroDeUsuario/registroDeUsuario.html"
               class="boton outlined"
-              >Registrarse</a
-            >
+              >Registrarse</a>
           </div>
         </form>
       </div>

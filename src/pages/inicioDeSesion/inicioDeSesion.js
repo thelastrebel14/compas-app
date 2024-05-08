@@ -6,5 +6,8 @@ const inicioDeSesion = {
 }
 
 
-
+function redirigir()
+{
+    window.location.href = "/src/pages/MiEscena/miEscena.html"
+}
 
