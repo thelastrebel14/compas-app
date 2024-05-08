@@ -1,89 +1,94 @@
-@import "../Styles/main.css";
+@import "../../../Styles/main.css";
 
 /* ------------Header (Portada y foto de perfil) ------------*/
-header{
+header {
     width: 100%;
     max-width: 100%;
     height: 538px;
 }
-.header--portada{
+
+.header--portada {
     width: 100%;
     max-width: 100%;
     height: 400px;
     background-image: url("img/fotoPortada.png");
     background-size: cover;
 }
-.header--fotoPerfil{
+
+.header--fotoPerfil {
     margin-left: 100px;
     display: flex;
     justify-content: start;
-    align-items:center;
+    align-items: center;
 }
-.header--fotoPerfil img{
+
+.header--fotoPerfil img {
     width: 250px;
     position: absolute;
-} 
+}
 
 /* ------------Información del perfil de usuario ------------*/
 
-.profile{
+.profile {
     display: flex;
     justify-content: space-between;
 }
 
-.profile--info--nombreySeguidores{
+.profile--info--nombreySeguidores {
     display: flex;
     align-items: center;
 }
-.profile--info--nombreySeguidores--nombre{
+
+.profile--info--nombreySeguidores--nombre {
     margin-right: 14px;
     max-width: 372px;
 }
-.profile--info--nombreySeguidores--nombre h1{
+
+.profile--info--nombreySeguidores--nombre h1 {
     font-weight: bold;
 }
 
-.profile--info--nombreySeguidores--seguidores h5{
+.profile--info--nombreySeguidores--seguidores h5 {
     font-weight: bold;
     color: var(--grey);
 }
 
-.profile--info--ubicacion{
+.profile--info--ubicacion {
     margin-top: 16px;
 }
 
-.profile--info--enfoque{
+.profile--info--enfoque {
     margin-top: 24px;
     display: flex;
 }
 
-.profile--info--enfoque--instrumentos{
+.profile--info--enfoque--instrumentos {
     margin-right: 60px;
 }
 
-.profile--info--enfoque--instrumentos h5{
+.profile--info--enfoque--instrumentos h5 {
     font-weight: 500;
 }
 
-.profile--info--enfoque--instrumentos p{
+.profile--info--enfoque--instrumentos p {
     font-weight: bold;
     color: var(--grey);
 }
 
-.profile--info--enfoque--generos{
+.profile--info--enfoque--generos {
     margin-right: 60px;
 }
 
-.profile--info--enfoque--generos h5{
+.profile--info--enfoque--generos h5 {
     font-weight: 500;
 }
 
-.profile--info--enfoque--generos p{
+.profile--info--enfoque--generos p {
     font-weight: bold;
     color: var(--grey);
 }
 
-.profile--info--demo{
+.profile--info--demo {
     margin-top: 38px;
     background-color: var(--black);
     width: 700px;
@@ -91,14 +96,14 @@ header{
     border-radius: 10px;
 }
 
-.profile--info--demo{
+.profile--info--demo {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     padding: 15px 28px 15px 22px;
 }
 
-.profile--info--demo--img{
+.profile--info--demo--img {
     background-image: url('../../src/assets/perfilPublico/img/perfil-demo-img.jpg');
     background-size: cover;
     width: 80px;
@@ -107,7 +112,7 @@ header{
 }
 
 .profile--info--demo--titulo h3,
-.profile--info--demo--titulo h5{
+.profile--info--demo--titulo h5 {
     color: var(--white);
 }
 
@@ -116,41 +121,43 @@ header{
 /* .profile--follow{
     margin-left: 114px;
 } */
-.profile--follow--buttons{
+.profile--follow--buttons {
     display: flex;
 }
 
-.profile--follow--buttons--seguir{
+.profile--follow--buttons--seguir {
     background-color: var(--main-color);
     color: var(--white);
     margin-right: 52px;
 }
-.profile--follow--buttons--seguir:hover{
+
+.profile--follow--buttons--seguir:hover {
     background-color: var(--hover-color);
 }
 
-.profile--follow--buttons--donar{
+.profile--follow--buttons--donar {
     background-color: transparent;
     color: var(--main-color);
     border: 1px solid var(--main-color);
 }
 
-.profile--follow--mensaje{
+.profile--follow--mensaje {
     margin-top: 32px;
 }
-.profile--follow--mensaje h4{
+
+.profile--follow--mensaje h4 {
     font-weight: bold;
 }
 
-.profile--follow--mensaje h4 span{
+.profile--follow--mensaje h4 span {
     margin-left: 32px;
 }
 
-.profile--follow--redes{
+.profile--follow--redes {
     font-display: flex;
 }
 
-.profile--follow--redes img{
+.profile--follow--redes img {
     width: 40px;
     margin-right: 36px;
     margin-top: 20px;
@@ -159,26 +166,26 @@ header{
 
 /* ----------Sección de demos   /   Sección de Escenarios------------- */
 .escenarios,
-.demos{
-   margin-top: 46px;
+.demos {
+    margin-top: 46px;
 }
 
 .escenarios hr,
-.demos hr{
+.demos hr {
     margin-top: 16px;
     margin-bottom: 32px;
 }
 
 .escenarios--cards,
-.demos--cards{
+.demos--cards {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
 
 .escenarios--cards--item,
-.demos--cards--item{
+.demos--cards--item {
     width: 286px;
     max-width: 286px;
     height: 286px;
@@ -186,7 +193,7 @@ header{
 }
 
 .escenarios--cards--item img,
-.demos--cards--item img{
+.demos--cards--item img {
     width: 100%;
     height: 100%;
     max-width: 100%;
@@ -194,7 +201,7 @@ header{
 }
 
 .escenarios--item,
-.demos--item{
+.demos--item {
     width: 286px;
     height: 286px;
     display: flex;
@@ -204,7 +211,7 @@ header{
 }
 
 .escenarios--item img,
-.demos--item img{
+.demos--item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -213,7 +220,7 @@ header{
 
 
 .escenarios--item--info,
-.demos--item--info{
+.demos--item--info {
     border-radius: 10px;
     position: absolute;
     text-align: center;
@@ -228,27 +235,37 @@ header{
 }
 
 .escenarios--item--info .card-title,
-.demos--item--info .card-title{
+.demos--item--info .card-title {
     margin: 0;
     padding: 0;
 }
 
-.escenarios--item--info h4{
+.escenarios--item--info h4 {
     margin-top: 4px;
     margin-bottom: 6px;
 }
 
 .escenarios--item--info button,
-.demos--item--info button{
+.demos--item--info button {
     margin-top: 18px;
 }
 
+@media screen and (max-width: 886px) {
+
+    .escenarios--cards,
+    .demos--cards {
+        display: none;
+
+    }
+
+}
+
 /* ------Acerca de -------- */
-.acerca{
+.acerca {
     margin-top: 50px;
 }
 
-.acerca .linea{
+.acerca .linea {
     margin: 16px 0 32px 0;
 }
 
@@ -257,7 +274,7 @@ header{
     max-width: 600px;
 }
 
-.acerca--info p:nth-child(2){
+.acerca--info p:nth-child(2) {
     font-weight: bold;
     color: var(--grey);
     cursor: pointer;
@@ -265,12 +282,12 @@ header{
 
 /* Sección Recomendaciones */
 
-.recomendaciones--carousel .carousel .carousel-inner{
+.recomendaciones--carousel .carousel .carousel-inner {
     display: flex;
     align-items: center;
 }
 
-.recomendaciones--carousel--item{
+.recomendaciones--carousel--item {
     height: 226px;
     width: 726px;
     background-color: grey;
@@ -281,46 +298,52 @@ header{
     gap: 54px;
 }
 
-.recomendaciones--carousel--item--info{
+.recomendaciones--carousel--item--info {
     width: 754px;
 }
 
 
 /* ------------Sección similares------------ */
 
-.similares{
+.similares {
     margin-top: 38px;
 }
 
-.similares hr{
+.similares hr {
     margin: 16px 0 32px 0;
 }
-.similares--item{
+
+.similares--item {
     width: 184px;
     height: 400px;
 }
 
-.sistem--item--info{
+.sistem--item--info {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.similares--item--info h5{
+
+.similares--item--info h5 {
     font-weight: bold;
 }
-.similares--item img{
+
+.similares--item img {
     width: 100%;
     height: 184px;
     object-fit: cover;
     border-radius: 5px 5px 0 0;
 }
-.similares--item--info span{
+
+.similares--item--info span {
     margin-top: 6px;
 }
-.similares--item--info span:nth-of-type(2){
+
+.similares--item--info span:nth-of-type(2) {
     color: var(--grey);
 }
-.similares--item--info button{
+
+.similares--item--info button {
     margin-top: 25px;
     width: 128px;
     position: absolute;
@@ -330,7 +353,7 @@ header{
 
 
 /* ---------CARRUSEL----------- */
-.carousel{
+.carousel {
     width: 100%;
     display: flex;
     align-items: center;
@@ -338,16 +361,15 @@ header{
 }
 
 .carousel--prevArrow,
-.carousel--nextArrow{
+.carousel--nextArrow {
     cursor: pointer;
 }
 
 
-.carousel--cards{
+.carousel--cards {
     width: 80%;
     display: flex;
     align-items: center;
     gap: 30px;
     overflow-x: hidden;
 }
-
