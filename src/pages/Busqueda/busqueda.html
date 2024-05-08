@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="busqueda.css">
 
   </head>
-  <body>
+  <body class="vh-100">
     <!-------------------------- Navbar -------------------------->
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container-fluid">
@@ -30,15 +30,16 @@
         <!-- Configuración del toggler button (titulo, contenido, etc)-->
         <div class="offcanvas offcanvas-start shadow-none menu--hamburguesa" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div class="offcanvas-header border-bottom">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">La tribu del byte</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <!-- Contenido de Navbar, además de la configuración para visualizar la opciones en el toggler button -->
           <div class="offcanvas-body d-flex flex-column flex-lg-row p-4">
             <!-- Buscador -->
-            <div class="d-flex justify-content-center align-content-center p-0">
-              <input class="form-control mx-auto d-flex mt-3 buscador--configuracion" type="search" placeholder="Buscador" aria-label="Buscador">
-            </div>
+            <form class="form-floating my-2" id="floatingInput">
+              <input class="barra--busqueda--contenedor--form form-control" type="search" placeholder="Buscar" aria-label="Buscar">
+              <label for="floatingInput" class="d-flex justify-content-center align-items-center">Buscar</label>
+            </form>
             <!-- Opciones de texto para redirigir a sus respectivas paginas -->
             <ul class="navbar-nav d-flex justify-content-center align-items-center flex-grow-1 pe-0 text-config">
               <li class="nav-item">
@@ -64,7 +65,7 @@
                 </button>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item texto--drop--perfil" href="#"><p>Perfil</p></a></li>
-                  <li><a class="dropdown-item texto--drop--sesion" href="#"><p>Cerrar sesión</p></a></li>
+                  <li><a class="dropdown-item texto--drop--sesion" href="/index.html"><p>Cerrar sesión</p></a></li>
                 </ul>
               </div>
             </div> 
@@ -82,8 +83,10 @@
             <div class="col">
               <div class="barra--busqueda--contenedor d-flex align-items-center">
                 <!-- Barra de búsqueda -->
-                <form class="form-inline my-2 my-lg-0 flex-grow-1">
+                <form class="form-floating my-2 my-lg-0 flex-grow-1" id="floatingInput">
                   <input class="barra--busqueda--contenedor--form form-control mr-sm-2 w-100" type="search" placeholder="Buscar" aria-label="Buscar">
+                  <!-- Texto que se mostrará en el input y tendrá una animación -->
+                  <label for="floatingInput" class="d-flex justify-content-center align-items-center">Buscar</label> 
                 </form>
                 <!-- Icono -->
                 <button class="material-icons p-2 bg-transparent border-0">filter_alt</button>
@@ -95,8 +98,9 @@
         </div>  
       </section>
 
+      <!-------------------------- Botones de filtro -------------------------->      
       <section>
-        <div class="container filtro ">
+        <div class="container filtro">
           <div class="d-flex flex-lg-row flex-column justify-content-center align-items-center flex-md-column">
             <button class="btn d-flex boton outlined justify-content-center align-items-center boton--filtros" type="submit">Guitarra</button>
             <button class="btn d-flex boton outlined justify-content-center align-items-center boton--filtros" type="submit">Bateria</button>
@@ -106,42 +110,56 @@
           </div>
         </div>
       </section>
-       <!-------------------------- Contenedor de artistas, videos e imagenes -------------------------->
-      <section>
-        <div class="container">
+
+      <!-------------------------- Contenedor de artistas, videos e imagenes -------------------------->
+      <section class="artistas bg-black">
+        <div class="container-fluid">
           <div class="row">
               <div class="col-md-4">
-                <!-- Aquí va la lista de chats -->
-                <ul class="list-group">
-                  <li class="list-group-item">Chat 1</li>
-                  <li class="list-group-item">Chat 2</li>
-                  <li class="list-group-item">Chat 3</li>
-                  <li class="list-group-item">Chat 3</li>
-                  <li class="list-group-item">Chat 3</li>
-                  <li class="list-group-item">Chat 3</li>
-                  <li class="list-group-item">Chat 3</li>
-                  <li class="list-group-item">Chat 3</li>
-                  <li class="list-group-item">Chat 3</li>
-                  <li class="list-group-item">Chat 3</li>
-                  <li class="list-group-item">Chat 3</li>
-                  <li class="list-group-item">Chat 3</li>
-                  <!-- Agrega más chats según sea necesario -->
-                </ul>
-              </div>
-              <div class="col-md-8">
-                <!-- Aquí va la conversación -->
-                <div class="card">
-                  <div class="card-body">
-                      <!-- Aquí va la conversación -->
+                  <div id="chat-list-container">
+                      <ul id="chat-list-visible" class="list-group">
+                          <!-- Chats visibles -->
+                          <li class="list-group-item">Chat 1</li>
+                          <li class="list-group-item">Chat 2</li>
+                          <li class="list-group-item">Chat 3</li>
+                          <li class="list-group-item">Chat 4</li>
+                          <li class="list-group-item">Chat 5</li>
+                          <button id="see-more-btn" class="btn btn-primary mt-2">Ver más</button>
+                          <!-- Agrega más chats aquí -->
+                          <ul id="extra-chats" class="list-group">
+                            <!-- Chats adicionales -->
+                            <li class="list-group-item">Chat 6</li>
+                            <li class="list-group-item">Chat 7</li>
+                            <li class="list-group-item">Chat 8</li>
+                            <li class="list-group-item">Chat 7</li>
+                            <li class="list-group-item">Chat 8</li>
+                            <!-- Agrega más chats adicionales aquí -->
+                          </ul>
+                      </ul>
                   </div>
-                </div>
+                  
+              </div>
+              
+              <div class="col-md-8">
+                  <div id="message-container">
+                      <ul id="message-list" class="list-group">
+                          <!-- Mensajes -->
+                          <li class="list-group-item">Mensaje 1</li>
+                          <li class="list-group-item">Mensaje 2</li>
+                          <li class="list-group-item">Mensaje 3</li>
+                          <!-- Agrega más mensajes aquí -->
+                      </ul>
+                  </div>
               </div>
           </div>
       </div>
       </section>
+      
 
     </main>
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <script src="busqueda.js"></script>
   </body>
 </html>
