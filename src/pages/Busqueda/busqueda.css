@@ -3,6 +3,7 @@
 body
 {
     background-color: var(--background-color);
+    overflow-y: none;
 }
 /********************************* Navbar *********************************/
 /* Se coloca el color de fondo del cuerpo principal de la navbar, así como su altura predeterminada */
@@ -22,18 +23,7 @@ body
 {
     margin-left: 26px;
 }
-/* Se configura el tamaño de configuración */
-.buscador--configuracion
-{
-    width: 161px;
-    height: 40px;
-}
-/* Se configura el color y la sombra que tendrá el buscador al ingresar texto */
-.buscador--configuracion:focus
-{
-    border-color: var(--main-color);
-    box-shadow: 0 0 5px var(--main-color);
-}
+
 /* Se redimensiona la imagen de perfil */
 .perfil
 {
@@ -51,32 +41,36 @@ body
     color: var(--navbarText-color);
 }
 /* Color de texto al pasar el cursor */
-/* Color de texto al pasar el cursor */
 .texto--configuracion:hover, .texto--drop--perfil, .texto--drop--sesion
 {
     color: var(--navbarSelected);
 }
+/* Color de texto de cerrar sesión del dropdown  */
 .texto--drop--sesion:hover
 {
     color: red;
 }
 
 /********************************* Barra de busqueda *********************************/
+
+/* Se ingresa un margen para que la barra no se superponga con el navbar */
 .barra--busqueda
 {
-    margin-top: 116px;
+    margin-top: 46px;
 }
 
+/* Se coloca un border-radios de 10px como se acordó con todo el equipo, un color de borde gris y un tamaño del largo para la sección de navbar*/
 .barra--busqueda--contenedor--form
 {
     border-radius: 10px;
-    border-color: var(--active-color);
-    height: 48px;
+    border-color: #dee2e6;
+    width: 163px;
 }
+/* Se quita el box shadow predeterminado de bootstrap y se coloca un color de borde cuando el estado de la barra de busqueda se cambia a focus */
 .barra--busqueda--contenedor--form:focus
 {
-    border-color: var(--main-color);
-    box-shadow: 0 0 5px var(--main-color);
+    border-color: #dee2e6;
+    box-shadow: none;
 }
 
 /* Estilo para hacer la barra de búsqueda responsiva */
@@ -89,6 +83,7 @@ body
     } 
 }
 
+/* Se reasigna un nuevo tamaño al botón de filtrar */
 .boton--filtrar
 {
     width: 60px;
@@ -122,6 +117,7 @@ body
     font-feature-settings: 'liga';
   }
 
+/********************************* Botones predeterminados del filtrado *********************************/
 .filtro
 {
   margin-top: 41px;
@@ -132,4 +128,19 @@ body
   height: 37px;
   margin: 5px 14px;
   border-radius: 10px;
+}
+#chatsContainer {
+     /* Altura fija para el contenedor de mensajes */
+    overflow-y: auto; /* Hacerlo desplazable verticalmente */
+}
+
+#chat-list-container, #message-container {
+    height: 400px; /* Altura fija para los contenedores */
+    overflow-y: auto; /* Hacerlos desplazables verticalmente */
+}
+
+.artistas
+{
+    margin: 80px 0;
+    height: 604px;
 }
