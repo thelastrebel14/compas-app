@@ -147,34 +147,20 @@
 }
 
 
-
+/* Nueva publicación */
 
 .nueva--publicacion {
     background-color: var(--secondaryBg-color);
     width: 100%;
 }
 
-#imgPublicacion {
-    width: 60px;
-}
-
-.botones--publicacion {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
-.nueva--publicacion--alinear {
-    padding-top: 20px;
-    padding-right: 70px;
-    padding-bottom: 20px;
-    padding-left: 70px;
-    display: flex;
-    flex-direction: row;
-}
-
 .nueva--publicacion input {
-    border-color: var(--hover-color);
+    width: 900px;
+}
+
+.nueva--publicacion label {
+    font-weight: 400;
+    font-size: 16px;
 }
 
 .nueva--publicacion hr {
@@ -189,8 +175,31 @@
     padding-left: 4px;
 }
 
-.modal-content {
-    background-color: var(--background-color);
+#imgPublicacion {
+    width: 60px;
+}
+
+.botones--publicacion {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.botones--publicacion button {
+    border: none;
+    font-weight: bold;
+    font-size: 18px;
+    padding-bottom: 20px;
+}
+
+.nueva--publicacion--alinear {
+    padding-top: 20px;
+    padding-right: 70px;
+    padding-bottom: 20px;
+    padding-left: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .modal-title h4 {
@@ -210,6 +219,16 @@
 .nueva--publicacion--modal--formulario input {
     width: 200px;
 }
+
+.input-multimedia {
+    background-color: var(--);
+}
+
+/* .modal-alinear-botones {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+} */
 
 /* Dashboard, contiene las siguientes secciones:
     Tu Ritmo
