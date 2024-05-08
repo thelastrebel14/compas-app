@@ -59,9 +59,12 @@
                     <a class="nav-link colorText" href="#contacto">Contacto</a>
                 </li>
               </ul>
-              <div class="d-flex justify-content-center align-content-center">
-                <button class="btn boton flat shadow-none border-0">Compás App</button>
-              </div>
+              <form class="d-flex" action="/src/pages/MiEscena/miEscena.html">
+                <div class="d-flex justify-content-center align-content-center">
+                  <button class="btn boton flat shadow-none border-0" type="submit">Compás App</button>
+                </div>
+              </form>
+              
             <div>
           </div>
         </div>
@@ -431,11 +434,14 @@
               <label for="e-mail"></label>
               <input type="email" class="form-control" id="e-mail" placeholder="Correo">
             </div>
-            <div class="message">
+            <div class="message d-flex justify-content-center">
               <label for= "text"></label>
               <textarea class="text" id="text" rows="8" placeholder="Mensaje"></textarea>
             </div>
-            <button class="button" type="submit">Enviar</button>
+            <div class="d-flex justify-content-center">
+              <button class="button" type="submit">Enviar</button>
+            </div>
+            
           </form>
       </section>
     </main>
