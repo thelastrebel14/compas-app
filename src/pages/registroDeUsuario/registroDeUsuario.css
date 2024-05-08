@@ -52,14 +52,15 @@
   .registroDeUsuario--form--buttons {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
   #registrarme {
-    width: 30%;
+    width: 50%;
     margin: 5px;
   }
   #cancelar {
     margin: 5px;
-    width: 30%;
+    width: 50%;
   }
   #seleccionMusico {
     width: 100%;
