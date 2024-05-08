@@ -1,0 +1,44 @@
+[
+    {
+        "idPublicacion" : 1,
+        "idAutor" : 1
+    },
+    {
+        "idPublicacion" : 1,
+        "idAutor" : 2
+    },
+    {
+        "idPublicacion" : 1,
+        "idAutor" : 3
+    },
+    {
+        "idPublicacion" : 1,
+        "idAutor" : 4
+    },
+    {
+        "idPublicacion" : 1,
+        "idAutor" : 5
+    },
+    {
+        "idPublicacion" : 1,
+        "idAutor" : 6
+    },
+    {
+        "idPublicacion" : 1,
+        "idAutor" : 7
+    },
+    {
+        "idPublicacion" : 1,
+        "idAutor" : 8
+    },
+    {
+        "idPublicacion" : 1,
+        "idAutor" : 9
+    },
+    {
+        "idPublicacion" : 1,
+        "idAutor" : 10
+    }
+
+
+]

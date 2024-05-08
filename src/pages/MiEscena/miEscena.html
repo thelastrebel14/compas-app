@@ -1,45 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!------------------  Google icons import  --------------------->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
     <!-------------------------------  Bootstrap  ---------------------------->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
     <title>Mi Escena</title>
     <!---------------------------------  Estilos  ----------------------------->
-    <link rel="stylesheet" href="../../../Styles/main.css">
-    <link rel="stylesheet" href="stylesEscena.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../../../Styles/main.css" />
+    <link rel="stylesheet" href="/src/assets/elementos/navbar/navbar.css" />
+    <link rel="stylesheet" href="/src/assets/elementos/footer/footer.css" />
+    <link rel="stylesheet" href="stylesEscena.css" />
+    
+  </head>
+
+  <body>
+    <!-------------------------- Navbar -------------------------->
+    <!-------------------------- Navbar -------------------------->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+  
+          <!-- Imagen del logo de COMPÁS App para redirigir a mi escena -->
+          <a class="navbar-brand align-content-center" href="#"><img src="/src/assets/img/logo.ico" alt="logo--compásApp" class="imagen--compasApp"></a>
+  
+          <!-- Configuración de la apriencia del toggler button -->
+          <button class="navbar-toggler shadow-none border-0 boton-hamburguesa" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <!-- Configuración del toggler button (titulo, contenido, etc)-->
+          <div class="offcanvas offcanvas-start shadow-none menu--hamburguesa" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header border-bottom">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">La tribu del byte</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <!-- Contenido de Navbar, además de la configuración para visualizar la opciones en el toggler button -->
+            <div class="offcanvas-body d-flex flex-column flex-lg-row p-4">
+              <!-- Buscador -->
+              <form class="form-floating my-2" id="floatingInput">
+                <input class="barra--busqueda--contenedor--form form-control" type="search" placeholder="Buscar" aria-label="Buscar">
+                <label for="floatingInput" class="d-flex justify-content-center align-items-center">Buscar</label>
+              </form>
+              <!-- Opciones de texto para redirigir a sus respectivas paginas -->
+              <ul class="navbar-nav d-flex justify-content-center align-items-center flex-grow-1 pe-0 text-config">
+                <li class="nav-item">
+                  <a class="nav-link texto--configuracion" aria-current="page" href="#"><h5>Mi escena</h5></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link texto--configuracion" href="#"><h5>Artistas</h5></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link texto--configuracion" href="#"><h5>Escenarios</h5></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link texto--configuracion" href="#"><h5>Mensajes</h5></a>
+                </li>
+              </ul>
+              <!-- Espacio para generar un contenedor de un tamaño especifico para que las opciones de texto queden en el centro de la pantalla -->
+              <div class="d-flex margen"></div>
+              <!-- Opciones de la imagen con funcionamiento dropdown -->
+              <div class="d-flex justify-content-center align-content-center text-center ">
+                <div class="dropdown-center">
+                  <button class="btn dropdown-toggle border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="/src/assets/equipo/andrea_garibaldi.jpg" alt="perfil" class="rounded-circle perfil">
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item texto--drop--perfil" href="#"><p>Perfil</p></a></li>
+                    <li><a class="dropdown-item texto--drop--sesion" href="/index.html"><p>Cerrar sesión</p></a></li>
+                  </ul>
+                </div>
+              </div> 
+            </div>
+          </div>
+        </div>
+      </nav>
     <main>
+        <h1>Mi Escena</h1>
+        <h3>Encuentra músicos y escenarios cerca de ti</h3>
         <!--Carusel de publicidad-->
-        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+        <div id="demo" class="carousel carousel-principal slide" data-bs-ride="carousel">
 
             <!-- Indicators/dots -->
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-              <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-              <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            <div id="bannerIndicadoresCarousel-contenedor" class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
             </div>
-          
             <!-- The slideshow/carousel -->
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="../../assets/miEscena/banner_1.jpg" alt="Banner" class="carousel-img d-block w-100">
-              </div>
-              <div class="carousel-item">
-                <img src="../../assets/miEscena/banner_2.jpg" alt="Banner" class="carousel-img d-block w-100">
-              </div>
-              <div class="carousel-item">
-                <img src="../../assets/miEscena/banner_3.jpg" alt="Banner" class="carousel-img d-block w-100">
-              </div>
+            <div id="bannerElementosCarousel-contenedor" class="carousel-inner">
+                <div class="carousel-item active">
+                <img src="../../assets/miEscena/banner_1.jpg" alt="Banner" class="carousel-img carousel-principal-img d-block w-100">
+                </div>
+                <div class="carousel-item">
+                <img src="../../assets/miEscena/banner_2.jpg" alt="Banner" class="carousel-img carousel-principal-img d-block w-100">
+                </div>
+                <div class="carousel-item">
+                <img src="../../assets/miEscena/banner_3.jpg" alt="Banner" class="carousel-img carousel-principal-img d-block w-100">
+                </div>
             </div>
-          
             <!-- Left and right controls/icons -->
             <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
                 <span class="material-symbols-outlined custom-arrow">arrow_back_ios</span>
@@ -47,42 +118,304 @@
             <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
                 <span class="material-symbols-outlined custom-arrow">arrow_forward_ios</span>
             </button>
-          </div>
-        <!--Nueva publicación-->
-        <section class="nueva--publicacion--container">
-            <img src="https://th.bing.com/th/id/OIP.fMaa216CcNx57aG5oYldiQHaHc?w=204&h=205&c=7&r=0&o=5&dpr=1.3&pid=1.7" class="img-fluid rounded-circle" src="ny.jpg" alt="New York">
-            <input type="" placeholder="¿Cómo va tu vibra hoy?"/>
+        </div>
+
+             <!--Abre sección de nueva publicación-->
+        <section class="nueva--publicacion">
+            <div class="nueva--publicacion--alinear">
+                <img src="../../assets/img/Carlos Santana.jpg" class="img-fluid rounded-circle" alt="Carlos Santana"
+                    id="imgPublicacion">
+                <input type="text" class="comment" placeholder="¿Cómo va tu vibra hoy?" />
+            </div>
             <hr>
-            <button class="boton flat">Foto/Video</button>
-            <button class="boton flat">Estoy buscando artistas</button>
-        </section>
-        <div><!--Tu Ritmo-->
-            <h2c class="title">Tu Ritmo</h2>
-            <div class= contenedor>
-                <img class="kawai" src="https://th.bing.com/th/id/OIP.fMaa216CcNx57aG5oYldiQHaHc?w=204&h=205&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="señor kawaii" class="kawai">
-                <p class="name">Kawai Man</p>
-                <p class="instruments"> Guitarra|Bajo sexto|voz-principal</p>
-                <img class="mexicanMusic" src="https://th.bing.com/th/id/OIP.z584B0fwnJ4cYMMBWAzVigHaJ4?pid=ImgDet&w=179&h=238&c=7&dpr=1.3">
-                <div class="intContainer">
-                    <button class="like"> Me entona </button>
-                    <button class="share"> Compartir </button>
-                    <button class="colaborate"> Colaborar </button>
-                    <div>
-                        <label for="comment"></label>
-                        <input type="text" class="comment" placeholder="Comentar">
+            <div class="botones--publicacion">
+                <button class="boton flat" data-bs-toggle="modal" data-bs-target="#modalFotoVideo">
+                    Foto/Vídeo
+                </button>
+                <button type="button" class="boton flat" data-bs-toggle="modal" data-bs-target="#modalArtistas">
+                    Estoy buscando artistas
+                </button>
+            </div>
+
+            <!-- Modal para "Foto/Vídeo" -->
+            <div class="modal" id="modalFotoVideo">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Crear publicación</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="nueva--publicacion--modal--perfil">
+                            <img src="../../assets/img/Carlos Santana.jpg" class="img-fluid rounded-circle" alt="Carlos Santana"
+                            id="imgPublicacion">
+                            <h4>Carlos Santana</h4>
+                            </div>
+                            <br>
+                        <form action="" id="formularioFotoVideo">
+                            <input type="text" class="comment" name="publicacionTexto" placeholder="¿Qué evento estás planeando?"/>
+                            <br> 
+                            <input type="file" name="publicacionMultimedia">
+                            <br> <br>
+                            <p>*Los archivos multimedia son opcionales</p>
+                            <!-- Modal footer -->
+                            <div>
+                            <button type="submit" class="boton flat" data-bs-dismiss="modal">Publicar</button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </form>
+                        </div>
                     </div>
-                    
                 </div>
             </div>
-            <!-- Contenido dentro del contenedor -->
-            
-            
-            
-        </div> <!--Tu Ritmo-->
-        <!--Anuncios-->
-    </main>
-    <!---------------------    Bootstrap    ---------------------------------->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+            <!-- Modal para "Estoy buscando artistas" -->
+            <div class="modal" id="modalArtistas">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Crear publicación</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="nueva--publicacion--modal--perfil">
+                            <img src="../../assets/img/Carlos Santana.jpg" class="img-fluid rounded-circle" alt="Carlos Santana"
+                            id="imgPublicacion">
+                            <h4>Carlos Santana</h4>
+                            </div>
+                            <br>
+                            <form action="" id="formularioArtista">
+                                <fieldset>
+                                <div>
+                                    <legend>Encuentra artistas o escenarios cerca de ti llenando el siguiente formulario</legend>
+                                </div>
+                                <br>
+                                    <div class="nueva--publicacion--modal--formulario">
+                                    <label>Título de la publicación</label>
+                                    <input type="text" name="tituloPublicacion" placeholder="Busco guitarrista en..."/>
+                                    </div>
+                                <br>
+                                    <div class="nueva--publicacion--modal--formulario">
+                                    <label>Cuerpo de la publicación</label>
+                                    <input type="text" name="cuerpoPublicacion" placeholder="Más detalles"/>
+                                    </div>
+                                <br>
+                                <div>
+                                    <div>
+                                        <label>¿Buscas un artista o un escenario?</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="busquedaArtista" name="artistaOEscenario" value="busquedaArtista"/>
+                                        <label for="busquedaArtista">Artista</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="busquedaEscenario" name="artistaOEscenario" value="busquedaEscenario" />
+                                        <label for="busquedaEscenario">Escenario</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div>
+                                    <div>
+                                        <label>¿Qué género o géneros te interesan?</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="Norteno" name="generoNorteno" value="Norteno"/>
+                                        <label for="Norteno">Norteño</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="Cumbia" name="generoCumbia" value="Cumbia" />
+                                        <label for="Cumbia">Cumbia</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="Salsa" name="generoSalsa" value="Salsa" />
+                                        <label for="Salsa">Salsa</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="Mariachi" name="generoMariachi" value="Mariachi" />
+                                        <label for="Mariachi">Mariachi</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div>
+                                    <div>
+                                        <label>¿Qué instrumentos te interesan?</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="Guitarra" name="instrumentoGuitarra" value="Guitarra"/>
+                                        <label for="Guitarra">Guitarra</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="Acordeon" name="instrumentoAcordeon" value="Acordeon" />
+                                        <label for="Acordeon">Acordeón</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="Bateria" name="instrumentoBateria" value="Bateria" />
+                                        <label for="Bateria">Batería</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="intetizador" name="instrumentoSintetizador" value="Sintetizador" />
+                                        <label for="Sintetizador">Sintetizador</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div>
+                                    <label>Código postal</label>
+                                    <input type= "tel" name="codigoPostal" placeholder="Código postal"/>
+                                </div>
+                                <br>
+                                <div>
+                                    <label>Ciudad o municipio</label>
+                                    <input type="text" name="ciudadOMunicipio" placeholder="Ciudad o municipio"/>
+                                </div>
+                                <br>
+                                <div>
+                                    <label>Entidad federativa</label>
+                                    <input type="text" name="entidadFederativa" placeholder="Entidad federativa"/>
+                                </div>
+                                <br>
+                                <input type="file" name="artistaMultimedia">
+                                <br> <br>
+                                <p>*Los archivos multimedia son opcionales</p>
+                                </fieldset>
+                                <div class="modal-footer">
+                                    <button type="button" class="boton flat" data-bs-dismiss="modal">Publicar</button>
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!--Cierra sección de nueva publicación-->
+
+        <section class="dashboard-container">
+            <div> <!-- Tu Ritmo-->
+                <h2>Tu Ritmo</h2>
+                <div id="publicacionesMiEscena-contenedor">
+                </div>
+            </div>
+            <div> <!-- Anuncios-->
+                <h2>Anuncios</h2>
+                <div class="anuncios-element"> <!-- Artistas -->
+                    <h3>Artistas</h3>
+                    <div id="carouselExampleArtistas" class="carousel carousel-anuncios slide">
+                        <div id="artistasIndicadoresCarousel-contenedor" class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleArtistas" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleArtistas" data-bs-slide-to="1" aria-label="slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleArtistas" data-bs-slide-to="2" aria-label="3"></button>
+                        </div>
+                        <div id="artistasElementosCarousel-contenedor" class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="https://pm1.narvii.com/7295/d74ab1119680f645e3e98b82eeb63e9b332b15b9r1-635-638v2_hq.jpg" class="carousel-img carousel-anuncios-img d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://th.bing.com/th/id/OIP.-SOegfVqop3mnvrFNVIqmQHaEv?w=253&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" class="carousel-img carousel-anuncios-img d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://th.bing.com/th/id/OIP.PxMulZkadwr_0ajeskSlygAAAA?rs=1&pid=ImgDetMain" class="carousel-img carousel-anuncios-img d-block w-100" alt="...">
     
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleArtistas" data-bs-slide="prev">
+                            <span class="material-symbols-outlined custom-arrow">arrow_back_ios</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleArtistas" data-bs-slide="next">
+                            <span class="material-symbols-outlined custom-arrow">arrow_forward_ios</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="anuncios-element"><!-- Se busca -->
+                    <h3>Se busca</h3>
+                    <div id="carouselExampleSeBusca" class="carousel carousel-anuncios slide">
+                        <div id="seBuscaIndicadoresCarousel-contenedor" class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleSeBusca" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleSeBusca" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleSeBusca" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        <div id="seBuscaElementosCarousel-contenedor" class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="https://th.bing.com/th/id/OIP.-9XTMgI26RpDC19NTyJWDgHaNK?pid=ImgDet&w=182&h=322&c=7&dpr=1.3" class="carousel-img carousel-anuncios-img d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://4.bp.blogspot.com/-b7rTwfkGIpI/XJoQwUECuiI/AAAAAAAAUK8/zuKkQPJ0c0cP-F6lo_9SZc-5E6qHqTqcACK4BGAYYCw/s1600/instru2.jpg" class="carousel-img carousel-anuncios-img d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://www.orquestaritornello.es/wp-content/uploads/2021/10/B%C3%BAsqueda-de-m%C3%BAsicos.jpg" class="carousel-img carousel-anuncios-img d-block w-100" alt="...">
+    
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSeBusca"
+                            data-bs-slide="prev">
+                            <span class="material-symbols-outlined custom-arrow">arrow_back_ios</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSeBusca"
+                            data-bs-slide="next">
+                            <span class="material-symbols-outlined custom-arrow">arrow_forward_ios</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="anuncios-element"><!-- Escenarios -->
+                    <h3>Escenarios</h3>
+                    <div id="carouselExampleEscenarios" class="carousel carousel-anuncios slide">
+                        <div id="escenariosIndicadoresCarousel-contenedor" class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleEscenarios" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleEscenarios" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleEscenarios" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        <div id="escenariosElementosCarousel-contenedor" class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="https://www.decoforevents.com/wp-content/uploads/2019/01/tarima-de-escenario-premios-pimec.jpg" class="carousel-img carousel-anuncios-img d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://hypeabis.id/assets/content/20230904115005000000fdafdf.jpg" class="carousel-img carousel-anuncios-img d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://www.alwatan.com.sa/uploads/images/2023/01/09/887527.png" class="carousel-img carousel-anuncios-img d-block w-100" alt="...">
+    
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleEscenarios" data-bs-slide="prev">
+                            <span class="material-symbols-outlined custom-arrow">arrow_back_ios</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleEscenarios" data-bs-slide="next">
+                            <span class="material-symbols-outlined custom-arrow">arrow_forward_ios</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <a href="#">Acerca de</a>
+        <a href="#">Términos y condiciones</a>
+        <a href="#">Seguridad y privacidad</a>
+        <div class="copyright"> <!--Un div para alinear el icono con el texto de copyright-->
+            <span class="material-symbols-outlined" style="font-size: 26px"> <!--Icono de copyright-->
+                copyright
+            </span>
+            <p>Compás App 2024</p>
+        </div>
+    </footer>
+    <!---------------------    Bootstrap    ---------------------------------->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="miEscena.js"></script>
+    <script src="nuevaPublicacion.js"></script>
+
+    <script type="module" src="./miEscena.js"></script>
 </body>
+
 </html>

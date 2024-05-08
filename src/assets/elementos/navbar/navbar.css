@@ -1,0 +1,60 @@
+@import url("../Styles/main.css");
+
+/********************************* Navbar *********************************/
+/* Se coloca el color de fondo del cuerpo principal de la navbar, así como su altura predeterminada */
+.navbar
+{
+    background-color: var(--secondaryBg-color);
+    height: 70px;
+    padding: 0px;
+}
+/* Se coloca el color de fondo del menu de hamburguesa y el menu desplegable de la imagen dropdown */
+.menu--hamburguesa, .dropdown-menu
+{
+    background-color: var(--secondaryBg-color);
+}
+/* Se coloca un margen a la izquierda del logo de Compás para que quede acorde a figma */
+.imagen--compasApp
+{
+    margin-left: 26px;
+}
+
+/* Se redimensiona la imagen de perfil */
+.perfil
+{
+    width: 60px;
+    height: 60px;
+}
+/* Un margen que ayuda a centrar */
+.margen
+{
+    margin-right: 206px;
+}
+/* Configuración del color de texto */
+.texto--configuracion, .texto--drop--perfil
+{
+    color: var(--navbarText-color);
+}
+/* Color de texto al pasar el cursor */
+.texto--configuracion:hover, .texto--drop--perfil, .texto--drop--sesion
+{
+    color: var(--navbarSelected);
+}
+/* Color de texto de cerrar sesión del dropdown  */
+.texto--drop--sesion:hover
+{
+    color: red;
+}
+/* Se coloca un border-radios de 10px como se acordó con todo el equipo, un color de borde gris y un tamaño del largo para la sección de navbar*/
+.barra--busqueda--contenedor--form
+{
+    border-radius: 10px;
+    border-color: #dee2e6;
+    width: 163px;
+}
+/* Se quita el box shadow predeterminado de bootstrap y se coloca un color de borde cuando el estado de la barra de busqueda se cambia a focus */
+.barra--busqueda--contenedor--form:focus
+{
+    border-color: #dee2e6;
+    box-shadow: none;
+}

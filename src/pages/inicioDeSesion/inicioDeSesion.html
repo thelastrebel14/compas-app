@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio de sesión</title>
+    <link rel="stylesheet" href="inicioDeSesion.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <main class="inicioDeSesion">
+      <!-- Contenedor para alinear el contenido principal -->
+      <!-- contenedor de imagen -->
+      <div class="inicioDeSesion--imagen">
+        <img src="./assets/bandaAnimadaInicio.png" alt="banda" />
+      </div>
+      <!-- contenedor del formulario -->
+      <div class="inicioDeSesion--formContainer">
+        <!-- titulo principal -->
+        <h1>Te damos la bienvenida</h1>
+        <!-- inicia el formulario -->
+        <form action="" method="post">
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control"
+              id="floatingInput correoInput"
+              placeholder="name@example.com"
+            />
+            <label for="floatingInput">Correo electrónico</label>
+          </div>
+          <div class="form-floating">
+            <input
+              type="password"
+              class="form-control"
+              id="floatingPassword passwordInput"
+              placeholder="Password"
+            />
+            <label for="floatingPassword">Contraseña</label>
+          </div>
+          <!-- botones de inicio de sesion y registrarse -->
+          <div class="inicioDeSesion--form--buttons">
+            <button class="boton flat" id="submitButton">Iniciar Sesión</button>
+            <!-- vinculacion a la pagina de registro -->
+            <a
+              href="../registroDeUsuario/registroDeUsuario.html"
+              class="boton outlined"
+              >Registrarse</a
+            >
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <script src="inicioDeSesion.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
