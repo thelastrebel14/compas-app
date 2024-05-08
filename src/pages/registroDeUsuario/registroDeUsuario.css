@@ -1,35 +1,72 @@
 @import url(../../../Styles/main.css);
 @import "bootstrap/scss/variables";
 
-
 /* alinea el titulo al centro y le da margin */
-.registroDeUsuario--heading{
-    text-align: center;
-    margin-top: 46px;
-    margin-bottom: 70px ;
+.registroDeUsuario--heading {
+  text-align: center;
+  margin-top: 46px;
+  margin-bottom: 70px;
 }
-
 
 /* acomoda los botones para que no esten tan a la orilla */
-.registroDeUsuario--form--buttons{
-    padding: 0px 50px;
+.registroDeUsuario--form--buttons {
+  padding: 0px 50px;
 }
-
 
 /* espaciado entre botones */
 #registrarme {
-    margin: 0px 15px;
+  margin: 0px 15px;
 }
-
 
 /* espaciado entre botones */
 #cancelar {
-    margin: 0px 15px;
+  margin: 0px 15px;
 }
 
 /* pone a la misma altura los dropdowns y los demas inputs */
-#inputEstado, #inputCiudad {
-    height: 58px;
-    font-size: 12.8px;
+#inputEstado,
+#inputCiudad {
+  height: 58px;
+  font-size: 12.8px;
 }
 
+#seleccionUsuario {
+  display: flex;
+  flex-direction: row;
+}
+
+#seleccionMusico {
+  width: 50%;
+}
+
+#seleccionEscenario {
+  width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  #seleccionUsuario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .registroDeUsuario--form--buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #registrarme {
+    width: 50%;
+    margin: 5px;
+  }
+  #cancelar {
+    margin: 5px;
+    width: 50%;
+  }
+  #seleccionMusico {
+    width: 100%;
+  }
+
+  #seleccionEscenario {
+    width: 100%;
+  }
+}

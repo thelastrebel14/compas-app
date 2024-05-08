@@ -92,17 +92,17 @@
                 <input
                   type="password"
                   class="form-control"
-                  id="inputPassword"
+                  id="inputPasswordConfirm"
                   placeholder="Confirmar Contraseña"
                 />
-                <label for="inputPassword" class="form-label"
+                <label for="inputPasswordConfirm" class="form-label"
                   >Confirmar Contraseña</label
                 >
               </div>
             </div>
 
-            <div class="linea"></div>
             <!-- Linea divisora para separar el contenido -->
+            <hr />
             <label>Dirección</label>
             <!-- Datos de direccion -->
             <div class="col-md-2">
@@ -119,25 +119,31 @@
             </div>
             <!-- dropdowns para los estados -->
             <div class="col-md-5">
-              <select id="inputEstado" class="form-control">
-                <option selected><label>Estado</label></option>
-                <option id="cpEstado">...</option>
-              </select>
+              <div class="form-floating">
+                <select id="inputEstado" class="form-select">
+                  <option selected><label>Estado</label></option>
+                  <option id="cpEstado">...</option>
+                </select>
+                <label for="inputEstado">Estado</label>
+              </div>
             </div>
             <!-- dropdowns para las ciudades -->
             <div class="col-md-5">
-              <select id="inputCiudad" class="form-control">
-                <option selected><label>Ciudad</label></option>
-                <option id="cpMunicipio">...</option>
-              </select>
+              <div class="form-floating">
+                <select id="inputCiudad" class="form-select">
+                  <option selected><label>Ciudad</label></option>
+                  <option id="cpMunicipio">...</option>
+                </select>
+                <label for="inputCiudad">Ciudad</label>
+              </div>
             </div>
-            <div class="linea"></div>
             <!-- linea divisora del contenido -->
+            <hr />
             <!-- Seleccion de tipo de usuario con radio buttons -->
             <label>Selecciona el tipo de usuario que eres</label>
-            <section id="seleccionUsuario" class="d-flex flex-row">
+            <section id="seleccionUsuario">
               <!-- Radio Soy músico -->
-              <section class="w-50 p-20px">
+              <section class="column-gap-3" id="seleccionMusico">
                 <div class="col-md-6 form-check m-3">
                   <input
                     class="form-check-input"
@@ -177,7 +183,7 @@
               </section>
 
               <!-- Radio Soy escenario -->
-              <section class="w-50 column-gap-3">
+              <section class="column-gap-3" id="seleccionEscenario">
                 <div class="col-md-6 form-check m-3">
                   <input
                     class="form-check-input"
@@ -204,12 +210,22 @@
                 </section>
               </section>
             </section>
-            <section class="linea"></section>
+            <hr />
             <!-- linea divisora final -->
             <section class="registroDeUsuario--form--buttons text-end">
               <!-- botones finales de registro y cancelación -->
-              <button class="boton flat" id="registrarme">Registrarme</button>
-              <button class="boton outlined" id="cancelar">Cancelar</button>
+              <a
+                class="boton flat"
+                id="registrarme"
+                href="../MiEscena/miEscena.html"
+                >Registrarme</a
+              >
+              <a
+                class="boton outlined"
+                id="cancelar"
+                href="../inicioDeSesion/inicioDeSesion.html"
+                >Cancelar</a
+              >
             </section>
           </div>
         </div>
