@@ -150,7 +150,6 @@
 /* Nueva publicación */
 
 .nueva--publicacion {
-    background-color: var(--secondaryBg-color);
     width: 100%;
 }
 
