@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registro de usuario</title>
+    <link rel="icon" href="../../assets/img/logo.ico" type="image/x-icon" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -101,8 +102,8 @@
               </div>
             </div>
 
-            <div class="linea"></div>
             <!-- Linea divisora para separar el contenido -->
+            <hr />
             <label>Dirección</label>
             <!-- Datos de direccion -->
             <div class="col-md-2">
@@ -137,8 +138,8 @@
                 <label for="inputCiudad">Ciudad</label>
               </div>
             </div>
-            <div class="linea"></div>
             <!-- linea divisora del contenido -->
+            <hr />
             <!-- Seleccion de tipo de usuario con radio buttons -->
             <label>Selecciona el tipo de usuario que eres</label>
             <section id="seleccionUsuario">
@@ -210,11 +211,16 @@
                 </section>
               </section>
             </section>
-            <section class="linea"></section>
+            <hr />
             <!-- linea divisora final -->
             <section class="registroDeUsuario--form--buttons text-end">
               <!-- botones finales de registro y cancelación -->
-              <button class="boton flat" id="registrarme">Registrarme</button>
+              <a
+                class="boton flat"
+                id="registrarme"
+                href="../MiEscena/miEscena.html"
+                >Registrarme</a
+              >
               <a
                 class="boton outlined"
                 id="cancelar"
