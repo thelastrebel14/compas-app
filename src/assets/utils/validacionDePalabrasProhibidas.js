@@ -1,8 +1,13 @@
+//Se selecciona el botón que disparará la función (cambiar hacia donde apunta de ser necesario)
+var btnSubmit = document.getElementById("enviar");
+
 function prohibirPalabras() {
+
+    //Lista de palabras prohibidas agregadas manualmente, la lista actualmente contiene groserías de México, de España y groserías en Inglés, además de que contiene palabras que se usan en bases de datos para evitar la posibilidad de Inyecciones SQL
     let palabrasProhibidas = 
     [
         // México
-        "cola", "culo", "pito", "verga", "nalgas", "pendejo", "estupido", "mamon", "chinga", "mierda", "caca", "popo", "pipi", "miar", "orina", "excremento", "tonto", "baboso", "imbecil", "inutil", "pene", "vagina", "pucha", "semen", "esperma", "coger", "testiculo", "glande", "clitoris", "cabron", "idiota", "masturba", "bastardo", "escroto", "teta", "chichi", "bubi", "seno", "mamar",
+        "cola", "culo", "pito", "verga", "nalgas", "pendejo", "pendeja", "estupida", "estupido", "mamon", "mamona", "chinga", "mierda", "caca", "popo", "pipi", "miar", "orina", "excremento", "tonto", "tonta", "baboso", "babosa", "imbecil", "inutil", "pene", "vagina", "pucha", "semen", "esperma", "huevo", "glande", "clitoris", "cabron", "idiota", "masturba", "bastardo", "escroto", "teta", "chichi", "bubi", "seno", "mamar", "puta", "puto",
 
         //España 
         "polla", "follar",
@@ -16,7 +21,10 @@ function prohibirPalabras() {
     ];
     let resultado = "";
     let pos = -1
+
+    //Se selecciona el input (cambiar hacia donde apunta de ser necesario)
     let input = document.querySelector(".input").value;
+
     //uso foreach para recorrer cada elemento del array
     palabrasProhibidas.forEach(function (element) {
 
@@ -36,3 +44,8 @@ function prohibirPalabras() {
     }
     console.log(resultado);
 }
+
+btnSubmit.addEventListener("click", (e) => {
+    e.preventDefault();
+    prohibirPalabras();
+});
