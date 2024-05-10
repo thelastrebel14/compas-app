@@ -16,7 +16,7 @@ function prohibirPalabras() {
     ];
     let resultado = "";
     let pos = -1
-    let input = document.getElementById("input").value;
+    let input = document.querySelector(".input").value;
     //uso foreach para recorrer cada elemento del array
     palabrasProhibidas.forEach(function (element) {
 
