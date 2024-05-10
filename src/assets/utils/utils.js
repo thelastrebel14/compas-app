@@ -21,7 +21,7 @@
 	- 1 símbolo
 */
 /** 
- * Validación de coincidencia de contraseña (Javier)
+Validación de coincidencia de contraseña (Javier)
  * 
  * Validaciones a considerar: 
  * - Sean dos strings iguales
