@@ -515,7 +515,7 @@
               <form>
                 <div class="mb-3">
                     <label for="img--cover" class="col-form-label">Cargar foto</label>
-                    <input type="file" name="foto--cover" id="img--cover">
+                    <input type="file" name="foto--cover" id="img--cover" accept="image/png, image/jpeg">
                   </div>
               </form>
             </div>
@@ -538,7 +538,7 @@
               <form>
                 <div class="mb-3">
                     <label for="img--cover" class="col-form-label">Cargar foto</label>
-                    <input type="file" name="foto--cover" id="img--cover">
+                    <input type="file" name="foto--cover" id="img--cover" accept="image/png, image/jpeg">
                   </div>
               </form>
             </div>
@@ -582,6 +582,10 @@
                         <div class="mb-3">
                             <label for="redPerfil" class="col-form-label">Agregar red social</label>
                             <input type="text" class="form-control" id="redPerfil">
+                        </div>
+                        <div class="mb-3">
+                            <label for="numTelefono" class="col-form-label">Número de Telefono</label>
+                            <input type="text" class="form-control" id="numTelefono" placeholder="Phone number"> <!--type="number"-->
                         </div>
                         <div class="modal-footer">  <!-- Button debe ser type="submit" y estar dentro de <form> --- </form>-->
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -628,8 +632,10 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
         crossorigin="anonymous">
     </script>
+    <script src="../../assets/utils/validacionTelefono.js"></script>
     <script src="./perfilPrivado.js"></script>
     <script src="./carrucel.js"></script>
+    
 </body>
 
 </html>

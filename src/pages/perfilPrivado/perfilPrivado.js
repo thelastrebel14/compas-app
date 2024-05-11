@@ -1,6 +1,7 @@
 function Test() { 
     console.log("hola");
 }
+
 //---------------------------------------------------------------------
 // const acercaDe = document.getElementById('idAcercaDeIcon'); // Constante que contiene el elemento iconEditAcercaDe mediante su ID(idAcercaDeIcon)
 
@@ -21,14 +22,19 @@ consformProfileInfo.addEventListener( 'submit' , function(event) {  // al objeto
   const instrumento = document.getElementById('instrumentosPerfil').value;
   const generoMusical = document.getElementById('generoMusicalPerfil').value;
   const redes = document.getElementById('redPerfil').value;
+  const numeroTelefono = document.getElementById('numTelefono').value;
   console.log(nombre);
   console.log(ciudad);
   console.log(estado);
   console.log(instrumento);
   console.log(generoMusical);
   console.log(redes);
-  
+  let numeroValidado = validaTelefonosValidacion(numeroTelefono);
+  console.log(numeroValidado);
   });
+
+
+  
   
 
 //---------------------------------------------------------------------
