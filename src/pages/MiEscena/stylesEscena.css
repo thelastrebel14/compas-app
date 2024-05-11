@@ -391,12 +391,6 @@
     margin-left: 16px;
 }
 
-/* @media (max-width: 1090px) { // Este código provoca que los botones desaparezcan al encoger la pantalla
-    .boton {                    // Recomiendo su eliminación 
-        display: none;
-    }
-} */
-
 /* Anuncios*/
 
 .anuncios-element {
