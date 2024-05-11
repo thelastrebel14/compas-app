@@ -1,6 +1,6 @@
 const contenidoEmail = document.getElementById("submitButton");
 const errorEmail = document.getElementById("error--email");
-function validarEmail(correo)
+function validarEmail()
 {
     if (!contenidoEmail.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) 
     {
