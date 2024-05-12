@@ -234,7 +234,9 @@ function validaContraseña(password) {
 
 //funcion para validar el correo
 function validarEmail(correo) {
-  if (!correo.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+  // Se consideran los dominios y extensiones más populares en México para el registro de correos.
+  // No se aceptan correos universitarios o empresariales ya que la cuenta debe ser personal.
+  if (!correo.match(/^[A-Za-z0-9._%+-]+@(gmail\.com|outlook\.com|hotmail\.com|live\.com|yahoo\.com|aol\.com|telmex\.com|prodigy\.net\.mx|infinitum\.com\.mx)$/)) {
     return false;
   }
   return true;
