@@ -37,7 +37,7 @@ async function rellenoCodigoPostal() {
       `https://api.copomex.com/query/info_cp/${codigoPostal}?token=4d481f50-19e7-4e38-8d07-870975872307`
     );
     if (!response.ok) {
-      throw new Error("No se encontro");
+      throw new Error("No se encontró");
     }
 
     const data = await response.json();
@@ -63,7 +63,7 @@ class RegistroDeUsuario {
     edad,
     genero,
     email,
-    contraseña,
+    contrasena,
     estado,
     ciudad,
     codigoPostal,
@@ -78,7 +78,7 @@ class RegistroDeUsuario {
         (this.edad = edad),
         (this.genero = genero),
         (this.email = email),
-        (this.contraseña = contraseña);
+        (this.contrasena = contrasena);
     }
     localizacion: {
       (this.estado = estado),
@@ -87,21 +87,22 @@ class RegistroDeUsuario {
     }
     tipoUsuario: {
       (this.isMusico = isMusico),
-        (this.instrumentosMusicales = instrumentosMusicales),
-        (this.generosMusicales = generosMusicales),
-        (this.isEscenario = isEscenario),
-        (this.tipoDeEscenario = tipoDeEscenario);
+      (this.instrumentosMusicales = instrumentosMusicales),
+      (this.generosMusicales = generosMusicales),
+      (this.isEscenario = isEscenario),
+      (this.tipoDeEscenario = tipoDeEscenario);
     }
   }
 }
 const botonRegistro = document.getElementById("registrarme");
+
 botonRegistro.addEventListener("click", (e) => {
   e.preventDefault();
   const registroNombre = document.getElementById("inputName").value;
   const registroEdad = document.getElementById("inputAge").value;
   const registroGenero = document.getElementById("inputGender").value;
   const registroEmail = document.getElementById("inputEmail").value;
-  const registroContraseña = document.getElementById("inputPassword").value;
+  const registroContrasena = document.getElementById("inputPassword").value;
   const registroCodigoPostal = document.getElementById("inputCP").value;
   const inputEstado = document.getElementById("inputEstado");
   const selectedEstado = inputEstado?.options[inputEstado.selectedIndex];
@@ -116,42 +117,102 @@ botonRegistro.addEventListener("click", (e) => {
     "inputGenerosMusicales"
   ).value;
   const registroIsEscenario = document.getElementById("soyEscenario").checked;
-  const registroTipoDeEscenario =
-    document.getElementById("inputEscenario").value;
+  const registroTipoDeEscenario = document.getElementById("inputEscenario").value;
 
-  let usuario = new RegistroDeUsuario(
-    (nombre = registroNombre),
-    (edad = registroEdad),
-    (genero = registroGenero),
-    (email = registroEmail),
-    (contraseña = registroContraseña),
-    (estado = estadoValue),
-    (ciudad = ciudadValue),
-    (codigoPostal = registroCodigoPostal),
-    (isMusico = registroIsMusico),
-    (instrumentosMusicales = registroInstrumentos),
-    (generosMusicales = registroGenerosMusicales),
-    (isEscenario = registroIsEscenario),
-    (tipoDeEscenario = registroTipoDeEscenario)
-  );
-  const usuarioJSON = JSON.stringify(usuario);
+  // Verificar si algún campo está vacío o tiene valor no permitido
+  if (
+    registroNombre.trim() === "" ||
+    registroEdad.trim() === "" ||
+    registroGenero.trim() === "" ||
+    registroEmail.trim() === "" ||
+    registroContrasena.trim() === "" ||
+    registroCodigoPostal.trim() === "" ||
+    estadoValue.trim() === "" ||
+    ciudadValue.trim() === "" ||
+    (registroIsMusico && (registroInstrumentos.trim() === "" || registroGenerosMusicales.trim() === "")) ||
+    (registroIsEscenario && registroTipoDeEscenario.trim() === "")
+  ) {
+    alert("Por favor completa todos los campos obligatorios.");
+    return; // Detener la ejecución si algún campo está incompleto
+  } else {
+    let usuario;
+    if (registroIsMusico) {
+      usuario = new RegistroDeUsuario(
+        registroNombre,
+        registroEdad,
+        registroGenero,
+        registroEmail,
+        registroContrasena,
+        estadoValue,
+        ciudadValue,
+        registroCodigoPostal,
+        registroIsMusico,
+        registroInstrumentos,
+        registroGenerosMusicales,
+        false, // No es escenario, por lo tanto false
+        '' // No aplica tipo de escenario
+      );
+    } else {
+      usuario = new RegistroDeUsuario(
+        registroNombre,
+        registroEdad,
+        registroGenero,
+        registroEmail,
+        registroContrasena,
+        estadoValue,
+        ciudadValue,
+        registroCodigoPostal,
+        registroIsMusico,
+        '', // No aplica instrumentos
+        '', // No aplica géneros musicales
+        registroIsEscenario,
+        registroTipoDeEscenario
+      );
+    }
+
+    console.log({usuario})
+    const usuarioJSON = JSON.stringify(usuario);
+    window.location.href = "../MiEscena/miEscena.html";
+  }
+
+    
 });
 
 //funciones a utilizar
 
 //funcion de validacion en vivo
-function validacionEnVivo(inputId, callback) {
+function validacionEnVivo(inputId, callback, evitaEscrituraInvalida = false) {
   let input = document.getElementById(inputId);
+  
   input.oninput = () => {
     let v = input.value;
-    callback(v);
+    isValid = callback(v);
 
-    if (callback(v)) {
+    if(inputId === 'inputPassword'){
+      let confirmarPassword = document.getElementById('inputPasswordConfirm')
+      if(confirmarPassword.value !== ''){
+        if(validaCoincidenciaContrasena(confirmarPassword.value)){
+          confirmarPassword.classList.remove("is-invalid");
+          confirmarPassword.classList.add("is-valid");
+        } else {
+          confirmarPassword.classList.remove("is-valid");
+          confirmarPassword.classList.add("is-invalid");
+          if (evitaEscrituraInvalida){
+            confirmarPassword.value = v.slice(0, -1); // Si el caracter no es válido, lo elimina del campo
+          }
+        }
+      }
+    }
+
+    if (isValid) {
       input.classList.remove("is-invalid");
       input.classList.add("is-valid");
     } else {
       input.classList.remove("is-valid");
       input.classList.add("is-invalid");
+      if (evitaEscrituraInvalida){
+        input.value = v.slice(0, -1); // Si el caracter no es válido, lo elimina del campo
+      }
     }
   };
 }
@@ -171,29 +232,52 @@ function validaCodigoPostal(value) {
 
 // funcion para validar la contraseña
 
-function validaContraseña(password) {
-  password = password.trim();
-  if (password.length < 8) {
-    return false;
-  }
+function validaContrasena(password) {
+  let resultado = true; 
   const regexNumero = /\d/;
   const regexMayuscula = /[A-Z]/;
   const regexSimbolo = /[^a-zA-Z0-9]/;
-
-  if (
-    !regexNumero.test(password) ||
-    !regexMayuscula.test(password) ||
-    !regexSimbolo.test(password)
-  ) {
-    return false;
+  password = password.trim();
+  // Verificar la longitud mínima
+  if (password.length < 8) {
+    resultado = false;
+    document.querySelector('#validacion-caracteres-contrasena label:nth-child(1)').style.color = 'red';
+  } else {
+    document.querySelector('#validacion-caracteres-contrasena label:nth-child(1)').style.color = 'green';
   }
 
-  return true;
+  // Verificar presencia de número
+  if (!regexNumero.test(password)) {
+    resultado = false;
+    document.querySelector('#validacion-caracteres-contrasena label:nth-child(2)').style.color = 'red';
+  } else {
+    document.querySelector('#validacion-caracteres-contrasena label:nth-child(2)').style.color = 'green';
+  }
+
+  // Verificar presencia de mayúscula
+  if (!regexMayuscula.test(password)) {
+    resultado = false;
+    document.querySelector('#validacion-caracteres-contrasena label:nth-child(3)').style.color = 'red';
+  } else {
+    document.querySelector('#validacion-caracteres-contrasena label:nth-child(3)').style.color = 'green';
+  }
+
+  // Verificar presencia de símbolo
+  if (!regexSimbolo.test(password)) {
+    resultado = false;
+    document.querySelector('#validacion-caracteres-contrasena label:nth-child(4)').style.color = 'red';
+  } else {
+    document.querySelector('#validacion-caracteres-contrasena label:nth-child(4)').style.color = 'green';
+  }
+
+  return resultado;
 }
 
 //funcion para validar el correo
 function validarEmail(correo) {
-  if (!correo.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+  // Se consideran los dominios y extensiones más populares en México para el registro de correos.
+  // No se aceptan correos universitarios o empresariales ya que la cuenta debe ser personal.
+  if (!correo.match(/^[A-Za-z0-9._%+-]+@(gmail\.com|outlook\.com|hotmail\.com|live\.com|yahoo\.com|aol\.com|telmex\.com|prodigy\.net\.mx|infinitum\.com\.mx)$/)) {
     return false;
   }
   return true;
@@ -210,11 +294,16 @@ function validarEdad(edad) {
 
 // funcion para confirmar contraseña
 
-function password(password) {
+function validaCoincidenciaContrasena(password) {
   let passwordCheck = document.getElementById("inputPassword").value;
+
   if (password !== passwordCheck) {
+    document.querySelector('#validacion-coincidencia-contrasena').removeAttribute('hidden');  
+    document.querySelector('#validacion-coincidencia-contrasena label:nth-child(1)').style.color = 'red';
     return false;
   }
+  
+  document.querySelector('#validacion-coincidencia-contrasena label:nth-child(1)').style.color = 'green';
   return true;
 }
 
@@ -258,10 +347,10 @@ function validarTexto(texto) {
 
 validacionEnVivo("inputAge", validarEdad);
 validacionEnVivo("inputEmail", validarEmail);
-validacionEnVivo("inputPassword", validaContraseña);
-validacionEnVivo("inputPasswordConfirm", password);
+validacionEnVivo("inputPassword", validaContrasena);
+validacionEnVivo("inputPasswordConfirm", validaCoincidenciaContrasena);
 validacionEnVivo("inputCP", validaCodigoPostal);
-validacionEnVivo("inputName", validarTexto);
+validacionEnVivo("inputName", validarTexto, true);
 
 const form = document.querySelector(".needs-validation");
 form.addEventListener(
