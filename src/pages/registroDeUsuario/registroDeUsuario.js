@@ -95,6 +95,7 @@ class RegistroDeUsuario {
   }
 }
 const botonRegistro = document.getElementById("registrarme");
+
 botonRegistro.addEventListener("click", (e) => {
   e.preventDefault();
   const registroNombre = document.getElementById("inputName").value;
@@ -116,9 +117,24 @@ botonRegistro.addEventListener("click", (e) => {
     "inputGenerosMusicales"
   ).value;
   const registroIsEscenario = document.getElementById("soyEscenario").checked;
-  const registroTipoDeEscenario =
-    document.getElementById("inputEscenario").value;
+  const registroTipoDeEscenario = document.getElementById("inputEscenario").value;
 
+  // Verificar si algún campo está vacío o tiene valor no permitido
+  if (
+    registroNombre.trim() === "" ||
+    registroEdad.trim() === "" ||
+    registroGenero.trim() === "" ||
+    registroEmail.trim() === "" ||
+    registroContrasena.trim() === "" ||
+    registroCodigoPostal.trim() === "" ||
+    estadoValue.trim() === "" ||
+    ciudadValue.trim() === "" ||
+    (registroIsMusico && (registroInstrumentos.trim() === "" || registroGenerosMusicales.trim() === "")) ||
+    (registroIsEscenario && registroTipoDeEscenario.trim() === "")
+  ) {
+    alert("Por favor completa todos los campos obligatorios.");
+    return; // Detener la ejecución si algún campo está incompleto
+  } else {
     let usuario;
     if (registroIsMusico) {
       usuario = new RegistroDeUsuario(
@@ -154,8 +170,12 @@ botonRegistro.addEventListener("click", (e) => {
       );
     }
 
-  console.log({usuario})
-  const usuarioJSON = JSON.stringify(usuario);
+    console.log({usuario})
+    const usuarioJSON = JSON.stringify(usuario);
+    window.location.href = "../MiEscena/miEscena.html";
+  }
+
+    
 });
 
 //funciones a utilizar
