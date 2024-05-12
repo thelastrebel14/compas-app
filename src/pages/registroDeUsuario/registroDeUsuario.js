@@ -140,18 +140,21 @@ botonRegistro.addEventListener("click", (e) => {
 //funciones a utilizar
 
 //funcion de validacion en vivo
-function validacionEnVivo(inputId, callback) {
+function validacionEnVivo(inputId, callback, evitaEscrituraInvalida = false) {
   let input = document.getElementById(inputId);
   input.oninput = () => {
     let v = input.value;
-    callback(v);
+    isValid = callback(v);
 
-    if (callback(v)) {
+    if (isValid) {
       input.classList.remove("is-invalid");
       input.classList.add("is-valid");
     } else {
       input.classList.remove("is-valid");
       input.classList.add("is-invalid");
+      if (evitaEscrituraInvalida){
+        input.value = v.slice(0, -1); // Si el caracter no es válido, lo elimina del campo
+      }
     }
   };
 }
@@ -261,7 +264,7 @@ validacionEnVivo("inputEmail", validarEmail);
 validacionEnVivo("inputPassword", validaContraseña);
 validacionEnVivo("inputPasswordConfirm", password);
 validacionEnVivo("inputCP", validaCodigoPostal);
-validacionEnVivo("inputName", validarTexto);
+validacionEnVivo("inputName", validarTexto, true);
 
 const form = document.querySelector(".needs-validation");
 form.addEventListener(
