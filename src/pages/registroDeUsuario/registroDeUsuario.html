@@ -18,7 +18,11 @@
       <h1 class="registroDeUsuario--heading">
         Estas a un paso de unirte a Compás
       </h1>
-      <form>
+      <form
+        class="needs-validation"
+        action="../MiEscena/miEscena.html"
+        novalidate
+      >
         <!-- Inicio del formulario de registro-->
         <div class="container">
           <div class="row g-3">
@@ -31,6 +35,7 @@
                   class="form-control"
                   id="inputName"
                   placeholder="Nombre completo"
+                  required
                 />
                 <label for="inputName" class="form-label"
                   >Nombre completo</label
@@ -45,6 +50,7 @@
                   class="form-control"
                   id="inputAge"
                   placeholder="Edad"
+                  required
                 />
                 <label for="inputAge" class="form-label">Edad</label>
               </div>
@@ -52,12 +58,13 @@
 
             <div class="col-md-6">
               <div class="form-floating">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="inputGender"
-                  placeholder="Género"
-                />
+                <select id="inputGender" class="form-select" required>
+                  <option selected>Género</option>
+                  <option value="1">Masculino</option>
+                  <option value="2">Femenino</option>
+                  <option value="3">Otro</option>
+                  <option value="4">Prefiero no decirlo</option>
+                </select>
                 <label for="inputGender" class="form-label">Género</label>
               </div>
             </div>
@@ -69,6 +76,7 @@
                   class="form-control"
                   id="inputEmail"
                   placeholder="Correo electrónico"
+                  required
                 />
                 <label for="inputEmail" class="form-label"
                   >Correo electrónico</label
@@ -83,18 +91,20 @@
                   class="form-control"
                   id="inputPassword"
                   placeholder="Contraseña"
+                  required
                 />
                 <label for="inputPassword" class="form-label">Contraseña</label>
               </div>
             </div>
 
             <div class="col-md-6">
-              <div class="form-floating">
+              <div class="form-floating" id="confirmarContraseña">
                 <input
                   type="password"
                   class="form-control"
                   id="inputPasswordConfirm"
                   placeholder="Confirmar Contraseña"
+                  required
                 />
                 <label for="inputPasswordConfirm" class="form-label"
                   >Confirmar Contraseña</label
@@ -114,6 +124,7 @@
                   id="inputCP"
                   placeholder="Código postal"
                   onchange="cp()"
+                  required
                 />
                 <label for="inputCP" class="form-label">Código postal</label>
               </div>
@@ -121,7 +132,7 @@
             <!-- dropdowns para los estados -->
             <div class="col-md-5">
               <div class="form-floating">
-                <select id="inputEstado" class="form-select">
+                <select id="inputEstado" class="form-select" required>
                   <option selected><label>Estado</label></option>
                   <option id="cpEstado">...</option>
                 </select>
@@ -131,7 +142,7 @@
             <!-- dropdowns para las ciudades -->
             <div class="col-md-5">
               <div class="form-floating">
-                <select id="inputCiudad" class="form-select">
+                <select id="inputCiudad" class="form-select" required>
                   <option selected><label>Ciudad</label></option>
                   <option id="cpMunicipio">...</option>
                 </select>
@@ -215,12 +226,9 @@
             <!-- linea divisora final -->
             <section class="registroDeUsuario--form--buttons text-end">
               <!-- botones finales de registro y cancelación -->
-              <a
-                class="boton flat"
-                id="registrarme"
-                href="../MiEscena/miEscena.html"
-                >Registrarme</a
-              >
+              <button type="submit" class="boton flat" id="registrarme">
+                Registrarme
+              </button>
               <a
                 class="boton outlined"
                 id="cancelar"
