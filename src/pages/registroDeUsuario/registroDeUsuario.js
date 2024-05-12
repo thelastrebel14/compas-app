@@ -63,7 +63,7 @@ class RegistroDeUsuario {
     edad,
     genero,
     email,
-    contraseña,
+    contrasena,
     estado,
     ciudad,
     codigoPostal,
@@ -78,7 +78,7 @@ class RegistroDeUsuario {
         (this.edad = edad),
         (this.genero = genero),
         (this.email = email),
-        (this.contraseña = contraseña);
+        (this.contrasena = contrasena);
     }
     localizacion: {
       (this.estado = estado),
@@ -101,7 +101,7 @@ botonRegistro.addEventListener("click", (e) => {
   const registroEdad = document.getElementById("inputAge").value;
   const registroGenero = document.getElementById("inputGender").value;
   const registroEmail = document.getElementById("inputEmail").value;
-  const registroContraseña = document.getElementById("inputPassword").value;
+  const registroContrasena = document.getElementById("inputPassword").value;
   const registroCodigoPostal = document.getElementById("inputCP").value;
   const inputEstado = document.getElementById("inputEstado");
   const selectedEstado = inputEstado?.options[inputEstado.selectedIndex];
@@ -124,7 +124,7 @@ botonRegistro.addEventListener("click", (e) => {
     (edad = registroEdad),
     (genero = registroGenero),
     (email = registroEmail),
-    (contraseña = registroContraseña),
+    (contrasena = registroContrasena),
     (estado = estadoValue),
     (ciudad = ciudadValue),
     (codigoPostal = registroCodigoPostal),
@@ -134,6 +134,8 @@ botonRegistro.addEventListener("click", (e) => {
     (isEscenario = registroIsEscenario),
     (tipoDeEscenario = registroTipoDeEscenario)
   );
+
+  console.log({usuario})
   const usuarioJSON = JSON.stringify(usuario);
 });
 
@@ -150,7 +152,7 @@ function validacionEnVivo(inputId, callback, evitaEscrituraInvalida = false) {
     if(inputId === 'inputPassword'){
       let confirmarPassword = document.getElementById('inputPasswordConfirm')
       if(confirmarPassword.value !== ''){
-        if(validaCoincidenciaContraseña(confirmarPassword.value)){
+        if(validaCoincidenciaContrasena(confirmarPassword.value)){
           confirmarPassword.classList.remove("is-invalid");
           confirmarPassword.classList.add("is-valid");
         } else {
@@ -191,7 +193,7 @@ function validaCodigoPostal(value) {
 
 // funcion para validar la contraseña
 
-function validaContraseña(password) {
+function validaContrasena(password) {
   let resultado = true; 
   const regexNumero = /\d/;
   const regexMayuscula = /[A-Z]/;
@@ -200,33 +202,33 @@ function validaContraseña(password) {
   // Verificar la longitud mínima
   if (password.length < 8) {
     resultado = false;
-    document.querySelector('#validacion-caracteres-contraseña label:nth-child(1)').style.color = 'red';
+    document.querySelector('#validacion-caracteres-contrasena label:nth-child(1)').style.color = 'red';
   } else {
-    document.querySelector('#validacion-caracteres-contraseña label:nth-child(1)').style.color = 'green';
+    document.querySelector('#validacion-caracteres-contrasena label:nth-child(1)').style.color = 'green';
   }
 
   // Verificar presencia de número
   if (!regexNumero.test(password)) {
     resultado = false;
-    document.querySelector('#validacion-caracteres-contraseña label:nth-child(2)').style.color = 'red';
+    document.querySelector('#validacion-caracteres-contrasena label:nth-child(2)').style.color = 'red';
   } else {
-    document.querySelector('#validacion-caracteres-contraseña label:nth-child(2)').style.color = 'green';
+    document.querySelector('#validacion-caracteres-contrasena label:nth-child(2)').style.color = 'green';
   }
 
   // Verificar presencia de mayúscula
   if (!regexMayuscula.test(password)) {
     resultado = false;
-    document.querySelector('#validacion-caracteres-contraseña label:nth-child(3)').style.color = 'red';
+    document.querySelector('#validacion-caracteres-contrasena label:nth-child(3)').style.color = 'red';
   } else {
-    document.querySelector('#validacion-caracteres-contraseña label:nth-child(3)').style.color = 'green';
+    document.querySelector('#validacion-caracteres-contrasena label:nth-child(3)').style.color = 'green';
   }
 
   // Verificar presencia de símbolo
   if (!regexSimbolo.test(password)) {
     resultado = false;
-    document.querySelector('#validacion-caracteres-contraseña label:nth-child(4)').style.color = 'red';
+    document.querySelector('#validacion-caracteres-contrasena label:nth-child(4)').style.color = 'red';
   } else {
-    document.querySelector('#validacion-caracteres-contraseña label:nth-child(4)').style.color = 'green';
+    document.querySelector('#validacion-caracteres-contrasena label:nth-child(4)').style.color = 'green';
   }
 
   return resultado;
@@ -253,15 +255,16 @@ function validarEdad(edad) {
 
 // funcion para confirmar contraseña
 
-function validaCoincidenciaContraseña(password) {
+function validaCoincidenciaContrasena(password) {
   let passwordCheck = document.getElementById("inputPassword").value;
+
   if (password !== passwordCheck) {
-    
-    document.querySelector('#validacion-coincidencia-contraseña label:nth-child(1)').style.color = 'red';
+    document.querySelector('#validacion-coincidencia-contrasena').removeAttribute('hidden');  
+    document.querySelector('#validacion-coincidencia-contrasena label:nth-child(1)').style.color = 'red';
     return false;
   }
   
-  document.querySelector('#validacion-coincidencia-contraseña label:nth-child(1)').style.color = 'green';
+  document.querySelector('#validacion-coincidencia-contrasena label:nth-child(1)').style.color = 'green';
   return true;
 }
 
@@ -305,8 +308,8 @@ function validarTexto(texto) {
 
 validacionEnVivo("inputAge", validarEdad);
 validacionEnVivo("inputEmail", validarEmail);
-validacionEnVivo("inputPassword", validaContraseña);
-validacionEnVivo("inputPasswordConfirm", validaCoincidenciaContraseña);
+validacionEnVivo("inputPassword", validaContrasena);
+validacionEnVivo("inputPasswordConfirm", validaCoincidenciaContrasena);
 validacionEnVivo("inputCP", validaCodigoPostal);
 validacionEnVivo("inputName", validarTexto, true);
 
