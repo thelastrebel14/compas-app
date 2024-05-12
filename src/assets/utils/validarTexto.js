@@ -32,3 +32,4 @@ function validarTexto(texto) {
   // regresa el valor booleano de la variable
   return isText;
 }
+
