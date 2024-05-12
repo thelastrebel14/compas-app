@@ -37,7 +37,7 @@ async function rellenoCodigoPostal() {
       `https://api.copomex.com/query/info_cp/${codigoPostal}?token=4d481f50-19e7-4e38-8d07-870975872307`
     );
     if (!response.ok) {
-      throw new Error("No se encontro");
+      throw new Error("No se encontró");
     }
 
     const data = await response.json();
@@ -142,9 +142,26 @@ botonRegistro.addEventListener("click", (e) => {
 //funcion de validacion en vivo
 function validacionEnVivo(inputId, callback, evitaEscrituraInvalida = false) {
   let input = document.getElementById(inputId);
+  
   input.oninput = () => {
     let v = input.value;
     isValid = callback(v);
+
+    if(inputId === 'inputPassword'){
+      let confirmarPassword = document.getElementById('inputPasswordConfirm')
+      if(confirmarPassword.value !== ''){
+        if(validaCoincidenciaContraseña(confirmarPassword.value)){
+          confirmarPassword.classList.remove("is-invalid");
+          confirmarPassword.classList.add("is-valid");
+        } else {
+          confirmarPassword.classList.remove("is-valid");
+          confirmarPassword.classList.add("is-invalid");
+          if (evitaEscrituraInvalida){
+            confirmarPassword.value = v.slice(0, -1); // Si el caracter no es válido, lo elimina del campo
+          }
+        }
+      }
+    }
 
     if (isValid) {
       input.classList.remove("is-invalid");
@@ -175,23 +192,44 @@ function validaCodigoPostal(value) {
 // funcion para validar la contraseña
 
 function validaContraseña(password) {
-  password = password.trim();
-  if (password.length < 8) {
-    return false;
-  }
+  let resultado = true; 
   const regexNumero = /\d/;
   const regexMayuscula = /[A-Z]/;
   const regexSimbolo = /[^a-zA-Z0-9]/;
-
-  if (
-    !regexNumero.test(password) ||
-    !regexMayuscula.test(password) ||
-    !regexSimbolo.test(password)
-  ) {
-    return false;
+  password = password.trim();
+  // Verificar la longitud mínima
+  if (password.length < 8) {
+    resultado = false;
+    document.querySelector('#validacion-caracteres-contraseña label:nth-child(1)').style.color = 'red';
+  } else {
+    document.querySelector('#validacion-caracteres-contraseña label:nth-child(1)').style.color = 'green';
   }
 
-  return true;
+  // Verificar presencia de número
+  if (!regexNumero.test(password)) {
+    resultado = false;
+    document.querySelector('#validacion-caracteres-contraseña label:nth-child(2)').style.color = 'red';
+  } else {
+    document.querySelector('#validacion-caracteres-contraseña label:nth-child(2)').style.color = 'green';
+  }
+
+  // Verificar presencia de mayúscula
+  if (!regexMayuscula.test(password)) {
+    resultado = false;
+    document.querySelector('#validacion-caracteres-contraseña label:nth-child(3)').style.color = 'red';
+  } else {
+    document.querySelector('#validacion-caracteres-contraseña label:nth-child(3)').style.color = 'green';
+  }
+
+  // Verificar presencia de símbolo
+  if (!regexSimbolo.test(password)) {
+    resultado = false;
+    document.querySelector('#validacion-caracteres-contraseña label:nth-child(4)').style.color = 'red';
+  } else {
+    document.querySelector('#validacion-caracteres-contraseña label:nth-child(4)').style.color = 'green';
+  }
+
+  return resultado;
 }
 
 //funcion para validar el correo
@@ -213,11 +251,15 @@ function validarEdad(edad) {
 
 // funcion para confirmar contraseña
 
-function password(password) {
+function validaCoincidenciaContraseña(password) {
   let passwordCheck = document.getElementById("inputPassword").value;
   if (password !== passwordCheck) {
+    
+    document.querySelector('#validacion-coincidencia-contraseña label:nth-child(1)').style.color = 'red';
     return false;
   }
+  
+  document.querySelector('#validacion-coincidencia-contraseña label:nth-child(1)').style.color = 'green';
   return true;
 }
 
@@ -262,7 +304,7 @@ function validarTexto(texto) {
 validacionEnVivo("inputAge", validarEdad);
 validacionEnVivo("inputEmail", validarEmail);
 validacionEnVivo("inputPassword", validaContraseña);
-validacionEnVivo("inputPasswordConfirm", password);
+validacionEnVivo("inputPasswordConfirm", validaCoincidenciaContraseña);
 validacionEnVivo("inputCP", validaCodigoPostal);
 validacionEnVivo("inputName", validarTexto, true);
 
