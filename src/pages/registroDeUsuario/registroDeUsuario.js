@@ -87,10 +87,10 @@ class RegistroDeUsuario {
     }
     tipoUsuario: {
       (this.isMusico = isMusico),
-        (this.instrumentosMusicales = instrumentosMusicales),
-        (this.generosMusicales = generosMusicales),
-        (this.isEscenario = isEscenario),
-        (this.tipoDeEscenario = tipoDeEscenario);
+      (this.instrumentosMusicales = instrumentosMusicales),
+      (this.generosMusicales = generosMusicales),
+      (this.isEscenario = isEscenario),
+      (this.tipoDeEscenario = tipoDeEscenario);
     }
   }
 }
@@ -119,21 +119,40 @@ botonRegistro.addEventListener("click", (e) => {
   const registroTipoDeEscenario =
     document.getElementById("inputEscenario").value;
 
-  let usuario = new RegistroDeUsuario(
-    (nombre = registroNombre),
-    (edad = registroEdad),
-    (genero = registroGenero),
-    (email = registroEmail),
-    (contrasena = registroContrasena),
-    (estado = estadoValue),
-    (ciudad = ciudadValue),
-    (codigoPostal = registroCodigoPostal),
-    (isMusico = registroIsMusico),
-    (instrumentosMusicales = registroInstrumentos),
-    (generosMusicales = registroGenerosMusicales),
-    (isEscenario = registroIsEscenario),
-    (tipoDeEscenario = registroTipoDeEscenario)
-  );
+    let usuario;
+    if (registroIsMusico) {
+      usuario = new RegistroDeUsuario(
+        registroNombre,
+        registroEdad,
+        registroGenero,
+        registroEmail,
+        registroContrasena,
+        estadoValue,
+        ciudadValue,
+        registroCodigoPostal,
+        registroIsMusico,
+        registroInstrumentos,
+        registroGenerosMusicales,
+        false, // No es escenario, por lo tanto false
+        '' // No aplica tipo de escenario
+      );
+    } else {
+      usuario = new RegistroDeUsuario(
+        registroNombre,
+        registroEdad,
+        registroGenero,
+        registroEmail,
+        registroContrasena,
+        estadoValue,
+        ciudadValue,
+        registroCodigoPostal,
+        registroIsMusico,
+        '', // No aplica instrumentos
+        '', // No aplica géneros musicales
+        registroIsEscenario,
+        registroTipoDeEscenario
+      );
+    }
 
   console.log({usuario})
   const usuarioJSON = JSON.stringify(usuario);
