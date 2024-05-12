@@ -137,4 +137,143 @@ botonRegistro.addEventListener("click", (e) => {
   const usuarioJSON = JSON.stringify(usuario);
 });
 
-const inputCiudad = document.getElementById("inputCiudad");
+//funciones a utilizar
+
+//funcion de validacion en vivo
+function validacionEnVivo(inputId, callback) {
+  let input = document.getElementById(inputId);
+  input.oninput = () => {
+    let v = input.value;
+    callback(v);
+
+    if (callback(v)) {
+      input.classList.remove("is-invalid");
+      input.classList.add("is-valid");
+    } else {
+      input.classList.remove("is-valid");
+      input.classList.add("is-invalid");
+    }
+  };
+}
+
+//funcion para validar codigo postal
+
+function validaCodigoPostal(value) {
+  // recibe el texto a validar
+  let esValido = true; // inicia como true
+  if (value.length != 5) {
+    esValido = false; // checa que tenga 5 caracteres
+  } else if (!(value <= 99000 && value >= 1000)) {
+    esValido = false; // checa que este en el rango valido
+  }
+  return esValido; // devuelve true o false
+}
+
+// funcion para validar la contraseña
+
+function validaContraseña(password) {
+  password = password.trim();
+  if (password.length < 8) {
+    return false;
+  }
+  const regexNumero = /\d/;
+  const regexMayuscula = /[A-Z]/;
+  const regexSimbolo = /[^a-zA-Z0-9]/;
+
+  if (
+    !regexNumero.test(password) ||
+    !regexMayuscula.test(password) ||
+    !regexSimbolo.test(password)
+  ) {
+    return false;
+  }
+
+  return true;
+}
+
+//funcion para validar el correo
+function validarEmail(correo) {
+  if (!correo.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+    return false;
+  }
+  return true;
+}
+
+// funcion para validar edad
+
+function validarEdad(edad) {
+  if (edad > 15 && edad < 120) {
+    return true;
+  }
+  return false;
+}
+
+// funcion para confirmar contraseña
+
+function password(password) {
+  let passwordCheck = document.getElementById("inputPassword").value;
+  if (password !== passwordCheck) {
+    return false;
+  }
+  return true;
+}
+
+//funcion para solo texto
+function validarTexto(texto) {
+  // inicializa variable para determinar si es texto
+  isText = false;
+  // Verificar que la casilla no se deje vacía
+  if (texto == "" || texto == null) {
+    // se omite todo y regresa false
+    return false;
+  }
+
+  // Verificar que el tipo de dato sea una cadena de texto
+  if (typeof texto !== "string") {
+    // se omite todo y regresa false
+    return false;
+  }
+
+  // Verificar que los caracteres utilizados sean letras según la tabla ASCII
+  for (let i = 0; i < texto.length; i++) {
+    if (
+      (texto.charCodeAt(i) >= 65 && texto.charCodeAt(i) <= 90) ||
+      (texto.charCodeAt(i) >= 97 && texto.charCodeAt(i) <= 122)
+    ) {
+      // se actualiza la variable
+      isText = true;
+    } else {
+      // se actualiza la variable
+      isText = false;
+    }
+  }
+  // elimina espacios innecesarios
+  texto = texto.trim();
+
+  // regresa el valor booleano de la variable
+  return isText;
+}
+
+// implementacion de las funciones
+
+validacionEnVivo("inputAge", validarEdad);
+validacionEnVivo("inputEmail", validarEmail);
+validacionEnVivo("inputPassword", validaContraseña);
+validacionEnVivo("inputPasswordConfirm", password);
+validacionEnVivo("inputCP", validaCodigoPostal);
+validacionEnVivo("inputName", validarTexto);
+
+const form = document.querySelector(".needs-validation");
+form.addEventListener(
+  "submit",
+  (event) => {
+    console.log(form.children);
+    if (!form.checkValidity()) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    form.classList.add("was-validated");
+  },
+  false
+);
