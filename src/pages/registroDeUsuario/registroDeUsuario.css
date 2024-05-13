@@ -23,13 +23,6 @@
   margin: 0px 15px;
 }
 
-/* pone a la misma altura los dropdowns y los demas inputs */
-#inputEstado,
-#inputCiudad {
-  height: 58px;
-  font-size: 12.8px;
-}
-
 #seleccionUsuario {
   display: flex;
   flex-direction: row;
