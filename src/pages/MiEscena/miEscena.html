@@ -184,15 +184,15 @@
                                 <h4>Carlos Santana</h4>
                             </div>
                             <br>
-                            <form action="" id="formularioFotoVideo">
-                                <div class="nueva--publicacion--modal--formulario">
-                                    <textarea class="form-control" name="publicacionTexto" id=""
+                            <form class="row g-3 needs-validation" novalidate action="" id="formularioFotoVideo">
+                                <div class="">
+                                    <textarea class="form-control" name="publicacionTexto" id="validacionFotoVideo01" required
                                         placeholder="¿Cómo va tu vibra hoy?"></textarea>
                                 </div>
                                 <br>
                                 <p> Carga una imagen para tu publicación (opcional)</p>
-                                <div class="mb-3">
-                                    <input class="form-control" type="file" name="publicacionMultimedia" id="formFile">
+                                <div>
+                                    <input class="form-control" type="file" name="publicacionMultimedia" id="validacionFotoVideo02">
                                 </div>
                                 <br>
                                 <!-- Modal footer -->
@@ -225,15 +225,15 @@
                                 <h4>Carlos Santana</h4>
                             </div>
                             <br>
-                            <form action="" id="formularioArtista">
+                            <form class="row g-3 needs-validation" novalidate action="" id="formularioArtista">
                                 <fieldset>
-                                    <div class="nueva--publicacion--modal--formulario">
-                                        <input type="text" class="form-control" name="tituloPublicacion" id=""
+                                    <div>
+                                        <input type="text" class="form-control" name="tituloPublicacion" id="validacionArtista01"
                                             placeholder="Título de la publicación">
                                     </div>
                                     <br>
                                     <div class="form-floating">
-                                        <select class="form-select" id="floatingSelect"
+                                        <select class="form-select" id="validacionArtista02"
                                             aria-label="Floating label select example">
                                             <option selected>¿Buscas un artista o un escenario?</option>
                                             <option value="1" id="busquedaArtista" name="artistaOEscenario">Artista
@@ -244,7 +244,7 @@
                                     </div>
                                     <br>
                                     <div class="form-floating">
-                                        <select class="form-select" id="floatingSelect"
+                                        <select class="form-select" id="validacionArtista03"
                                             aria-label="Floating label select example">
                                             <option selected>¿Qué género musical te interesa?</option>
                                             <option value="1" name="generoNorteno">Norteño</option>
@@ -255,7 +255,7 @@
                                     </div>
                                     <br>
                                     <div class="form-floating">
-                                        <select class="form-select" id="floatingSelect"
+                                        <select class="form-select" id="validacionArtista04"
                                             aria-label="Floating label select example">
                                             <option selected>¿Qué instrumento te interesa?</option>
                                             <option value="1" name="instrumentoGuitarra">Guitarra</option>
@@ -265,45 +265,27 @@
                                         </select>
                                     </div>
                                     <br>
-                                    <div class="nueva--publicacion--modal--formulario">
-                                        <input type="text" class="form-control" name="ubicacionBusqueda"
+                                    <div>
+                                        <input type="text" class="form-control" name="ubicacionBusqueda" id="validacionArtista05"
                                             placeholder="Ubicación">
                                     </div>
                                     <br>
-                                    <div class="nueva--publicacion--modal--formulario">
-                                        <textarea class="form-control" name="cuerpoPublicacion" id="cuerpoPublicacion"
+                                    <div>
+                                        <textarea class="form-control" name="cuerpoPublicacion" id="validacionArtista06"
                                             placeholder="Cuerpo de la publicación"></textarea>
                                     </div>
                                     <br>
                                     <p> Carga una imagen para tu publicación (opcional)</p>
                                     <div class="mb-3">
-                                        <input class="form-control" type="file" name="artistaMultimedia" id="formFile">
+                                        <input class="form-control" type="file" name="artistaMultimedia" id="validacionArtista07">
                                     </div>
                                     <br>
                                 </fieldset>
                                 <div class="modal-alinear-botones">
                                     <button type="button" class="boton outlined" data-bs-dismiss="modal">Cerrar</button>
-                                    <button type="button" class="boton flat" data-bs-dismiss="modal">Publicar</button>
+                                    <button type="submit" class="boton flat" data-bs-dismiss="modal">Publicar</button>
                                 </div>
                             </form>
-                        <!-- </div>
-                    </div>
-                    <br />
-                    <p>Carga una imagen para tu publicación (opcional)</p>
-                    <div class="mb-3">
-                        <input class="form-control" type="file" id="formFile" />
-                    </div>
-                    <br />
-                    </fieldset>
-                    <div class="modal-alinear-botones">
-                        <button type="button" class="boton outlined" data-bs-dismiss="modal">
-                            Cerrar
-                        </button>
-                        <button type="button" class="boton flat" data-bs-dismiss="modal">
-                            Publicar
-                        </button>
-                    </div> -->
-                    </form>
                 </div>
             </div>
             </div>
@@ -452,6 +434,7 @@
     <script src="nuevaPublicacion.js"></script>
 
     <script type="module" src="./miEscena.js"></script>
+    <script src="../../assets/utils/validarTexto.js"></script>
 </body>
 
 </html>
