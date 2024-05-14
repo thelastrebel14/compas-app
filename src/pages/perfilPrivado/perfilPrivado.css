@@ -8,6 +8,7 @@ header{
     display: grid;
     grid-template-columns: repeat(12,1fr);
     grid-template-rows: repeat(10,1fr);
+    margin-top: 60px;
 }
 .header--portada{
     display: grid;
@@ -85,17 +86,27 @@ header{
     background-color: var(--hover-color);
 }
 /* ------------------------------  Información del perfil de usuario   ------------------------------*/
+main{
+    padding-top: 10px;
+}
 .profile{
     display: grid;
     grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(3,1fr);
+    /* width: auto; */
     /* justify-content: space-between; */
 }
 .profile--info{
-    grid-column: 1/10;
+     display: grid;
+    /*grid-template-columns: repeat(8,1fr);
+    grid-template-rows: repeat(4,1fr); */
+    grid-column: 1/9;
+    grid-row: 1/5;
 }
 .profile--info--nombreySeguidores{
     display: flex;
     align-items: center;
+    grid-row: 1/2;
 }
 .profile--info--nombreySeguidores--nombre{
     margin-right: 14px;
@@ -110,9 +121,10 @@ header{
 }
 .profile--info--ubicacion{
     margin-top: 16px;
+    grid-row: 2/3;
 }
 .profile--info--enfoque{
-    margin-top: 24px;
+    margin-top: 0px;
     display: flex;
 }
 .profile--info--enfoque--instrumentos{
@@ -138,7 +150,7 @@ header{
 .profile--info--demo{
     margin-top: 38px;
     background-color: var(--black);
-    width: 700px;
+    width: auto;  /* modified*/
     height: 110px;
     border-radius: 10px;
 }
@@ -151,7 +163,7 @@ header{
 .profile--info--demo--img{
     background-image: url('img/perfil-demo-img.jpg');
     background-size: cover;
-    width: 80px;
+    width: auto;
     height: 80px;
     border-radius: 10px;
 }
@@ -159,56 +171,59 @@ header{
 .profile--info--demo--titulo h5{
     color: var(--white);
 }
- /* .profile--follow{
-    border: solid;  
-    display:flex;
-    flex-direction: column;
-    margin-left: 114px;
-} 
-
-
-.profile--follow--buttons--seguir{
-    background-color: var(--main-color);
-    color: var(--white);
-    margin-right: 52px;
-}
-
-.profile--follow--mensaje{
-    margin-top: 32px;
-}
-.profile--follow--mensaje h4{
-    font-weight: bold;
-}
-
-.profile--follow--mensaje h4 span{
-    margin-left: 32px;
-} */
 .profile--follow{
-    display: flexbox;
-    grid-column: 10/13;
-    display: grid;
-    grid-template-columns: 100px 100px 100px;
-    grid-template-rows: 100px 120px;
+    display: flex;
+    justify-content: center;
+    grid-column: 9/13;
+    grid-row: 3/4;
 }
-
+.profile--follow--buttons{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.profile--follow--buttons--seguidores{
+    margin: 5px;
+}
+.profile--follow--buttons--siguiendo{
+    margin: 5px;
+}
+.profile--follow--buttons--donadores{
+    margin-left: 5px;
+}
+.profile--followMensaje{
+    grid-column: 9/13;
+    grid-row: 2/3;
+}
+.profile--follow--mensaje{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+h4{
+    font-weight: bold;
+    margin-left: 10px;
+}
 .profile--follow--redes{
     display: flex;
     justify-content: center;
     align-items: center;
-    grid-column: 1/4;
-    height: 120px
+    
 }
 img{
     width: 40px;
     cursor: pointer;
     margin: 15px;
-    
 }
 /* -------------------------------    Symbol Profile Info   ------------------------  */
+.profile--info--editSymbol{
+    grid-column: 12/13;
+    grid-row: 1/2;
+}
 .symbol-edit{
     color: var(--hover-color);
     background-color: var(--secondaryBg-color);
-    font-size: 50px;
     margin: 25px;
     border-radius: 50%;
     width: 55px;
@@ -218,7 +233,6 @@ img{
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    grid-column: 3/4;
 }
 .symbol-edit:hover{
     background-color: var(--grey);
@@ -312,7 +326,6 @@ img{
 /* ------------------------------------   Acerca de    ------------------------------- */
 .acerca{
     margin-top: 50px;
-    border: solid;
 }
 
 .acerca .linea{
@@ -320,9 +333,9 @@ img{
 }
 
 .acerca--info {
-    width: 600px;
-    max-width: 600px;
-}
+    width: auto;
+    text-align:justify;
+} 
 
 .acerca--info p:nth-child(2){
     font-weight: bold;
