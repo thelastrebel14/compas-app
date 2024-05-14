@@ -27,35 +27,35 @@ radioSoyMusico.addEventListener(
   })
 );
 
-const cp = () => {
-  rellenoCodigoPostal();
-};
-async function rellenoCodigoPostal() {
-  try {
-    const codigoPostal = document.getElementById("inputCP").value;
-    const response = await fetch(
-      `https://api.copomex.com/query/info_cp/${codigoPostal}?token=4d481f50-19e7-4e38-8d07-870975872307`
-    );
-    if (!response.ok) {
-      throw new Error("No se encontró");
-    }
+// const cp = () => {
+//   rellenoCodigoPostal();
+// };
+// async function rellenoCodigoPostal() {
+//   try {
+//     const codigoPostal = document.getElementById("inputCP").value;
+//     const response = await fetch(
+//       `https://api.copomex.com/query/info_cp/${codigoPostal}?token=4d481f50-19e7-4e38-8d07-870975872307`
+//     );
+//     if (!response.ok) {
+//       throw new Error("No se encontró");
+//     }
 
-    const data = await response.json();
-    const opcionEstado = document.getElementById("inputEstado");
-    const opcionMunicipio = document.getElementById("inputCiudad");
+//     const data = await response.json();
+//     const opcionEstado = document.getElementById("inputEstado");
+//     const opcionMunicipio = document.getElementById("inputCiudad");
 
-    data.forEach((element) => {
-      let nuevaOpcionEstado = document.createElement("option");
-      let nuevaOpcionMunicipio = document.createElement("option");
-      nuevaOpcionEstado.textContent = element.response.estado;
-      nuevaOpcionMunicipio.textContent = element.response.municipio;
-      opcionEstado.appendChild(nuevaOpcionEstado);
-      opcionMunicipio.appendChild(nuevaOpcionMunicipio);
-    });
-  } catch (error) {
-    console.error(error);
-  }
-}
+//     data.forEach((element) => {
+//       let nuevaOpcionEstado = document.createElement("option");
+//       let nuevaOpcionMunicipio = document.createElement("option");
+//       nuevaOpcionEstado.textContent = element.response.estado;
+//       nuevaOpcionMunicipio.textContent = element.response.municipio;
+//       opcionEstado.appendChild(nuevaOpcionEstado);
+//       opcionMunicipio.appendChild(nuevaOpcionMunicipio);
+//     });
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
 
 class RegistroDeUsuario {
   constructor(
@@ -140,9 +140,12 @@ botonRegistro.addEventListener("click", (e) => {
       return;
     } else {
       const alerta = document.createElement("div");
+      const contenedorAlerta = document.getElementById("alertaFormulario");
       alerta.classList.add("alert", "alert-danger");
       alerta.textContent = "Por favor completa todos los campos obligatorios.";
-      document.body.appendChild(alerta);
+      alerta.style.textAlign = "center";
+      alerta.focus();
+      contenedorAlerta.appendChild(alerta);
     }
 
     return; // Detener la ejecución si algún campo está incompleto
@@ -184,7 +187,7 @@ botonRegistro.addEventListener("click", (e) => {
 
     console.log({ usuario });
     const usuarioJSON = JSON.stringify(usuario);
-    window.location.href = "../MiEscena/miEscena.html";
+    // window.location.href = "../MiEscena/miEscena.html";
   }
 });
 
@@ -388,6 +391,9 @@ validacionEnVivo("inputPassword", validaContrasena);
 validacionEnVivo("inputPasswordConfirm", validaCoincidenciaContrasena);
 validacionEnVivo("inputCP", validaCodigoPostal);
 validacionEnVivo("inputName", validarTexto, true);
+validacionEnVivo("inputInstrumentos", validarTexto, true);
+validacionEnVivo("inputGenerosMusicales", validarTexto, true);
+validacionEnVivo("inputEscenario", validarTexto, true);
 
 const form = document.querySelector(".needs-validation");
 form.addEventListener(
@@ -403,3 +409,22 @@ form.addEventListener(
   },
   false
 );
+
+var inputContraseña = document.getElementById("inputPassword");
+
+inputContraseña.addEventListener("keydown", function (event) {
+  var teclaPresionada = event.keyCode || event.which;
+
+  if (teclaPresionada === 32) {
+    event.preventDefault();
+  }
+});
+
+var inputContraseñaConfirmar = document.getElementById("inputPasswordConfirm");
+inputContraseñaConfirmar.addEventListener("keydown", function (event) {
+  var teclaPresionada = event.keyCode || event.which;
+
+  if (teclaPresionada === 32) {
+    event.preventDefault();
+  }
+});
