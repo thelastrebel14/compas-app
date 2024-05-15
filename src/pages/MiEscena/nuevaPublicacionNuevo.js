@@ -38,7 +38,32 @@ botonPublicarFotoVideo.addEventListener('click', (e) => {
     }
     console.log({publicacion});
     const publicacionJSON = JSON.stringify(publicacion);
-});
+
+        // Enviar los datos del formulario al servidor usando fetch
+        fetch('/enviarPublicacionFotoVideo', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            publicacionTexto: publicacionTexto,
+            publicacionMultimedia: publicacionMultimedia,
+          })
+      })
+      .then(response => response.json())
+      .then(data => {
+          // Mostrar mensaje de éxito o error al usuario
+          if (data.success) {
+              mensaje.textContent = '¡Mensaje enviado con éxito!';
+          } else {
+              mensaje.textContent = 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.';
+          }
+      })
+      .catch(error => {
+          console.error('Error:', error);
+          mensaje.textContent = 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.';
+      });
+  });
 
 class NuevaPublicacionBusquedaArtista {
   constructor (
@@ -87,7 +112,7 @@ botonPublicarBusquedaArtista.addEventListener('click', (e) => {
         const alerta = document.createElement("div");
         const contenedorAlerta = document.getElementById("formularioBusquedaArtista");
         alerta.classList.add("alert", "alert-danger");
-        alerta.textContent = "Por favor, completa todos los campos.";
+        alerta.textContent = "Por favor, completa los campos requeridos.";
         alerta.style.textAlign = "center";
         alerta.focus();
         contenedorAlerta.appendChild(alerta);
@@ -108,8 +133,38 @@ botonPublicarBusquedaArtista.addEventListener('click', (e) => {
 }
 console.log({publicacion});
 const publicacionJSON = JSON.stringify(publicacion);
-});
 
+        // Enviar los datos del formulario al servidor usando fetch
+        fetch('/enviarPublicacionBusquedaArtista', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            tituloPublicacion: tituloPublicacion,
+            artistaOEscenario: artistaOEscenario,
+            generoMusical: generoMusical,
+            instrumentoMusical: instrumentoMusical,
+            ubicacionBusqueda: ubicacionBusqueda,
+            codigoPostal: odigoPostal,
+            cuerpoPublicacion: cuerpoPublicacion,
+            multimediaBusqueda: multimediaBusqueda,
+          })
+      })
+      .then(response => response.json())
+      .then(data => {
+          // Mostrar mensaje de éxito o error al usuario
+          if (data.success) {
+              mensaje.textContent = '¡Mensaje enviado con éxito!';
+          } else {
+              mensaje.textContent = 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.';
+          }
+      })
+      .catch(error => {
+          console.error('Error:', error);
+          mensaje.textContent = 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.';
+      });
+  });
 
 
 // FUNCIONES DE VALIDACIÓN
