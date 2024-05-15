@@ -132,27 +132,28 @@ botonPublicarBusquedaArtista.addEventListener('click', (e) => {
         cuerpoPublicacion,
         multimediaBusqueda,
     );
+    
+    console.log({publicacion});
+    const publicacionJSON = JSON.stringify(publicacion);
 }
-console.log({publicacion});
-const publicacionJSON = JSON.stringify(publicacion);
 
-        // Enviar los datos del formulario al servidor usando fetch
-        fetch('/enviarPublicacionBusquedaArtista', {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            tituloPublicacion: tituloPublicacion,
-            artistaOEscenario: artistaOEscenario,
-            generoMusical: generoMusical,
-            instrumentoMusical: instrumentoMusical,
-            ubicacionBusqueda: ubicacionBusqueda,
-            codigoPostal: odigoPostal,
-            cuerpoPublicacion: cuerpoPublicacion,
-            multimediaBusqueda: multimediaBusqueda,
-          })
-      })
+      //   // Enviar los datos del formulario al servidor usando fetch
+      //   fetch('/enviarPublicacionBusquedaArtista', {
+      //     method: 'POST',
+      //     headers: {
+      //         'Content-Type': 'application/json'
+      //     },
+      //     body: JSON.stringify({
+      //       tituloPublicacion: tituloPublicacion,
+      //       artistaOEscenario: artistaOEscenario,
+      //       generoMusical: generoMusical,
+      //       instrumentoMusical: instrumentoMusical,
+      //       ubicacionBusqueda: ubicacionBusqueda,
+      //       codigoPostal: codigoPostal,
+      //       cuerpoPublicacion: cuerpoPublicacion,
+      //       multimediaBusqueda: multimediaBusqueda,
+      //     })
+      // })
       // .then(response => response.json())
       // .then(data => {
       //     // Mostrar mensaje de éxito o error al usuario
