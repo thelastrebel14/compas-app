@@ -35,34 +35,36 @@ botonPublicarFotoVideo.addEventListener('click', (e) => {
             publicacionTexto.trim(),
             publicacionMultimedia,
         );
-    }
-    console.log({publicacion});
-    const publicacionJSON = JSON.stringify(publicacion);
 
-        // Enviar los datos del formulario al servidor usando fetch
-        fetch('/enviarPublicacionFotoVideo', {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            publicacionTexto: publicacionTexto,
-            publicacionMultimedia: publicacionMultimedia,
-          })
-      })
-      .then(response => response.json())
-      .then(data => {
-          // Mostrar mensaje de éxito o error al usuario
-          if (data.success) {
-              mensaje.textContent = '¡Mensaje enviado con éxito!';
-          } else {
-              mensaje.textContent = 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.';
-          }
-      })
-      .catch(error => {
-          console.error('Error:', error);
-          mensaje.textContent = 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.';
-      });
+        console.log({publicacion});
+        const publicacionJSON = JSON.stringify(publicacion);
+    }
+
+
+      //   // Enviar los datos del formulario al servidor usando fetch
+      //   fetch('/enviarPublicacionFotoVideo', {
+      //     method: 'POST',
+      //     headers: {
+      //         'Content-Type': 'application/json'
+      //     },
+      //     body: JSON.stringify({
+      //       publicacionTexto: publicacionTexto,
+      //       publicacionMultimedia: publicacionMultimedia,
+      //     })
+      // })
+      // .then(response => response.json())
+      // .then(data => {
+      //     // Mostrar mensaje de éxito o error al usuario
+      //     if (data.success) {
+      //         mensaje.textContent = '¡Mensaje enviado con éxito!';
+      //     } else {
+      //         mensaje.textContent = 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.';
+      //     }
+      // })
+      // .catch(error => {
+      //     console.error('Error:', error);
+      //     mensaje.textContent = 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.';
+      // });
   });
 
 class NuevaPublicacionBusquedaArtista {
@@ -151,19 +153,19 @@ const publicacionJSON = JSON.stringify(publicacion);
             multimediaBusqueda: multimediaBusqueda,
           })
       })
-      .then(response => response.json())
-      .then(data => {
-          // Mostrar mensaje de éxito o error al usuario
-          if (data.success) {
-              mensaje.textContent = '¡Mensaje enviado con éxito!';
-          } else {
-              mensaje.textContent = 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.';
-          }
-      })
-      .catch(error => {
-          console.error('Error:', error);
-          mensaje.textContent = 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.';
-      });
+      // .then(response => response.json())
+      // .then(data => {
+      //     // Mostrar mensaje de éxito o error al usuario
+      //     if (data.success) {
+      //         mensaje.textContent = '¡Mensaje enviado con éxito!';
+      //     } else {
+      //         mensaje.textContent = 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.';
+      //     }
+      // })
+      // .catch(error => {
+      //     console.error('Error:', error);
+      //     mensaje.textContent = 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.';
+      // });
   });
 
 
