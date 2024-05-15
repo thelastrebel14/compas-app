@@ -178,6 +178,12 @@
 }
 }
 
+@media (min-width: 864px) {
+.nueva--publicacion input {
+    width: 600px;
+}
+}
+
 @media (min-width: 992px) {
 .nueva--publicacion input {
     width: 700px;
