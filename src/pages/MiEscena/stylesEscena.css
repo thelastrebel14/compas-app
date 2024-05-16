@@ -1,4 +1,4 @@
-@import url("../../../Styles/main.css"); 
+@import url("../../../Styles/main.css");
 
 /* 
 .title{
@@ -9,14 +9,18 @@
 
 .contenedor {
     display: flex;
-    align-items: center; /* Centra los elementos verticalmente */
-    width: 35%; /* Ancho del contenedor */
-    margin-left: 5%; /* Margen izquierdo para centrar el contenedor horizontalmente */
-    background-color: var(--background-color); /* Color de fondo del contenedor */
+    align-items: center;
+    /* Centra los elementos verticalmente */
+    width: 35%;
+    /* Ancho del contenedor */
+    margin-left: 5%;
+    /* Margen izquierdo para centrar el contenedor horizontalmente */
+    background-color: var(--background-color);
+    /* Color de fondo del contenedor */
     /*border: 1px solid  var(--main-color); /* Borde del contenedor */
     align-items: flex-start;
     padding-bottom: 2px;
-    display:flow-root;
+    display: flow-root;
     margin-bottom: 5%;
 }
 
@@ -24,12 +28,13 @@
     border-radius: 20px;
     width: 8%;
     height: 8%;
-    float: inline-start; /* Establece el elemento como bloque en línea */
-    margin: 10px ;
-    
+    float: inline-start;
+    /* Establece el elemento como bloque en línea */
+    margin: 10px;
+
 }
 
-.name{
+.name {
     font-size: 15px;
     margin: 8px 0 5px 0;
     font-style: bold;
@@ -37,13 +42,13 @@
 
 }
 
-.instruments{
+.instruments {
 
     font-size: 10px;
     font-style: bold;
     margin: 1px 0 15px 0;
     display: flex;
-    
+
 }
 
 .linea {
@@ -55,25 +60,26 @@
 
 
 
-.descript{
+.descript {
     margin-left: 8px;
 }
 
-.mexicanMusic{
+.mexicanMusic {
     margin: 10px;
     width: 80%;
 }
 
 
-.comment{
+.comment {
     width: 85%;
     font-size: 20.5px;
 }
 
-.material-symbols-outlined{
+.material-symbols-outlined {
     margin-left: 10px;
 
 }
+
 .artistas {
     height: 100%;
     width: 15%;
@@ -84,7 +90,7 @@
     background-color: var(--background-color);
     align-items: center;
     padding-right: 10px;
-    
+
 }
 
 
@@ -96,24 +102,24 @@
 /* #carouselExampleEscenarios{
     height: 30%;
 } */
-.carousel-img1{
+.carousel-img1 {
 
     align-items: center;
-    width:100%;
+    width: 100%;
     padding-top: 5px;
 }
 
 
-.comment{
+.comment {
     width: 95%;
-    margin: 5px 5px 5px 5px; 
+    margin: 5px 5px 5px 5px;
     border-radius: 5px;
     display: flex;
 }
 
 /* Carusel personalizado*/
 
-.carousel-principal{
+.carousel-principal {
     height: 60vh;
 }
 
@@ -121,7 +127,7 @@
     height: 60vh;
 }
 
-.carousel-anuncios{
+.carousel-anuncios {
     height: 60vh;
     width: 30vw;
 }
@@ -142,7 +148,7 @@
     width: 5vw;
 }
 
-.carousel-indicators .active{
+.carousel-indicators .active {
     background-color: var(--active-color);
 }
 
@@ -155,39 +161,51 @@
 }
 
 @media (min-width: 480px) {
-.nueva--publicacion input {
-    width: 200px;
-}
-}
-
-@media (min-width: 540px) {
     .nueva--publicacion input {
-        width: 300px;
+        width: 200px;
+    }
 }
-}    
 
 @media (min-width: 640px) {
     .nueva--publicacion input {
-        width: 400px;
-}
+        width: 300px;
+    }
 }
 
 @media (min-width: 767px) {
-.nueva--publicacion input {
-    width: 500px;
+    .nueva--publicacion input {
+        width: 400px;
+    }
 }
+
+@media (min-width: 864px) {
+    .nueva--publicacion input {
+        width: 500px;
+    }
 }
 
 @media (min-width: 992px) {
-.nueva--publicacion input {
-    width: 700px;
+    .nueva--publicacion input {
+        width: 600px;
+    }
 }
+
+@media (min-width: 1080px) {
+    .nueva--publicacion input {
+        width: 700px;
+    }
 }
 
 @media (min-width: 1200px) {
-.nueva--publicacion input {
-    width: 900px;
+    .nueva--publicacion input {
+        width: 800px;
+    }
 }
+
+@media (min-width: 1360px) {
+    .nueva--publicacion input {
+        width: 900px;
+    }
 }
 
 .nueva--publicacion label {
@@ -218,11 +236,11 @@
 }
 
 @media (min-width: 480px) {
-.botones--publicacion {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
+    .botones--publicacion {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
 }
 
 .botones--publicacion button {
@@ -271,7 +289,7 @@
     padding-left: 4px;
 }
 
-.nueva--publicacion--modal--formulario input {
+.col-md-4 textarea {
     width: 200px;
 }
 
@@ -280,19 +298,6 @@
     flex-direction: row;
     justify-content: space-evenly;
 }
-
-/* #modalArtistas input {
-    width: 450px;
-}
-
-#cuerpoPublicacion {
-    width: 450px;
-    height: 150px;
-}
-
-#floatingSelect {
-    width: 450px;
-} */
 
 
 /* Dashboard, contiene las siguientes secciones:
@@ -303,7 +308,7 @@
         Escenarios
 */
 
-.dashboard-container{
+.dashboard-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -316,10 +321,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start; /* Centra los elementos verticalmente */
-    width: 40vw; /* Ancho del contenedor */
+    align-items: flex-start;
+    /* Centra los elementos verticalmente */
+    width: 40vw;
+    /* Ancho del contenedor */
     height: auto;
-    background-color: var(--secondaryBg-color); /* Color de fondo del contenedor */
+    background-color: var(--secondaryBg-color);
+    /* Color de fondo del contenedor */
     padding: 16px;
     border-radius: 10px;
     margin-bottom: 16px;
@@ -352,7 +360,7 @@
     height: auto;
 }
 
-.contenido-publicacion-contenedor{
+.contenido-publicacion-contenedor {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -387,7 +395,7 @@
     margin-bottom: 16px;
 }
 
-.boton-reaccion{
+.boton-reaccion {
     margin-left: 16px;
 }
 
@@ -395,4 +403,40 @@
 
 .anuncios-element {
     margin-bottom: 16px;
+}
+
+/* Footer */
+
+.footer { 
+    font-weight: bold;
+    display: flex; 
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (min-width: 480px) { 
+    .footer {
+        padding-top: 25px;
+        padding-right: 100px;
+        padding-bottom: 25px;
+        padding-left: 100px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+}
+
+.footer a { 
+    text-decoration: none;
+    color: var(--black);
+}
+
+.footer span, p {
+    font-weight: bold;
+}
+
+.footer--copyright {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }

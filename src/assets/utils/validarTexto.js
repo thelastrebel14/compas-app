@@ -1,3 +1,4 @@
+
 function validarTexto(texto) {
   // inicializa variable para determinar si es texto
   isText = false;
