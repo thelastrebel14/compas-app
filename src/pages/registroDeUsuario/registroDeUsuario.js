@@ -187,7 +187,7 @@ botonRegistro.addEventListener("click", (e) => {
 
     console.log({ usuario });
     const usuarioJSON = JSON.stringify(usuario);
-    // window.location.href = "../MiEscena/miEscena.html";
+    window.location.href = "../inicioDeSesion/inicioDeSesion.html";
   }
 });
 
