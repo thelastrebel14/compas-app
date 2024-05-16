@@ -101,7 +101,7 @@ main{
     /*grid-template-columns: repeat(8,1fr);
     grid-template-rows: repeat(4,1fr); */
     grid-column: 1/9;
-    grid-row: 1/5;
+    grid-row: 1/3;
 }
 .profile--info--nombreySeguidores{
     display: flex;
@@ -110,7 +110,7 @@ main{
 }
 .profile--info--nombreySeguidores--nombre{
     margin-right: 14px;
-    max-width: 372px;
+    /* max-width: 372px; */
 }
 .profile--info--nombreySeguidores--nombre h1{
     font-weight: bold;
@@ -148,16 +148,19 @@ main{
     color: var(--grey);
 }
 .profile--info--demo{
-    margin-top: 38px;
+    margin: 15px;
     background-color: var(--black);
     width: auto;  /* modified*/
     height: 110px;
     border-radius: 10px;
+    grid-column: 1/9;
+    grid-row: 3/4;
 }
 .profile--info--demo{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    align-items: center;
     padding: 15px 28px 15px 22px;
 }
 .profile--info--demo--img{
@@ -183,12 +186,21 @@ main{
     align-items: center;
 }
 .profile--follow--buttons--seguidores{
+    display: flex;
+    justify-content: center;
+    text-align: center;
     margin: 5px;
 }
 .profile--follow--buttons--siguiendo{
+    display: flex;
+    justify-content: center;
+    text-align: center;
     margin: 5px;
 }
 .profile--follow--buttons--donadores{
+    display: flex;
+    justify-content: center;
+    text-align: center;
     margin-left: 5px;
 }
 .profile--followMensaje{
@@ -216,8 +228,7 @@ img{
     cursor: pointer;
     margin: 15px;
 }
-/* -------------------------------    Symbol Profile Info   ------------------------  */
-.profile--info--editSymbol{
+.profile--info--editSymbol{ /* ----------    Symbol Profile Info   --------------  */
     grid-column: 12/13;
     grid-row: 1/2;
 }
@@ -237,6 +248,113 @@ img{
 .symbol-edit:hover{
     background-color: var(--grey);
 }
+
+/* @media screen and (max-width: 764px){
+    .profile{
+        display: grid;
+        grid-template-columns: repeat(12,1fr);
+        grid-template-rows: repeat(3,1fr);
+    }
+} */
+@media screen and (max-width: 992px){
+    .profile{
+        display: grid;
+        grid-template-columns: repeat(12,1fr);
+        grid-template-rows: repeat(3,1fr);
+    }
+    .boton {
+        display: inline-block;
+        padding: 8px 16px;
+        font-size: 8px;
+        font-weight: 500;
+        /* text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, border-color 0.3s; */
+    }
+    .profile--info--demo{
+        height: 80px;
+    }
+}
+@media screen and (max-width: 576px){
+    .profile{
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        grid-template-rows: repeat(3,1fr) .5fr 1fr;
+    }
+    .profile--info{
+        display: grid;
+       /*grid-template-columns: repeat(8,1fr);
+       grid-template-rows: repeat(4,1fr); */
+       grid-column: 1/7;
+       grid-row: 1/3;
+   }
+   .profile--info--ubicacion{
+    /* grid-row: 3/4; */
+   }
+   .profile--info--enfoque--generos{
+        margin: 0 10px;
+   }
+   .profile--info--enfoque--instrumentos{
+    margin: 0 10px;
+   }
+   .profile--info--demo{
+    grid-column: 1/7;
+    grid-row: 5/6;
+   }
+    .profile--info--editSymbol{ /* ----------    Symbol Profile Info   --------------  */
+        grid-column: 6/7;
+        grid-row: 1/2;
+    }
+    .symbol-edit{
+        color: var(--hover-color);
+        background-color: var(--secondaryBg-color);
+        margin: 5px;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .profile--follow--buttons{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .profile--follow--buttons--seguidores{
+        margin: 5px;
+        width: 80px;
+    }
+    .profile--follow--buttons--siguiendo{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin: 5px;
+        width: 80px;
+    }
+    .profile--follow--buttons--donadores{
+        margin-left: 5px;
+        width: 80px;
+    }
+    .profile--followMensaje{
+        grid-column: 1/7;
+        grid-row: 3/4;
+    }
+    .profile--follow{
+        display: flex;
+        justify-content: center;
+        grid-column: 1/7;
+        grid-row: 4/5;
+        height: 80px;
+    }
+}
+
+/* ----------Sección de demos   /   Sección de Escenarios------------- */
 /* ----------Sección de demos   /   Sección de Escenarios------------- */
 .escenarios,
 .demos{
@@ -327,16 +445,18 @@ img{
 .acerca{
     margin-top: 50px;
 }
-
+.acerca--encabezado{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 .acerca .linea{
     margin: 16px 0 32px 0;
 }
-
 .acerca--info {
     width: auto;
     text-align:justify;
 } 
-
 .acerca--info p:nth-child(2){
     font-weight: bold;
     color: var(--grey);
