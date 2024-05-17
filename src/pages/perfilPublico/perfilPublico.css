@@ -35,7 +35,7 @@ header {
 
 @media screen and (max-width: 992px) {
     header {
-        margin-bottom: 00px;
+        margin-bottom: 0px;
     }
 
     .header--portada {
@@ -52,6 +52,19 @@ header {
     .header--fotoPerfil img {
         width: 150px;
         height: 150px;
+    }
+}
+
+@media screen and (max-width: 886px) {
+    .header--fotoPerfil img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header--fotoPerfil {
+        margin-left: 28px;
     }
 }
 
@@ -212,33 +225,46 @@ header {
 }
 
 @media screen and (max-width: 886px) {
+    .profile {
+        margin-top: 28px;
+    }
     .profile--follow--buttons button {
         width: 120px;
     }
 }
 
 @media screen and (max-width: 768px) {
-    .profile{
+    .profile {
         flex-direction: column;
     }
+
     .profile--info--nombreySeguidores {
         flex-direction: row;
     }
-    .profile--follow--buttons{
+
+    .profile--follow--buttons {
         margin-top: 20px;
     }
+
     .profile--follow--buttons button {
         width: 180px;
     }
 }
-@media screen and (max-width: 480px){
+
+@media screen and (max-width: 668px){
+    .profile {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
     .profile--info--nombreySeguidores {
         flex-direction: column;
     }
 }
 
-@media screen and (max-width: 380px){
-    .profile--info--enfoque{
+@media screen and (max-width: 380px) {
+    .profile--info--enfoque {
         flex-direction: column;
     }
 }
@@ -330,10 +356,87 @@ header {
     margin-top: 18px;
 }
 
+@media screen and (max-width: 768px) {
+    .escenarios hr,
+    .demos hr{
+        margin-bottom: 0px
+    }
+    .escenarios--cards,
+    .demos--cards {
+        align-items: start;
+        justify-content: left;
+
+    }
+
+    .escenarios--cards--item,
+    .demos--cards--item {
+        width: 200px;
+        max-width: 200px;
+        height: 200px;
+        max-height: 200px;
+    }
+
+    .escenarios--item,
+    .demos--item {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .escenarios--cards--item,
+    .demos--cards--item {
+        width: 300px;
+        max-width: 300px;
+        height: 300px;
+        max-height: 300px;
+    }
+
+    .escenarios--item,
+    .demos--item {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 380px){
+    .escenarios--cards--item,
+    .demos--cards--item {
+        width: 250px;
+        max-width: 250px;
+        height: 250px;
+        max-height: 250px;
+    }
+
+    .escenarios--item,
+    .demos--item {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 324px){
+    .escenarios--cards--item,
+    .demos--cards--item {
+        width: 210px;
+        max-width: 210px;
+        height: 210px;
+        max-height: 210px;
+    }
+
+    .escenarios--item,
+    .demos--item {
+        width: 210px;
+        height: 210px;
+    }
+}
+
+
+
 /* ------Acerca de -------- */
 .acerca {
     margin-top: 90px;
-    display: none;
+    /* display: none; */
 }
 
 .acerca .linea {
@@ -355,6 +458,13 @@ header {
     cursor: pointer;
 }
 
+@media screen and (max-width: 668px){
+    .acerca--info{
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
 /* Sección Reseñas */
 .carousel {
     margin-top: 82px;
@@ -366,13 +476,11 @@ header {
 
 .resenas {
     margin-top: 90px;
-    display: none;
+    /* display: none; */
 }
 
 .resenas--item {
-    display: flex;
-    gap: 54px;
-    padding: 0 216px 0 216px;
+    padding: 0 180px 0 180px;
 }
 
 .resenas--item img {
@@ -380,6 +488,18 @@ header {
     height: 100px;
     border-radius: 360px;
     object-fit: cover;
+}
+
+.resenas--item--info-movil{
+    display: block;
+    display: flex;
+    gap: 24px;
+    align-items: end;
+    margin-bottom: 24px;
+}
+.resenas--item--info-movil img{
+    width: 60px;
+    height: 60px;
 }
 
 .resenas--item--info h4 {
@@ -390,13 +510,35 @@ header {
     font-weight: 400;
 }
 
+@media screen and (max-width: 886px){
+    .resenas--item {
+        padding: 0 140px 0 140px;
+    }   
+}
+
+@media screen and (max-width: 886px){
+    .resenas--item {
+        padding: 0 50px 0 50px;
+    }   
+}
+
+@media screen and (max-width: 576px){
+    .resenas--item {
+        padding: 0 20px 0 20px;
+    }   
+}
+
+@media screen and (max-width: 480px){
+    .resenas--item {
+        padding: 0 0 0 0;
+    }   
+}
 
 
 /* ------------Sección similares------------ */
 
 .similares {
     margin-top: 90px;
-    display: none;
 }
 
 .similares hr {
@@ -422,6 +564,7 @@ header {
     width: 100%;
     height: 184px;
     object-fit: cover;
+    object-position: center center;
     border-radius: 5px 5px 0 0;
 }
 
@@ -439,6 +582,25 @@ header {
     position: absolute;
     bottom: 20px;
 }
+
+@media screen and (max-width: 480px){
+    .similares--item {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 380px){
+    .similares--item {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 324px){
+    .similares--item {
+        width: 220px;
+    }
+}
+
 
 
 
@@ -462,4 +624,23 @@ header {
     align-items: center;
     gap: 30px;
     overflow-x: hidden;
+}
+
+@media screen and (max-width: 768px) {
+    .carousel {
+        justify-content: center;
+    }
+
+    .carousel--prevArrow,
+    .carousel--nextArrow {
+        visibility: hidden;
+        /* display: none; */
+    }
+
+    .carousel--cards {
+        overflow-x: scroll;
+        justify-content: center;
+        width: 100%;
+        align-items: start;
+    }
 }

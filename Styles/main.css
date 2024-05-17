@@ -46,7 +46,7 @@ main{
     }
 }
 
-@media screen and (max-width: 380px){
+@media screen and (max-width: 480px){
     main{
         margin: 0 28px 0 28px;
     }
