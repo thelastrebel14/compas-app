@@ -1,8 +1,8 @@
 //import {validarTexto} from "../../assets/utils/validarTexto"
 
-function Test() { 
-    console.log("hola");
-}
+// function Test() { 
+//     console.log("hola");
+// }
 
 //---------------------------------------------------------------------
 // const acercaDe = document.getElementById('idAcercaDeIcon'); // Constante que contiene el elemento iconEditAcercaDe mediante su ID(idAcercaDeIcon)
@@ -54,7 +54,7 @@ consformProfileInfo.addEventListener( 'submit' , function(event) {  // al objeto
   console.log(numeroValidado);
   });
 
-
+  
   
   
 
