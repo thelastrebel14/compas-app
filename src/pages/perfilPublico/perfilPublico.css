@@ -30,7 +30,29 @@ header {
     object-fit: cover;
     border-radius: 360px;
     position: absolute;
-    
+
+}
+
+@media screen and (max-width: 992px) {
+    header {
+        margin-bottom: 00px;
+    }
+
+    .header--portada {
+        height: 250px;
+    }
+
+    .header--fotoPerfil {
+        margin-left: 50px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+
+    .header--fotoPerfil img {
+        width: 150px;
+        height: 150px;
+    }
 }
 
 /* ------------Información del perfil de usuario ------------*/
@@ -38,12 +60,12 @@ header {
 .profile {
     display: flex;
     justify-content: space-between;
+    margin-top: 38px;
 }
 
 .profile--info--nombreySeguidores {
     display: flex;
-    align-items: center;
-    margin-top: 34px;
+    align-items: start;
 }
 
 .profile--info--nombreySeguidores--nombre {
@@ -58,6 +80,7 @@ header {
 .profile--info--nombreySeguidores--seguidores h5 {
     font-weight: bold;
     color: var(--grey);
+    margin-top: 10px;
 }
 
 .profile--info--ubicacion {
@@ -101,6 +124,7 @@ header {
     width: 700px;
     height: 110px;
     border-radius: 10px;
+    display: none;
 }
 
 .profile--info--demo {
@@ -108,6 +132,7 @@ header {
     align-items: center;
     justify-content: space-evenly;
     padding: 15px 28px 15px 22px;
+    display: none;
 }
 
 .profile--info--demo--img {
@@ -121,6 +146,10 @@ header {
 .profile--info--demo--titulo h3,
 .profile--info--demo--titulo h5 {
     color: var(--white);
+}
+
+.profile--follow--buttons button {
+    width: 180px;
 }
 
 
@@ -152,12 +181,17 @@ header {
     margin-top: 32px;
 }
 
-.profile--follow--mensaje h4 {
+.profile--follow--mensaje h6 {
     font-weight: bold;
+    cursor: pointer;
 }
 
-.profile--follow--mensaje h4 span {
+.profile--follow--mensaje h6 span {
     margin-left: 32px;
+}
+
+.profile--follow--mensaje h6 span img {
+    width: 30px;
 }
 
 .profile--follow--redes {
@@ -165,16 +199,55 @@ header {
 }
 
 .profile--follow--redes img {
-    width: 40px;
-    margin-right: 36px;
-    margin-top: 20px;
+    width: 30px;
+    margin-right: 10px;
+    margin-top: 10px;
     cursor: pointer;
+}
+
+@media screen and (max-width: 992px) {
+    .profile--info--nombreySeguidores {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 886px) {
+    .profile--follow--buttons button {
+        width: 120px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .profile{
+        flex-direction: column;
+    }
+    .profile--info--nombreySeguidores {
+        flex-direction: row;
+    }
+    .profile--follow--buttons{
+        margin-top: 20px;
+    }
+    .profile--follow--buttons button {
+        width: 180px;
+    }
+}
+@media screen and (max-width: 480px){
+    .profile--info--nombreySeguidores {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 380px){
+    .profile--info--enfoque{
+        flex-direction: column;
+    }
 }
 
 /* ----------Sección de demos   /   Sección de Escenarios------------- */
 .escenarios,
 .demos {
     margin-top: 90px;
+    /* display: none; */
 }
 
 .escenarios hr,
@@ -260,6 +333,7 @@ header {
 /* ------Acerca de -------- */
 .acerca {
     margin-top: 90px;
+    display: none;
 }
 
 .acerca .linea {
@@ -270,9 +344,11 @@ header {
     width: 600px;
     max-width: 600px;
 }
+
 .acerca--info p:nth-child(1) {
     font-weight: 400;
 }
+
 .acerca--info p:nth-child(2) {
     font-weight: bold;
     color: var(--grey);
@@ -280,15 +356,17 @@ header {
 }
 
 /* Sección Reseñas */
-.carousel{
+.carousel {
     margin-top: 82px;
 }
 
-.carousel-control-next{
+.carousel-control-next {
     color: black;
 }
-.resenas{
+
+.resenas {
     margin-top: 90px;
+    display: none;
 }
 
 .resenas--item {
@@ -318,6 +396,7 @@ header {
 
 .similares {
     margin-top: 90px;
+    display: none;
 }
 
 .similares hr {
