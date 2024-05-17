@@ -19,10 +19,10 @@ function validaTelefonosValidacion(numeroTelefono){
     var patron = /^\d{10}$/; 
     //El Método test(): verificar si una cadena coincide con un patrón específico.
     if (patron.test(numeroTelefonoValidado)) {  
-      //return true; // Válido
-      return numeroTelefonoValidado;
+      return true; // Válido
+      //return numeroTelefonoValidado;
     } else {
-      //return false; // No válido
-      return "Numero invalido";
+      return false; // No válido
+      //return "Numero invalido";
     }
 }
