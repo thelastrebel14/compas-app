@@ -188,6 +188,8 @@ botonRegistro.addEventListener("click", (e) => {
     console.log({ usuario });
     const usuarioJSON = JSON.stringify(usuario);
     window.location.href = "../inicioDeSesion/inicioDeSesion.html";
+    localStorage.setItem("usuario", usuario.email);
+    localStorage.setItem("contraseña", usuario.contrasena);
   }
 });
 
