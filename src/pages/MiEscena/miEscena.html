@@ -184,21 +184,20 @@
                                 <h4>Carlos Santana</h4>
                             </div>
                             <br>
-                            <form action="" id="formularioFotoVideo">
-                                <div class="nueva--publicacion--modal--formulario">
-                                    <textarea class="form-control" name="publicacionTexto" id=""
-                                        placeholder="¿Cómo va tu vibra hoy?"></textarea>
+                            <form class="row g-3 needs-validation" novalidate action="" id="formularioFotoVideo">
+                                <div>
+                                    <textarea class="form-control" name="publicacionTexto" id="publicacionTexto" required placeholder="¿Cómo va tu vibra hoy?"></textarea>
                                 </div>
                                 <br>
                                 <p> Carga una imagen para tu publicación (opcional)</p>
-                                <div class="mb-3">
-                                    <input class="form-control" type="file" name="publicacionMultimedia" id="formFile">
+                                <div>
+                                    <input class="form-control" type="file" name="publicacionMultimedia" id="publicacionMultimedia">
                                 </div>
                                 <br>
                                 <!-- Modal footer -->
                                 <div class="modal-alinear-botones">
                                     <button type="button" class="boton outlined" data-bs-dismiss="modal">Cerrar</button>
-                                    <button type="submit" class="boton flat" data-bs-dismiss="modal">Publicar</button>
+                                    <button type="submit" class="boton flat" id="publicarFotoVideo" data-bs-dismiss="modal">Publicar</button>
                                 </div>
                             </form>
                         </div>
@@ -225,15 +224,15 @@
                                 <h4>Carlos Santana</h4>
                             </div>
                             <br>
-                            <form action="" id="formularioArtista">
+                            <form class="row g-3 needs-validation" novalidate action="" id="formularioBusquedaArtista">
                                 <fieldset>
-                                    <div class="nueva--publicacion--modal--formulario">
-                                        <input type="text" class="form-control" name="tituloPublicacion" id=""
+                                    <div>
+                                        <input type="text" class="form-control" name="tituloPublicacion" id="tituloPublicacion" required
                                             placeholder="Título de la publicación">
                                     </div>
                                     <br>
                                     <div class="form-floating">
-                                        <select class="form-select" id="floatingSelect"
+                                        <select class="form-select" id="artistaOEscenario" required
                                             aria-label="Floating label select example">
                                             <option selected>¿Buscas un artista o un escenario?</option>
                                             <option value="1" id="busquedaArtista" name="artistaOEscenario">Artista
@@ -244,7 +243,7 @@
                                     </div>
                                     <br>
                                     <div class="form-floating">
-                                        <select class="form-select" id="floatingSelect"
+                                        <select class="form-select" id="generoMusical"
                                             aria-label="Floating label select example">
                                             <option selected>¿Qué género musical te interesa?</option>
                                             <option value="1" name="generoNorteno">Norteño</option>
@@ -255,7 +254,7 @@
                                     </div>
                                     <br>
                                     <div class="form-floating">
-                                        <select class="form-select" id="floatingSelect"
+                                        <select class="form-select" id="instrumentoMusical"
                                             aria-label="Floating label select example">
                                             <option selected>¿Qué instrumento te interesa?</option>
                                             <option value="1" name="instrumentoGuitarra">Guitarra</option>
@@ -265,45 +264,30 @@
                                         </select>
                                     </div>
                                     <br>
-                                    <div class="nueva--publicacion--modal--formulario">
-                                        <input type="text" class="form-control" name="ubicacionBusqueda"
+                                    <div>
+                                        <input type="text" class="form-control" name="ubicacionBusqueda" required id="ubicacionBusqueda"
                                             placeholder="Ubicación">
                                     </div>
                                     <br>
-                                    <div class="nueva--publicacion--modal--formulario">
-                                        <textarea class="form-control" name="cuerpoPublicacion" id="cuerpoPublicacion"
-                                            placeholder="Cuerpo de la publicación"></textarea>
+                                    <div>
+                                        <input type="number" class="form-control" name="codigoPostal" id="codigoPostal" required placeholder="Código postal">
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <textarea class="form-control" name="cuerpoPublicacion" id="cuerpoPublicacion" required placeholder="Cuerpo de la publicación"></textarea>
                                     </div>
                                     <br>
                                     <p> Carga una imagen para tu publicación (opcional)</p>
                                     <div class="mb-3">
-                                        <input class="form-control" type="file" name="artistaMultimedia" id="formFile">
+                                        <input class="form-control" type="file" name="multimediaBusqueda" id="multimediaBusqueda">
                                     </div>
                                     <br>
                                 </fieldset>
                                 <div class="modal-alinear-botones">
                                     <button type="button" class="boton outlined" data-bs-dismiss="modal">Cerrar</button>
-                                    <button type="button" class="boton flat" data-bs-dismiss="modal">Publicar</button>
+                                    <button type="submit" id="publicarBusquedaArtista" class="boton flat" data-bs-dismiss="modal">Publicar</button>
                                 </div>
                             </form>
-                        <!-- </div>
-                    </div>
-                    <br />
-                    <p>Carga una imagen para tu publicación (opcional)</p>
-                    <div class="mb-3">
-                        <input class="form-control" type="file" id="formFile" />
-                    </div>
-                    <br />
-                    </fieldset>
-                    <div class="modal-alinear-botones">
-                        <button type="button" class="boton outlined" data-bs-dismiss="modal">
-                            Cerrar
-                        </button>
-                        <button type="button" class="boton flat" data-bs-dismiss="modal">
-                            Publicar
-                        </button>
-                    </div> -->
-                    </form>
                 </div>
             </div>
             </div>
@@ -435,10 +419,8 @@
         <a href="#">Acerca de</a>
         <a href="#">Términos y condiciones</a>
         <a href="#">Seguridad y privacidad</a>
-        <div class="copyright">
-            <!--Un div para alinear el icono con el texto de copyright-->
+        <div class="footer--copyright">
             <span class="material-symbols-outlined" style="font-size: 26px">
-                <!--Icono de copyright-->
                 copyright
             </span>
             <p>Compás App 2024</p>
@@ -449,7 +431,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="miEscena.js"></script>
-    <script src="nuevaPublicacion.js"></script>
+    <script src="nuevaPublicacionNuevo.js"></script>
 
     <script type="module" src="./miEscena.js"></script>
 </body>
