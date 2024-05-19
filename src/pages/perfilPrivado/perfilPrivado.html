@@ -127,23 +127,27 @@
             <div class="profile--info">
                 <div class="profile--info--nombreySeguidores">
                     <div class="profile--info--nombreySeguidores--nombre">
-                        <h1 id="nombreUsuario">Mario Sandoval Velázquez</h1>
+                        <!-- <h1 id="nombreUsuario">Mario Sandoval Velázquez</h1> -->
+                        <div id="contenedor--nombreUsuario"></div>
                     </div>
                     <div class="profile--info--nombreySeguidores--seguidores">
                         <h5>13.2M seguidores</h5>
                     </div>
                 </div>
                 <div class="profile--info--ubicacion">
-                    <h5>Tizayuca, Hidalgo</h5>
+                    <!-- <h5>Tizayuca, Hidalgo</h5> -->
+                    <div id="contenedor--ubicacion"></div>
                 </div>
                 <div class="profile--info--enfoque">
                     <div class="profile--info--enfoque--instrumentos">
                         <h5>Instrumentos</h5>
-                        <p>Guitarra | Bajo | Voz</p>
+                        <!-- <p>Guitarra | Bajo | Voz</p> -->
+                        <div id="contenedor--instrumentos"></div>
                     </div>
                     <div class="profile--info--enfoque--generos">
-                        <h5>Géneros</h5>
+                        <h5>Géneros musicales</h5>
                         <p>Rock | Cumbia | Metal</p>
+                        <div id="contenedor--generosMusicales"></div>
                     </div>
                 </div>
                 <!-- <div class="profile--info--demo">
@@ -280,6 +284,7 @@
 
 
         <!----------------------------  Sección acerca de ------------------------------------------>
+        
         <section class="acerca">
             <div class="acerca--encabezado">
                 <h2 class="boldTx">Acerca de</h2>
@@ -288,12 +293,12 @@
                 </span>
             </div>
             <div class="linea"></div>
-            <div class="acerca--info">
-                <p>
+            <div class="acerca--info" id="contenedor--acercaDe">
+                <!-- <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ad aliquid sed ipsa beatae. Cum fuga non, possimus necessitatibus illum id beatae expedita deleniti quidem earum aspernatur reiciendis! Veritatis, iure?
                     Debitis eius ratione libero illum quo omnis similique sint fuga quaerat. Hic doloribus labore minima eveniet quibusdam! Nemo necessitatibus delectus natus eveniet voluptates. Officia, ex ipsum fugiat soluta nam at!
                 </p>
-                <p>Ver más...</p>
+                <p>Ver más...</p> -->
             </div>
         </section>
 
@@ -685,8 +690,11 @@
                             <label for="estadoPerfil" class="col-form-label">Estado</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="instrumentosPerfil" placeholder="Instrumentos">
-                            <label for="instrumentosPerfil" class="col-form-label">Instrumentos</label>
+                            <h5>Instrumentos</h5>
+                            <!-- <input type="text" class="form-control" id="instrumentosPerfil" placeholder="Instrumentos"> -->
+                            <!-- <label for="instrumentosPerfil" class="col-form-label">Instrumentos</label> -->
+                            <button type="button" id="button--AddInstrument" class="btn">+</button>
+                            <div id="contenedor--inputsInstrumentos"></div>
                         </div>
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" id="generoMusicalPerfil" placeholder="Género musical">
@@ -722,17 +730,18 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form>
+            <form id="formAcercaDe">
                 <div class="mb-3">
                     <label for="img--cover" class="col-form-label">Agrega una descripción</label>
                     <textarea class="form-control" id="message-text"></textarea>
-                  </div>
-              </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-form-acercaDe-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-form-acercaDe-primary">Aceptar</button>
+                </div>
+            </form>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn-primary">Aceptar</button>
-            </div>
+            
           </div>
         </div>
       </div>

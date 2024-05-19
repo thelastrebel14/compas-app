@@ -542,6 +542,36 @@ img{
     color: var(--grey);
     cursor: pointer;
 }
+.btn-form-acercaDe-primary{
+    color: #fff;
+    background-color: var(--main-color);
+    border: 2px solid var(--main-color);
+}
+.btn-form-acercaDe-primary:hover{
+    color: #fff;
+    background-color: var(--hover-color);
+    border: 2px solid var(--hover-color); 
+}
+.btn-form-acercaDe-primary:active{
+    background-color: var(--active-color) !important;
+    border: 2px solid var(--active-color) !important;
+}
+.btn-form-acercaDe-secondary{
+    color: var(--main-color);
+    background-color: transparent;
+    border: 2px solid var(--main-color);
+}
+.btn-form-acercaDe-secondary:hover{
+    color: var(--hover-color);
+    background-color: transparent;
+    border: 2px solid var(--hover-color); 
+}
+.btn-form-acercaDe-secondary:active{
+    color: var(--active-color) !important;
+    background-color: transparent !important;
+    border: 2px solid var(--active-color) !important; 
+}
+
 
 /*----------------------------- Sección Recomendaciones -----------------------------------*/
 
