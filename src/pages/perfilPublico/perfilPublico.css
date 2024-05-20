@@ -131,45 +131,11 @@ header {
     color: var(--grey);
 }
 
-.profile--info--demo {
-    margin-top: 38px;
-    background-color: var(--black);
-    width: 700px;
-    height: 110px;
-    border-radius: 10px;
-    display: none;
-}
-
-.profile--info--demo {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 15px 28px 15px 22px;
-    display: none;
-}
-
-.profile--info--demo--img {
-    background-image: url('../../src/assets/perfilPublico/img/perfil-demo-img.jpg');
-    background-size: cover;
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
-}
-
-.profile--info--demo--titulo h3,
-.profile--info--demo--titulo h5 {
-    color: var(--white);
-}
-
 .profile--follow--buttons button {
     width: 180px;
+    font-size: 25px;
 }
 
-
-
-/* .profile--follow{
-    margin-left: 114px;
-} */
 .profile--follow--buttons {
     display: flex;
 }
@@ -194,17 +160,17 @@ header {
     margin-top: 32px;
 }
 
-.profile--follow--mensaje h6 {
+.profile--follow--mensaje h4 {
     font-weight: bold;
     cursor: pointer;
 }
 
-.profile--follow--mensaje h6 span {
+.profile--follow--mensaje h4 span {
     margin-left: 32px;
 }
 
-.profile--follow--mensaje h6 span img {
-    width: 30px;
+.profile--follow--mensaje h4 span img {
+    width: 31.38px;
 }
 
 .profile--follow--redes {
@@ -212,7 +178,7 @@ header {
 }
 
 .profile--follow--redes img {
-    width: 30px;
+    width: 40px;
     margin-right: 10px;
     margin-top: 10px;
     cursor: pointer;
@@ -228,6 +194,7 @@ header {
     .profile {
         margin-top: 28px;
     }
+
     .profile--follow--buttons button {
         width: 120px;
     }
@@ -248,10 +215,11 @@ header {
 
     .profile--follow--buttons button {
         width: 180px;
+        font-size: 20px;
     }
 }
 
-@media screen and (max-width: 668px){
+@media screen and (max-width: 668px) {
     .profile {
         margin-top: 20px;
     }
@@ -264,383 +232,452 @@ header {
 }
 
 @media screen and (max-width: 380px) {
-    .profile--info--enfoque {
-        flex-direction: column;
+    .profile--follow--buttons button {
+        font-size: 16px;
     }
 }
 
-/* ----------Sección de demos   /   Sección de Escenarios------------- */
-.escenarios,
-.demos {
-    margin-top: 90px;
-    /* display: none; */
-}
-
-.escenarios hr,
-.demos hr {
-    margin-top: 16px;
-    margin-bottom: 32px;
-}
-
-.escenarios--cards,
-.demos--cards {
+/* ----------SECCIÓN DE DEMO DEL PERFIL----------- */
+.profile--demo {
+    margin-top: 36px;
+    background-color: var(--black);
     display: flex;
     align-items: center;
-    justify-content: center;
-
+    padding: 16px 22px 16px 22px;
+    width: 700px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-.escenarios--cards--item,
-.demos--cards--item {
-    width: 286px;
-    max-width: 286px;
-    height: 286px;
-    max-height: 286px;
-}
-
-.escenarios--cards--item img,
-.demos--cards--item img {
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
-}
-
-.escenarios--item,
-.demos--item {
-    width: 286px;
-    height: 286px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-}
-
-.escenarios--item img,
-.demos--item img {
-    width: 100%;
-    height: 100%;
+.profile--demo--img {
+    width: 80px;
+    height: 80px;
     object-fit: cover;
-    border-radius: 10px;
+    margin-right: 50px;
+    border-radius: 5px;
 }
 
-
-.escenarios--item--info,
-.demos--item--info {
-    border-radius: 10px;
-    position: absolute;
-    text-align: center;
+.profile--demo--info {
+    margin-right: 80px;
+    width: 50%;
     color: var(--white);
-    background-color: rgba(0, 0, 0, 0.6);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.escenarios--item--info .card-title,
-.demos--item--info .card-title {
-    margin: 0;
-    padding: 0;
-}
-
-.escenarios--item--info h4 {
-    margin-top: 4px;
-    margin-bottom: 6px;
-}
-
-.escenarios--item--info button,
-.demos--item--info button {
-    margin-top: 18px;
 }
 
 @media screen and (max-width: 768px) {
-    .escenarios hr,
-    .demos hr{
-        margin-bottom: 0px
+    .profile--demo {
+        width: 100%;
     }
+}
+
+@media screen and (max-width: 668px) {
+    .profile--demo--img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .profile--demo--img {
+        display: none;
+    }
+
+    .profile--demo--info {
+        width: 70%;
+
+    }
+
+    .profile--demo--play {
+        width: 40px;
+    }
+}
+
+    @media screen and (max-width: 380px) {
+
+        .profile--demo--info h3 {
+            width: 90%;
+            font-size: 20px;
+        }
+    }
+
+
+
+    /* ----------Sección de demos   /   Sección de Escenarios------------- */
+    .escenarios,
+    .demos {
+        margin-top: 90px;
+        /* display: none; */
+    }
+
+    .escenarios hr,
+    .demos hr {
+        margin-top: 16px;
+        margin-bottom: 32px;
+    }
+
     .escenarios--cards,
     .demos--cards {
-        align-items: start;
-        justify-content: left;
-
-    }
-
-    .escenarios--cards--item,
-    .demos--cards--item {
-        width: 200px;
-        max-width: 200px;
-        height: 200px;
-        max-height: 200px;
-    }
-
-    .escenarios--item,
-    .demos--item {
-        width: 200px;
-        height: 200px;
-    }
-}
-
-@media screen and (max-width: 480px){
-    .escenarios--cards--item,
-    .demos--cards--item {
-        width: 300px;
-        max-width: 300px;
-        height: 300px;
-        max-height: 300px;
-    }
-
-    .escenarios--item,
-    .demos--item {
-        width: 300px;
-        height: 300px;
-    }
-}
-
-@media screen and (max-width: 380px){
-    .escenarios--cards--item,
-    .demos--cards--item {
-        width: 250px;
-        max-width: 250px;
-        height: 250px;
-        max-height: 250px;
-    }
-
-    .escenarios--item,
-    .demos--item {
-        width: 250px;
-        height: 250px;
-    }
-}
-
-@media screen and (max-width: 324px){
-    .escenarios--cards--item,
-    .demos--cards--item {
-        width: 210px;
-        max-width: 210px;
-        height: 210px;
-        max-height: 210px;
-    }
-
-    .escenarios--item,
-    .demos--item {
-        width: 210px;
-        height: 210px;
-    }
-}
-
-
-
-/* ------Acerca de -------- */
-.acerca {
-    margin-top: 90px;
-    /* display: none; */
-}
-
-.acerca .linea {
-    margin: 16px 0 32px 0;
-}
-
-.acerca--info {
-    width: 600px;
-    max-width: 600px;
-}
-
-.acerca--info p:nth-child(1) {
-    font-weight: 400;
-}
-
-.acerca--info p:nth-child(2) {
-    font-weight: bold;
-    color: var(--grey);
-    cursor: pointer;
-}
-
-@media screen and (max-width: 668px){
-    .acerca--info{
-        width: 100%;
-        max-width: 100%;
-    }
-}
-
-/* Sección Reseñas */
-.carousel {
-    margin-top: 82px;
-}
-
-.carousel-control-next {
-    color: black;
-}
-
-.resenas {
-    margin-top: 90px;
-    /* display: none; */
-}
-
-.resenas--item {
-    padding: 0 180px 0 180px;
-}
-
-.resenas--item img {
-    width: 100px;
-    height: 100px;
-    border-radius: 360px;
-    object-fit: cover;
-}
-
-.resenas--item--info-movil{
-    display: block;
-    display: flex;
-    gap: 24px;
-    align-items: end;
-    margin-bottom: 24px;
-}
-.resenas--item--info-movil img{
-    width: 60px;
-    height: 60px;
-}
-
-.resenas--item--info h4 {
-    font-weight: bold;
-}
-
-.resenas--item--info p {
-    font-weight: 400;
-}
-
-@media screen and (max-width: 886px){
-    .resenas--item {
-        padding: 0 140px 0 140px;
-    }   
-}
-
-@media screen and (max-width: 886px){
-    .resenas--item {
-        padding: 0 50px 0 50px;
-    }   
-}
-
-@media screen and (max-width: 576px){
-    .resenas--item {
-        padding: 0 20px 0 20px;
-    }   
-}
-
-@media screen and (max-width: 480px){
-    .resenas--item {
-        padding: 0 0 0 0;
-    }   
-}
-
-
-/* ------------Sección similares------------ */
-
-.similares {
-    margin-top: 90px;
-}
-
-.similares hr {
-    margin: 16px 0 32px 0;
-}
-
-.similares--item {
-    width: 184px;
-    height: 400px;
-}
-
-.sistem--item--info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.similares--item--info h5 {
-    font-weight: bold;
-}
-
-.similares--item img {
-    width: 100%;
-    height: 184px;
-    object-fit: cover;
-    object-position: center center;
-    border-radius: 5px 5px 0 0;
-}
-
-.similares--item--info span {
-    margin-top: 6px;
-}
-
-.similares--item--info span:nth-of-type(2) {
-    color: var(--grey);
-}
-
-.similares--item--info button {
-    margin-top: 25px;
-    width: 128px;
-    position: absolute;
-    bottom: 20px;
-}
-
-@media screen and (max-width: 480px){
-    .similares--item {
-        width: 300px;
-    }
-}
-
-@media screen and (max-width: 380px){
-    .similares--item {
-        width: 250px;
-    }
-}
-
-@media screen and (max-width: 324px){
-    .similares--item {
-        width: 220px;
-    }
-}
-
-
-
-
-/* ---------CARRUSEL----------- */
-.carousel {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.carousel--prevArrow,
-.carousel--nextArrow {
-    cursor: pointer;
-}
-
-
-.carousel--cards {
-    width: 80%;
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    overflow-x: hidden;
-}
-
-@media screen and (max-width: 768px) {
-    .carousel {
+        display: flex;
+        align-items: center;
         justify-content: center;
+
+    }
+
+    .escenarios--cards--item,
+    .demos--cards--item {
+        width: 286px;
+        max-width: 286px;
+        height: 286px;
+        max-height: 286px;
+    }
+
+    .escenarios--cards--item img,
+    .demos--cards--item img {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .escenarios--item,
+    .demos--item {
+        width: 286px;
+        height: 286px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+    }
+
+    .escenarios--item img,
+    .demos--item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+
+    .escenarios--item--info,
+    .demos--item--info {
+        border-radius: 10px;
+        position: absolute;
+        text-align: center;
+        color: var(--white);
+        background-color: rgba(0, 0, 0, 0.6);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .escenarios--item--info .card-title,
+    .demos--item--info .card-title {
+        margin: 0;
+        padding: 0;
+    }
+
+    .escenarios--item--info h4 {
+        margin-top: 4px;
+        margin-bottom: 6px;
+    }
+
+    .escenarios--item--info button,
+    .demos--item--info button {
+        margin-top: 18px;
+    }
+
+    @media screen and (max-width: 768px) {
+
+        .escenarios hr,
+        .demos hr {
+            margin-bottom: 0px
+        }
+
+        .escenarios--cards,
+        .demos--cards {
+            align-items: start;
+            justify-content: left;
+
+        }
+
+        .escenarios--cards--item,
+        .demos--cards--item {
+            width: 200px;
+            max-width: 200px;
+            height: 200px;
+            max-height: 200px;
+        }
+
+        .escenarios--item,
+        .demos--item {
+            width: 200px;
+            height: 200px;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+
+        .escenarios--cards--item,
+        .demos--cards--item {
+            width: 300px;
+            max-width: 300px;
+            height: 300px;
+            max-height: 300px;
+        }
+
+        .escenarios--item,
+        .demos--item {
+            width: 300px;
+            height: 300px;
+        }
+    }
+
+    @media screen and (max-width: 380px) {
+
+        .escenarios--cards--item,
+        .demos--cards--item {
+            width: 250px;
+            max-width: 250px;
+            height: 250px;
+            max-height: 250px;
+        }
+
+        .escenarios--item,
+        .demos--item {
+            width: 250px;
+            height: 250px;
+        }
+    }
+
+    @media screen and (max-width: 324px) {
+
+        .escenarios--cards--item,
+        .demos--cards--item {
+            width: 210px;
+            max-width: 210px;
+            height: 210px;
+            max-height: 210px;
+        }
+
+        .escenarios--item,
+        .demos--item {
+            width: 210px;
+            height: 210px;
+        }
+    }
+
+
+
+    /* ------Acerca de -------- */
+    .acerca {
+        margin-top: 90px;
+        /* display: none; */
+    }
+
+    .acerca .linea {
+        margin: 16px 0 32px 0;
+    }
+
+    .acerca--info {
+        width: 600px;
+        max-width: 600px;
+    }
+
+    .acerca--info p:nth-child(1) {
+        font-weight: 400;
+    }
+
+    .acerca--info p:nth-child(2) {
+        font-weight: bold;
+        color: var(--grey);
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: 668px) {
+        .acerca--info {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+
+    /* Sección Reseñas */
+    .carousel {
+        margin-top: 82px;
+    }
+
+    .carousel-control-next {
+        color: black;
+    }
+
+    .resenas {
+        margin-top: 90px;
+        /* display: none; */
+    }
+
+    .resenas--item {
+        padding: 0 180px 0 180px;
+    }
+
+    .resenas--item img {
+        width: 100px;
+        height: 100px;
+        border-radius: 360px;
+        object-fit: cover;
+    }
+
+    .resenas--item--info-movil {
+        display: block;
+        display: flex;
+        gap: 24px;
+        align-items: end;
+        margin-bottom: 24px;
+    }
+
+    .resenas--item--info-movil img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .resenas--item--info h4 {
+        font-weight: bold;
+    }
+
+    .resenas--item--info p {
+        font-weight: 400;
+    }
+
+    @media screen and (max-width: 886px) {
+        .resenas--item {
+            padding: 0 140px 0 140px;
+        }
+    }
+
+    @media screen and (max-width: 886px) {
+        .resenas--item {
+            padding: 0 50px 0 50px;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .resenas--item {
+            padding: 0 20px 0 20px;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .resenas--item {
+            padding: 0 0 0 0;
+        }
+    }
+
+
+    /* ------------Sección similares------------ */
+
+    .similares {
+        margin-top: 90px;
+    }
+
+    .similares hr {
+        margin: 16px 0 32px 0;
+    }
+
+    .similares--item {
+        width: 184px;
+        height: 400px;
+    }
+
+    .sistem--item--info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .similares--item--info h5 {
+        font-weight: bold;
+    }
+
+    .similares--item img {
+        width: 100%;
+        height: 184px;
+        object-fit: cover;
+        object-position: center center;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .similares--item--info span {
+        margin-top: 6px;
+    }
+
+    .similares--item--info span:nth-of-type(2) {
+        color: var(--grey);
+    }
+
+    .similares--item--info button {
+        margin-top: 25px;
+        width: 128px;
+        position: absolute;
+        bottom: 20px;
+    }
+
+    @media screen and (max-width: 480px) {
+        .similares--item {
+            width: 300px;
+        }
+    }
+
+    @media screen and (max-width: 380px) {
+        .similares--item {
+            width: 250px;
+        }
+    }
+
+    @media screen and (max-width: 324px) {
+        .similares--item {
+            width: 220px;
+        }
+    }
+
+
+
+
+    /* ---------CARRUSEL----------- */
+    .carousel {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .carousel--prevArrow,
     .carousel--nextArrow {
-        visibility: hidden;
-        /* display: none; */
+        cursor: pointer;
     }
 
+
     .carousel--cards {
-        overflow-x: scroll;
-        justify-content: center;
-        width: 100%;
-        align-items: start;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 30px;
+        overflow-x: hidden;
     }
-}
+
+    @media screen and (max-width: 768px) {
+        .carousel {
+            justify-content: center;
+        }
+
+        .carousel--prevArrow,
+        .carousel--nextArrow {
+            /* visibility: hidden; */
+            display: none;
+        }
+
+        .carousel--cards {
+            overflow-x: scroll;
+            width: 100%;
+        }
+    }
