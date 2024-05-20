@@ -18,18 +18,7 @@
 {
     margin-left: 26px;
 }
-/* Se configura el tamaño de configuración */
-.buscador--configuracion
-{
-    width: 161px;
-    height: 40px;
-}
-/* Se configura el color y la sombra que tendrá el buscador al ingresar texto */
-.buscador--configuracion:focus
-{
-    border-color: var(--main-color);
-    box-shadow: 0 0 5px var(--main-color);
-}
+
 /* Se redimensiona la imagen de perfil */
 .perfil
 {
@@ -42,7 +31,7 @@
     margin-right: 206px;
 }
 /* Configuración del color de texto */
-.texto--configuracion, .texto--drop--perfil, .texto--drop--sesion
+.texto--configuracion, .texto--drop--perfil
 {
     color: var(--navbarText-color);
 }
@@ -51,7 +40,21 @@
 {
     color: var(--navbarSelected);
 }
+/* Color de texto de cerrar sesión del dropdown  */
 .texto--drop--sesion:hover
 {
     color: red;
+}
+/* Se coloca un border-radios de 10px como se acordó con todo el equipo, un color de borde gris y un tamaño del largo para la sección de navbar*/
+.barra--busqueda--contenedor--form
+{
+    border-radius: 10px;
+    border-color: #dee2e6;
+    width: 163px;
+}
+/* Se quita el box shadow predeterminado de bootstrap y se coloca un color de borde cuando el estado de la barra de busqueda se cambia a focus */
+.barra--busqueda--contenedor--form:focus
+{
+    border-color: #dee2e6;
+    box-shadow: none;
 }

@@ -86,7 +86,26 @@
     padding-right: 10px;
     
 }
+@media (max-width:800px){
+    .anuncios-element .carousel-inner .carousel-anuncios-img  {
+        height: 30vh;
+    }
+}
 
+@media  (max-width:800px) {
+    .anuncios-element .carousel-anuncios{
+        height: 30vh;
+    }
+    
+}
+
+
+@media (max-width: 1100px){
+    .flat{
+        display: none;
+
+    }
+}
 
 /* #carouselExampleSeBusca{
     padding: 10px;
@@ -147,34 +166,52 @@
 }
 
 
-
+/* Nueva publicación */
 
 .nueva--publicacion {
-    background-color: var(--secondaryBg-color);
     width: 100%;
+    background-color: var(--secondaryBg-color);
 }
 
-#imgPublicacion {
-    width: 60px;
-}
-
-.botones--publicacion {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
-.nueva--publicacion--alinear {
-    padding-top: 20px;
-    padding-right: 70px;
-    padding-bottom: 20px;
-    padding-left: 70px;
-    display: flex;
-    flex-direction: row;
-}
-
+@media (min-width: 480px) {
 .nueva--publicacion input {
-    border-color: var(--hover-color);
+    width: 200px;
+}
+}
+
+@media (min-width: 540px) {
+    .nueva--publicacion input {
+        width: 300px;
+}
+}    
+
+@media (min-width: 640px) {
+    .nueva--publicacion input {
+        width: 400px;
+}
+}
+
+@media (min-width: 767px) {
+.nueva--publicacion input {
+    width: 500px;
+}
+}
+
+@media (min-width: 992px) {
+.nueva--publicacion input {
+    width: 700px;
+}
+}
+
+@media (min-width: 1200px) {
+.nueva--publicacion input {
+    width: 900px;
+}
+}
+
+.nueva--publicacion label {
+    font-weight: 400;
+    font-size: 16px;
 }
 
 .nueva--publicacion hr {
@@ -189,16 +226,55 @@
     padding-left: 4px;
 }
 
-.modal-content {
-    background-color: var(--background-color);
+#imgPublicacion {
+    width: 60px;
+}
+
+.botones--publicacion {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+@media (min-width: 480px) {
+.botones--publicacion {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+}
+
+.botones--publicacion button {
+    border: none;
+    font-weight: bold;
+    font-size: 18px;
+    padding-bottom: 20px;
+}
+
+.nueva--publicacion--alinear {
+    padding-top: 20px;
+    padding-right: 70px;
+    padding-bottom: 20px;
+    padding-left: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 480px) {
+    .nueva--publicacion--alinear {
+        padding-top: 20px;
+        padding-right: 70px;
+        padding-bottom: 20px;
+        padding-left: 70px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
 }
 
 .modal-title h4 {
     text-align: center;
-}
-
-.modal-content label {
-    font-size: 20px;
 }
 
 .nueva--publicacion--modal--perfil {
@@ -207,9 +283,23 @@
     align-items: center;
 }
 
-.nueva--publicacion--modal--formulario input {
+.nueva--publicacion--modal--perfil img {
+    padding-top: 4px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
+}
+
+.col-md-4 textarea {
     width: 200px;
 }
+
+.modal-alinear-botones {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
 
 /* Dashboard, contiene las siguientes secciones:
     Tu Ritmo
@@ -305,12 +395,6 @@
 
 .boton-reaccion{
     margin-left: 16px;
-}
-
-@media (max-width: 1090px) {
-    .boton {
-        display: none;
-    }
 }
 
 /* Anuncios*/
