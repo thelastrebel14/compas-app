@@ -1,6 +1,8 @@
-function Test() { 
-    console.log("hola");
-}
+//import {validarTexto} from "../../assets/utils/validarTexto"
+
+// function Test() { 
+//     console.log("hola");
+// }
 
 //---------------------------------------------------------------------
 // const acercaDe = document.getElementById('idAcercaDeIcon'); // Constante que contiene el elemento iconEditAcercaDe mediante su ID(idAcercaDeIcon)
@@ -13,6 +15,25 @@ function Test() {
 // --------------------------------------------------------------------
 
 const consformProfileInfo = document.querySelector('#formProfileInfo'); // Constante que contiene el elemento formulario mediante su ID(formProfileInfo)
+
+// Validación en vivo de input Nombre
+validacionEnVivo("nombrePerfil",  //string del id del input
+validarTexto);  //callback de una funcion de validacion
+// Validación en vivo de input Ciudad
+validacionEnVivo("ciudadPerfil",  //string del id del input
+validarTexto);  //callback de una funcion de validacion
+// Validación en vivo de input Estado
+validacionEnVivo("estadoPerfil",  //string del id del input
+validarTexto);  //callback de una funcion de validacion
+// Validación en vivo de input Instrumentos
+validacionEnVivo("instrumentosPerfil",  //string del id del input
+validarTexto);  //callback de una funcion de validacion
+// Validación en vivo de input Género musical
+validacionEnVivo("generoMusicalPerfil",  //string del id del input
+validarTexto);  //callback de una funcion de validacion
+// Validación en vivo de input Número de telefono
+validacionEnVivo("numTelefono",  //string del id del input
+  validaTelefonosValidacion);  //callback de una funcion de validacion
 
 consformProfileInfo.addEventListener( 'submit' , function(event) {  // al objeto consformProfileInfo se le agrega un evento de escucha tipo "submit" y ejecuta la funcion anonima siguiente.
   event.preventDefault();
@@ -33,7 +54,7 @@ consformProfileInfo.addEventListener( 'submit' , function(event) {  // al objeto
   console.log(numeroValidado);
   });
 
-
+  
   
   
 
