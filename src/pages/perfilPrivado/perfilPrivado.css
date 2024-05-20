@@ -569,9 +569,11 @@ img{
 .btn-form-acercaDe-secondary:active{
     color: var(--active-color) !important;
     background-color: transparent !important;
-    border: 2px solid var(--active-color) !important; 
+    border: 2px solid var(--active-color) !important;
 }
-
+.form-control{
+    height: 300px;
+}
 
 /*----------------------------- Sección Recomendaciones -----------------------------------*/
 

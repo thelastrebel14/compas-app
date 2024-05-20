@@ -109,12 +109,14 @@
 <!-------------------------- FIN Navbar -------------------------->
     <header>
         <div class="header--portada">
+            <div id="contenedor--imgPortada"></div>  <!--CONTENEDOR IMAGEN PORTADA-->
             <span class="material-symbols-outlined header--portada--symbolEditCamera" data-bs-toggle="modal" data-bs-target="#headerPortadaModal">
                 photo_camera
             </span>
         </div>
         <div class="header--fotoPerfil">
             <img loading="lazy" class="header--fotoPerfil--img" src="./img/fotoPerfil.png" alt="fotoPerfil">
+            <div id="contenedor--fotoPerfil"></div> <!--CONTENEDOR FOTO PERFIL-->
             <span class="material-symbols-outlined header--fotoPerfil--symbolEditCamera" data-bs-toggle="modal" data-bs-target="#headerFotoPerfilModal">
                 photo_camera
             </span>
@@ -146,7 +148,7 @@
                     </div>
                     <div class="profile--info--enfoque--generos">
                         <h5>Géneros musicales</h5>
-                        <p>Rock | Cumbia | Metal</p>
+                        <!-- <p>Rock | Cumbia | Metal</p> -->
                         <div id="contenedor--generosMusicales"></div>
                     </div>
                 </div>
@@ -697,8 +699,11 @@
                             <div id="contenedor--inputsInstrumentos"></div>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="generoMusicalPerfil" placeholder="Género musical">
-                            <label for="generoMusicalPerfil" class="col-form-label">Género musical</label>
+                            <h5>Géneros musicales</h5>
+                            <!-- <input type="text" class="form-control" id="generoMusicalPerfil" placeholder="Género musical">
+                            <label for="generoMusicalPerfil" class="col-form-label">Género musical</label> -->
+                            <button type="button" id="button--AddGeneroMusical" class="btn">+</button>
+                            <div id="contenedor--inputsGenerosMusicales"></div>
                         </div>
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" id="redPerfil" placeholder="link red social">

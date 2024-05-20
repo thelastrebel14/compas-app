@@ -5,6 +5,9 @@
 //     console.log("Acerca de click");
 //   });
 // --------------------------------------------------------------------
+// document.addEventListener("DOMContentLoaded", function() {
+//   cargarInfoUserEnPerfil();
+// });
 
 // Validación en vivo de input Nombre
 validacionEnVivo("nombrePerfil",  //string del id del input
@@ -19,28 +22,44 @@ validarTexto);  //callback de una funcion de validacion
 //validacionEnVivo("instrumentosPerfil",  //string del id del input
 //validarTexto);  //callback de una funcion de validacion
 // Validación en vivo de input Género musical
-validacionEnVivo("generoMusicalPerfil",  //string del id del input
-validarTexto);  //callback de una funcion de validacion
+//validacionEnVivo("generoMusicalPerfil",  //string del id del input
+//validarTexto);  //callback de una funcion de validacion
 // Validación en vivo de input Número de telefono
-validacionEnVivo("numTelefono",  //string del id del input
-  validaTelefonosValidacion);  //callback de una funcion de validacion
+//validacionEnVivo("numTelefono",  //string del id del input
+//  validaTelefonosValidacion);  //callback de una funcion de validacion
 
-//                          Clase de prueba para modificar sus elementos
+//                      Clase de prueba que carga sus elementos a la información del perfil
 class UserCreadoEnRegistro {
   instrumentos = ["Guitarra","Bajo","Voz"];
+  generosMusicales = ["Rock","Cumbia","Metal"]
   constructor(nombre, ciudad, estado){
     this.nombre = nombre;
     this.ciudad = ciudad;
     this.estado = estado;
+    // this.fotoPerfil = fotoPerfil;
+    // this.imgPortada = imgPortada;
   }
   mostrarAtributos(){
-    console.log(this.nombre,this.ciudad,this.estado,this.instrumentos);
+    console.log(this.nombre,this.ciudad,this.estado,this.instrumentos,this.generosMusicales);
   }
-  // Método para agregar un instrumento al array
-  agregarInstrumento(instrumento) {
-    this.instrumentos.push(instrumento);
-    console.log(`Instrumento '${instrumento}' agregado a la biblioteca.`);
-  }
+  // // Método para agregar un instrumento al array
+  // agregarInstrumento(instrumento) {
+  //   this.instrumentos.push(instrumento);
+  //   console.log(`Instrumento '${instrumento}' agregado a la biblioteca.`);
+  // }
+  // // Método para modificar atributos en el array "instrumentos"
+  // modificarInstrumentos(element, posision){
+  //   this.instrumentos[posision] = element;
+  // }
+  // // Método para agregar un género musical al array
+  // agregarGeneroMusical(generoMusical) {
+  //   this.generosMusicales.push(generoMusical);
+  //   console.log(`Genero '${generoMusical}' agregado a la biblioteca.`);
+  // }
+  // // Método para modificar atributos en el array "generosMusicales"
+  // modificarGenerosMusicales(element, posision){
+  //   this.generosMusicales[posision] = element;
+  // }
 }
 //                      Instanciar un objeto desde la clase UserCreadoEnRegistro
 const objetoUsuarioDelPerfil = new UserCreadoEnRegistro('Mario Sandoval Velázquez', 'Tizayuca', 'Hidalgo');
@@ -49,6 +68,7 @@ const objetoUsuarioDelPerfil = new UserCreadoEnRegistro('Mario Sandoval Velázqu
  console.log(objetoUsuarioDelPerfil.ciudad); 
  console.log(objetoUsuarioDelPerfil.estado); 
  console.log(objetoUsuarioDelPerfil.instrumentos);
+ console.log(objetoUsuarioDelPerfil.generosMusicales);
 
 // objetoUsuarioDelPerfil.agregarInstrumento("teclado");
 
@@ -57,6 +77,7 @@ const objetoUsuarioDelPerfil = new UserCreadoEnRegistro('Mario Sandoval Velázqu
 const nombreUser = document.createElement("h1");
 const ubicacionUser = document.createElement("h5");
 const instrumentosUser = document.createElement("p");
+const generosMusicalesUser = document.createElement("p");
 
 //                              Obtener referencias de los contenedores
 // Obtener referencia al contenedor "nombreUsuario"
@@ -67,6 +88,10 @@ const contenedorUbicacionUser = document.getElementById('contenedor--ubicacion')
 const contenedorInstrumentos = document.getElementById("contenedor--instrumentos");
 // Obtener referencia al contenedor "inputsInstrumentos"
 const contenedorInputsIntrumentos = document.getElementById('contenedor--inputsInstrumentos');
+// Obtener referencia al contenedor "generosMusicales"
+const contenedorGenerosMusicales = document.getElementById('contenedor--generosMusicales');
+// Obtener referencia al contenedor "inputsInstrumentos"
+const contenedorInputsGenerosMusicales = document.getElementById('contenedor--inputsGenerosMusicales');
 
 //                      Función para cargar información inicial del usuario a su perfil
 function cargarInfoUserEnPerfil(){
@@ -74,10 +99,12 @@ function cargarInfoUserEnPerfil(){
 nombreUser.textContent = objetoUsuarioDelPerfil.nombre;
 ubicacionUser.textContent = objetoUsuarioDelPerfil.ciudad + ", " + objetoUsuarioDelPerfil.estado;
 instrumentosUser.textContent = objetoUsuarioDelPerfil.instrumentos;
+generosMusicalesUser.textContent = objetoUsuarioDelPerfil.generosMusicales;
 // Agregar el nuevo elemento 'nombreUser' al contenedor 'contenedorNombreUser' mediante DOM
 contenedorNombreUser.appendChild(nombreUser);
 contenedorUbicacionUser.appendChild(ubicacionUser);
 contenedorInstrumentos.appendChild(instrumentosUser);
+contenedorGenerosMusicales.appendChild(generosMusicalesUser);
 }
 cargarInfoUserEnPerfil();
 
@@ -93,29 +120,49 @@ consformProfileInfo.addEventListener( 'submit' , function(event) {  // al objeto
   console.log(objetoUsuarioDelPerfil.ciudad);
   objetoUsuarioDelPerfil.estado = document.getElementById('estadoPerfil').value;
   console.log(objetoUsuarioDelPerfil.estado);
-  const newInstrument = document.getElementById('input3--instrumento').value;
-  console.log(newInstrument);
-  //objetoUsuarioDelPerfil.instrumentos = document.getElementById('contenedor--inputsInstrumentos').value;
-  objetoUsuarioDelPerfil.agregarInstrumento(newInstrument);
-  // for(let i=0; i<= ;i++){
-  //   const newInstrument = document.getElementById(`input[${i}]--instrumento`).value;
-  //   console.log(newInstrument);
-  //   //objetoUsuarioDelPerfil.instrumentos = document.getElementById('contenedor--inputsInstrumentos').value;
-  //   objetoUsuarioDelPerfil.agregarInstrumento(newInstrument);
-  // }
-  console.log(objetoUsuarioDelPerfil.instrumentos);
-  // const generoMusical = document.getElementById('generoMusicalPerfil').value;
-  // const redes = document.getElementById('redPerfil').value;
 
-  // Manipulación del DOM para informacion del perfil
+  // Leyendo valores de inputs instrumentos y guardandolos en el atributo array 'objetoUsuarioDelPerfil.instrumentos'
+  let numeroInputsInstrumentos = contenedorInputsIntrumentos.children;
+  //console.log(numeroInputsInstrumentos.length);
+  for(let i=1; i <= numeroInputsInstrumentos.length; i++){
+    const newInstrument = document.getElementById(`input${i}--instrumento`).value;
+    console.log(newInstrument);
+    objetoUsuarioDelPerfil.instrumentos[i-1] = newInstrument;
+  }
+  // Eliminando elementos sobrantes en el array 'objetoUsuarioDelPerfil.instrumentos'
+  let tamanoArrayInstrumentos = objetoUsuarioDelPerfil.instrumentos.length;
+  for(let i = numeroInputsInstrumentos.length; i < tamanoArrayInstrumentos; i++){
+      objetoUsuarioDelPerfil.instrumentos.splice(i);
+  }
+
+  // Leyendo valores de inputs generosMusicales y guardandolos en el atributo array 'objetoUsuarioDelPerfil.generosMusicales'
+  let numeroInputsGenerosMusicales = contenedorInputsGenerosMusicales.children;
+  //console.log(numeroInputsGenerosMusicales.length);
+  for(let i=1; i <= numeroInputsGenerosMusicales.length; i++){
+    const newGeneroMusical = document.getElementById(`input${i}--generoMusical`).value;
+    console.log(newGeneroMusical);
+    objetoUsuarioDelPerfil.generosMusicales[i-1] = newGeneroMusical; // Modificando los elementos del atributo array 'generosMusicales'
+  }
+  // Eliminando elementos sobrantes en el array 'objetoUsuarioDelPerfil.generosMusicales'
+  let tamanoArrayGenerosMusicales = objetoUsuarioDelPerfil.generosMusicales.length;
+  for(let i = numeroInputsGenerosMusicales.length; i < tamanoArrayGenerosMusicales; i++){
+      objetoUsuarioDelPerfil.generosMusicales.splice(i);
+  }
+  
+  // Leyendo valores de inputs redesSociales y guardandolos en el atributo array 'objetoUsuarioDelPerfil.redesSociales'
+
+
+  //                   Manipulación del DOM para informacion del perfil
   // Configurando el nuevo elemento, estableciendole atributos, contenido, etc.
   nombreUser.textContent = objetoUsuarioDelPerfil.nombre;
   ubicacionUser.textContent = objetoUsuarioDelPerfil.ciudad + ", " + objetoUsuarioDelPerfil.estado;
   instrumentosUser.textContent = objetoUsuarioDelPerfil.instrumentos;
+  generosMusicalesUser.textContent = objetoUsuarioDelPerfil.generosMusicales;
   // Agregar el nuevo elemento al contenedor
   contenedorNombreUser.appendChild(nombreUser);
   contenedorUbicacionUser.appendChild(ubicacionUser);
   contenedorInstrumentos.appendChild(instrumentosUser);
+  contenedorGenerosMusicales.appendChild(generosMusicalesUser);
   });
 
   // Funcion test para verificar valores del objeto
@@ -124,44 +171,69 @@ consformProfileInfo.addEventListener( 'submit' , function(event) {  // al objeto
   console.log(objetoUsuarioDelPerfil.ciudad); 
   console.log(objetoUsuarioDelPerfil.estado);
   console.log(objetoUsuarioDelPerfil.instrumentos);
+  console.log(objetoUsuarioDelPerfil.generosMusicales);
   }
 
 //                  Agregando Inputs en sección instrumentos de modal información personal
 
 // Variable para el total de elementos agregados
 let totalInputsIntrumentos = 1;
-
+// Bloque de código que agrega inputs en modal
 const buttonAddInputInstruments = document.getElementById("button--AddInstrument");
 buttonAddInputInstruments.addEventListener('click', function(event){
   //crear elemento div
   const inputsInstrumentos = document.createElement("div");
   //agregar un input al elemento div
-  inputsInstrumentos.innerHTML = `<label>${totalInputsIntrumentos}</label> <input type="text" id="input${totalInputsIntrumentos++}--instrumento" name="instrumento[]" placeholder="Añade instrumento" required><button onclick="eliminar(this)">Eliminar</button>`;
+  inputsInstrumentos.innerHTML = `<label>${totalInputsIntrumentos}</label> <input type="text" id="input${totalInputsIntrumentos}--instrumento" name="instrumento[]" placeholder="Añade instrumento" required><button onclick="eliminarInputsInstrumentos(this)">Eliminar</button>`;
   //agregar el elemento div a contenedor inputsInstrumentos
   contenedorInputsIntrumentos.appendChild(inputsInstrumentos);
+  totalInputsIntrumentos++;
 });
-// input${totalInputsIntrumentos}
-/**
- * Método para eliminar el div contenedor del input
- * @param {this} e 
- */
-
-/** * Método para eliminar el div contenedor del input * @param {this} e */
-const eliminar = (e) => {
+// Método para eliminar el div contenedor del input
+const eliminarInputsInstrumentos = (e) => {
   const divPadre = e.parentNode;
   contenedorInputsIntrumentos.removeChild(divPadre);
-  actualizarContador();
+  actualizarContadorInputsInstrumentos();
 };
-
 // Método para actualizar el contador de los elementos agregados
-const actualizarContador = () => {
+const actualizarContadorInputsInstrumentos = () => {
   let divs = contenedorInputsIntrumentos.children;
   totalInputsIntrumentos = 1;
   for (let i = 0; i < divs.length; i++) {
-      divs[i].children[0].innerHTML = totalInputsIntrumentos++;
+    divs[i].children[0].innerHTML = totalInputsIntrumentos;
+      divs[i].children[1].id = `input${totalInputsIntrumentos++}--instrumento`;
   }
 };
+//                  Agregando Inputs en sección generosMusicales de modal información personal
 
+// Variable para el total de elementos agregados
+let totalInputsGenerosMusicales = 1;
+// Bloque de código que agrega inputs en modal
+const buttonAddInputGeneroMusical = document.getElementById("button--AddGeneroMusical");
+buttonAddInputGeneroMusical.addEventListener('click', function(event){
+  //crear elemento div
+  const inputsGenerosMusicales = document.createElement("div");
+  //agregar un input al elemento div
+  inputsGenerosMusicales.innerHTML = `<label>${totalInputsGenerosMusicales}</label> <input type="text" id="input${totalInputsGenerosMusicales}--generoMusical" name="generoMusical[]" placeholder="Añade género musical" required><button onclick="eliminarInputsGenerosMusicales(this)">Eliminar</button>`;
+  //agregar el elemento div a contenedor inputsInstrumentos
+  contenedorInputsGenerosMusicales.appendChild(inputsGenerosMusicales);
+  totalInputsGenerosMusicales++;
+});
+// Método para eliminar el div contenedor del input
+const eliminarInputsGenerosMusicales = (e) => {
+  const divPadre = e.parentNode;
+  contenedorInputsGenerosMusicales.removeChild(divPadre);
+  actualizarContadorInputsGenerosMusicales();
+};
+// Método para actualizar el contador de los elementos agregados
+const actualizarContadorInputsGenerosMusicales = () => {
+  let divs = contenedorInputsGenerosMusicales.children;
+  totalInputsGenerosMusicales = 1;
+  for (let i = 0; i < divs.length; i++) {
+    divs[i].children[0].innerHTML = totalInputsGenerosMusicales;
+      divs[i].children[1].id = `input${totalInputsGenerosMusicales++}--generoMusical`;
+  }
+};
 
 // --------------------  Sección acerca de   ------------------------------------
 // --------------------  Sección acerca de   ------------------------------------
