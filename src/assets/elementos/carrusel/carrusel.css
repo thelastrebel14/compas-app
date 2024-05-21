@@ -1,0 +1,21 @@
+/* ---------CARRUSEL----------- */
+.carousel {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.carousel--prevArrow,
+.carousel--nextArrow {
+    cursor: pointer;
+}
+
+
+.carousel--cards {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    overflow-x: hidden;
+}
