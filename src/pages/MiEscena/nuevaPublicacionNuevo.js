@@ -1,3 +1,5 @@
+// Creación de objeto a partir de los datos del formulario "Foto/Vídeo"
+
 class NuevaPublicacionFotoVideo {
   constructor(
     texto,
@@ -38,15 +40,8 @@ botonPublicarFotoVideo.addEventListener('click', (e) => {
 
     console.log({publicacion});
     const publicacionJSON = JSON.stringify(publicacion);
-  }
-});
 
-var form = document.getElementById("formularioFotoVideo");
-function handleForm(event) {event.preventDefault(); } 
-form.addEventListener('submit', handleForm);
-
-/*
-// Enviar los datos del formulario al servidor usando fetch
+        // Enviar los datos del formulario al servidor usando fetch
 fetch('/enviarPublicacionFotoVideo', {
   method: 'POST',
   headers: {
@@ -61,16 +56,25 @@ fetch('/enviarPublicacionFotoVideo', {
   .then(data => {
     // Mostrar mensaje de éxito o error al usuario
     if (data.success) {
-      mensaje.textContent = '¡Mensaje enviado con éxito!';
+      publicacion.textContent = '¡Publicación enviada con éxito!';
     } else {
-      mensaje.textContent = 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.';
+      publicacion.textContent = 'Error al enviar la publicación. Por favor, inténtalo de nuevo.';
     }
   })
   .catch(error => {
     console.error('Error:', error);
-    mensaje.textContent = 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.';
+    publicacion.textContent = 'Error al enviar la publicación. Por favor, inténtalo de nuevo.';
   });
-  */
+  }
+});
+
+// Código para evitar que Mi Escena se recargue al hacer 'submit' en algún formulario
+var form = document.getElementById("formularioFotoVideo");
+function handleForm(event) {event.preventDefault(); } 
+form.addEventListener('submit', handleForm);
+
+
+// Creación de objeto a partir de los datos del formulario "Estoy buscando artistas"
 
 class NuevaPublicacionBusquedaArtista {
   constructor(
@@ -140,15 +144,8 @@ botonPublicarBusquedaArtista.addEventListener('click', (e) => {
 
     console.log({publicacion});
     const publicacionJSON = JSON.stringify(publicacion);
-  }
-});
 
-var form = document.getElementById("formularioBusquedaArtista");
-function handleForm(event) {event.preventDefault(); } 
-form.addEventListener('submit', handleForm);
-
-/*
-// Enviar los datos del formulario al servidor usando fetch
+    // Enviar los datos del formulario al servidor usando fetch
 fetch('/enviarPublicacionBusquedaArtista', {
   method: 'POST',
   headers: {
@@ -169,15 +166,24 @@ fetch('/enviarPublicacionBusquedaArtista', {
   .then(data => {
     // Mostrar mensaje de éxito o error al usuario
     if (data.success) {
+      publicacion.textContent = '¡Publicación enviada con éxito!';
     } else {
-      mensaje.textContent = 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.';
+      publicacion.textContent = 'Error al enviar la publicación. Por favor, inténtalo de nuevo.';
     }
   })
   .catch(error => {
     console.error('Error:', error);
-    mensaje.textContent = 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.';
+    publicacion.textContent = 'Error al enviar la publicación. Por favor, inténtalo de nuevo.';
   });
-*/
+  }
+});
+
+// Código para evitar que Mi Escena se recargue al hacer 'submit' en algún formulario
+var form = document.getElementById("formularioBusquedaArtista");
+function handleForm(event) {event.preventDefault(); } 
+form.addEventListener('submit', handleForm);
+
+
 
 // FUNCIONES DE VALIDACIÓN
 

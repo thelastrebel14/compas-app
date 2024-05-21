@@ -25,12 +25,12 @@
         <!-- titulo principal -->
         <h1>Te damos la bienvenida</h1>
         <!-- inicia el formulario -->
-        <form action="/src/pages/MiEscena/miEscena.html" method="post">
+        <form>
           <div class="form-floating mb-3">
             <input
               type="email"
               class="form-control"
-              id="floatingInput correoInput"
+              id="correoInput"
               placeholder="name@example.com"
             />
             <label for="floatingInput">Correo electrónico</label>
@@ -39,19 +39,15 @@
             <input
               type="password"
               class="form-control"
-              id="floatingPassword passwordInput"
+              id="passwordInput"
               placeholder="Password"
             />
             <label for="floatingPassword">Contraseña</label>
+            <div id="contenedorAlerta"></div>
           </div>
           <!-- botones de inicio de sesion y registrarse -->
           <div class="inicioDeSesion--form--buttons">
-            <a
-              class="boton flat"
-              id="submitButton"
-              href="../MiEscena/miEscena.html"
-              >Iniciar Sesión</a
-            >
+            <button class="boton flat" id="submitButton">Iniciar Sesión</button>
             <!-- vinculacion a la pagina de registro -->
             <a
               href="../registroDeUsuario/registroDeUsuario.html"

@@ -92,7 +92,26 @@
     padding-right: 10px;
 
 }
+@media (max-width:800px){
+    .anuncios-element .carousel-inner .carousel-anuncios-img  {
+        height: 30vh;
+    }
+}
 
+@media  (max-width:800px) {
+    .anuncios-element .carousel-anuncios{
+        height: 30vh;
+    }
+    
+}
+
+
+@media (max-width: 1100px){
+    .flat{
+        display: none;
+
+    }
+}
 
 /* #carouselExampleSeBusca{
     padding: 10px;
@@ -404,6 +423,8 @@
 .anuncios-element {
     margin-bottom: 16px;
 }
+
+
 
 /* Footer */
 
