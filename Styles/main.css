@@ -35,19 +35,38 @@ body {
     /* padding: 70px 100px 0 100px; */
 }
 
-main{
+body::-webkit-scrollbar {
+    width: 10px;
+    /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+    /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 3px solid transparent;
+    /* creates padding around scroll thumb */
+}
+
+main {
     margin: 0 100px 0 100px;
     padding-top: 75px;
 }
 
-@media screen and (max-width: 992px){
-    main{
+@media screen and (max-width: 992px) {
+    main {
         margin: 0 50px 0 50px;
     }
 }
 
-@media screen and (max-width: 480px){
-    main{
+@media screen and (max-width: 480px) {
+    main {
         margin: 0 28px 0 28px;
     }
 }
@@ -111,53 +130,133 @@ label {
 }
 
 /* Estilos base para fuentes */
-h1, h2, h3, h4, h5, p, span, label {
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span,
+label {
     font-weight: 400;
     /* <weight>: Use a value from 200 to 800 */
-    font-size: 16px; /* Tamaño base de fuente para pantallas grandes */
+    font-size: 16px;
+    /* Tamaño base de fuente para pantallas grandes */
 }
 
 /* Media queries para hacer fuentes responsivas */
 @media (max-width: 767px) {
-    h1 { font-size: 36px; } /* Tamaño de fuente para pantallas pequeñas */
-    h2 { font-size: 30px; }
-    h3 { font-size: 24px; }
-    h4 { font-size: 20px; }
-    h5 { font-size: 18px; }
-    p { font-size: 14px; }
-    span, label { font-size: 10px; } /* Tamaño de fuente para span y label */
+    h1 {
+        font-size: 36px;
+    }
+
+    /* Tamaño de fuente para pantallas pequeñas */
+    h2 {
+        font-size: 30px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    h5 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    span,
+    label {
+        font-size: 10px;
+    }
+
+    /* Tamaño de fuente para span y label */
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-    h1 { font-size: 42px; } /* Tamaño de fuente para pantallas medianas */
-    h2 { font-size: 36px; }
-    h3 { font-size: 28px; }
-    h4 { font-size: 22px; }
-    h5 { font-size: 18px; }
-    p { font-size: 16px; }
-    span, label { font-size: 12px; } /* Tamaño de fuente para span y label */
+    h1 {
+        font-size: 42px;
+    }
+
+    /* Tamaño de fuente para pantallas medianas */
+    h2 {
+        font-size: 36px;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+
+    h4 {
+        font-size: 22px;
+    }
+
+    h5 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    span,
+    label {
+        font-size: 12px;
+    }
+
+    /* Tamaño de fuente para span y label */
 }
 
 /* Otros media queries para pantallas grandes y extra grandes si es necesario */
 @media (min-width: 992px) {
-    h1 { font-size: 48px; } /* Tamaño de fuente para pantallas grandes */
-    h2 { font-size: 39.06px; }
-    h3 { font-size: 31.25px; }
-    h4 { font-size: 25px; }
-    h5 { font-size: 20px; }
-    p { font-size: 16px; }
-    span, label { font-size: 12.8px; } /* Tamaño de fuente para span y label */
+    h1 {
+        font-size: 48px;
+    }
+
+    /* Tamaño de fuente para pantallas grandes */
+    h2 {
+        font-size: 39.06px;
+    }
+
+    h3 {
+        font-size: 31.25px;
+    }
+
+    h4 {
+        font-size: 25px;
+    }
+
+    h5 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    span,
+    label {
+        font-size: 12.8px;
+    }
+
+    /* Tamaño de fuente para span y label */
 }
 
-.boldTx{
+.boldTx {
     font-weight: bold;
 }
 
-.semiBoldTx{
+.semiBoldTx {
     font-weight: 500;
 }
 
-.lightTx{
+.lightTx {
     font-weight: 100;
 }
 
@@ -189,14 +288,14 @@ section {
     border: 2px solid var(--main-color);
 }
 
-.boton.flat:hover{
+.boton.flat:hover {
     background-color: var(--hover-color);
-    border: 2px solid var(--hover-color); 
+    border: 2px solid var(--hover-color);
 }
 
-.boton.flat:active{
+.boton.flat:active {
     background-color: var(--active-color);
-    border: 2px solid var(--active-color); 
+    border: 2px solid var(--active-color);
 }
 
 .boton.flat[disabled] {
@@ -214,16 +313,16 @@ section {
     border: 2px solid var(--main-color);
 }
 
-.boton.outlined:hover{
+.boton.outlined:hover {
     color: var(--hover-color);
     background-color: transparent;
-    border: 2px solid var(--hover-color); 
+    border: 2px solid var(--hover-color);
 }
 
-.boton.outlined:active{
+.boton.outlined:active {
     color: var(--active-color);
     background-color: transparent;
-    border: 2px solid var(--active-color); 
+    border: 2px solid var(--active-color);
 }
 
 .boton.outlined[disabled] {
