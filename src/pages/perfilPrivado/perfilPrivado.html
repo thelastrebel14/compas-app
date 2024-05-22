@@ -20,16 +20,21 @@
 <body>
 <!-------------------------- Navbar -------------------------->
 <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container-fluid">
-        <!-- Imagen del logo de COMPÁS App para redirigir a mi escena -->
-        <a class="navbar-brand align-content-center" href="../MiEscena/miEscena.html"><img
-                src="../../assets/img/logo.ico" alt="logo--compásApp" class="imagen--compasApp" /></a>
-
-        <!-- Configuración de la apriencia del toggler button -->
-        <button class="navbar-toggler shadow-none border-0 boton-hamburguesa" type="button"
-            data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+    <div class="container-fluid d-flex">
+      <a class="navbar-brand" href="../MiEscena/miEscena.html"><img src="../../assets/img/logo.ico" alt="logo--compásApp" class="imagen--compasApp d-flex mb-sm-5 mb-lg-0 mb-4"></a>
+      
+      <div class="dropdown-center d-flex mt-lg-5 mt-0 mb-md-3 mb-sm-3">
+        <button
+          class="btn dropdown-toggle border-0"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <img 
+            src="./img/fotoPerfilVacio.jpg"
+            alt="perfil"
+            class="rounded-circle perfil d-flex"
+          />
         </button>
 
         <!-- Configuración del toggler button (titulo, contenido, etc)-->
@@ -117,8 +122,9 @@
             </span>
         </div>
         <div class="header--fotoPerfil">
-            <img loading="lazy" class="header--fotoPerfil--img" src="./img/fotoPerfil.png" alt="fotoPerfil">
-            <div id="contenedor--fotoPerfil"></div> <!--CONTENEDOR FOTO PERFIL-->
+            <!-- <img loading="lazy" class="header--fotoPerfil--img" src="./img/fotoPerfil.png" alt="fotoPerfil"> -->
+            <!-- <div id="contenedor--fotoPerfil" class="header--fotoPerfil--img" style="border-radius: 50%;"></div> CONTENEDOR FOTO PERFIL-->
+            <img id="contenedor--fotoPerfil" class="header--fotoPerfil--img" src="./img/fotoPerfilVacio.jpg" style="border-radius: 50%;">
             <span class="material-symbols-outlined header--fotoPerfil--symbolEditCamera" data-bs-toggle="modal" data-bs-target="#headerFotoPerfilModal">
                 photo_camera
             </span>

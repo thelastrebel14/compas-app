@@ -30,13 +30,15 @@ validacionEnVivo("estadoPerfil", //string del id del input
 
 //                      Clase de prueba que carga sus elementos a la información del perfil
 class UserCreadoEnRegistro {
-  instrumentos = ["Guitarra","Bajo","Voz"];
-  generosMusicales = ["Rock","Cumbia","Metal"]
-  constructor(nombre, ciudad, estado){
+  //instrumentos = ["Guitarra","Bajo","Voz"];
+  //generosMusicales = ["Rock","Cumbia","Metal"];
+  constructor(nombre, ciudad, estado, instrumentos,generosMusicales){
     this.nombre = nombre;
     this.ciudad = ciudad;
     this.estado = estado;
-    this.fotoPerfil = fotoPerfil;
+    //this.fotoPerfil = fotoPerfil;
+    this.instrumentos = instrumentos;
+    this.generosMusicales = generosMusicales;
     // this.imgPortada = imgPortada;
   }
   mostrarAtributos() {
@@ -62,7 +64,8 @@ class UserCreadoEnRegistro {
   // }
 }
 //                      Instanciar un objeto desde la clase UserCreadoEnRegistro
-const objetoUsuarioDelPerfil = new UserCreadoEnRegistro('Mario Sandoval Velázquez', 'Tizayuca', 'Hidalgo');
+//const objetoUsuarioDelPerfil = new UserCreadoEnRegistro('Moises Reyes Orea', 'Guadalajara', 'Jalisco');
+const objetoUsuarioDelPerfil = JSON.parse(localStorage.getItem("usuarioCompleto"));
 // objetoUsuarioDelPerfil.mostrarAtributos();
 console.log(objetoUsuarioDelPerfil.nombre);
 console.log(objetoUsuarioDelPerfil.ciudad);
@@ -103,7 +106,7 @@ function cargarInfoUserEnPerfil(){
 // Configurando el nuevo elemento, estableciendole atributos, contenido, estilos, etc.
 nombreUser.textContent = objetoUsuarioDelPerfil.nombre;
 ubicacionUser.textContent = objetoUsuarioDelPerfil.ciudad + ", " + objetoUsuarioDelPerfil.estado;
-instrumentosUser.textContent = objetoUsuarioDelPerfil.instrumentos;
+instrumentosUser.textContent = objetoUsuarioDelPerfil.instrumentosMusicales;
 generosMusicalesUser.textContent = objetoUsuarioDelPerfil.generosMusicales;
 // Agregar el nuevo elemento 'nombreUser' al contenedor 'contenedorNombreUser' mediante DOM
 contenedorNombreUser.appendChild(nombreUser);

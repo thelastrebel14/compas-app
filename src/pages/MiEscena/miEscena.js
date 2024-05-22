@@ -128,9 +128,9 @@ const publicaciones = [
     {
         "idPublicacion": 1,
         "idAutor": 101,
-        "nombreAutor": "John Lennon",
+        "nombreAutor": "Mario Sandoval",
         "instrumentosAutor": ['Guitarra', 'Piano', 'Voz'],
-        "avatarAutor": "https://th.bing.com/th/id/OIP.MoADYsmouMfgsYuGJfZuogAAAA?pid=ImgDet&w=182&h=234&c=7&dpr=1.3",
+        "avatarAutor": "../perfilPublico/img/fotoPerfil.png",
         "titulo": "¡Nuevo álbum en camino!",
         "tipoPublicacion": "multimedia",
         "descripcion": "Estoy emocionado de compartirles que estoy trabajando en un nuevo álbum. ¡Espero que les guste!",
@@ -288,6 +288,9 @@ function crearElementoPublicacion(datosPublicacion) {
     var autorContenedor = document.createElement("div");
     autorContenedor.classList.add("autor-contenedor");
     var autorImg = document.createElement("img");
+    var redirecion = document.createElement("a");
+    redirecion.href = "../perfilPublico/index.html"
+    redirecion.appendChild(autorImg);
     autorImg.src = datosPublicacion.avatarAutor;
     autorImg.classList.add("rounded-circle", "img-usuario");
     autorImg.alt = "Usuario";
@@ -299,7 +302,7 @@ function crearElementoPublicacion(datosPublicacion) {
     autorEtiqueta.textContent = datosPublicacion.instrumentosAutor.join(" | ");
     autorInfo.appendChild(autorNombre);
     autorInfo.appendChild(autorEtiqueta);
-    autorContenedor.appendChild(autorImg);
+    autorContenedor.appendChild(redirecion);
     autorContenedor.appendChild(autorInfo);
   
     // Contenido de la publicación
