@@ -434,6 +434,14 @@ img{
     }
 }
 
+
+/*-----------------------Sección de sólo los demos-----------------*/
+.demos--header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 /* ----------Sección de demos   /   Sección de Escenarios------------- */
 /* ----------Sección de demos   /   Sección de Escenarios------------- */
 .escenarios,
