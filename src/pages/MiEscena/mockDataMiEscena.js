@@ -2,7 +2,7 @@ const publicaciones = [
     {
         "idPublicacion": 1,
         "idAutor": 101,
-        "nombreAutor": "John Lennon",
+        "nombreAutor": "Mario Sandoval",
         "instrumentosAutor": ['Guitarra', 'Piano', 'Voz'],
         "avatarAutor": "URL_AVATAR_1",
         "titulo": "¡Nuevo álbum en camino!",
