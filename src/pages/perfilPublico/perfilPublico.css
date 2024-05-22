@@ -1,4 +1,6 @@
 @import "../../../Styles/main.css";
+@import "./../../assets/elementos/navbar/navbar.css";
+@import "./../../assets/elementos/footer/footer.css";
 
 /* ------------Header (Portada y foto de perfil) ------------*/
 header {
@@ -81,7 +83,7 @@ header {
 
 .profile--info--nombreySeguidores--nombre {
     margin-right: 14px;
-    /* max-width: 372px; */
+    max-width: 372px;
 }
 
 .profile--info--nombreySeguidores--nombre h1 {
@@ -96,7 +98,6 @@ header {
 
 .profile--info--ubicacion {
     margin-top: 16px;
-    grid-row: 2/3;
 }
 
 .profile--info--enfoque {
@@ -300,11 +301,12 @@ header {
 
 
 
-/* ----------Sección de demos   /   Sección de Escenarios------------- */
-.escenarios,
-.demos{
-   margin-top: 46px;
-}
+    /* ----------Sección de demos   /   Sección de Escenarios------------- */
+    .escenarios,
+    .demos {
+        margin-top: 90px;
+        /* display: none; */
+    }
 
     .escenarios hr,
     .demos hr {
