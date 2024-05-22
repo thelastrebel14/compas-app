@@ -319,7 +319,6 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
-
     }
 
     .escenarios--cards--item,
@@ -389,7 +388,6 @@ header {
     }
 
     @media screen and (max-width: 768px) {
-
         .escenarios hr,
         .demos hr {
             margin-bottom: 0px
@@ -399,7 +397,6 @@ header {
         .demos--cards {
             align-items: start;
             justify-content: left;
-
         }
 
         .escenarios--cards--item,
@@ -677,7 +674,24 @@ header {
         }
 
         .carousel--cards {
+            padding-bottom: 20px;
             overflow-x: scroll;
             width: 100%;
+        }
+        .carousel--cards::-webkit-scrollbar{
+            width: 8px;
+        }
+        .carousel--cards::-webkit-scrollbar-track {
+            background: transparent;
+            /* color of the tracking area */
+        }
+        
+        .carousel--cards::-webkit-scrollbar-thumb {
+            background-color: var(--main-color);
+            /* color of the scroll thumb */
+            border-radius: 20px;
+            /* roundness of the scroll thumb */
+            border: 3px solid transparent;
+            /* creates padding around scroll thumb */
         }
     }
