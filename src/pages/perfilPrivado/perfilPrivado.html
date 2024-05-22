@@ -115,8 +115,9 @@
             </span>
         </div>
         <div class="header--fotoPerfil">
-            <img loading="lazy" class="header--fotoPerfil--img" src="./img/fotoPerfil.png" alt="fotoPerfil">
-            <div id="contenedor--fotoPerfil"></div> <!--CONTENEDOR FOTO PERFIL-->
+            <!-- <img loading="lazy" class="header--fotoPerfil--img" src="./img/fotoPerfil.png" alt="fotoPerfil"> -->
+            <!-- <div id="contenedor--fotoPerfil" class="header--fotoPerfil--img" style="border-radius: 50%;"></div> CONTENEDOR FOTO PERFIL-->
+            <img id="contenedor--fotoPerfil" class="header--fotoPerfil--img" src="./img/fotoPerfilVacio.jpg" style="border-radius: 50%;">
             <span class="material-symbols-outlined header--fotoPerfil--symbolEditCamera" data-bs-toggle="modal" data-bs-target="#headerFotoPerfilModal">
                 photo_camera
             </span>
@@ -183,7 +184,7 @@
                 <div class="profile--follow--buttons">
                     <button class="profile--follow--buttons--seguidores boton flat">Seguidores</button>
                     <button class="profile--follow--buttons--siguiendo boton flat">Siguiendo</button>
-                    <button class="profile--follow--buttons--donadores boton flat">Donadores</button>
+                    <!-- <button class="profile--follow--buttons--donadores boton flat">Donadores</button> -->
                 </div>
                 <div class="profile--follow--mensaje">
                     <h4>Mensajes<img loading="lazy" src="./img/mensaje-icon.png" alt=""></h4>
@@ -655,17 +656,19 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form>
+              <form id="formFotoPerfil">
                 <div class="mb-3">
                     <label for="img--cover" class="col-form-label">Cargar foto</label>
-                    <input type="file" name="foto--cover" id="img--cover" accept="image/png, image/jpeg">
+                    <input type="file" name="foto--cover" id="foto--perfilUser" accept="image/png, image/jpeg, image/jpg">
                   </div>
+                  
               </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn-primary">Cargar foto</button>
-            </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary">Cargar foto</button>
+              </div>
+              </div>
+            
           </div>
         </div>
       </div>
