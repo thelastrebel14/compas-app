@@ -93,7 +93,7 @@ header{
 }
 /* ------------------------------  Información del perfil de usuario   ------------------------------*/
 main{
-    padding-top: 0px;
+    padding-top: 0px !important;
 }
 .profile{
     display: grid;
@@ -453,26 +453,26 @@ h4{
 /* ----------Sección de demos   /   Sección de Escenarios------------- */
 /* ----------Sección de demos   /   Sección de Escenarios------------- */
 .escenarios,
-.demos{
-   margin-top: 46px;
+.demos {
+    margin-top: 90px;
+    /* display: none; */
 }
 
 .escenarios hr,
-.demos hr{
+.demos hr {
     margin-top: 16px;
     margin-bottom: 32px;
 }
 
 .escenarios--cards,
-.demos--cards{
+.demos--cards {
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
 .escenarios--cards--item,
-.demos--cards--item{
+.demos--cards--item {
     width: 286px;
     max-width: 286px;
     height: 286px;
@@ -480,7 +480,7 @@ h4{
 }
 
 .escenarios--cards--item img,
-.demos--cards--item img{
+.demos--cards--item img {
     width: 100%;
     height: 100%;
     max-width: 100%;
@@ -488,7 +488,7 @@ h4{
 }
 
 .escenarios--item,
-.demos--item{
+.demos--item {
     width: 286px;
     height: 286px;
     display: flex;
@@ -498,7 +498,7 @@ h4{
 }
 
 .escenarios--item img,
-.demos--item img{
+.demos--item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -507,7 +507,7 @@ h4{
 
 
 .escenarios--item--info,
-.demos--item--info{
+.demos--item--info {
     border-radius: 10px;
     position: absolute;
     text-align: center;
@@ -522,19 +522,97 @@ h4{
 }
 
 .escenarios--item--info .card-title,
-.demos--item--info .card-title{
+.demos--item--info .card-title {
     margin: 0;
     padding: 0;
 }
 
-.escenarios--item--info h4{
+.escenarios--item--info h4 {
     margin-top: 4px;
     margin-bottom: 6px;
 }
 
 .escenarios--item--info button,
-.demos--item--info button{
+.demos--item--info button {
     margin-top: 18px;
+}
+
+@media screen and (max-width: 768px) {
+    .escenarios hr,
+    .demos hr {
+        margin-bottom: 0px
+    }
+
+    .escenarios--cards,
+    .demos--cards {
+        align-items: start;
+        justify-content: left;
+    }
+
+    .escenarios--cards--item,
+    .demos--cards--item {
+        width: 200px;
+        max-width: 200px;
+        height: 200px;
+        max-height: 200px;
+    }
+
+    .escenarios--item,
+    .demos--item {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .escenarios--cards--item,
+    .demos--cards--item {
+        width: 300px;
+        max-width: 300px;
+        height: 300px;
+        max-height: 300px;
+    }
+
+    .escenarios--item,
+    .demos--item {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+
+    .escenarios--cards--item,
+    .demos--cards--item {
+        width: 250px;
+        max-width: 250px;
+        height: 250px;
+        max-height: 250px;
+    }
+
+    .escenarios--item,
+    .demos--item {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 324px) {
+
+    .escenarios--cards--item,
+    .demos--cards--item {
+        width: 210px;
+        max-width: 210px;
+        height: 210px;
+        max-height: 210px;
+    }
+
+    .escenarios--item,
+    .demos--item {
+        width: 210px;
+        height: 210px;
+    }
 }
 
 /* ------------------------------------   Acerca de    ------------------------------- */
@@ -592,73 +670,148 @@ h4{
 }
 
 /*----------------------------- Sección Recomendaciones -----------------------------------*/
+ /* Sección Reseñas */
+ .carousel {
+    margin-top: 82px;
+}
 
-.recomendaciones--carousel .carousel .carousel-inner{
+.carousel-control-next {
+    color: black;
+}
+
+.resenas {
+    margin-top: 90px;
+    /* display: none; */
+}
+
+.resenas--item {
+    padding: 0 180px 0 180px;
+}
+
+.resenas--item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 360px;
+    object-fit: cover;
+}
+
+.resenas--item--info-movil {
+    display: block;
     display: flex;
-    align-items: center;
+    gap: 24px;
+    align-items: end;
+    margin-bottom: 24px;
 }
 
-.recomendaciones--carousel--item{
-    height: 226px;
-    width: 726px;
-    background-color: grey;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 54px;
+.resenas--item--info-movil img {
+    width: 60px;
+    height: 60px;
 }
 
-.recomendaciones--carousel--item--info{
-    width: 754px;
+.resenas--item--info h4 {
+    font-weight: bold;
+}
+
+.resenas--item--info p {
+    font-weight: 400;
+}
+
+@media screen and (max-width: 886px) {
+    .resenas--item {
+        padding: 0 140px 0 140px;
+    }
+}
+
+@media screen and (max-width: 886px) {
+    .resenas--item {
+        padding: 0 50px 0 50px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .resenas--item {
+        padding: 0 20px 0 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .resenas--item {
+        padding: 0 0 0 0;
+    }
 }
 
 
-/* ----------------------------     Sección similares    ----------------------------- */
+/* ------------Sección similares------------ */
 
-.similares{
-    margin-top: 38px;
+.similares {
+    margin-top: 90px;
 }
 
-.similares hr{
+.similares hr {
     margin: 16px 0 32px 0;
 }
-.similares--item{
+
+.similares--item {
     width: 184px;
     height: 400px;
 }
 
-.sistem--item--info{
+.sistem--item--info {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.similares--item--info h5{
+
+.similares--item--info h5 {
     font-weight: bold;
 }
-.similares--item img{
+
+.similares--item img {
     width: 100%;
     height: 184px;
     object-fit: cover;
+    object-position: center center;
     border-radius: 5px 5px 0 0;
 }
-.similares--item--info span{
+
+.similares--item--info span {
     margin-top: 6px;
 }
-.similares--item--info span:nth-of-type(2){
+
+.similares--item--info span:nth-of-type(2) {
     color: var(--grey);
 }
-.similares--item--info button{
+
+.similares--item--info button {
     margin-top: 25px;
     width: 128px;
     position: absolute;
     bottom: 20px;
 }
 
+@media screen and (max-width: 480px) {
+    .similares--item {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .similares--item {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 324px) {
+    .similares--item {
+        width: 220px;
+    }
+}
 
 
-/* -------------------------------    CARRUSEL     ------------------------------------ */
-.carousel{
+
+
+/* ---------CARRUSEL----------- */
+.carousel {
     width: 100%;
     display: flex;
     align-items: center;
@@ -666,15 +819,50 @@ h4{
 }
 
 .carousel--prevArrow,
-.carousel--nextArrow{
+.carousel--nextArrow {
     cursor: pointer;
 }
 
 
-.carousel--cards{
+.carousel--cards {
     width: 80%;
     display: flex;
     align-items: center;
+    justify-content: start;
     gap: 30px;
     overflow-x: hidden;
+}
+
+@media screen and (max-width: 768px) {
+    .carousel {
+        justify-content: center;
+    }
+
+    .carousel--prevArrow,
+    .carousel--nextArrow {
+        /* visibility: hidden; */
+        display: none;
+    }
+
+    .carousel--cards {
+        padding-bottom: 20px;
+        overflow-x: scroll;
+        width: 100%;
+    }
+    .carousel--cards::-webkit-scrollbar{
+        width: 8px;
+    }
+    .carousel--cards::-webkit-scrollbar-track {
+        background: transparent;
+        /* color of the tracking area */
+    }
+    
+    .carousel--cards::-webkit-scrollbar-thumb {
+        background-color: var(--main-color);
+        /* color of the scroll thumb */
+        border-radius: 20px;
+        /* roundness of the scroll thumb */
+        border: 3px solid transparent;
+        /* creates padding around scroll thumb */
+    }
 }
