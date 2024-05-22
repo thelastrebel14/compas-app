@@ -26,91 +26,42 @@
     <!-------------------------- Navbar -------------------------->
     <!-------------------------- Navbar -------------------------->
     <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container-fluid">
-            <!-- Imagen del logo de COMPÁS App para redirigir a mi escena -->
-            <a class="navbar-brand align-content-center" href="../MiEscena/miEscena.html"><img
-                    src="../../assets/img/logo.ico" alt="logo--compásApp" class="imagen--compasApp" /></a>
-
-            <!-- Configuración de la apriencia del toggler button -->
-            <button class="navbar-toggler shadow-none border-0 boton-hamburguesa" type="button"
-                data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+        <div class="container-fluid d-flex">
+          <a class="navbar-brand" href="../MiEscena/miEscena.html"><img src="../../assets/img/logo.ico" alt="logo--compásApp" class="imagen--compasApp img-fluid mb-sm-4 mb-lg-2 mb-4"></a>
+          
+          <div class="dropdown-center d-flex mt-lg-4">
+            <button
+              class="btn dropdown-toggle border-0"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img 
+                src="../../assets/equipo/andrea_garibaldi.jpg"
+                alt="perfil"
+                class="rounded-circle perfil d-flex"
+              />
             </button>
-
-            <!-- Configuración del toggler button (titulo, contenido, etc)-->
-            <div class="offcanvas offcanvas-start shadow-none menu--hamburguesa" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header border-bottom">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-                        La tribu del byte
-                    </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <!-- Contenido de Navbar, además de la configuración para visualizar la opciones en el toggler button -->
-                <div class="offcanvas-body d-flex flex-column flex-lg-row p-4">
-                    <!-- Buscador -->
-                    <form class="form-floating my-2" id="floatingInput">
-                        <input class="barra--busqueda--contenedor--form form-control" type="search" placeholder="Buscar"
-                            aria-label="Buscar" />
-                        <label for="floatingInput"
-                            class="d-flex justify-content-center align-items-center">Buscar</label>
-                    </form>
-                    <!-- Opciones de texto para redirigir a sus respectivas paginas -->
-                    <ul
-                        class="navbar-nav d-flex justify-content-center align-items-center flex-grow-1 pe-0 text-config">
-                        <li class="nav-item">
-                            <a class="nav-link texto--configuracion" aria-current="page"
-                                href="../MiEscena/miEscena.html">
-                                <h5>Mi escena</h5>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link texto--configuracion" href="#">
-                                <h5>Artistas</h5>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link texto--configuracion" href="#">
-                                <h5>Escenarios</h5>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link texto--configuracion" href="#">
-                                <h5>Mensajes</h5>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- Espacio para generar un contenedor de un tamaño especifico para que las opciones de texto queden en el centro de la pantalla -->
-                    <div class="d-flex margen"></div>
-                    <!-- Opciones de la imagen con funcionamiento dropdown -->
-                    <div class="d-flex justify-content-center align-content-center text-center">
-                        <div class="dropdown-center">
-                            <button class="btn dropdown-toggle border-0" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                <img src="../../assets/equipo/andrea_garibaldi.jpg" alt="perfil"
-                                    class="rounded-circle perfil" />
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a class="dropdown-item texto--drop--perfil"
-                                        href="../perfilPrivado/perfilPrivado.html">
-                                        <p>Perfil</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item texto--drop--sesion"
-                                        href="../inicioDeSesion/inicioDeSesion.html">
-                                        <p>Cerrar sesión</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <ul class="dropdown-menu dropdown-center">
+              <li>
+                <a
+                  class="dropdown-item texto--drop--perfil"
+                  href="../perfilPrivado/perfilPrivado.html"
+                  ><p>Perfil</p></a
+                >
+              </li>
+              <li class="dropdown-center">
+                <a
+                  class="dropdown-item texto--drop--sesion"
+                  href="../inicioDeSesion/inicioDeSesion.html"
+                  ><p>Cerrar sesión</p></a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
     </nav>
+
     <main>
         <h1>Mi Escena</h1>
         <h3>Encuentra músicos y escenarios cerca de ti</h3>
