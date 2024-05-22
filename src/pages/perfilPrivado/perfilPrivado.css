@@ -629,7 +629,7 @@ h4{
 }
 .acerca--info {
     width: auto;
-    text-align:justify;
+    
 } 
 .acerca--info p:nth-child(2){
     font-weight: bold;
