@@ -5,9 +5,9 @@
 //     console.log("Acerca de click");
 //   });
 // --------------------------------------------------------------------
-// document.addEventListener("DOMContentLoaded", function() {
-//   cargarInfoUserEnPerfil();
-// });
+document.addEventListener("DOMContentLoaded", function() {
+  cargarInfoUserEnPerfil();
+});
 
 // Validación en vivo de input Nombre
 validacionEnVivo("nombrePerfil", //string del id del input
@@ -30,13 +30,13 @@ validacionEnVivo("estadoPerfil", //string del id del input
 
 //                      Clase de prueba que carga sus elementos a la información del perfil
 class UserCreadoEnRegistro {
-  instrumentos = ["Guitarra", "Bajo", "Voz"];
-  generosMusicales = ["Rock", "Cumbia", "Metal"]
-  constructor(nombre, ciudad, estado) {
+  instrumentos = ["Guitarra","Bajo","Voz"];
+  generosMusicales = ["Rock","Cumbia","Metal"]
+  constructor(nombre, ciudad, estado){
     this.nombre = nombre;
     this.ciudad = ciudad;
     this.estado = estado;
-    // this.fotoPerfil = fotoPerfil;
+    this.fotoPerfil = fotoPerfil;
     // this.imgPortada = imgPortada;
   }
   mostrarAtributos() {
@@ -78,6 +78,8 @@ const nombreUser = document.createElement("h1");
 const ubicacionUser = document.createElement("h5");
 const instrumentosUser = document.createElement("p");
 const generosMusicalesUser = document.createElement("p");
+//const fotoPerfilUser = document.createElement("img");
+// const fotoPerfilUser = document.getElementById("");
 
 //                              Obtener referencias de los contenedores
 // Obtener referencia al contenedor "nombreUsuario"
@@ -90,21 +92,24 @@ const contenedorInstrumentos = document.getElementById("contenedor--instrumentos
 const contenedorInputsIntrumentos = document.getElementById('contenedor--inputsInstrumentos');
 // Obtener referencia al contenedor "generosMusicales"
 const contenedorGenerosMusicales = document.getElementById('contenedor--generosMusicales');
-// Obtener referencia al contenedor "inputsInstrumentos"
+// Obtener referencia al contenedor "inputsGenerosMusicales"
 const contenedorInputsGenerosMusicales = document.getElementById('contenedor--inputsGenerosMusicales');
+// Obtener referencia al contenedor "fotoPerfil"
+const contenedorFotoPerfil = document.getElementById('contenedor--fotoPerfil');
+
 
 //                      Función para cargar información inicial del usuario a su perfil
-function cargarInfoUserEnPerfil() {
-  // Configurando el nuevo elemento, estableciendole atributos, contenido, estilos, etc.
-  nombreUser.textContent = objetoUsuarioDelPerfil.nombre;
-  ubicacionUser.textContent = objetoUsuarioDelPerfil.ciudad + ", " + objetoUsuarioDelPerfil.estado;
-  instrumentosUser.textContent = objetoUsuarioDelPerfil.instrumentos;
-  generosMusicalesUser.textContent = objetoUsuarioDelPerfil.generosMusicales;
-  // Agregar el nuevo elemento 'nombreUser' al contenedor 'contenedorNombreUser' mediante DOM
-  contenedorNombreUser.appendChild(nombreUser);
-  contenedorUbicacionUser.appendChild(ubicacionUser);
-  contenedorInstrumentos.appendChild(instrumentosUser);
-  contenedorGenerosMusicales.appendChild(generosMusicalesUser);
+function cargarInfoUserEnPerfil(){
+// Configurando el nuevo elemento, estableciendole atributos, contenido, estilos, etc.
+nombreUser.textContent = objetoUsuarioDelPerfil.nombre;
+ubicacionUser.textContent = objetoUsuarioDelPerfil.ciudad + ", " + objetoUsuarioDelPerfil.estado;
+instrumentosUser.textContent = objetoUsuarioDelPerfil.instrumentos;
+generosMusicalesUser.textContent = objetoUsuarioDelPerfil.generosMusicales;
+// Agregar el nuevo elemento 'nombreUser' al contenedor 'contenedorNombreUser' mediante DOM
+contenedorNombreUser.appendChild(nombreUser);
+contenedorUbicacionUser.appendChild(ubicacionUser);
+contenedorInstrumentos.appendChild(instrumentosUser);
+contenedorGenerosMusicales.appendChild(generosMusicalesUser);
 }
 cargarInfoUserEnPerfil();
 
