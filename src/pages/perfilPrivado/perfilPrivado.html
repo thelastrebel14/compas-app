@@ -66,8 +66,9 @@
             </span>
         </div>
         <div class="header--fotoPerfil">
-            <img loading="lazy" class="header--fotoPerfil--img" src="./img/fotoPerfil.png" alt="fotoPerfil">
-            <div id="contenedor--fotoPerfil"></div> <!--CONTENEDOR FOTO PERFIL-->
+            <!-- <img loading="lazy" class="header--fotoPerfil--img" src="./img/fotoPerfil.png" alt="fotoPerfil"> -->
+            <!-- <div id="contenedor--fotoPerfil" class="header--fotoPerfil--img" style="border-radius: 50%;"></div> CONTENEDOR FOTO PERFIL-->
+            <img id="contenedor--fotoPerfil" class="header--fotoPerfil--img" src="./img/fotoPerfil.png" style="border-radius: 50%;">
             <span class="material-symbols-outlined header--fotoPerfil--symbolEditCamera" data-bs-toggle="modal" data-bs-target="#headerFotoPerfilModal">
                 photo_camera
             </span>
@@ -134,7 +135,7 @@
                 <div class="profile--follow--buttons">
                     <button class="profile--follow--buttons--seguidores boton flat">Seguidores</button>
                     <button class="profile--follow--buttons--siguiendo boton flat">Siguiendo</button>
-                    <button class="profile--follow--buttons--donadores boton flat">Donadores</button>
+                    <!-- <button class="profile--follow--buttons--donadores boton flat">Donadores</button> -->
                 </div>
                 <div class="profile--follow--mensaje">
                     <h4>Mensajes<img loading="lazy" src="./img/mensaje-icon.png" alt=""></h4>
@@ -151,88 +152,71 @@
         </section>
 
         <!-------------------- Sección de los demos ---------------------------------->
-
-        <!-- Sección de los demos -->
-        <section class="demos">
-            <h2 class="boldTx">Demos</h2>
-            <hr>
-            <!-- <div class="carousel">
-                <img id="carouselPrevArrow" class="carousel--prevArrow" src="img/prev.png" alt="">
-                <div id="carouselCards" class="carousel--cards">
-                    <div class="carousel--cards--item">
-                        <h1>Item1</h1>
-                    </div>
-                    <div class="carousel--cards--item">
-                        <h1>Item2</h1>
-                    </div>
-                    <div class="carousel--cards--item">
-                        <h1>Item3</h1>
-                    </div>
-                </div>
-                <img id="carouselNextArrow" src="img/next.png" alt="" class="carousel--nextArrow">
-            </div> -->
-
-            <div class="carousel">
-                <img id="carouselPrevArrowDemos" class="carousel--prevArrow" src="img/prev.png" alt="">
-                <div id="carouselCardsDemos" class="carousel--cards">
-                    <div id="" class="carousel--cards--item">
-                        <div class="card demos--item">
-                            <img src="img/perfilPublico_demo1.jpg" alt="...">
-                            <div class="card-body demos--item--info">
-                                <h4 class="card-title">Las ciudad de las luces</h4>
-                                <button class="boton flat">Reproducir</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel--cards--item">
-                        <div class="card demos--item">
-                            <img src="img/perfilPublico_demo2.jpg" alt="...">
-                            <div class="card-body demos--item--info">
-                                <h4 class="card-title">Las ciudad de las luces</h4>
-                                <button class="boton flat">Reproducir</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel--cards--item">
-                        <div class="card demos--item">
-                            <img src="img/perfilPublico_demo3.jpg" alt="...">
-                            <div class="card-body demos--item--info">
-                                <h4 class="card-title">Las ciudad de las luces</h4>
-                                <button class="boton flat">Reproducir</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel--cards--item">
-                        <div class="card demos--item">
-                            <img src="img/perfilPublico_demo4.jpg" alt="...">
-                            <div class="card-body demos--item--info">
-                                <h4 class="card-title">Las ciudad de las luces</h4>
-                                <button class="boton flat">Reproducir</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel--cards--item">
-                        <div class="card demos--item">
-                            <img src="img/perfilPublico_demo5.jpg" alt="...">
-                            <div class="card-body demos--item--info">
-                                <h4 class="card-title">Las ciudad de las luces</h4>
-                                <button class="boton flat">Reproducir</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel--cards--item">
-                        <div class="card demos--item">
-                            <img src="img/perfilPublico_demo6.jpg" alt="...">
-                            <div class="card-body demos--item--info">
-                                <h4 class="card-title">Las ciudad de las luces</h4>
-                                <button class="boton flat">Reproducir</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <img id="carouselNextArrowDemos" src="img/next.png" alt="" class="carousel--nextArrow">
+ <!-- Sección de los demos -->
+ <section class="demos">
+    <h2 class="boldTx">Demos</h2>
+    <hr />
+    <div class="carousel">
+      <img id="carouselPrevArrowDemos" class="carousel--prevArrow" src="img/prev.png" alt="" />
+      <div id="carouselCardsDemos" class="carousel--cards">
+        <div id="" class="carousel--cards--item">
+          <div class="card demos--item">
+            <img src="img/perfilPublico_demo1.jpg" alt="..." />
+            <div class="card-body demos--item--info">
+              <h4 class="card-title">Las ciudad de las luces</h4>
+              <button class="boton flat">Reproducir</button>
             </div>
-        </section>
+          </div>
+        </div>
+        <div class="carousel--cards--item">
+          <div class="card demos--item">
+            <img src="img/perfilPublico_demo2.jpg" alt="..." />
+            <div class="card-body demos--item--info">
+              <h4 class="card-title">Las ciudad de las luces</h4>
+              <button class="boton flat">Reproducir</button>
+            </div>
+          </div>
+        </div>
+        <div class="carousel--cards--item">
+          <div class="card demos--item">
+            <img src="img/perfilPublico_demo3.jpg" alt="..." />
+            <div class="card-body demos--item--info">
+              <h4 class="card-title">Las ciudad de las luces</h4>
+              <button class="boton flat">Reproducir</button>
+            </div>
+          </div>
+        </div>
+        <div class="carousel--cards--item">
+          <div class="card demos--item">
+            <img src="img/perfilPublico_demo4.jpg" alt="..." />
+            <div class="card-body demos--item--info">
+              <h4 class="card-title">Las ciudad de las luces</h4>
+              <button class="boton flat">Reproducir</button>
+            </div>
+          </div>
+        </div>
+        <div class="carousel--cards--item">
+          <div class="card demos--item">
+            <img src="img/perfilPublico_demo5.jpg" alt="..." />
+            <div class="card-body demos--item--info">
+              <h4 class="card-title">Las ciudad de las luces</h4>
+              <button class="boton flat">Reproducir</button>
+            </div>
+          </div>
+        </div>
+        <div class="carousel--cards--item">
+          <div class="card demos--item">
+            <img src="img/perfilPublico_demo6.jpg" alt="..." />
+            <div class="card-body demos--item--info">
+              <h4 class="card-title">Las ciudad de las luces</h4>
+              <button class="boton flat">Reproducir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img id="carouselNextArrowDemos" src="img/next.png" alt="" class="carousel--nextArrow" />
+    </div>
+  </section>
 
 
 
@@ -256,315 +240,326 @@
         </section>
 
         <!---------------------------------    Sección de los Escenarios    ------------------------------>
-        <section class="escenarios">
-            <h2 class="boldTx">Mis escenarios</h2>
-            <hr>
-            <!-- <div class="carousel">
-                <img id="carouselPrevArrow" class="carousel--prevArrow" src="img/prev.png" alt="">
-                <div id="carouselCards" class="carousel--cards">
-                    <div class="carousel--cards--item">
-                        <h1>Item1</h1>
-                    </div>
-                    <div class="carousel--cards--item">
-                        <h1>Item2</h1>
-                    </div>
-                    <div class="carousel--cards--item">
-                        <h1>Item3</h1>
-                    </div>
+        <!-- Sección de los Escenarios -->
+    <section class="escenarios">
+        <h2 class="boldTx">Mis escenarios</h2>
+        <hr />
+  
+        <div class="carousel">
+          <img id="carouselPrevArrowEscenarios" class="carousel--prevArrow" src="img/prev.png" alt="" />
+          <div id="carouselCardsEscenarios" class="carousel--cards">
+            <div class="carousel--cards--item">
+              <div class="card escenarios--item">
+                <img src="img/perfilPublico_escenario1.jpg" alt="..." />
+                <div class="card-body escenarios--item--info">
+                  <label>Restaurante</label>
+                  <h4 class="card-title boldTx">Casa cilantro</h4>
+                  <p class="semiBoldTx">Tizayuca, Hidalgo</p>
+                  <button class="boton flat">Reproducir</button>
                 </div>
-                <img id="carouselNextArrow" src="img/next.png" alt="" class="carousel--nextArrow">
-            </div> -->
-
-            <div class="carousel">
-                <img id="carouselPrevArrowEscenarios" class="carousel--prevArrow" src="./img/prev.png" alt="">
-                <div id="carouselCardsEscenarios" class="carousel--cards">
-                    <div class="carousel--cards--item">
-                        <div class="card escenarios--item">
-                            <img src="./img/perfilPublico_escenario1.jpg" alt="...">
-                            <div class="card-body escenarios--item--info">
-                                <label>Restaurante</label>
-                                <h4 class="card-title boldTx">Casa cilantro</h4>
-                                <p class="semiBoldTx">Tizayuca, Hidalgo</p>
-                                <button class="boton flat">Reproducir</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel--cards--item">
-                        <div class="card escenarios--item">
-                            <img src="./img/perfilPublico_escenario2.jpg" alt="...">
-                            <div class="card-body escenarios--item--info">
-                                <label>Restaurante</label>
-                                <h4 class="card-title boldTx">Casa cilantro</h4>
-                                <p class="semiBoldTx">Tizayuca, Hidalgo</p>
-                                <button class="boton flat">Me interesa</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel--cards--item">
-                        <div class="card escenarios--item">
-                            <img src="./img/perfilPublico_escenario3.jpg" alt="...">
-                            <div class="card-body escenarios--item--info">
-                                <label>Restaurante</label>
-                                <h4 class="card-title boldTx">Casa cilantro</h4>
-                                <p class="semiBoldTx">Tizayuca, Hidalgo</p>
-                                <button class="boton flat">Me interesa</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel--cards--item">
-                        <div class="card escenarios--item">
-                            <img src="img/perfilPublico_escenario4.jpg" alt="...">
-                            <div class="card-body escenarios--item--info">
-                                <label>Restaurante</label>
-                                <h4 class="card-title boldTx">Casa cilantro</h4>
-                                <p class="semiBoldTx">Tizayuca, Hidalgo</p>
-                                <button class="boton flat">Me interesa</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel--cards--item">
-                        <div class="card escenarios--item">
-                            <img src="img/perfilPublico_escenario5.jpg" alt="...">
-                            <div class="card-body escenarios--item--info">
-                                <label>Restaurante</label>
-                                <h4 class="card-title boldTx">Casa cilantro</h4>
-                                <p class="semiBoldTx">Tizayuca, Hidalgo</p>
-                                <button class="boton flat">Me interesa</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel--cards--item">
-                        <div class="card escenarios--item">
-                            <img src="img/perfilPublico_escenario6.jpg" alt="...">
-                            <div class="card-body escenarios--item--info">
-                                <h4 class="card-title">Las ciudad de las luces</h4>
-                                <button class="boton flat">Me interesa</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <img id="carouselNextArrowEscenarios" src="img/next.png" alt="" class="carousel--nextArrow">
+              </div>
             </div>
-        </section>
-
-        <!-- Recomendaciones -->
-        <section class="recomendaciones">
-            <h2 class="boldTx">Recomendaciones</h2>
-            <hr>
-            <div class="recomendaciones--carousel">
-                <div id="carouselExample" class="carousel slide">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <div class="card recomendaciones--carousel--item">
-                            <img src="img/perfilPublico_similares1.png" alt="...">
-                            <div class="card-body recomendaciones--carousel--item--info">
-                              <h5 class="card-title">Card title 1</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                          </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div class="card" style="width: 18rem;">
-                            <!-- <img src="..." class="card-img-top" alt="..."> -->
-                            <div class="card-body">
-                              <h5 class="card-title">Card title 2</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                          </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div class="card" style="width: 18rem;">
-                            <!-- <img src="..." class="card-img-top" alt="..."> -->
-                            <div class="card-body">
-                              <h5 class="card-title">Card title 3</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                          </div>
-                      </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
+            <div class="carousel--cards--item">
+              <div class="card escenarios--item">
+                <img src="img/perfilPublico_escenario2.jpg" alt="..." />
+                <div class="card-body escenarios--item--info">
+                  <label>Restaurante</label>
+                  <h4 class="card-title boldTx">Casa cilantro</h4>
+                  <p class="semiBoldTx">Tizayuca, Hidalgo</p>
+                  <button class="boton flat">Me interesa</button>
+                </div>
+              </div>
+            </div>
+            <div class="carousel--cards--item">
+              <div class="card escenarios--item">
+                <img src="img/perfilPublico_escenario3.jpg" alt="..." />
+                <div class="card-body escenarios--item--info">
+                  <label>Restaurante</label>
+                  <h4 class="card-title boldTx">Casa cilantro</h4>
+                  <p class="semiBoldTx">Tizayuca, Hidalgo</p>
+                  <button class="boton flat">Me interesa</button>
+                </div>
+              </div>
+            </div>
+            <div class="carousel--cards--item">
+              <div class="card escenarios--item">
+                <img src="img/perfilPublico_escenario4.jpg" alt="..." />
+                <div class="card-body escenarios--item--info">
+                  <label>Restaurante</label>
+                  <h4 class="card-title boldTx">Casa cilantro</h4>
+                  <p class="semiBoldTx">Tizayuca, Hidalgo</p>
+                  <button class="boton flat">Me interesa</button>
+                </div>
+              </div>
+            </div>
+            <div class="carousel--cards--item">
+              <div class="card escenarios--item">
+                <img src="img/perfilPublico_escenario5.jpg" alt="..." />
+                <div class="card-body escenarios--item--info">
+                  <label>Restaurante</label>
+                  <h4 class="card-title boldTx">Casa cilantro</h4>
+                  <p class="semiBoldTx">Tizayuca, Hidalgo</p>
+                  <button class="boton flat">Me interesa</button>
+                </div>
+              </div>
+            </div>
+            <div class="carousel--cards--item">
+              <div class="card escenarios--item">
+                <img src="img/perfilPublico_escenario6.jpg" alt="..." />
+                <div class="card-body escenarios--item--info">
+                  <h4 class="card-title">Las ciudad de las luces</h4>
+                  <button class="boton flat">Me interesa</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img id="carouselNextArrowEscenarios" src="img/next.png" alt="" class="carousel--nextArrow" />
+        </div>
+      </section>
+  
+      <!-- Carrusel de reseñas -->
+      <section class="resenas">
+        <h2 class="boldTx">Reseñas sobre Mario</h2>
+        <hr />
+        <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="resenas--item">
+                <div class="resenas--item--info">
+                  <div class="resenas--item--info-movil">
+                    <img src="img/perfilPublico_similares6.jpg" alt="">
+                    <h4>Pablo guzmán 1</h4>
                   </div>
-            </div>
-        </section>
-
-        <section class="similares">
-            <h2 class="boldTx">Similares</h2>
-            <hr>
-
-            <div class="similares--carousel">
-                <div class="carousel">
-                    <img id="carouselPrevArrowSimilares" class="carousel--prevArrow" src="img/prev.png" alt="">
-                    <div id="carouselCardsSimilares" class="carousel--cards">
-                        <div class="carousel--cards--item">
-                            <div class="similares--item">
-                                <div class="card similares--item">
-                                    <img src="img/perfilPublico_similares1.png" alt="...">
-                                    <div class="card-body similares--item--info">
-                                        <h5 class="card-title">Juan José</h5>
-                                        <span class="card-text">Tizayuca, Hidalgo</span> <br>
-                                        <span>Trompeta | Saxofón</span><br>
-                                        <button href="#" class="boton flat">Ver perfil</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel--cards--item">
-                            <div class="similares--item">
-                                <div class="card similares--item">
-                                    <img src="img/perfilPublico_similares2.png" alt="...">
-                                    <div class="card-body similares--item--info">
-                                        <h5 class="card-title">Julia</h5>
-                                        <span class="card-text">Polanco, CDMX</span> <br>
-                                        <span>Guitarra | Voz</span> <br>
-                                        <button href="#" class="boton flat">Ver perfil</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel--cards--item">
-                            <div class="similares--item">
-                                <div class="card similares--item">
-                                    <img src="img/perfilPublico_similares3.png" alt="...">
-                                    <div class="card-body similares--item--info">
-                                        <h5 class="card-title">Abel Ramos</h5>
-                                        <span class="card-text">Xalapa, Veracruz</span> <br>
-                                        <span>Batería | Bajo | Teclado | Guitarra</span><br>
-                                        <button href="#" class="boton flat">Ver perfil</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel--cards--item">
-                            <div class="similares--item">
-                                <div class="card similares--item">
-                                    <img src="img/perfilPublico_similares4.png" alt="...">
-                                    <div class="card-body similares--item--info">
-                                        <h5 class="card-title">Enrique</h5>
-                                        <span class="card-text">Tizayuca, Hidalgo</span> <br>
-                                        <span>Bajo</span><br>
-                                        <button href="#" class="boton flat">Ver perfil</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel--cards--item">
-                            <div class="similares--item">
-                                <div class="card similares--item">
-                                    <img src="img/perfilPublico_similares5.png" alt="...">
-                                    <div class="card-body similares--item--info">
-                                        <h5 class="card-title">Pablo Cesar</h5>
-                                        <span class="card-text">Tizayuca, Hidalgo</span> <br>
-                                        <span>Guitarra | Bajo | Batería | Voz | Teclado</span><br>
-                                        <button href="#" class="boton flat">Ver perfil</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel--cards--item">
-                            <div class="similares--item">
-                                <div class="card similares--item">
-                                    <img src="img/perfilPublico_similares6.jpg" alt="...">
-                                    <div class="card-body similares--item--info">
-                                        <h5 class="card-title">Melisa</h5>
-                                        <span class="card-text">Tizayuca, Hidalgo</span> <br>
-                                        <span>Trompeta | Saxofón</span><br>
-                                        <button href="#" class="boton flat">Ver perfil</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel--cards--item">
-                            <div class="similares--item">
-                                <div class="card similares--item">
-                                    <img src="img/perfilPublico_similares1.png" alt="...">
-                                    <div class="card-body similares--item--info">
-                                        <h5 class="card-title">Juan José</h5>
-                                        <span class="card-text">Tizayuca, Hidalgo</span> <br>
-                                        <span>Trompeta | Saxofón</span><br>
-                                        <button href="#" class="boton flat">Ver perfil</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel--cards--item">
-                            <div class="similares--item">
-                                <div class="card similares--item">
-                                    <img src="img/perfilPublico_similares2.png" alt="...">
-                                    <div class="card-body similares--item--info">
-                                        <h5 class="card-title">Julia</h5>
-                                        <span class="card-text">Polanco, CDMX</span> <br>
-                                        <span>Guitarra | Voz</span> <br>
-                                        <button href="#" class="boton flat">Ver perfil</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel--cards--item">
-                            <div class="similares--item">
-                                <div class="card similares--item">
-                                    <img src="img/perfilPublico_similares3.png" alt="...">
-                                    <div class="card-body similares--item--info">
-                                        <h5 class="card-title">Abel Ramos</h5>
-                                        <span class="card-text">Xalapa, Veracruz</span> <br>
-                                        <span>Batería | Bajo | Teclado | Guitarra</span><br>
-                                        <button href="#" class="boton flat">Ver perfil</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel--cards--item">
-                            <div class="similares--item">
-                                <div class="card similares--item">
-                                    <img src="img/perfilPublico_similares4.png" alt="...">
-                                    <div class="card-body similares--item--info">
-                                        <h5 class="card-title">Enrique</h5>
-                                        <span class="card-text">Tizayuca, Hidalgo</span> <br>
-                                        <span>Bajo</span><br>
-                                        <button href="#" class="boton flat">Ver perfil</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel--cards--item">
-                            <div class="similares--item">
-                                <div class="card similares--item">
-                                    <img src="img/perfilPublico_similares5.png" alt="...">
-                                    <div class="card-body similares--item--info">
-                                        <h5 class="card-title">Pablo Cesar</h5>
-                                        <span class="card-text">Tizayuca, Hidalgo</span> <br>
-                                        <span>Guitarra | Bajo | Batería | Voz | Teclado</span><br>
-                                        <button href="#" class="boton flat">Ver perfil</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel--cards--item">
-                            <div class="similares--item">
-                                <div class="card similares--item">
-                                    <img src="img/perfilPublico_similares6.jpg" alt="...">
-                                    <div class="card-body similares--item--info">
-                                        <h5 class="card-title">Melisa</h5>
-                                        <span class="card-text">Tizayuca, Hidalgo</span> <br>
-                                        <span>Trompeta | Saxofón</span><br>
-                                        <button href="#" class="boton flat">Ver perfil</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <img id="carouselNextArrowSimilares" src="img/next.png" alt="" class="carousel--nextArrow">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, nam laboriosam debitis
+                    quibusdam
+                    dignissimos praesentium earum. Accusantium quam, assumenda laboriosam delectus expedita provident eius
+                    illum
+                    veniam non at nostrum aspernatur?
+                    Aut magnam accusamus illo ducimus illum a possimus provident quam nihil asperiores nobis, esse numquam
+                    perspiciatis ipsa accusantium rerum cum commodi officiis quod autem distinctio. Eos accusamus
+                    assumenda
+                    quasi nisi!</p>
                 </div>
+              </div>
             </div>
+            <div class="carousel-item">
+              <div class="resenas--item">
+                <div class="resenas--item--info">
+                  <div class="resenas--item--info-movil">
+                    <img src="img/perfilPublico_similares6.jpg" alt="">
+                    <h4>Pablo guzmán 2</h4>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, nam laboriosam debitis
+                    quibusdam
+                    dignissimos praesentium earum. Accusantium quam, assumenda laboriosam delectus expedita provident eius
+                    illum
+                    veniam non at nostrum aspernatur?
+                    Aut magnam accusamus illo ducimus illum a possimus provident quam nihil asperiores nobis, esse numquam
+                    perspiciatis ipsa accusantium rerum cum commodi officiis quod autem distinctio. Eos accusamus
+                    assumenda
+                    quasi nisi!</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="resenas--item">
+                <div class="resenas--item--info">
+                  <div class="resenas--item--info-movil">
+                    <img src="img/perfilPublico_similares6.jpg" alt="">
+                    <h4>Pablo guzmán 3</h4>
+                  </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, nam laboriosam debitis
+                    quibusdam
+                    dignissimos praesentium earum. Accusantium quam, assumenda laboriosam delectus expedita provident eius
+                    illum
+                    veniam non at nostrum aspernatur?
+                    Aut magnam accusamus illo ducimus illum a possimus provident quam nihil asperiores nobis, esse numquam
+                    perspiciatis ipsa accusantium rerum cum commodi officiis quod autem distinctio. Eos accusamus
+                    assumenda
+                    quasi nisi!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <img id="carouselNextArrowEscenarios" src="img/prev.png" alt="" class="carousel--nextArrow" />
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <img id="carouselNextArrowEscenarios" src="img/next.png" alt="" class="carousel--nextArrow" />
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+  
+      <section class="similares">
+        <h2 class="boldTx">Similares</h2>
+        <hr>
+  
+        <div class="similares--carousel">
+          <div class="carousel">
+            <img id="carouselPrevArrowSimilares" class="carousel--prevArrow" src="img/prev.png" alt="">
+            <div id="carouselCardsSimilares" class="carousel--cards">
+              <div class="carousel--cards--item">
+                <div class="similares--item">
+                  <div class="card similares--item">
+                    <img src="img/perfilPublico_similares1.png" alt="...">
+                    <div class="card-body similares--item--info">
+                      <h5 class="card-title">Juan José</h5>
+                      <span class="card-text">Tizayuca, Hidalgo</span> <br>
+                      <span>Trompeta | Saxofón</span><br>
+                      <button href="#" class="boton flat">Ver perfil</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel--cards--item">
+                <div class="similares--item">
+                  <div class="card similares--item">
+                    <img src="img/perfilPublico_similares2.png" alt="...">
+                    <div class="card-body similares--item--info">
+                      <h5 class="card-title">Julia</h5>
+                      <span class="card-text">Polanco, CDMX</span> <br>
+                      <span>Guitarra | Voz</span> <br>
+                      <button href="#" class="boton flat">Ver perfil</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel--cards--item">
+                <div class="similares--item">
+                  <div class="card similares--item">
+                    <img src="img/perfilPublico_similares3.png" alt="...">
+                    <div class="card-body similares--item--info">
+                      <h5 class="card-title">Abel Ramos</h5>
+                      <span class="card-text">Xalapa, Veracruz</span> <br>
+                      <span>Batería | Bajo | Teclado | Guitarra</span><br>
+                      <button href="#" class="boton flat">Ver perfil</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel--cards--item">
+                <div class="similares--item">
+                  <div class="card similares--item">
+                    <img src="img/perfilPublico_similares4.png" alt="...">
+                    <div class="card-body similares--item--info">
+                      <h5 class="card-title">Enrique</h5>
+                      <span class="card-text">Tizayuca, Hidalgo</span> <br>
+                      <span>Bajo</span><br>
+                      <button href="#" class="boton flat">Ver perfil</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel--cards--item">
+                <div class="similares--item">
+                  <div class="card similares--item">
+                    <img src="img/perfilPublico_similares5.png" alt="...">
+                    <div class="card-body similares--item--info">
+                      <h5 class="card-title">Pablo Cesar</h5>
+                      <span class="card-text">Tizayuca, Hidalgo</span> <br>
+                      <span>Guitarra | Bajo | Batería | Voz | Teclado</span><br>
+                      <button href="#" class="boton flat">Ver perfil</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel--cards--item">
+                <div class="similares--item">
+                  <div class="card similares--item">
+                    <img src="img/perfilPublico_similares6.jpg" alt="...">
+                    <div class="card-body similares--item--info">
+                      <h5 class="card-title">Melisa</h5>
+                      <span class="card-text">Tizayuca, Hidalgo</span> <br>
+                      <span>Trompeta | Saxofón</span><br>
+                      <button href="#" class="boton flat">Ver perfil</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel--cards--item">
+                <div class="similares--item">
+                  <div class="card similares--item">
+                    <img src="img/perfilPublico_similares1.png" alt="...">
+                    <div class="card-body similares--item--info">
+                      <h5 class="card-title">Juan José</h5>
+                      <span class="card-text">Tizayuca, Hidalgo</span> <br>
+                      <span>Trompeta | Saxofón</span><br>
+                      <button href="#" class="boton flat">Ver perfil</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel--cards--item">
+                <div class="similares--item">
+                  <div class="card similares--item">
+                    <img src="img/perfilPublico_similares2.png" alt="...">
+                    <div class="card-body similares--item--info">
+                      <h5 class="card-title">Julia</h5>
+                      <span class="card-text">Polanco, CDMX</span> <br>
+                      <span>Guitarra | Voz</span> <br>
+                      <button href="#" class="boton flat">Ver perfil</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel--cards--item">
+                <div class="similares--item">
+                  <div class="card similares--item">
+                    <img src="img/perfilPublico_similares3.png" alt="...">
+                    <div class="card-body similares--item--info">
+                      <h5 class="card-title">Abel Ramos</h5>
+                      <span class="card-text">Xalapa, Veracruz</span> <br>
+                      <span>Batería | Bajo | Teclado | Guitarra</span><br>
+                      <button href="#" class="boton flat">Ver perfil</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel--cards--item">
+                <div class="similares--item">
+                  <div class="card similares--item">
+                    <img src="img/perfilPublico_similares4.png" alt="...">
+                    <div class="card-body similares--item--info">
+                      <h5 class="card-title">Enrique</h5>
+                      <span class="card-text">Tizayuca, Hidalgo</span> <br>
+                      <span>Bajo</span><br>
+                      <button href="#" class="boton flat">Ver perfil</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel--cards--item">
+                <div class="similares--item">
+                  <div class="card similares--item">
+                    <img src="img/perfilPublico_similares5.png" alt="...">
+                    <div class="card-body similares--item--info">
+                      <h5 class="card-title">Pablo Cesar</h5>
+                      <span class="card-text">Tizayuca, Hidalgo</span> <br>
+                      <span>Guitarra | Bajo | Batería | Voz | Teclado</span><br>
+                      <button href="#" class="boton flat">Ver perfil</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel--cards--item">
+                <div class="similares--item">
+                  <div class="card similares--item">
+                    <img src="img/perfilPublico_similares6.jpg" alt="...">
+                    <div class="card-body similares--item--info">
+                      <h5 class="card-title">Melisa</h5>
+                      <span class="card-text">Tizayuca, Hidalgo</span> <br>
+                      <span>Trompeta | Saxofón</span><br>
+                      <button href="#" class="boton flat">Ver perfil</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <img id="carouselNextArrowSimilares" src="img/next.png" alt="" class="carousel--nextArrow">
+          </div>
+        </div>
 
         </section>
 
@@ -606,17 +601,19 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form>
+              <form id="formFotoPerfil">
                 <div class="mb-3">
                     <label for="img--cover" class="col-form-label">Cargar foto</label>
-                    <input type="file" name="foto--cover" id="img--cover" accept="image/png, image/jpeg">
+                    <input type="file" name="foto--cover" id="foto--perfilUser" accept="image/png, image/jpeg, image/jpg">
                   </div>
+                  
               </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn-primary">Cargar foto</button>
-            </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary">Cargar foto</button>
+              </div>
+              </div>
+            
           </div>
         </div>
       </div>
