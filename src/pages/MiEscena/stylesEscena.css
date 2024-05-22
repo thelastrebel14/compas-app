@@ -109,7 +109,9 @@
 @media (max-width: 1100px){
     .flat{
         display: none;
-
+    }
+    #publicarFotoVideo, #publicarBusquedaArtista {
+        display: block;
     }
 }
 
@@ -370,8 +372,9 @@
 
 .img-usuario {
     margin-right: 6px;
-    height: 45px;
+    height: 60px;
     width: 60px;
+    object-fit: cover;
 }
 
 .img-publicacion {

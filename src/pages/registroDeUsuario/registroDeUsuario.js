@@ -27,35 +27,35 @@ radioSoyMusico.addEventListener(
   })
 );
 
-// const cp = () => {
-//   rellenoCodigoPostal();
-// };
-// async function rellenoCodigoPostal() {
-//   try {
-//     const codigoPostal = document.getElementById("inputCP").value;
-//     const response = await fetch(
-//       `https://api.copomex.com/query/info_cp/${codigoPostal}?token=4d481f50-19e7-4e38-8d07-870975872307`
-//     );
-//     if (!response.ok) {
-//       throw new Error("No se encontró");
-//     }
+const cp = () => {
+  rellenoCodigoPostal();
+};
+async function rellenoCodigoPostal() {
+  try {
+    const codigoPostal = document.getElementById("inputCP").value;
+    const response = await fetch(
+      `https://api.copomex.com/query/info_cp/${codigoPostal}?token=4d481f50-19e7-4e38-8d07-870975872307`
+    );
+    if (!response.ok) {
+      throw new Error("No se encontró");
+    }
 
-//     const data = await response.json();
-//     const opcionEstado = document.getElementById("inputEstado");
-//     const opcionMunicipio = document.getElementById("inputCiudad");
+    const data = await response.json();
+    const opcionEstado = document.getElementById("inputEstado");
+    const opcionMunicipio = document.getElementById("inputCiudad");
 
-//     data.forEach((element) => {
-//       let nuevaOpcionEstado = document.createElement("option");
-//       let nuevaOpcionMunicipio = document.createElement("option");
-//       nuevaOpcionEstado.textContent = element.response.estado;
-//       nuevaOpcionMunicipio.textContent = element.response.municipio;
-//       opcionEstado.appendChild(nuevaOpcionEstado);
-//       opcionMunicipio.appendChild(nuevaOpcionMunicipio);
-//     });
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
+    data.forEach((element) => {
+      let nuevaOpcionEstado = document.createElement("option");
+      let nuevaOpcionMunicipio = document.createElement("option");
+      nuevaOpcionEstado.textContent = element.response.estado;
+      nuevaOpcionMunicipio.textContent = element.response.municipio;
+      opcionEstado.appendChild(nuevaOpcionEstado);
+      opcionMunicipio.appendChild(nuevaOpcionMunicipio);
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
 
 class RegistroDeUsuario {
   constructor(
@@ -190,6 +190,7 @@ botonRegistro.addEventListener("click", (e) => {
     window.location.href = "../inicioDeSesion/inicioDeSesion.html";
     localStorage.setItem("usuario", usuario.email);
     localStorage.setItem("contraseña", usuario.contrasena);
+    localStorage.setItem("usuarioCompleto",usuarioJSON);
   }
 });
 

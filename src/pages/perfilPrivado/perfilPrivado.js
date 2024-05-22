@@ -5,9 +5,9 @@
 //     console.log("Acerca de click");
 //   });
 // --------------------------------------------------------------------
-// document.addEventListener("DOMContentLoaded", function() {
-//   cargarInfoUserEnPerfil();
-// });
+document.addEventListener("DOMContentLoaded", function() {
+  cargarInfoUserEnPerfil();
+});
 
 // Validación en vivo de input Nombre
 validacionEnVivo("nombrePerfil",  //string del id del input
@@ -30,13 +30,15 @@ validarTexto);  //callback de una funcion de validacion
 
 //                      Clase de prueba que carga sus elementos a la información del perfil
 class UserCreadoEnRegistro {
-  instrumentos = ["Guitarra","Bajo","Voz"];
-  generosMusicales = ["Rock","Cumbia","Metal"]
-  constructor(nombre, ciudad, estado){
+  //instrumentos = ["Guitarra","Bajo","Voz"];
+  //generosMusicales = ["Rock","Cumbia","Metal"];
+  constructor(nombre, ciudad, estado, instrumentos,generosMusicales){
     this.nombre = nombre;
     this.ciudad = ciudad;
     this.estado = estado;
-    // this.fotoPerfil = fotoPerfil;
+    //this.fotoPerfil = fotoPerfil;
+    this.instrumentos = instrumentos;
+    this.generosMusicales = generosMusicales;
     // this.imgPortada = imgPortada;
   }
   mostrarAtributos(){
@@ -62,7 +64,8 @@ class UserCreadoEnRegistro {
   // }
 }
 //                      Instanciar un objeto desde la clase UserCreadoEnRegistro
-const objetoUsuarioDelPerfil = new UserCreadoEnRegistro('Mario Sandoval Velázquez', 'Tizayuca', 'Hidalgo');
+//const objetoUsuarioDelPerfil = new UserCreadoEnRegistro('Moises Reyes Orea', 'Guadalajara', 'Jalisco');
+const objetoUsuarioDelPerfil = JSON.parse(localStorage.getItem("usuarioCompleto"));
 // objetoUsuarioDelPerfil.mostrarAtributos();
  console.log(objetoUsuarioDelPerfil.nombre);
  console.log(objetoUsuarioDelPerfil.ciudad); 
@@ -78,6 +81,8 @@ const nombreUser = document.createElement("h1");
 const ubicacionUser = document.createElement("h5");
 const instrumentosUser = document.createElement("p");
 const generosMusicalesUser = document.createElement("p");
+//const fotoPerfilUser = document.createElement("img");
+// const fotoPerfilUser = document.getElementById("");
 
 //                              Obtener referencias de los contenedores
 // Obtener referencia al contenedor "nombreUsuario"
@@ -90,23 +95,42 @@ const contenedorInstrumentos = document.getElementById("contenedor--instrumentos
 const contenedorInputsIntrumentos = document.getElementById('contenedor--inputsInstrumentos');
 // Obtener referencia al contenedor "generosMusicales"
 const contenedorGenerosMusicales = document.getElementById('contenedor--generosMusicales');
-// Obtener referencia al contenedor "inputsInstrumentos"
+// Obtener referencia al contenedor "inputsGenerosMusicales"
 const contenedorInputsGenerosMusicales = document.getElementById('contenedor--inputsGenerosMusicales');
+// Obtener referencia al contenedor "fotoPerfil"
+const contenedorFotoPerfil = document.getElementById('contenedor--fotoPerfil');
+
 
 //                      Función para cargar información inicial del usuario a su perfil
 function cargarInfoUserEnPerfil(){
 // Configurando el nuevo elemento, estableciendole atributos, contenido, estilos, etc.
 nombreUser.textContent = objetoUsuarioDelPerfil.nombre;
 ubicacionUser.textContent = objetoUsuarioDelPerfil.ciudad + ", " + objetoUsuarioDelPerfil.estado;
-instrumentosUser.textContent = objetoUsuarioDelPerfil.instrumentos;
+instrumentosUser.textContent = objetoUsuarioDelPerfil.instrumentosMusicales;
 generosMusicalesUser.textContent = objetoUsuarioDelPerfil.generosMusicales;
+//fotoPerfilUser.src = "./img/fotoPerfilVacio.jpg";
+    // Establecer atributos adicionales si es necesario
+    //fotoPerfilUser.alt = 'Foto Perfil de Usuario';
+    //fotoPerfilUser.width = 250; // Puedes ajustar el ancho y alto según sea necesario
+// https://www.youtube.com/watch?v=xXrs4j-p3yE
 // Agregar el nuevo elemento 'nombreUser' al contenedor 'contenedorNombreUser' mediante DOM
 contenedorNombreUser.appendChild(nombreUser);
 contenedorUbicacionUser.appendChild(ubicacionUser);
 contenedorInstrumentos.appendChild(instrumentosUser);
 contenedorGenerosMusicales.appendChild(generosMusicalesUser);
+contenedorFotoPerfil.appendChild(fotoPerfilUser);
 }
-cargarInfoUserEnPerfil();
+//cargarInfoUserEnPerfil();
+
+//                            Editando Foto de perfil usuario
+// Obtener referencia al input "foto--perfilUser"
+const fotoPerfilUser = document.getElementById("foto--perfilUser");
+const formFotoPerfilUser = document.getElementById("formFotoPerfil");
+formFotoPerfilUser.addEventListener('submit', function(){
+  //objetoUsuarioDelPerfil.fotoPerfil = document.getElementById("foto--perfilUser");
+  contenedorFotoPerfil.src = URL.createObjectURL(fotoPerfilUser.files[0]);
+});
+
 
 //                            Formulario Edit Información de Usuario en Perfil
 //                            Formulario Edit Información de Usuario en Perfil

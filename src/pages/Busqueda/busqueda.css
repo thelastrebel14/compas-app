@@ -80,6 +80,11 @@ body
     {
         margin-left: 10px;
         margin-right: 10px;
+    }
+    .imagen--compasApp
+    {
+        width: 50%;
+        height: auto;
     } 
 }
 
