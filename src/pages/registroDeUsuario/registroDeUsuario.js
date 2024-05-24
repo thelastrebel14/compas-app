@@ -28,7 +28,10 @@ radioSoyMusico.addEventListener(
 );
 
 const cp = () => {
-  rellenoCodigoPostal();
+  if (!direccionCheckbox.checked) {
+    rellenoCodigoPostal();
+  }
+  return;
 };
 async function rellenoCodigoPostal() {
   try {
@@ -190,7 +193,7 @@ botonRegistro.addEventListener("click", (e) => {
     window.location.href = "../inicioDeSesion/inicioDeSesion.html";
     localStorage.setItem("usuario", usuario.email);
     localStorage.setItem("contraseña", usuario.contrasena);
-    localStorage.setItem("usuarioCompleto",usuarioJSON);
+    localStorage.setItem("usuarioCompleto", usuarioJSON);
   }
 });
 
@@ -429,5 +432,70 @@ inputContraseñaConfirmar.addEventListener("keydown", function (event) {
 
   if (teclaPresionada === 32) {
     event.preventDefault();
+  }
+});
+
+// implementacion del checkbox
+
+const direccionCheckbox = document.getElementById("direccionCheckbox");
+const selectEstado = document.getElementById("selectEstado");
+const selectCiudad = document.getElementById("selectCiudad");
+const dataCiudad = document.getElementById("dataCiudad");
+const dataEstado = document.getElementById("dataEstado");
+
+direccionCheckbox.addEventListener("click", function (event) {
+  if (direccionCheckbox.checked) {
+    //oculta el input de select
+    selectEstado.hidden = true;
+    selectCiudad.hidden = true;
+
+    //crea el nuevo input de tipo texto para estado
+    const divEstado = document.createElement("div");
+    const inputEstado = document.createElement("input");
+    const labelEstado = document.createElement("label");
+
+    //asigna clases y atributos a los elementos
+    divEstado.classList.add("form-floating");
+
+    inputEstado.classList.add("form-control");
+    inputEstado.type = "text";
+    inputEstado.id = "inputEstado";
+    inputEstado.placeholder = "Estado";
+    inputEstado.required = true;
+
+    labelEstado.classList.add("form-label");
+    labelEstado.setAttribute("for", "inputEstado");
+    labelEstado.textContent = "Estado";
+
+    //añade los elementos al div
+    divEstado.append(inputEstado, labelEstado);
+    dataEstado.append(divEstado);
+
+    //crea el nuevo input de tipo texto para ciudad
+    //crea el nuevo input de tipo texto para estado
+    const divCiudad = document.createElement("div");
+    const inputCiudad = document.createElement("input");
+    const labelCiudad = document.createElement("label");
+
+    //asigna clases y atributos a los elementos
+    divCiudad.classList.add("form-floating");
+
+    inputCiudad.classList.add("form-control");
+    inputCiudad.type = "text";
+    inputCiudad.id = "inputCiudad";
+    inputCiudad.placeholder = "Ciudad";
+    inputCiudad.required = true;
+
+    labelCiudad.classList.add("form-label");
+    labelCiudad.setAttribute("for", "inputCiudad");
+    labelCiudad.textContent = "Ciudad";
+
+    //añade los elementos al div
+    divCiudad.append(inputCiudad, labelCiudad);
+    dataCiudad.append(divCiudad);
+  } else if (!direccionCheckbox.checked) {
+    //habilita los selects
+    selectEstado.hidden = false;
+    selectCiudad.hidden = false;
   }
 });
