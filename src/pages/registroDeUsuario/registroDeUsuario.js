@@ -445,57 +445,77 @@ const dataEstado = document.getElementById("dataEstado");
 
 direccionCheckbox.addEventListener("click", function (event) {
   if (direccionCheckbox.checked) {
-    //oculta el input de select
-    selectEstado.hidden = true;
-    selectCiudad.hidden = true;
+    if (
+      !document.getElementById("inputTextEstado") &&
+      !document.getElementById("inputTextCiudad")
+    ) {
+      //oculta el input de select
+      selectEstado.hidden = true;
+      selectCiudad.hidden = true;
 
-    //crea el nuevo input de tipo texto para estado
-    const divEstado = document.createElement("div");
-    const inputEstado = document.createElement("input");
-    const labelEstado = document.createElement("label");
+      //crea el nuevo input de tipo texto para estado
+      const divEstado = document.createElement("div");
+      const inputEstado = document.createElement("input");
+      const labelEstado = document.createElement("label");
 
-    //asigna clases y atributos a los elementos
-    divEstado.classList.add("form-floating");
+      //asigna clases y atributos a los elementos
+      divEstado.classList.add("form-floating");
+      divEstado.id = "inputTextEstado";
 
-    inputEstado.classList.add("form-control");
-    inputEstado.type = "text";
-    inputEstado.id = "inputEstado";
-    inputEstado.placeholder = "Estado";
-    inputEstado.required = true;
+      inputEstado.classList.add("form-control");
+      inputEstado.type = "text";
+      inputEstado.id = "inputEstado";
+      inputEstado.placeholder = "Estado";
+      inputEstado.required = true;
 
-    labelEstado.classList.add("form-label");
-    labelEstado.setAttribute("for", "inputEstado");
-    labelEstado.textContent = "Estado";
+      labelEstado.classList.add("form-label");
+      labelEstado.setAttribute("for", "inputEstado");
+      labelEstado.textContent = "Estado";
 
-    //añade los elementos al div
-    divEstado.append(inputEstado, labelEstado);
-    dataEstado.append(divEstado);
+      //añade los elementos al div
+      divEstado.append(inputEstado, labelEstado);
+      dataEstado.append(divEstado);
 
-    //crea el nuevo input de tipo texto para ciudad
-    //crea el nuevo input de tipo texto para estado
-    const divCiudad = document.createElement("div");
-    const inputCiudad = document.createElement("input");
-    const labelCiudad = document.createElement("label");
+      //crea el nuevo input de tipo texto para ciudad
+      //crea el nuevo input de tipo texto para estado
+      const divCiudad = document.createElement("div");
+      const inputCiudad = document.createElement("input");
+      const labelCiudad = document.createElement("label");
 
-    //asigna clases y atributos a los elementos
-    divCiudad.classList.add("form-floating");
+      //asigna clases y atributos a los elementos
+      divCiudad.classList.add("form-floating");
+      divCiudad.id = "inputTextCiudad";
 
-    inputCiudad.classList.add("form-control");
-    inputCiudad.type = "text";
-    inputCiudad.id = "inputCiudad";
-    inputCiudad.placeholder = "Ciudad";
-    inputCiudad.required = true;
+      inputCiudad.classList.add("form-control");
+      inputCiudad.type = "text";
+      inputCiudad.id = "inputCiudad";
+      inputCiudad.placeholder = "Ciudad";
+      inputCiudad.required = true;
 
-    labelCiudad.classList.add("form-label");
-    labelCiudad.setAttribute("for", "inputCiudad");
-    labelCiudad.textContent = "Ciudad";
+      labelCiudad.classList.add("form-label");
+      labelCiudad.setAttribute("for", "inputCiudad");
+      labelCiudad.textContent = "Ciudad";
 
-    //añade los elementos al div
-    divCiudad.append(inputCiudad, labelCiudad);
-    dataCiudad.append(divCiudad);
+      //añade los elementos al div
+      divCiudad.append(inputCiudad, labelCiudad);
+      dataCiudad.append(divCiudad);
+      console.log("Test 1");
+    } else if (
+      document.getElementById("inputTextEstado") &&
+      document.getElementById("inputTextCiudad")
+    ) {
+      document.getElementById("inputTextEstado").hidden = false;
+      document.getElementById("inputTextCiudad").hidden = false;
+      selectEstado.hidden = true;
+      selectCiudad.hidden = true;
+      console.log("Test 2");
+    }
   } else if (!direccionCheckbox.checked) {
     //habilita los selects
     selectEstado.hidden = false;
     selectCiudad.hidden = false;
+    document.getElementById("inputTextCiudad").hidden = true;
+    document.getElementById("inputTextEstado").hidden = true;
+    console.log("Test 3");
   }
 });
