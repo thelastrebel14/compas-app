@@ -109,9 +109,26 @@
 
 
 @media (max-width: 1100px) {
-    .flat {
-        display: none;
+    .boton.flat {
+        background: none;
+        /* Si el botón tiene fondo, lo eliminamos */
+        border: none;
+        /* Si el botón tiene borde, lo eliminamos */
+        padding: 0;
+        /* Elimina el padding para reducir el tamaño */
+        color: transparent;
+        /* Hace el texto invisible */
     }
+
+    .boton.flat .material-symbols-outlined {
+        color: black;
+        /* Asegura que el icono sea visible */
+        position: relative;
+        /* Asegura que el icono se mantenga en su lugar */
+        left: -10px;
+        /* Ajusta la posición del icono si es necesario */
+    }
+
 
     #publicarFotoVideo,
     #publicarBusquedaArtista {
@@ -362,7 +379,7 @@
     background-color: var(--secondaryBg-color);
     /* Color de fondo del contenedor */
     padding: 16px;
-    border-radius: 10px;
+    border-radius: 20px;
     margin-bottom: 16px;
 }
 
@@ -373,7 +390,6 @@
     align-items: center;
     height: 10vh;
     width: 100%;
-    margin-bottom: 4px;
 }
 
 .autor-info {
