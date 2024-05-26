@@ -343,12 +343,21 @@ function validaCoincidenciaContrasena(password) {
     document.querySelector(
       "#validacion-coincidencia-contrasena label:nth-child(1)"
     ).style.color = "red";
+    document.querySelector(
+      "#validacion-coincidencia-contrasena label:nth-child(1)"
+    ).textContent = "Las contraseñas no coinciden";
     return false;
   }
 
   document.querySelector(
     "#validacion-coincidencia-contrasena label:nth-child(1)"
   ).style.color = "green";
+  document
+    .querySelector("#validacion-coincidencia-contrasena")
+    .removeAttribute("hidden");
+  document.querySelector(
+    "#validacion-coincidencia-contrasena label:nth-child(1)"
+  ).textContent = "Las contraseñas coinciden";
   return true;
 }
 
