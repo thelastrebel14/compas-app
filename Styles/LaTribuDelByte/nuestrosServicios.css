@@ -6,6 +6,7 @@
     height: auto;
     margin: 50px 20px;
     align-content: center;
+    cursor: default;
 }
 
 .service-block{

@@ -1,42 +1,141 @@
-
-/* Se importan los diseños principales de main.css */
-/* @import url(../Styles/main.css);  */
-
-/* !!!Eliminar el margin cuando se incorpore a el archivo principal!!! */
-.nuestro-equipo {
-    text-align: center;
+/* Contentedor de las cartas, genera margenes, pordes y paddings para su acomodamiento*/
+.container 
+{
+  margin: 30px auto;
+  border-radius: 10px;
+  padding: 0 60px; /* Margen de 60px en los bordes */
 }
 
-/* Separa el contenido del titulo principal */
-.nuestro-equipo h3{
-    margin-bottom: 50px;
+/* Centra las cartas */
+.row 
+{
+  justify-content: center;
+  margin-left: -30px; 
+  margin-right: -30px; 
 }
 
-
-/* Muestra las cartas en forma de Grid con diseño responsivo sin media querry */
-.cards-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(204px, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(1fr, 330px));
-    gap: 30px 100px;
+/* Configuración del cuerpo de las cartas, su posición, animación y tamaño */
+.card 
+{
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 204px;
+  height: 20rem;
+  margin: 0 30px 30px 30px; 
 }
 
-/* Elimina estílo de los itmes de lista y alinea a la izquierda para mejor visibilidad */
-.card li{
-    list-style-type: none;
-    margin: 4px;
-    text-align: left;
+/* Hover para activar el efecto de animación */
+.card:hover 
+{
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
-
-/* Agrega estílo a las imágenes */
-.card img{
-    margin: 10px 20px;
-    height: 126px;
-    border-radius: 10px;
+/* Configuración de tamaño de texto para el titulo*/
+.card-title
+{
+  font-size: 24px;
+}
+.card-img-top {
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen cubra toda el área disponible */
+  transition: transform 0.3s ease;
 }
 
-/* Incrementa el tamaño de los iconos */
-.card-link{
-    font-size: 1.5rem;
+.card:hover .card-img-top 
+{
+  transform: scale(1.1);
 }
+
+/* Configuración para los elementos de la animación que son los elementos que se encuetran en el cuerpo de la carta */
+.card-body 
+{
+  position: absolute;
+  margin-top: 0;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  transition: left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.card:hover .card-body 
+{
+  left: 0;
+}
+
+.card-title, .card-text 
+{
+  margin: 0;
+  text-align: center; 
+}
+
+/* Configuración del texto, para permitir cortar palabras, el tamaño y su alineación */
+.card-text 
+{
+  margin-top: 10px;
+  overflow: auto; 
+  text-align: left; 
+  margin-left: auto; 
+  margin-right: auto; 
+  hyphens: auto; 
+  font-size: 14px;
+}
+/* Estilos para la barra de desplazamiento */
+.card-text::-webkit-scrollbar 
+{
+width: 1px;
+}
+
+.card-text::-webkit-scrollbar-track 
+{
+background: var(--background-color); /* Color de fondo del riel */
+}
+
+/* Mango de la barra de desplazamiento */
+.card-text::-webkit-scrollbar-thumb 
+{
+background: var(--main-color); 
+border-radius: 5px; 
+}
+
+/* Estilos al pasar el cursor sobre la barra de desplazamiento */
+.card-text::-webkit-scrollbar-thumb:hover 
+{
+background: var(--hover-color); /* Color del mango al pasar el cursor */
+}
+
+.card-link {
+  color: var(--background-color); /* Color de los enlaces */
+  font-size: 24px; /* Tamaño de los íconos */
+  margin: 0 5px; /* Espacio entre los enlaces */
+}
+.card-link:hover
+{
+  color: blue;
+}
+ /* Estilos para pantallas menores a 600px */
+ @media (max-width: 600px) 
+ {
+  .card 
+  {
+    width: 100%; /* Ancho completo */
+    margin: 0 auto 30px auto; /* Margen superior e inferior automático para centrar */
+  }
+}
+
+  .puesto
+  {
+    font-size: 10px;
+    overflow-y: hidden;
+    height: 40px;
+  }
