@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ------- contador de Me entona ---------
 
-// selecciona los elementos que se usaran
+//selecciona los elementos que se usaran
 // const meEntonaBoton = document.getElementById("meEntonaBoton");
 // const contadorMeEntona = document.getElementById("contadorMeEntona");
 
@@ -631,12 +631,12 @@ botonPublicarBusquedaArtista.addEventListener("click", (e) => {
   }
 });
 
-// Código para evitar que Mi Escena se recargue al hacer 'submit' en algún formulario
-var form = document.getElementById("formularioBusquedaArtista");
-function handleForm(event) {
-  event.preventDefault();
-}
-form.addEventListener("submit", handleForm);
+ //Código para evitar que Mi Escena se recargue al hacer 'submit' en algún formulario
+  var form = document.getElementById("formularioBusquedaArtista");
+  function handleForm(event) {
+    event.preventDefault();
+  }
+  form.addEventListener("submit", handleForm);
 
 // FUNCIONES DE VALIDACIÓN
 
@@ -873,7 +873,7 @@ function eliminarTodasPublicaciones() {
 // IMPORTANTE: Definan si usar localStorage o fetch en todas las funciones, sería uno o el otro en todas las funciones.
 // El ejemplo de fetch ya lo tienen, es modificar el method a GET o POST según corresponda, apóyense de documentación.
 
-const modalNombre = document.getElementById("modalNombre");
-modalNombre.textContent = JSON.parse(
-  localStorage.getItem("usuarioJSON")
-).nombre;
+  const modalNombre = document.getElementById("modalNombre");
+  modalNombre.textContent = JSON.parse(
+    localStorage.getItem("usuarioJSON")
+  ).nombre;
