@@ -1,7 +1,6 @@
-
-function validarTexto(texto) {
+export function validarTexto(texto) {
   // inicializa variable para determinar si es texto
-  isText = false;
+  let isText = false;
   // Verificar que la casilla no se deje vacía
   if (texto == "" || texto == null) {
     // se omite todo y regresa false
@@ -18,7 +17,8 @@ function validarTexto(texto) {
   for (let i = 0; i < texto.length; i++) {
     if (
       (texto.charCodeAt(i) >= 65 && texto.charCodeAt(i) <= 90) ||
-      (texto.charCodeAt(i) >= 97 && texto.charCodeAt(i) <= 122)
+      (texto.charCodeAt(i) >= 97 && texto.charCodeAt(i) <= 122) ||
+      texto.charCodeAt(i) == 32
     ) {
       // se actualiza la variable
       isText = true;
