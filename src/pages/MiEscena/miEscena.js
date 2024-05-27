@@ -478,9 +478,17 @@ botonPublicarFotoVideo.addEventListener("click", (e) => {
       publicacionMultimedia
     );
 
-    console.log({ publicacion });
+    console.log({publicacion});
     const publicacionJSON = JSON.stringify(publicacion);
 
+
+
+    document.getElementById("contenedorPublicacionFotoVideo").innerHTML = publicacionJSON;
+
+    crearElementoPublicacion(object.values(NuevaPublicacionFotoVideo));
+
+
+    
     // Enviar los datos del formulario al servidor usando fetch
     fetch("/enviarPublicacionFotoVideo", {
       method: "POST",
@@ -593,7 +601,7 @@ botonPublicarBusquedaArtista.addEventListener("click", (e) => {
       multimediaBusqueda
     );
 
-    console.log({ publicacion });
+    console.log({publicacion});
     const publicacionJSON = JSON.stringify(publicacion);
 
     // Enviar los datos del formulario al servidor usando fetch
@@ -698,6 +706,32 @@ validacionEnVivo("codigoPostal", validaCodigoPostal);
     );
   });
 })();
+
+
+/*
+// Creando un nuevo elemento 'p' y guardandolo en una constante 'textAcercaDe'
+const publicacionTextoVideo = document.createElement("p");
+// ----------------------    Capturando texto de formularios --------------------
+const datosPublicacionFotoVideo = document.querySelector('formularioFotoVideo');
+datosPublicacionFotoVideo.addEventListener('submit', function(e){
+  e.preventDefault();
+  const publicacionTexto = document.getElementById("publicacionTexto").value;
+  console.log(publicacionTexto);
+//  ---------------------    Actualizando elementos del DOM  ------------------------
+// Configurando el nuevo elemento, estableciendole atributos, contenido, estilos, etc.
+datosTexto.textContent = publicacionTexto; //textAcercaDeForm.textContent;
+// Obtener referencia al contenedor acerca de
+const contenedorPublicacionFotoVideo = document.getElementById('contenedorPublicacionFotoVideo');
+// Agregar el nuevo elemento 'textAcercaDe' al contenedor 'contenedorAcercaDe' mediante DOM
+contenedorPublicacionFotoVideo.appendChild(datosTexto);
+// Limpiar el contenido del textarea
+formularioFotoVideo.reset();
+// Cerrar el modal utilizando el método de Bootstrap
+const myModal = bootstrap.Modal.getOrCreateInstance('modalFotoVideo');
+myModal.hide();
+});
+*/
+
 
 /*
 // Editar publicación
