@@ -274,9 +274,9 @@ section {
 
 /* -----------BOTONES---------- */
 .boton {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: center; */
     padding: 8px 16px;
     font-size: 12.8px;
     font-weight: 500;
