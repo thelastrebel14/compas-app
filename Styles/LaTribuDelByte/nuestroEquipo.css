@@ -84,7 +84,7 @@
 {
   margin-top: 10px;
   overflow: auto; 
-  text-align: left; 
+  text-align: center; 
   margin-left: auto; 
   margin-right: auto; 
   hyphens: auto; 
@@ -93,28 +93,29 @@
 /* Estilos para la barra de desplazamiento */
 .card-text::-webkit-scrollbar 
 {
-width: 1px;
+  width: 1px;
 }
 
 .card-text::-webkit-scrollbar-track 
 {
-background: var(--background-color); /* Color de fondo del riel */
+  background: var(--background-color); /* Color de fondo del riel */
 }
 
 /* Mango de la barra de desplazamiento */
 .card-text::-webkit-scrollbar-thumb 
 {
-background: var(--main-color); 
-border-radius: 5px; 
+  background: var(--main-color); 
+  border-radius: 5px; 
 }
 
 /* Estilos al pasar el cursor sobre la barra de desplazamiento */
 .card-text::-webkit-scrollbar-thumb:hover 
 {
-background: var(--hover-color); /* Color del mango al pasar el cursor */
+  background: var(--hover-color); /* Color del mango al pasar el cursor */
 }
 
-.card-link {
+.card-link 
+{
   color: var(--background-color); /* Color de los enlaces */
   font-size: 24px; /* Tamaño de los íconos */
   margin: 0 5px; /* Espacio entre los enlaces */
@@ -133,9 +134,9 @@ background: var(--hover-color); /* Color del mango al pasar el cursor */
   }
 }
 
-  .puesto
-  {
-    font-size: 10px;
-    overflow-y: hidden;
-    height: 40px;
-  }
+.puesto
+{
+  font-size: 10px;
+  overflow-y: hidden;
+  height: 40px;
+}

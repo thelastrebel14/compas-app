@@ -1,6 +1,5 @@
 /* @import "../Styles/main.css"; */
-
-.nuestrosServicios{
+.nuestrosServicios {
     text-align: center;
     width: auto;
     height: auto;
@@ -9,12 +8,12 @@
     cursor: default;
 }
 
-.service-block{
+.service-block {
     text-align: center;
     width: auto;
     height: auto;
     margin: 30px 20px;
-    display: inline-block; 
+    display: inline-block;
     align-content: center;
 }
 
@@ -24,10 +23,63 @@
         'FILL' 0,
         'wght' 400,
         'GRAD' 0,
-        'opsz' 24
+        'opsz' 24;
+    transition: color 0.3s, font-size 0.3s;
 }
 
-.material-symbols-outlined:hover{
-    /*font-size: 60px;*/
-    color: var( --main-color);
+.material-symbols-outlined:hover {
+    color: var(--main-color);
+}
+
+@media (max-width: 1200px) {
+    .material-symbols-outlined {
+        font-size: 45px;
+    }
+
+    .service-block {
+        margin: 25px 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .material-symbols-outlined {
+        font-size: 40px;
+    }
+
+    .service-block {
+        margin: 20px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .material-symbols-outlined {
+        font-size: 35px;
+    }
+
+    .service-block {
+        margin: 15px 5px;
+    }
+}
+
+@media (max-width: 576px) {
+    .material-symbols-outlined {
+        font-size: 30px;
+    }
+
+    .service-block {
+        margin: 10px 0;
+    }
+
+    /* Usar Grid para dos columnas en pantallas menores a 600px */
+    .nuestrosServicios {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .service-block {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+    }
 }
