@@ -2,12 +2,12 @@
 
 //selecion de elementos del documento
 const radioSoyMusico = document.getElementById("soyMusico");
-const radioSoyEscenario = document.getElementById("soyEscenario");
+//const radioSoyEscenario = document.getElementById("soyEscenario");
 const musicoInputs = document.getElementById("musicoInputs");
 const escenarioInputs = document.getElementById("escenarioInputs");
 
 //funcionalidad dinamica para los radio buttons
-radioSoyEscenario.addEventListener(
+/*radioSoyEscenario.addEventListener(
   "click",
   (mostrarInputs = () => {
     if (radioSoyEscenario.checked) {
@@ -15,7 +15,7 @@ radioSoyEscenario.addEventListener(
       musicoInputs.hidden = true;
     }
   })
-);
+);*/
 
 radioSoyMusico.addEventListener(
   "click",
@@ -72,9 +72,9 @@ class RegistroDeUsuario {
     codigoPostal,
     isMusico,
     instrumentosMusicales,
-    generosMusicales,
-    isEscenario,
-    tipoDeEscenario
+    generosMusicales //,
+    //isEscenario,
+    //tipoDeEscenario
   ) {
     datos: {
       (this.nombre = nombre),
@@ -91,9 +91,9 @@ class RegistroDeUsuario {
     tipoUsuario: {
       (this.isMusico = isMusico),
         (this.instrumentosMusicales = instrumentosMusicales),
-        (this.generosMusicales = generosMusicales),
-        (this.isEscenario = isEscenario),
-        (this.tipoDeEscenario = tipoDeEscenario);
+        (this.generosMusicales = generosMusicales); //,
+      //(this.isEscenario = isEscenario),
+      // (this.tipoDeEscenario = tipoDeEscenario);
     }
   }
 }
@@ -119,9 +119,9 @@ botonRegistro.addEventListener("click", (e) => {
   const registroGenerosMusicales = document.getElementById(
     "inputGenerosMusicales"
   ).value;
-  const registroIsEscenario = document.getElementById("soyEscenario").checked;
-  const registroTipoDeEscenario =
-    document.getElementById("inputEscenario").value;
+  // const registroIsEscenario = document.getElementById("soyEscenario").checked;
+  // const registroTipoDeEscenario =
+  //   document.getElementById("inputEscenario").value;
 
   // Verificar si algún campo está vacío o tiene valor no permitido
   if (
@@ -135,8 +135,8 @@ botonRegistro.addEventListener("click", (e) => {
     ciudadValue.trim() === "" ||
     (registroIsMusico &&
       (registroInstrumentos.trim() === "" ||
-        registroGenerosMusicales.trim() === "")) ||
-    (registroIsEscenario && registroTipoDeEscenario.trim() === "")
+        registroGenerosMusicales.trim() === "")) //||
+    // (registroIsEscenario && registroTipoDeEscenario.trim() === "")
   ) {
     //alert("Por favor completa todos los campos obligatorios.");
     if (document.querySelector(".alert")) {
@@ -182,9 +182,9 @@ botonRegistro.addEventListener("click", (e) => {
         registroCodigoPostal,
         registroIsMusico,
         "", // No aplica instrumentos
-        "", // No aplica géneros musicales
-        registroIsEscenario,
-        registroTipoDeEscenario.trim()
+        "" // No aplica géneros musicales
+        // registroIsEscenario,
+        // registroTipoDeEscenario.trim()
       );
     }
 
@@ -408,7 +408,7 @@ validacionEnVivo("inputCP", validaCodigoPostal);
 validacionEnVivo("inputName", validarTexto, true);
 validacionEnVivo("inputInstrumentos", validarTexto, true);
 validacionEnVivo("inputGenerosMusicales", validarTexto, true);
-validacionEnVivo("inputEscenario", validarTexto, true);
+// validacionEnVivo("inputEscenario", validarTexto, true);
 
 const form = document.querySelector(".needs-validation");
 form.addEventListener(
@@ -508,7 +508,6 @@ direccionCheckbox.addEventListener("click", function (event) {
       //añade los elementos al div
       divCiudad.append(inputCiudad, labelCiudad);
       dataCiudad.append(divCiudad);
-      console.log("Test 1");
     } else if (
       document.getElementById("inputTextEstado") &&
       document.getElementById("inputTextCiudad")
@@ -517,7 +516,6 @@ direccionCheckbox.addEventListener("click", function (event) {
       document.getElementById("inputTextCiudad").hidden = false;
       selectEstado.hidden = true;
       selectCiudad.hidden = true;
-      console.log("Test 2");
     }
   } else if (!direccionCheckbox.checked) {
     //habilita los selects
@@ -525,6 +523,5 @@ direccionCheckbox.addEventListener("click", function (event) {
     selectCiudad.hidden = false;
     document.getElementById("inputTextCiudad").hidden = true;
     document.getElementById("inputTextEstado").hidden = true;
-    console.log("Test 3");
   }
 });
