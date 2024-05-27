@@ -56,10 +56,16 @@ h4 {
     flex-direction: row;
     align-content: center;
     color: var(--grey);
+    margin: 0;
 }
 
 .copyright p {
     color: var(--grey);
     font-weight: bold;
     margin: 0;
+
+}
+.compas
+{
+    cursor: default;
 }
