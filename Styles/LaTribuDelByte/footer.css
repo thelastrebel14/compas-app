@@ -1,15 +1,5 @@
 /* @import url('../Styles/main.css'); */
 
-html { /*Se establece border-box en todo el proyecto para facilitar la implementación de paddings y otros elementos fácilmente*/
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-*,*:before,*:after { /*Una extensión del border-box que amplia su uso*/
-    box-sizing: inherit;
-}
-
 body { /*Se establecen características generales para todo el documento. El tamaño de letra, la fuente y el color de fondo*/
     font-size: 16px;
     font-family: "Plus Jakarta Sans", sans-serif;
@@ -30,25 +20,33 @@ h4 {
 }
 
 .footer { /*Se definen características específicas para el footer*/
-
     display: flex; 
     margin: 50, 100;
     font-weight: bold;
     display: flex;
-
     align-items: center;
     flex-direction: column;
+    padding-top: 25px;
+    padding-right: 100px;
+    padding-bottom: 25px;
+    padding-left: 100px;
 }
 
-@media (min-width: 480px) { /*Se aplica una característica responsive para que en pantallas menores a 480 pixeles los elementos del footer se acomoden en filas centradas que se apilan una debajo de la otra*/
+@media (min-width: 1000px) { /*Se aplica una característica responsive para que en pantallas menores a 480 pixeles los elementos del footer se acomoden en filas centradas que se apilan una debajo de la otra*/
     .footer {
+        padding-top: 25px;
+        padding-right: 100px;
+        padding-bottom: 25px;
+        padding-left: 100px;
         flex-direction: row;
         align-items: center;
         justify-content: space-evenly;
     }
 }
 
-.footer a { /*Se edita el texto de los enlaces del footer para que sean de color negro y sin subrayado de enlace*/
+
+
+.footer a { /*Se edita el texto de los enlaces del footer para que sean de color gris y sin subrayado de enlace*/
     text-decoration: none;
     color: var(--grey);
 }
@@ -65,6 +63,7 @@ h4 {
     color: var(--grey);
     font-weight: bold;
     margin: 0;
+
 }
 .compas
 {
