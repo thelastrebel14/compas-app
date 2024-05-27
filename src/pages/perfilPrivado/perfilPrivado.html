@@ -61,7 +61,7 @@
     <header>
         <div class="header--portada">
             <div id="contenedor--imgPortada"></div>  <!--CONTENEDOR IMAGEN PORTADA-->
-            <span class="material-symbols-outlined header--portada--symbolEditCamera" data-bs-toggle="modal" data-bs-target="#headerPortadaModal">
+            <span class="material-symbols-outlined header--portada--symbolEditCamera" id="edit-imgPortada" data-bs-toggle="modal" data-bs-target="#headerPortadaModal">
                 photo_camera
             </span>
         </div>
@@ -69,7 +69,7 @@
             <!-- <img loading="lazy" class="header--fotoPerfil--img" src="./img/fotoPerfil.png" alt="fotoPerfil"> -->
             <!-- <div id="contenedor--fotoPerfil" class="header--fotoPerfil--img" style="border-radius: 50%;"></div> CONTENEDOR FOTO PERFIL-->
             <img id="contenedor--fotoPerfil" class="header--fotoPerfil--img" src="./img/fotoPerfilVacio.jpg" style="border-radius: 50%;">
-            <span class="material-symbols-outlined header--fotoPerfil--symbolEditCamera" data-bs-toggle="modal" data-bs-target="#headerFotoPerfilModal">
+            <span class="material-symbols-outlined header--fotoPerfil--symbolEditCamera" id="edit-fotoPerfil" data-bs-toggle="modal" data-bs-target="#headerFotoPerfilModal">
                 photo_camera
             </span>
         </div>
@@ -127,7 +127,7 @@
             </div>
             <div class="profile--info--editSymbol">
                 <!-------------------------------    EDIT ICON    ------------------------>
-                <span class="material-symbols-outlined symbol-edit" data-bs-toggle="modal" data-bs-target="#profileInfo">
+                <span class="material-symbols-outlined symbol-edit" id="iconEdit-infoPerfil" data-bs-toggle="modal" data-bs-target="#profileInfo">
                     stylus
                 </span>
             </div>
@@ -586,8 +586,8 @@
               </form>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn-primary">Cargar foto</button>
+              <button type="button" class="btn btn-form-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-form-primary">Cargar foto</button>
             </div>
           </div>
         </div>
@@ -603,17 +603,15 @@
             <div class="modal-body">
               <form id="formFotoPerfil">
                 <div class="mb-3">
-                    <label for="img--cover" class="col-form-label">Cargar foto</label>
-                    <input type="file" name="foto--cover" id="foto--perfilUser" accept="image/png, image/jpeg, image/jpg">
-                  </div>
-                  
+                  <label for="img--cover" class="col-form-label">Cargar foto</label>
+                  <input type="file" name="foto--cover" id="foto--perfilUser" accept="image/png, image/jpeg, image/jpg">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-form-secondary" data-bs-dismiss="modal">Cancelar</button>
+                  <button type="button" id="botonFotoPerfil" class="btn btn-form-primary">Cargar foto</button>
+                </div>
               </form>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Cargar foto</button>
-              </div>
-              </div>
-            
+            </div>
           </div>
         </div>
       </div>
@@ -662,8 +660,8 @@
                             <label for="numTelefono" class="col-form-label">Número de Telefono</label>
                         </div> -->
                         <div class="modal-footer">  <!-- Button debe ser type="submit" y estar dentro de <form> --- </form>-->
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-primary" id="submitFormulario">Aceptar</button>
+                            <button type="button" class="btn btn-form-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-form-primary" id="submitFormulario">Aceptar</button>
                         </div> 
                     </form>
                 </div>
@@ -689,8 +687,8 @@
                     <textarea class="form-control" id="message-text"></textarea>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-form-acercaDe-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-form-acercaDe-primary">Aceptar</button>
+                    <button type="button" class="btn btn-form-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-form-primary">Aceptar</button>
                 </div>
             </form>
             </div>
