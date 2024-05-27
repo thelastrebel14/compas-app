@@ -525,3 +525,36 @@ direccionCheckbox.addEventListener("click", function (event) {
     document.getElementById("inputTextEstado").hidden = true;
   }
 });
+
+const inputInstrumentos = document.getElementById("inputInstrumentos");
+const inputGenerosMusicales = document.getElementById("inputGenerosMusicales");
+const instrumentosChipContainer = document.getElementById("instrumentosChips");
+const generosChipContainer = document.getElementById("generosChips");
+
+function crearChip(text, container) {
+  const chip = document.createElement("div");
+  const chipClose = document.createElement("span");
+  chipClose.innerHTML = "&times;";
+  chipClose.id = "removeChip";
+  chip.classList.add("chip");
+  chip.textContent = text;
+  chip.append(chipClose);
+  container.append(chip);
+  chipClose.addEventListener("click", function (event) {
+    event.target.parentElement.remove();
+  });
+}
+
+inputInstrumentos.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    let text = event.target.value;
+    crearChip(text, instrumentosChipContainer);
+  }
+});
+
+inputGenerosMusicales.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    let text = event.target.value;
+    crearChip(text, generosChipContainer);
+  }
+});
