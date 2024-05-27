@@ -79,6 +79,9 @@
     margin-left: 10px;
 
 }
+.material-symbols-outlined:hover{
+    color: var(--active-color);
+}
 
 .artistas {
     height: 100%;
@@ -90,6 +93,17 @@
     background-color: var(--background-color);
     align-items: center;
     padding-right: 10px;
+}
+
+
+
+
+@media screen and (max-width:1100px ) {
+    .material-symbols-outlined{
+        color: var(--main-color);
+    }
+
+
 
 }
 @media (max-width:800px){
@@ -104,6 +118,7 @@
     }
     
 }
+
 
 
 @media (max-width: 1100px){
