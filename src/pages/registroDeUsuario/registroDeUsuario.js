@@ -2,12 +2,12 @@
 
 //selecion de elementos del documento
 const radioSoyMusico = document.getElementById("soyMusico");
-const radioSoyEscenario = document.getElementById("soyEscenario");
+//const radioSoyEscenario = document.getElementById("soyEscenario");
 const musicoInputs = document.getElementById("musicoInputs");
 const escenarioInputs = document.getElementById("escenarioInputs");
 
 //funcionalidad dinamica para los radio buttons
-radioSoyEscenario.addEventListener(
+/*radioSoyEscenario.addEventListener(
   "click",
   (mostrarInputs = () => {
     if (radioSoyEscenario.checked) {
@@ -15,7 +15,7 @@ radioSoyEscenario.addEventListener(
       musicoInputs.hidden = true;
     }
   })
-);
+);*/
 
 radioSoyMusico.addEventListener(
   "click",
@@ -28,7 +28,10 @@ radioSoyMusico.addEventListener(
 );
 
 const cp = () => {
-  rellenoCodigoPostal();
+  if (!direccionCheckbox.checked) {
+    rellenoCodigoPostal();
+  }
+  return;
 };
 async function rellenoCodigoPostal() {
   try {
@@ -69,9 +72,9 @@ class RegistroDeUsuario {
     codigoPostal,
     isMusico,
     instrumentosMusicales,
-    generosMusicales,
-    isEscenario,
-    tipoDeEscenario
+    generosMusicales //,
+    //isEscenario,
+    //tipoDeEscenario
   ) {
     datos: {
       (this.nombre = nombre),
@@ -88,9 +91,9 @@ class RegistroDeUsuario {
     tipoUsuario: {
       (this.isMusico = isMusico),
         (this.instrumentosMusicales = instrumentosMusicales),
-        (this.generosMusicales = generosMusicales),
-        (this.isEscenario = isEscenario),
-        (this.tipoDeEscenario = tipoDeEscenario);
+        (this.generosMusicales = generosMusicales); //,
+      //(this.isEscenario = isEscenario),
+      // (this.tipoDeEscenario = tipoDeEscenario);
     }
   }
 }
@@ -116,9 +119,9 @@ botonRegistro.addEventListener("click", (e) => {
   const registroGenerosMusicales = document.getElementById(
     "inputGenerosMusicales"
   ).value;
-  const registroIsEscenario = document.getElementById("soyEscenario").checked;
-  const registroTipoDeEscenario =
-    document.getElementById("inputEscenario").value;
+  // const registroIsEscenario = document.getElementById("soyEscenario").checked;
+  // const registroTipoDeEscenario =
+  //   document.getElementById("inputEscenario").value;
 
   // Verificar si algún campo está vacío o tiene valor no permitido
   if (
@@ -132,8 +135,8 @@ botonRegistro.addEventListener("click", (e) => {
     ciudadValue.trim() === "" ||
     (registroIsMusico &&
       (registroInstrumentos.trim() === "" ||
-        registroGenerosMusicales.trim() === "")) ||
-    (registroIsEscenario && registroTipoDeEscenario.trim() === "")
+        registroGenerosMusicales.trim() === "")) //||
+    // (registroIsEscenario && registroTipoDeEscenario.trim() === "")
   ) {
     //alert("Por favor completa todos los campos obligatorios.");
     if (document.querySelector(".alert")) {
@@ -179,9 +182,9 @@ botonRegistro.addEventListener("click", (e) => {
         registroCodigoPostal,
         registroIsMusico,
         "", // No aplica instrumentos
-        "", // No aplica géneros musicales
-        registroIsEscenario,
-        registroTipoDeEscenario.trim()
+        "" // No aplica géneros musicales
+        // registroIsEscenario,
+        // registroTipoDeEscenario.trim()
       );
     }
 
@@ -190,7 +193,7 @@ botonRegistro.addEventListener("click", (e) => {
     window.location.href = "../inicioDeSesion/inicioDeSesion.html";
     localStorage.setItem("usuario", usuario.email);
     localStorage.setItem("contraseña", usuario.contrasena);
-    localStorage.setItem("usuarioCompleto",usuarioJSON);
+    localStorage.setItem("usuarioCompleto", usuarioJSON);
   }
 });
 
@@ -340,12 +343,21 @@ function validaCoincidenciaContrasena(password) {
     document.querySelector(
       "#validacion-coincidencia-contrasena label:nth-child(1)"
     ).style.color = "red";
+    document.querySelector(
+      "#validacion-coincidencia-contrasena label:nth-child(1)"
+    ).textContent = "Las contraseñas no coinciden";
     return false;
   }
 
   document.querySelector(
     "#validacion-coincidencia-contrasena label:nth-child(1)"
   ).style.color = "green";
+  document
+    .querySelector("#validacion-coincidencia-contrasena")
+    .removeAttribute("hidden");
+  document.querySelector(
+    "#validacion-coincidencia-contrasena label:nth-child(1)"
+  ).textContent = "Las contraseñas coinciden";
   return true;
 }
 
@@ -396,7 +408,7 @@ validacionEnVivo("inputCP", validaCodigoPostal);
 validacionEnVivo("inputName", validarTexto, true);
 validacionEnVivo("inputInstrumentos", validarTexto, true);
 validacionEnVivo("inputGenerosMusicales", validarTexto, true);
-validacionEnVivo("inputEscenario", validarTexto, true);
+// validacionEnVivo("inputEscenario", validarTexto, true);
 
 const form = document.querySelector(".needs-validation");
 form.addEventListener(
@@ -429,5 +441,87 @@ inputContraseñaConfirmar.addEventListener("keydown", function (event) {
 
   if (teclaPresionada === 32) {
     event.preventDefault();
+  }
+});
+
+// implementacion del checkbox
+
+const direccionCheckbox = document.getElementById("direccionCheckbox");
+const selectEstado = document.getElementById("selectEstado");
+const selectCiudad = document.getElementById("selectCiudad");
+const dataCiudad = document.getElementById("dataCiudad");
+const dataEstado = document.getElementById("dataEstado");
+
+direccionCheckbox.addEventListener("click", function (event) {
+  if (direccionCheckbox.checked) {
+    if (
+      !document.getElementById("inputTextEstado") &&
+      !document.getElementById("inputTextCiudad")
+    ) {
+      //oculta el input de select
+      selectEstado.hidden = true;
+      selectCiudad.hidden = true;
+
+      //crea el nuevo input de tipo texto para estado
+      const divEstado = document.createElement("div");
+      const inputEstado = document.createElement("input");
+      const labelEstado = document.createElement("label");
+
+      //asigna clases y atributos a los elementos
+      divEstado.classList.add("form-floating");
+      divEstado.id = "inputTextEstado";
+
+      inputEstado.classList.add("form-control");
+      inputEstado.type = "text";
+      inputEstado.id = "inputEstado";
+      inputEstado.placeholder = "Estado";
+      inputEstado.required = true;
+
+      labelEstado.classList.add("form-label");
+      labelEstado.setAttribute("for", "inputEstado");
+      labelEstado.textContent = "Estado";
+
+      //añade los elementos al div
+      divEstado.append(inputEstado, labelEstado);
+      dataEstado.append(divEstado);
+
+      //crea el nuevo input de tipo texto para ciudad
+      //crea el nuevo input de tipo texto para estado
+      const divCiudad = document.createElement("div");
+      const inputCiudad = document.createElement("input");
+      const labelCiudad = document.createElement("label");
+
+      //asigna clases y atributos a los elementos
+      divCiudad.classList.add("form-floating");
+      divCiudad.id = "inputTextCiudad";
+
+      inputCiudad.classList.add("form-control");
+      inputCiudad.type = "text";
+      inputCiudad.id = "inputCiudad";
+      inputCiudad.placeholder = "Ciudad";
+      inputCiudad.required = true;
+
+      labelCiudad.classList.add("form-label");
+      labelCiudad.setAttribute("for", "inputCiudad");
+      labelCiudad.textContent = "Ciudad";
+
+      //añade los elementos al div
+      divCiudad.append(inputCiudad, labelCiudad);
+      dataCiudad.append(divCiudad);
+    } else if (
+      document.getElementById("inputTextEstado") &&
+      document.getElementById("inputTextCiudad")
+    ) {
+      document.getElementById("inputTextEstado").hidden = false;
+      document.getElementById("inputTextCiudad").hidden = false;
+      selectEstado.hidden = true;
+      selectCiudad.hidden = true;
+    }
+  } else if (!direccionCheckbox.checked) {
+    //habilita los selects
+    selectEstado.hidden = false;
+    selectCiudad.hidden = false;
+    document.getElementById("inputTextCiudad").hidden = true;
+    document.getElementById("inputTextEstado").hidden = true;
   }
 });

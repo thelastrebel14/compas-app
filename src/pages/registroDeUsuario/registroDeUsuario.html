@@ -16,7 +16,7 @@
   <body>
     <main>
       <h1 class="registroDeUsuario--heading">
-        Estas a un paso de unirte a Compás
+        Estás a un paso de unirte a Compás!
       </h1>
       <form
         class="needs-validation"
@@ -139,8 +139,8 @@
               </div>
             </div>
             <!-- dropdowns para los estados -->
-            <div class="col-md-5">
-              <div class="form-floating">
+            <div class="col-md-5" id="dataEstado">
+              <div class="form-floating" id="selectEstado">
                 <select id="inputEstado" class="form-select" required>
                   <option value="" selected disabled hidden>Estado</option>
                   <option id="cpEstado">...</option>
@@ -149,14 +149,20 @@
               </div>
             </div>
             <!-- dropdowns para las ciudades -->
-            <div class="col-md-5">
-              <div class="form-floating">
+            <div class="col-md-5" id="dataCiudad">
+              <div class="form-floating" id="selectCiudad">
                 <select id="inputCiudad" class="form-select" required>
                   <option value="" selected disabled hidden>Ciudad</option>
                   <option id="cpMunicipio">...</option>
                 </select>
                 <label for="inputCiudad">Ciudad</label>
               </div>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="direccionCheckbox">
+              <label class="form-check-label" for="direccionCheckbox">
+                Si no encuentras tu estado, da click aquí!
+              </label>
             </div>
             <!-- linea divisora del contenido -->
             <hr />
@@ -204,30 +210,16 @@
               </section>
 
               <!-- Radio Soy escenario -->
-              <section class="column-gap-3" id="seleccionEscenario">
-                <div class="col-md-6 form-check m-3">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="flexRadioDefault"
-                    id="soyEscenario"
-                  />
-                  <label class="form-check-label" for="soyEscenario">
-                    Soy escenario
-                  </label>
-                </div>
-                <section id="escenarioInputs" hidden>
-                  <div class="col-md-6 form-floating m-3">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="inputEscenario"
-                      placeholder="Tipo de escenario"
-                    />
-                    <label for="inputEscenario" class="form-label"
-                      >Tipo de escenario</label
-                    >
-                  </div>
+              <section class="column-gap-3" id="usuarioChips">
+                  <section class="instrumentosChips col-md-6 m-3">
+                    <div class="chip"><span id="removeChip">&times;</span>Guitarra</div>
+                    <div class="chip"><span id="removeChip">&times;</span>Acordeon</div>
+                    <div class="chip"><span id="removeChip">&times;</span>Piano</div>
+                  </section>
+                <section id="generosChips">
+                    <section class="generosChips col-md-6 m-3">
+                      <span class="badge rounded-pill">Dark<span id="removeChip">&times;</span></span>
+                    </section>
                 </section>
               </section>
             </section>
