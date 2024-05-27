@@ -64,7 +64,8 @@ header {
 
 .header--fotoPerfil--img {
     width: 250px;
-    position: absolute;
+    height: 250px;
+    position: absolute; 
     grid-column: 3/7;
     grid-row: 3/6;
 
@@ -406,6 +407,7 @@ main {
     }
     .header--fotoPerfil--img{
         width: 120px;   /*----------------------------*/
+        height: 120px;
         position: absolute; 
         grid-column: 3/7;
         grid-row: 3/6;
@@ -418,11 +420,10 @@ main {
         width: 40px;
         font-size: 30px;
     }
-
-    .header--fotoPerfil--symbolEditCamera {
-        height: 40px;
-        width: 40px;
-        font-size: 30px;
+    .header--fotoPerfil--symbolEditCamera{
+        height: 35px;
+        width: 35px;
+        font-size: 28px;
     }
 
     .profile {
@@ -723,45 +724,38 @@ main {
 
 .acerca--info {
     width: auto;
-
-}
-
-.acerca--info p:nth-child(2) {
+    margin: 0px 35px;
+} 
+.acerca--info p:nth-child(2){
     font-weight: bold;
     color: var(--grey);
     cursor: pointer;
 }
-
-.btn-form-acercaDe-primary {
+.btn-form-primary{
     color: #fff;
     background-color: var(--main-color);
     border: 2px solid var(--main-color);
 }
-
-.btn-form-acercaDe-primary:hover {
+.btn-form-primary:hover{
     color: #fff;
     background-color: var(--hover-color);
     border: 2px solid var(--hover-color);
 }
-
-.btn-form-acercaDe-primary:active {
+.btn-form-primary:active{
     background-color: var(--active-color) !important;
     border: 2px solid var(--active-color) !important;
 }
-
-.btn-form-acercaDe-secondary {
+.btn-form-secondary{
     color: var(--main-color);
     background-color: transparent;
     border: 2px solid var(--main-color);
 }
-
-.btn-form-acercaDe-secondary:hover {
+.btn-form-secondary:hover{
     color: var(--hover-color);
     background-color: transparent;
     border: 2px solid var(--hover-color);
 }
-
-.btn-form-acercaDe-secondary:active {
+.btn-form-secondary:active{
     color: var(--active-color) !important;
     background-color: transparent !important;
     border: 2px solid var(--active-color) !important;
