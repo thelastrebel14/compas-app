@@ -1,12 +1,10 @@
-
-/* @import url(../main.css); */
+@import url("../main.css"); 
 
 h3{
     text-align: center;
     font-weight: 400; 
     font-size: 31.25px;
 }
-
 .name{
     text-align: center;
     margin: 5px;
@@ -54,6 +52,14 @@ h3{
     padding: 3px;
 }
 
+.form-control:focus {
+    border-color: var(--hover-color);
+    box-shadow: 0 0 10px rgba(210, 98, 13, 0.3);
+  }
+
+  /* Estilo para el textarea enfocado, pero no vacío */
+
+
 .button{
     width: 100px;
     padding: 4px;
@@ -71,9 +77,6 @@ h3{
 @media screen and (max-width: 800) {
     .button  {
         margin-left: 46.5% ;
-        
-        
-    
     }
 }
 

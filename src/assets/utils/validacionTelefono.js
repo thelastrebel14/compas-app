@@ -11,7 +11,7 @@
   // validaNombreValidación() <- Convención para nombrar variables. Usar prefijo valida
 */
 
-function validaTelefonosValidacion(numeroTelefono){
+export function validaTelefonosValidacion(numeroTelefono){
     let numeroTelefonoValidado = numeroTelefono.split(" ").join(""); // Elimina los espacios
     // Expresión regular para validar números de teléfono
     // \d: Este es un metacarácter Equivale a [0-9].

@@ -1,4 +1,5 @@
 @import url("../../../Styles/main.css");
+@import "./../../assets/elementos/footer/footer.css";
 
 /* 
 .title{
@@ -79,6 +80,9 @@
     margin-left: 10px;
 
 }
+.material-symbols-outlined:hover{
+    color: var(--active-color);
+}
 
 .artistas {
     height: 100%;
@@ -90,27 +94,65 @@
     background-color: var(--background-color);
     align-items: center;
     padding-right: 10px;
+}
+
+
+
+
+@media screen and (max-width:1100px ) {
+    .material-symbols-outlined{
+        color: var(--main-color);
+    }
+
+
 
 }
-@media (max-width:800px){
-    .anuncios-element .carousel-inner .carousel-anuncios-img  {
+
+@media (max-width:800px) {
+    .anuncios-element .carousel-inner .carousel-anuncios-img {
         height: 30vh;
     }
 }
 
-@media  (max-width:800px) {
-    .anuncios-element .carousel-anuncios{
+@media (max-width:800px) {
+    .anuncios-element .carousel-anuncios {
         height: 30vh;
     }
-    
+
 }
+
+
 
 
 @media (max-width: 1100px){
     .flat{
         display: none;
+
+@media (max-width: 1100px) {
+    .boton.flat {
+        background: none;
+        /* Si el botón tiene fondo, lo eliminamos */
+        border: none;
+        /* Si el botón tiene borde, lo eliminamos */
+        padding: 0;
+        /* Elimina el padding para reducir el tamaño */
+        color: transparent;
+        /* Hace el texto invisible */
     }
-    #publicarFotoVideo, #publicarBusquedaArtista {
+
+    .boton.flat .material-symbols-outlined {
+        color: black;
+        /* Asegura que el icono sea visible */
+        position: relative;
+        /* Asegura que el icono se mantenga en su lugar */
+        left: -10px;
+        /* Ajusta la posición del icono si es necesario */
+
+    }
+
+
+    #publicarFotoVideo,
+    #publicarBusquedaArtista {
         display: block;
     }
 }
@@ -150,7 +192,7 @@
 
 .carousel-anuncios {
     height: 60vh;
-    width: 30vw;
+    width: 100%;
 }
 
 .carousel-anuncios-img {
@@ -187,9 +229,16 @@
     }
 }
 
-@media (min-width: 640px) {
+@media screen and (min-width: 640px) {
     .nueva--publicacion input {
         width: 300px;
+    }
+
+    .dashboard-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -331,8 +380,9 @@
 
 .dashboard-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
 }
 
@@ -344,13 +394,13 @@
     justify-content: space-between;
     align-items: flex-start;
     /* Centra los elementos verticalmente */
-    width: 40vw;
+    width: 100%;
     /* Ancho del contenedor */
     height: auto;
     background-color: var(--secondaryBg-color);
     /* Color de fondo del contenedor */
     padding: 16px;
-    border-radius: 10px;
+    border-radius: 20px;
     margin-bottom: 16px;
 }
 
@@ -361,7 +411,6 @@
     align-items: center;
     height: 10vh;
     width: 100%;
-    margin-bottom: 4px;
 }
 
 .autor-info {
@@ -378,8 +427,8 @@
 }
 
 .img-publicacion {
-    width: 35vw;
-    height: auto;
+    object-fit: cover;
+    width: 100%;
 }
 
 .contenido-publicacion-contenedor {
@@ -425,42 +474,4 @@
 
 .anuncios-element {
     margin-bottom: 16px;
-}
-
-
-
-/* Footer */
-
-.footer { 
-    font-weight: bold;
-    display: flex; 
-    align-items: center;
-    flex-direction: column;
-}
-
-@media (min-width: 480px) { 
-    .footer {
-        padding-top: 25px;
-        padding-right: 100px;
-        padding-bottom: 25px;
-        padding-left: 100px;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-evenly;
-    }
-}
-
-.footer a { 
-    text-decoration: none;
-    color: var(--black);
-}
-
-.footer span, p {
-    font-weight: bold;
-}
-
-.footer--copyright {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
 }

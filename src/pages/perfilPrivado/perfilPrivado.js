@@ -32,17 +32,19 @@ validacionEnVivo("estadoPerfil", //string del id del input
 class UserCreadoEnRegistro {
   //instrumentos = ["Guitarra","Bajo","Voz"];
   //generosMusicales = ["Rock","Cumbia","Metal"];
-  constructor(nombre, ciudad, estado, instrumentos,generosMusicales){
+  instrumentosMusicales = [];
+  generosMusicales = [];
+  constructor(nombre, ciudad, estado, instrumentosMusicales,generosMusicales){
     this.nombre = nombre;
     this.ciudad = ciudad;
     this.estado = estado;
     //this.fotoPerfil = fotoPerfil;
-    this.instrumentos = instrumentos;
+    this.instrumentosMusicales = instrumentosMusicales;
     this.generosMusicales = generosMusicales;
     // this.imgPortada = imgPortada;
   }
-  mostrarAtributos() {
-    console.log(this.nombre, this.ciudad, this.estado, this.instrumentos, this.generosMusicales);
+  mostrarAtributos(){
+    console.log(this.nombre,this.ciudad,this.estado,this.instrumentosMusicales,this.generosMusicales);
   }
   // // Método para agregar un instrumento al array
   // agregarInstrumento(instrumento) {
@@ -67,11 +69,11 @@ class UserCreadoEnRegistro {
 //const objetoUsuarioDelPerfil = new UserCreadoEnRegistro('Moises Reyes Orea', 'Guadalajara', 'Jalisco');
 const objetoUsuarioDelPerfil = JSON.parse(localStorage.getItem("usuarioCompleto"));
 // objetoUsuarioDelPerfil.mostrarAtributos();
-console.log(objetoUsuarioDelPerfil.nombre);
-console.log(objetoUsuarioDelPerfil.ciudad);
-console.log(objetoUsuarioDelPerfil.estado);
-console.log(objetoUsuarioDelPerfil.instrumentos);
-console.log(objetoUsuarioDelPerfil.generosMusicales);
+ console.log(objetoUsuarioDelPerfil.nombre);
+ console.log(objetoUsuarioDelPerfil.ciudad); 
+ console.log(objetoUsuarioDelPerfil.estado); 
+ console.log(objetoUsuarioDelPerfil.instrumentosMusicales);
+ console.log(objetoUsuarioDelPerfil.generosMusicales);
 
 // objetoUsuarioDelPerfil.agregarInstrumento("teclado");
 
@@ -135,12 +137,12 @@ consformProfileInfo.addEventListener('submit', function (event) { // al objeto c
   for (let i = 1; i <= numeroInputsInstrumentos.length; i++) {
     const newInstrument = document.getElementById(`input${i}--instrumento`).value;
     console.log(newInstrument);
-    objetoUsuarioDelPerfil.instrumentos[i - 1] = newInstrument;
+    objetoUsuarioDelPerfil.instrumentosMusicales[i-1] = newInstrument;
   }
   // Eliminando elementos sobrantes en el array 'objetoUsuarioDelPerfil.instrumentos'
-  let tamanoArrayInstrumentos = objetoUsuarioDelPerfil.instrumentos.length;
-  for (let i = numeroInputsInstrumentos.length; i < tamanoArrayInstrumentos; i++) {
-    objetoUsuarioDelPerfil.instrumentos.splice(i);
+  let tamanoArrayInstrumentos = objetoUsuarioDelPerfil.instrumentosMusicales.length;
+  for(let i = numeroInputsInstrumentos.length; i < tamanoArrayInstrumentos; i++){
+      //objetoUsuarioDelPerfil.instrumentosMusicales.splice(i);
   }
 
   // Leyendo valores de inputs generosMusicales y guardandolos en el atributo array 'objetoUsuarioDelPerfil.generosMusicales'
@@ -153,8 +155,8 @@ consformProfileInfo.addEventListener('submit', function (event) { // al objeto c
   }
   // Eliminando elementos sobrantes en el array 'objetoUsuarioDelPerfil.generosMusicales'
   let tamanoArrayGenerosMusicales = objetoUsuarioDelPerfil.generosMusicales.length;
-  for (let i = numeroInputsGenerosMusicales.length; i < tamanoArrayGenerosMusicales; i++) {
-    objetoUsuarioDelPerfil.generosMusicales.splice(i);
+  for(let i = numeroInputsGenerosMusicales.length; i < tamanoArrayGenerosMusicales; i++){
+      //objetoUsuarioDelPerfil.generosMusicales.splice(i);
   }
 
   // Leyendo valores de inputs redesSociales y guardandolos en el atributo array 'objetoUsuarioDelPerfil.redesSociales'
@@ -164,7 +166,7 @@ consformProfileInfo.addEventListener('submit', function (event) { // al objeto c
   // Configurando el nuevo elemento, estableciendole atributos, contenido, etc.
   nombreUser.textContent = objetoUsuarioDelPerfil.nombre;
   ubicacionUser.textContent = objetoUsuarioDelPerfil.ciudad + ", " + objetoUsuarioDelPerfil.estado;
-  instrumentosUser.textContent = objetoUsuarioDelPerfil.instrumentos;
+  instrumentosUser.textContent = objetoUsuarioDelPerfil.instrumentosMusicales;
   generosMusicalesUser.textContent = objetoUsuarioDelPerfil.generosMusicales;
   // Agregar el nuevo elemento al contenedor
   contenedorNombreUser.appendChild(nombreUser);

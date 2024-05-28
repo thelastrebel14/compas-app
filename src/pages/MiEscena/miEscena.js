@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ------- contador de Me entona ---------
 
-// selecciona los elementos que se usaran
+//selecciona los elementos que se usaran
 // const meEntonaBoton = document.getElementById("meEntonaBoton");
 // const contadorMeEntona = document.getElementById("contadorMeEntona");
 
@@ -364,22 +364,34 @@ function crearElementoPublicacion(datosPublicacion) {
   var boton3 = document.createElement("button");
   boton3.classList.add("boton", "flat");
   boton3.textContent = "Colaborar";
-  reaccionesContenedor1.appendChild(icono1);
+  boton1.appendChild(icono1);
   reaccionesContenedor1.appendChild(boton1);
-  reaccionesContenedor2.appendChild(icono2);
+  boton2.appendChild(icono2);
   reaccionesContenedor2.appendChild(boton2);
-  reaccionesContenedor3.appendChild(icono3);
+  boton3.appendChild(icono3);
   reaccionesContenedor3.appendChild(boton3);
   botonesPublicacionContenedor.appendChild(reaccionesContenedor1);
   botonesPublicacionContenedor.appendChild(reaccionesContenedor2);
   botonesPublicacionContenedor.appendChild(reaccionesContenedor3);
 
   // Input de comentario
+  var comentarioFormContainer = document.createElement("div");
+  comentarioFormContainer.classList.add("form-floating");
   var inputComentario = document.createElement("input");
   inputComentario.type = "text";
   inputComentario.classList.add("form-control", "input-comentario");
   inputComentario.placeholder = "Comentar";
   inputComentario.name = "comentario";
+  inputComentario.id = "comentario";
+  var comentarioLabel = document.createElement("label");
+  comentarioLabel.setAttribute("for", "comentario");
+  comentarioLabel.classList.add("form-label");
+  comentarioLabel.textContent = "Comentar";
+  comentarioFormContainer.appendChild(inputComentario);
+  comentarioFormContainer.appendChild(comentarioLabel);
+  var comentarioContainer = document.createElement("div");
+  comentarioContainer.classList.add("col-md-12");
+  comentarioContainer.appendChild(comentarioFormContainer);
 
   // Contenedor de comentarios
   var comentariosContenedor = document.createElement("div");
@@ -392,7 +404,7 @@ function crearElementoPublicacion(datosPublicacion) {
   publicacionContenedor.appendChild(document.createElement("hr"));
   publicacionContenedor.appendChild(botonesPublicacionContenedor);
   publicacionContenedor.appendChild(document.createElement("hr"));
-  publicacionContenedor.appendChild(inputComentario);
+  publicacionContenedor.appendChild(comentarioContainer);
   publicacionContenedor.appendChild(comentariosContenedor);
 
   // Obtener el contenedor donde se agregarán los elementos
@@ -619,12 +631,12 @@ botonPublicarBusquedaArtista.addEventListener("click", (e) => {
   }
 });
 
-// Código para evitar que Mi Escena se recargue al hacer 'submit' en algún formulario
-var form = document.getElementById("formularioBusquedaArtista");
-function handleForm(event) {
-  event.preventDefault();
-}
-form.addEventListener("submit", handleForm);
+ //Código para evitar que Mi Escena se recargue al hacer 'submit' en algún formulario
+  var form = document.getElementById("formularioBusquedaArtista");
+  function handleForm(event) {
+    event.preventDefault();
+  }
+  form.addEventListener("submit", handleForm);
 
 // FUNCIONES DE VALIDACIÓN
 
@@ -861,7 +873,7 @@ function eliminarTodasPublicaciones() {
 // IMPORTANTE: Definan si usar localStorage o fetch en todas las funciones, sería uno o el otro en todas las funciones.
 // El ejemplo de fetch ya lo tienen, es modificar el method a GET o POST según corresponda, apóyense de documentación.
 
-const modalNombre = document.getElementById("modalNombre");
-modalNombre.textContent = JSON.parse(
-  localStorage.getItem("usuarioJSON")
-).nombre;
+  const modalNombre = document.getElementById("modalNombre");
+  modalNombre.textContent = JSON.parse(
+    localStorage.getItem("usuarioJSON")
+  ).nombre;
