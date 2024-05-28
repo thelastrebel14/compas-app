@@ -121,15 +121,6 @@
 
 }
 
-
-
-
-@media (max-width: 1100px){
-    .flat{
-        display: none;
-    }
-}
-
 @media (max-width: 1100px) {
     .boton.flat {
         background: none;
