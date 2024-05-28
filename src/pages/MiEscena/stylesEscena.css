@@ -121,6 +121,15 @@
 
 }
 
+
+
+
+@media (max-width: 1100px) {
+    .flat {
+        display: none;
+    }
+}
+
 @media (max-width: 1100px) {
     .boton.flat {
         background: none;
@@ -143,11 +152,6 @@
 
     }
 
-
-    #publicarFotoVideo,
-    #publicarBusquedaArtista {
-        display: block;
-    }
 }
 
 /* #carouselExampleSeBusca{
@@ -304,6 +308,22 @@
         flex-direction: row;
         justify-content: space-evenly;
     }
+}
+
+.fiat {
+    color: #fff;
+    background-color: var(--main-color);
+    border: 2px solid var(--main-color);
+}
+
+.boton.fiat:hover {
+    background-color: var(--hover-color);
+    border: 2px solid var(--hover-color);
+}
+
+.boton.fiat:active {
+    background-color: var(--active-color);
+    border: 2px solid var(--active-color);
 }
 
 .botones--publicacion button {
