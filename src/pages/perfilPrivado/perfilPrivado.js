@@ -361,14 +361,14 @@ myModal.hide();
 
 
 // Validación en vivo de input Nombre
-validacionEnVivo("nombrePerfil",  //string del id del input
-validarTexto);  //callback de una funcion de validacion
+//validacionEnVivo("nombrePerfil",  //string del id del input
+//validarTexto);  //callback de una funcion de validacion
 // Validación en vivo de input Ciudad
-validacionEnVivo("ciudadPerfil",  //string del id del input
-validarTexto);  //callback de una funcion de validacion
+//validacionEnVivo("ciudadPerfil",  //string del id del input
+//validarTexto);  //callback de una funcion de validacion
 // Validación en vivo de input Estado
-validacionEnVivo("estadoPerfil",  //string del id del input
-validarTexto);  //callback de una funcion de validacion
+//validacionEnVivo("estadoPerfil",  //string del id del input
+//validarTexto);  //callback de una funcion de validacion
 // Validación en vivo de input Instrumentos
 //validacionEnVivo("instrumentosPerfil",  //string del id del input
 //validarTexto);  //callback de una funcion de validacion

@@ -1,4 +1,5 @@
-@import url('../Styles/main.css');
+/* @import url('./../Styles/main.css'); */
+@import "./../../../../Styles/main.css";
 
 body {
     font-size: 16px;
