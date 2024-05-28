@@ -454,9 +454,10 @@ const botonPublicarFotoVideo = document.getElementById("publicarFotoVideo");
 
 botonPublicarFotoVideo.addEventListener("click", (e) => {
   const publicacionTexto = document.getElementById("publicacionTexto").value;
-  const publicacionMultimedia = document.getElementById(
-    "publicacionMultimedia"
-  ).value;
+  const publicacionMultimedia = document.getElementById("publicacionMultimedia").value;
+
+  crearPublicacionFotoVideo(publicacionTexto, publicacionMultimedia);
+  
 
   if (publicacionTexto.trim() === "") {
     if (document.querySelector(".alert")) {
@@ -481,14 +482,6 @@ botonPublicarFotoVideo.addEventListener("click", (e) => {
     console.log({publicacion});
     const publicacionJSON = JSON.stringify(publicacion);
 
-
-
-    document.getElementById("contenedorPublicacionFotoVideo").innerHTML = publicacionJSON;
-
-    crearElementoPublicacion(object.values(NuevaPublicacionFotoVideo));
-
-
-    
     // Enviar los datos del formulario al servidor usando fetch
     fetch("/enviarPublicacionFotoVideo", {
       method: "POST",
@@ -516,6 +509,9 @@ botonPublicarFotoVideo.addEventListener("click", (e) => {
           "Error al enviar la publicación. Por favor, inténtalo de nuevo.";
       });
   }
+  formularioFotoVideo.reset();
+  const myModal = bootstrap.Modal.getOrCreateInstance('modalFotoVideo');
+  myModal.hide();
 });
 
 // Código para evitar que Mi Escena se recargue al hacer 'submit' en algún formulario
@@ -559,13 +555,13 @@ botonPublicarBusquedaArtista.addEventListener("click", (e) => {
   const tituloPublicacion = document.getElementById("tituloPublicacion").value;
   const artistaOEscenario = document.getElementById("artistaOEscenario").value;
   const generoMusical = document.getElementById("generoMusical").value;
-  const instrumentoMusical =
-    document.getElementById("instrumentoMusical").value;
+  const instrumentoMusical = document.getElementById("instrumentoMusical").value;
   const ubicacionBusqueda = document.getElementById("ubicacionBusqueda").value;
   const codigoPostal = document.getElementById("codigoPostal").value;
   const cuerpoPublicacion = document.getElementById("cuerpoPublicacion").value;
-  const multimediaBusqueda =
-    document.getElementById("multimediaBusqueda").value;
+  const multimediaBusqueda = document.getElementById("multimediaBusqueda").value;
+
+  crearPublicacionBusquedaArtista(tituloPublicacion, artistaOEscenario, generoMusical, instrumentoMusical, ubicacionBusqueda, codigoPostal, cuerpoPublicacion, multimediaBusqueda);
 
   if (
     tituloPublicacion.trim() === "" ||
@@ -637,6 +633,9 @@ botonPublicarBusquedaArtista.addEventListener("click", (e) => {
           "Error al enviar la publicación. Por favor, inténtalo de nuevo.";
       });
   }
+  formularioBusquedaArtista.reset();
+  const myModal = bootstrap.Modal.getOrCreateInstance('modalBusquedaArtista');
+  myModal.hide();
 });
 
  //Código para evitar que Mi Escena se recargue al hacer 'submit' en algún formulario
@@ -911,3 +910,44 @@ function eliminarTodasPublicaciones() {
   modalNombre.textContent = JSON.parse(
     localStorage.getItem("usuarioJSON")
   ).nombre;
+
+
+
+
+
+
+
+
+  function crearPublicacionFotoVideo (publicacionTexto, publicacionMultimedia){
+    const publicacionFotoVideo = 
+    {
+      idPublicacion: 11,
+      idAutor: 111,
+      nombreAutor: "Moisés Reyes Orea",
+      instrumentosAutor: ["Guitarra", "Teclado", "Batería"],
+      avatarAutor: "../../pages/perfilPrivado/img/fotoPerfilVacio.jpg",
+      titulo: "test" ,
+      tipoPublicacion: "texto",
+      descripcion: publicacionTexto, publicacionMultimedia,
+      createdAt: "2024-05-27T06:15:00Z",
+    };
+  
+   crearElementoPublicacion(publicacionFotoVideo);
+  }
+
+  function crearPublicacionBusquedaArtista (tituloPublicacion, artistaOEscenario, generoMusical, instrumentoMusical, ubicacionBusqueda, codigoPostal, cuerpoPublicacion, multimediaBusqueda){
+    const publicacionBusquedaArtista = 
+    {
+      idPublicacion: 12,
+      idAutor: 112,
+      nombreAutor: "Moisés Reyes Orea",
+      instrumentosAutor: ["Guitarra", "Teclado", "Batería"],
+      avatarAutor: "../../pages/perfilPrivado/img/fotoPerfilVacio.jpg",
+      titulo: "test" ,
+      tipoPublicacion: "texto",
+      descripcion: tituloPublicacion, artistaOEscenario, generoMusical, instrumentoMusical, ubicacionBusqueda, codigoPostal, cuerpoPublicacion, multimediaBusqueda,
+      createdAt: "2024-05-27T08:15:00Z",
+    };
+
+   crearElementoPublicacion(publicacionBusquedaArtista);
+  }
