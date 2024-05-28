@@ -80,6 +80,9 @@
     margin-left: 10px;
 
 }
+.material-symbols-outlined:hover{
+    color: var(--active-color);
+}
 
 .artistas {
     height: 100%;
@@ -91,6 +94,17 @@
     background-color: var(--background-color);
     align-items: center;
     padding-right: 10px;
+}
+
+
+
+
+@media screen and (max-width:1100px ) {
+    .material-symbols-outlined{
+        color: var(--main-color);
+    }
+
+
 
 }
 
@@ -106,6 +120,13 @@
     }
 
 }
+
+
+
+
+@media (max-width: 1100px){
+    .flat{
+        display: none;
 
 @media (max-width: 1100px) {
     .boton.flat {
@@ -126,6 +147,7 @@
         /* Asegura que el icono se mantenga en su lugar */
         left: -10px;
         /* Ajusta la posición del icono si es necesario */
+
     }
 
 
