@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ------- contador de Me entona ---------
 
-// selecciona los elementos que se usaran
+//selecciona los elementos que se usaran
 // const meEntonaBoton = document.getElementById("meEntonaBoton");
 // const contadorMeEntona = document.getElementById("contadorMeEntona");
 
@@ -478,9 +478,17 @@ botonPublicarFotoVideo.addEventListener("click", (e) => {
       publicacionMultimedia
     );
 
-    console.log({ publicacion });
+    console.log({publicacion});
     const publicacionJSON = JSON.stringify(publicacion);
 
+
+
+    document.getElementById("contenedorPublicacionFotoVideo").innerHTML = publicacionJSON;
+
+    crearElementoPublicacion(object.values(NuevaPublicacionFotoVideo));
+
+
+    
     // Enviar los datos del formulario al servidor usando fetch
     fetch("/enviarPublicacionFotoVideo", {
       method: "POST",
@@ -593,7 +601,7 @@ botonPublicarBusquedaArtista.addEventListener("click", (e) => {
       multimediaBusqueda
     );
 
-    console.log({ publicacion });
+    console.log({publicacion});
     const publicacionJSON = JSON.stringify(publicacion);
 
     // Enviar los datos del formulario al servidor usando fetch
@@ -631,12 +639,12 @@ botonPublicarBusquedaArtista.addEventListener("click", (e) => {
   }
 });
 
-// Código para evitar que Mi Escena se recargue al hacer 'submit' en algún formulario
-var form = document.getElementById("formularioBusquedaArtista");
-function handleForm(event) {
-  event.preventDefault();
-}
-form.addEventListener("submit", handleForm);
+ //Código para evitar que Mi Escena se recargue al hacer 'submit' en algún formulario
+  var form = document.getElementById("formularioBusquedaArtista");
+  function handleForm(event) {
+    event.preventDefault();
+  }
+  form.addEventListener("submit", handleForm);
 
 // FUNCIONES DE VALIDACIÓN
 
@@ -698,6 +706,32 @@ validacionEnVivo("codigoPostal", validaCodigoPostal);
     );
   });
 })();
+
+
+/*
+// Creando un nuevo elemento 'p' y guardandolo en una constante 'textAcercaDe'
+const publicacionTextoVideo = document.createElement("p");
+// ----------------------    Capturando texto de formularios --------------------
+const datosPublicacionFotoVideo = document.querySelector('formularioFotoVideo');
+datosPublicacionFotoVideo.addEventListener('submit', function(e){
+  e.preventDefault();
+  const publicacionTexto = document.getElementById("publicacionTexto").value;
+  console.log(publicacionTexto);
+//  ---------------------    Actualizando elementos del DOM  ------------------------
+// Configurando el nuevo elemento, estableciendole atributos, contenido, estilos, etc.
+datosTexto.textContent = publicacionTexto; //textAcercaDeForm.textContent;
+// Obtener referencia al contenedor acerca de
+const contenedorPublicacionFotoVideo = document.getElementById('contenedorPublicacionFotoVideo');
+// Agregar el nuevo elemento 'textAcercaDe' al contenedor 'contenedorAcercaDe' mediante DOM
+contenedorPublicacionFotoVideo.appendChild(datosTexto);
+// Limpiar el contenido del textarea
+formularioFotoVideo.reset();
+// Cerrar el modal utilizando el método de Bootstrap
+const myModal = bootstrap.Modal.getOrCreateInstance('modalFotoVideo');
+myModal.hide();
+});
+*/
+
 
 /*
 // Editar publicación
@@ -873,7 +907,7 @@ function eliminarTodasPublicaciones() {
 // IMPORTANTE: Definan si usar localStorage o fetch en todas las funciones, sería uno o el otro en todas las funciones.
 // El ejemplo de fetch ya lo tienen, es modificar el method a GET o POST según corresponda, apóyense de documentación.
 
-const modalNombre = document.getElementById("modalNombre");
-modalNombre.textContent = JSON.parse(
-  localStorage.getItem("usuarioJSON")
-).nombre;
+  const modalNombre = document.getElementById("modalNombre");
+  modalNombre.textContent = JSON.parse(
+    localStorage.getItem("usuarioJSON")
+  ).nombre;
