@@ -478,8 +478,7 @@ header {
     }
 
     .acerca--info {
-        width: 600px;
-        max-width: 600px;
+        padding:  0 35px;
     }
 
     .acerca--info p:nth-child(1) {
@@ -685,7 +684,7 @@ header {
             width: 100%;
         }
         .carousel--cards::-webkit-scrollbar{
-            width: 8px;
+            height: 8px;
         }
         .carousel--cards::-webkit-scrollbar-track {
             background: transparent;
