@@ -508,7 +508,7 @@
     width: 80%;
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: space-evenly;
     gap: 30px;
     overflow-x: hidden;
 }
@@ -553,11 +553,6 @@
 
 /* ----------Sección de demos   /   Sección de Escenarios------------- */
 /* ----------Sección de demos   /   Sección de Escenarios------------- */
-.escenarios,
-.demos {
-    margin-top: 90px;
-    /* display: none; */
-}
 
 .escenarios hr,
 .demos hr {
@@ -590,8 +585,8 @@
 
 .escenarios--item,
 .demos--item {
-    width: 286px;
-    height: 286px;
+    width: auto;
+    height: 36vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -600,9 +595,9 @@
 
 .escenarios--item img,
 .demos--item img {
-    width: 100%;
+    /* width: 100%; */
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 10px;
 }
 
@@ -654,11 +649,11 @@
         max-height: 200px;
     }
 
-    .escenarios--item,
+    /* .escenarios--item,
     .demos--item {
         width: 200px;
         height: 200px;
-    }
+    } */
 }
 
 @media screen and (max-width: 480px) {
@@ -671,11 +666,11 @@
         max-height: 300px;
     }
 
-    .escenarios--item,
+    /* .escenarios--item,
     .demos--item {
         width: 300px;
         height: 300px;
-    }
+    } */
 }
 
 @media screen and (max-width: 380px) {
@@ -688,11 +683,11 @@
         max-height: 250px;
     }
 
-    .escenarios--item,
+    /* .escenarios--item,
     .demos--item {
         width: 250px;
         height: 250px;
-    }
+    } */
 }
 
 @media screen and (max-width: 324px) {
@@ -705,11 +700,11 @@
         max-height: 210px;
     }
 
-    .escenarios--item,
+    /* .escenarios--item,
     .demos--item {
         width: 210px;
         height: 210px;
-    }
+    } */
 }
 
 .publicaciones-contenedor {
