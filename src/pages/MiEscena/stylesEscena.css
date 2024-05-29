@@ -72,18 +72,13 @@
 
 
 .comment {
-    width: 85%;
+    width:100%;
     font-size: 20.5px;
 }
 
-.material-symbols-outlined {
-    margin-left: 10px;
 
-}
 
-.material-symbols-outlined:hover {
-    color: var(--active-color);
-}
+
 
 .artistas {
     height: 100%;
@@ -98,17 +93,18 @@
 }
 
 
+#enviarComentario {
+    cursor: pointer;
+    
+}
 
 
 @media screen and (max-width:1100px) {
     .material-symbols-outlined {
-        color: var(--main-color);
         color: black;
         
         
     }
-
-
 
 }
 
@@ -125,10 +121,6 @@
 
 }
 
-@media (max-width: 1100px){
-    .flat{
-        display: none;}
-}
 
 @media (max-width: 1100px) {
     .boton.flat {
@@ -140,9 +132,10 @@
         /* Elimina el padding para reducir el tamaño */
         color: transparent;
         /* Hace el texto invisible */
+        
     }
 
-    .boton.flat .material-symbols-outlined {
+        .material-symbols-outlined {
         color: black;
         /* Asegura que el icono sea visible */
         position: relative;
@@ -153,6 +146,9 @@
     }
 
 }
+
+
+
 
 /* #carouselExampleSeBusca{
     padding: 10px;
@@ -316,14 +312,17 @@
     border: 2px solid var(--main-color);
 }
 
-.boton.fiat:hover {
-    background-color: var(--hover-color);
-    border: 2px solid var(--hover-color);
+@media (max-width: 1100px){
+.boton.flat:hover {
+    background-color:var(--secondaryBg-color);
+    border: 2px;
 }
-
-.boton.fiat:active {
-    background-color: var(--active-color);
-    border: 2px solid var(--active-color);
+}
+@media (max-width: 1100px){
+.boton.flat:active {
+    background-color: var(--secondaryBg-color);
+    /* border:  solid var(--secondaryBg-color); */
+}
 }
 
 .botones--publicacion button {
