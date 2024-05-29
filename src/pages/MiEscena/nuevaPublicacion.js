@@ -12,11 +12,20 @@ class NuevaPublicacionFotoVideo {
   
   botonPublicarFotoVideo.addEventListener("click", (e) => {
     const publicacionTexto = document.getElementById("publicacionTexto").value;
-    const publicacionMultimedia = document.getElementById("publicacionMultimedia").value;
-  
+    const publicacionMultimedia = document.querySelector("#publicacionMultimedia");
+    var multimediaSubida = "";
+    
+    publicacionMultimedia.addEventListener("change", function() {
+      const reader = new FileReader();
+      reader.addEventListener("load", () => {
+        multimediaSubida = reader.result;
+        document.querySelector("#multimediaSubida") = `url(${multimediaSubida})`;
+      });
+      reader.readAsDataURL(this.files[0]);
+    });
+
     crearPublicacionFotoVideo(publicacionTexto, publicacionMultimedia);
     
-  
     if (publicacionTexto.trim() === "") {
       if (document.querySelector(".alert")) {
         return;
@@ -67,6 +76,7 @@ class NuevaPublicacionFotoVideo {
             "Error al enviar la publicación. Por favor, inténtalo de nuevo.";
         });
     }
+    // Limpiar y cerrar el modal
     formularioFotoVideo.reset();
     const myModal = bootstrap.Modal.getOrCreateInstance('modalFotoVideo');
     myModal.hide();
@@ -193,6 +203,7 @@ class NuevaPublicacionFotoVideo {
             "Error al enviar la publicación. Por favor, inténtalo de nuevo.";
         });
     }
+    // Limpiar y cerrar el modal
     formularioBusquedaArtista.reset();
     const myModal = bootstrap.Modal.getOrCreateInstance('modalBusquedaArtista');
     myModal.hide();
@@ -280,7 +291,9 @@ class NuevaPublicacionFotoVideo {
       avatarAutor: "../../pages/perfilPrivado/img/fotoPerfilVacio.jpg",
       titulo: "test" ,
       tipoPublicacion: "texto",
-      descripcion: publicacionTexto, publicacionMultimedia,
+      tipoPublicacion: "multimedia",
+      descripcion: [publicacionTexto],
+      archivoMultimedia: publicacionMultimedia,
       createdAt: "2024-05-27T06:15:00Z",
     };
   
@@ -295,9 +308,11 @@ class NuevaPublicacionFotoVideo {
       nombreAutor: "Moisés Reyes Orea",
       instrumentosAutor: ["Guitarra", "Teclado", "Batería"],
       avatarAutor: "../../pages/perfilPrivado/img/fotoPerfilVacio.jpg",
-      titulo: "test" ,
+      titulo: "test",
       tipoPublicacion: "texto",
-      descripcion: tituloPublicacion, artistaOEscenario, generoMusical, instrumentoMusical, ubicacionBusqueda, codigoPostal, cuerpoPublicacion, multimediaBusqueda,
+      tipoPublicacion: "multimedia",
+      descripcion: [tituloPublicacion, artistaOEscenario, generoMusical, instrumentoMusical, ubicacionBusqueda, codigoPostal, cuerpoPublicacion],
+      archivoMultimedia: multimediaBusqueda,
       createdAt: "2024-05-27T08:15:00Z",
     };
 
@@ -339,7 +354,7 @@ class NuevaPublicacionFotoVideo {
       "publicacion-contenedor"
     );
     var contenidoPublicacion = document.createElement("p");
-    contenidoPublicacion.textContent = datosPublicacion.descripcion;
+    contenidoPublicacion.textContent = datosPublicacion.descripcion.join('\n');
     if (datosPublicacion.tipoPublicacion === "multimedia") {
       var imgPublicacion = document.createElement("img");
       imgPublicacion.src = datosPublicacion.archivoMultimedia;
@@ -426,3 +441,4 @@ class NuevaPublicacionFotoVideo {
     // Agregar el nuevo elemento al contenedor
     contenedor.appendChild(publicacionContenedor);
   }
+
