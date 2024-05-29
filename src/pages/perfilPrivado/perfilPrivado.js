@@ -245,7 +245,7 @@ buttonAddInputInstruments.addEventListener('click', function(event){
   //crear elemento div
   const inputsInstrumentos = document.createElement("div");
   //agregar un input al elemento div
-  inputsInstrumentos.innerHTML = `<label>${totalInputsIntrumentos}</label> <input type="text" id="input${totalInputsIntrumentos}--instrumento" name="instrumento[]" placeholder="Añade instrumento" required><button onclick="eliminarInputsInstrumentos(this)">Eliminar</button>`;
+  inputsInstrumentos.innerHTML = `<label>${totalInputsIntrumentos}</label> <input type="text" class="InputsDinamicos"; id="input${totalInputsIntrumentos}--instrumento" name="instrumento[]" placeholder="Añade instrumento" required><button onclick="eliminarInputsInstrumentos(this)" class="btn-deleteInput">Eliminar</button>`;
   //agregar el elemento div a contenedor inputsInstrumentos
   contenedorInputsIntrumentos.appendChild(inputsInstrumentos);
   totalInputsIntrumentos++;
@@ -275,7 +275,7 @@ buttonAddInputGeneroMusical.addEventListener('click', function(event){
   //crear elemento div
   const inputsGenerosMusicales = document.createElement("div");
   //agregar un input al elemento div
-  inputsGenerosMusicales.innerHTML = `<label>${totalInputsGenerosMusicales}</label> <input type="text" id="input${totalInputsGenerosMusicales}--generoMusical" name="generoMusical[]" placeholder="Añade género musical" required><button onclick="eliminarInputsGenerosMusicales(this)">Eliminar</button>`;
+  inputsGenerosMusicales.innerHTML = `<label>${totalInputsGenerosMusicales}</label> <input type="text" class="InputsDinamicos"; id="input${totalInputsGenerosMusicales}--generoMusical" name="generoMusical[]" placeholder="Añade género musical" required><button onclick="eliminarInputsGenerosMusicales(this)" class="btn-deleteInput">Eliminar</button>`;
   //agregar el elemento div a contenedor inputsInstrumentos
   contenedorInputsGenerosMusicales.appendChild(inputsGenerosMusicales);
   totalInputsGenerosMusicales++;
