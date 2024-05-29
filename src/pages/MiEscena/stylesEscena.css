@@ -402,13 +402,20 @@
 
 /*Tu Ritmo*/
 
+#publicacionesMiEscena-contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .publicacion-contenedor {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
     /* Centra los elementos verticalmente */
-    width: 100%;
+    width: 70vw;
     /* Ancho del contenedor */
     height: auto;
     background-color: var(--secondaryBg-color);
@@ -511,6 +518,7 @@
     justify-content: space-evenly;
     gap: 30px;
     overflow-x: hidden;
+    transition: transform 0.5s ease-in-out;
 }
 
 @media screen and (max-width: 768px) {
@@ -593,8 +601,12 @@
     border-radius: 10px;
 }
 
+.evento {
+    height: 48vh !important;
+}
+
 .escenarios--item img,
-.demos--item img {
+.demos--item img .eventos--item img {
     /* width: 100%; */
     height: 100%;
     object-fit: contain;
