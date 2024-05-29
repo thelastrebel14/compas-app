@@ -1,89 +1,101 @@
-// const acercaDe = document.getElementById('idAcercaDeIcon'); // Constante que contiene el elemento iconEditAcercaDe mediante su ID(idAcercaDeIcon)
-
-// acercaDe.addEventListener( "click" ,() => {  // al objeto acercaDe se le agrega un evento de escucha tipo click y ejecuta la funcion anonima de tipo flecha siguiente
-      
-//     console.log("Acerca de click");
-//   });
-// --------------------------------------------------------------------
-document.addEventListener("DOMContentLoaded", function() {
-  cargarInfoUserEnPerfil();
+document.addEventListener("DOMContentLoaded", function () {
+  fetchGetInfoUser();
 });
 
-// Validación en vivo de input Nombre
-validacionEnVivo("nombrePerfil",  //string del id del input
-validarTexto);  //callback de una funcion de validacion
-// Validación en vivo de input Ciudad
-validacionEnVivo("ciudadPerfil",  //string del id del input
-validarTexto);  //callback de una funcion de validacion
-// Validación en vivo de input Estado
-validacionEnVivo("estadoPerfil",  //string del id del input
-validarTexto);  //callback de una funcion de validacion
-// Validación en vivo de input Instrumentos
-//validacionEnVivo("instrumentosPerfil",  //string del id del input
-//validarTexto);  //callback de una funcion de validacion
-// Validación en vivo de input Género musical
-//validacionEnVivo("generoMusicalPerfil",  //string del id del input
-//validarTexto);  //callback de una funcion de validacion
-// Validación en vivo de input Número de telefono
-//validacionEnVivo("numTelefono",  //string del id del input
-//  validaTelefonosValidacion);  //callback de una funcion de validacion
+// ---------    Función Fetch para extraer datos, cargarlos en el HTML y guardarlos en un objeto
+function fetchGetInfoUser(){
+  // https://jsonplaceholder.typicode.com/users/5
+  // http://localhost:8081/api/v1/usuario
+  const url = 'http://localhost:8081/api/v1/usuario';
+  let post;
+  fetch(url)
+    .then(response => response.json())
+    .then(response => {
+      console.log("hola");
+      console.log(post);
+      post = response;
+      cargarInfoUserEnPerfil(post);
+      instanciarObjetoUser(post);
+      mostrarDatosObjeto();
+    })
+    .catch(error => console.error("error en la petición", error));
+}
 
-//                      Clase de prueba que carga sus elementos a la información del perfil
+// ---------   Función Fetch para Enviar los datos modificados del formulario al servidor usando fetch
+// const urlPost = "";
+// fetch(urlPost, {
+//   method: "POST",
+//   headers: {
+//     "Content-Type": "application/json; charset=UTF-8"},
+// // Definir el body que debe coincidir con mi API, para ello le paso un método stringify que permite transformar el objeto en formato JSON
+//   body: JSON.stringify({
+//     nombre: nombreUser,
+//     ciudad: ciudadUser,
+//     estado: estadoUser
+//   }),
+// })
+//   .then((response) => response.json())
+//   .then((data) => {
+//     // Mostrar mensaje de éxito o error al usuario
+//     if (data.success) {
+//       console.log("¡Datos enviados con éxito!");
+//     } else {
+//       console.log("Error al actualizar los datos. Inténtalo de nuevo.");
+//     }
+//   })
+//   .catch((error) => {
+//     console.error("Error:", error);
+//     console.log("Error al actualizar los datos. Inténtalo de nuevo.");
+//     });
+
+//-------------------  Clase con la información del perfil del usuario
 class UserCreadoEnRegistro {
-  //instrumentos = ["Guitarra","Bajo","Voz"];
-  //generosMusicales = ["Rock","Cumbia","Metal"];
+  // instrumentosMusicales = ["Guitarra","Bajo","Voz"];
+  // generosMusicales = ["Rock","Cumbia","Metal"];
   instrumentosMusicales = [];
   generosMusicales = [];
-  constructor(nombre, ciudad, estado, instrumentosMusicales,generosMusicales){
+  fotoPerfil;
+  constructor(nombre, ciudad, estado,instrumentosMusicales,generosMusicales){
     this.nombre = nombre;
     this.ciudad = ciudad;
     this.estado = estado;
     //this.fotoPerfil = fotoPerfil;
-    this.instrumentosMusicales = instrumentosMusicales;
-    this.generosMusicales = generosMusicales;
+    // this.instrumentosMusicales = instrumentosMusicales;
+    // this.generosMusicales = generosMusicales;
     // this.imgPortada = imgPortada;
   }
   mostrarAtributos(){
-    console.log(this.nombre,this.ciudad,this.estado,this.instrumentosMusicales,this.generosMusicales);
+    console.log(this.nombre,this.ciudad,this.estado,this.instrumentosMusicales,this.generosMusicales,this.fotoPerfil);
   }
-  // // Método para agregar un instrumento al array
-  // agregarInstrumento(instrumento) {
-  //   this.instrumentos.push(instrumento);
-  //   console.log(`Instrumento '${instrumento}' agregado a la biblioteca.`);
-  // }
-  // // Método para modificar atributos en el array "instrumentos"
-  // modificarInstrumentos(element, posision){
-  //   this.instrumentos[posision] = element;
-  // }
-  // // Método para agregar un género musical al array
-  // agregarGeneroMusical(generoMusical) {
-  //   this.generosMusicales.push(generoMusical);
-  //   console.log(`Genero '${generoMusical}' agregado a la biblioteca.`);
-  // }
-  // // Método para modificar atributos en el array "generosMusicales"
-  // modificarGenerosMusicales(element, posision){
-  //   this.generosMusicales[posision] = element;
-  // }
+  // Método para agregar un instrumento al array
+  agregarInstrumento(instrumento) {
+    this.instrumentos.push(instrumento);
+    console.log(`Instrumento '${instrumento}' agregado a la biblioteca.`);
+  }
+  // Método para modificar atributos en el array "instrumentos"
+  modificarInstrumentos(element, posision){
+    this.instrumentos[posision] = element;
+  }
+  // Método para agregar un género musical al array
+  agregarGeneroMusical(generoMusical) {
+    this.generosMusicales.push(generoMusical);
+    console.log(`Genero '${generoMusical}' agregado a la biblioteca.`);
+  }
+  // Método para modificar atributos en el array "generosMusicales"
+  modificarGenerosMusicales(element, posision){
+    this.generosMusicales[posision] = element;
+  }
 }
-//                      Instanciar un objeto desde la clase UserCreadoEnRegistro
-//const objetoUsuarioDelPerfil = new UserCreadoEnRegistro('Moises Reyes Orea', 'Guadalajara', 'Jalisco');
-const objetoUsuarioDelPerfil = JSON.parse(localStorage.getItem("usuarioCompleto"));
-// objetoUsuarioDelPerfil.mostrarAtributos();
- console.log(objetoUsuarioDelPerfil.nombre);
- console.log(objetoUsuarioDelPerfil.ciudad); 
- console.log(objetoUsuarioDelPerfil.estado); 
- console.log(objetoUsuarioDelPerfil.instrumentosMusicales);
- console.log(objetoUsuarioDelPerfil.generosMusicales);
-
-// objetoUsuarioDelPerfil.agregarInstrumento("teclado");
 
 //                                      Creación de elementos
 // Creando un nuevo elemento 'h1' y guardandolo en una constante 'nombreUser'
 const nombreUser = document.createElement("h1");
+const ciudadUser = document.createElement("h5");
+const estadoUser = document.createElement("h5");
 const ubicacionUser = document.createElement("h5");
 const instrumentosUser = document.createElement("p");
 const generosMusicalesUser = document.createElement("p");
-//const fotoPerfilUser = document.createElement("img");
+//let fotoPerfilUser = document.createElement("img");
 // const fotoPerfilUser = document.getElementById("");
 
 //                              Obtener referencias de los contenedores
@@ -99,49 +111,195 @@ const contenedorInputsIntrumentos = document.getElementById('contenedor--inputsI
 const contenedorGenerosMusicales = document.getElementById('contenedor--generosMusicales');
 // Obtener referencia al contenedor "inputsGenerosMusicales"
 const contenedorInputsGenerosMusicales = document.getElementById('contenedor--inputsGenerosMusicales');
+// Obtener referencia al contenedor "imgPortada"
+const contenedorImgPortada = document.getElementById('contenedor--imgPortada');
 // Obtener referencia al contenedor "fotoPerfil"
 const contenedorFotoPerfil = document.getElementById('contenedor--fotoPerfil');
 
-
 //                      Función para cargar información inicial del usuario a su perfil
-function cargarInfoUserEnPerfil(){
-// Configurando el nuevo elemento, estableciendole atributos, contenido, estilos, etc.
-nombreUser.textContent = objetoUsuarioDelPerfil.nombre;
-ubicacionUser.textContent = objetoUsuarioDelPerfil.ciudad + ", " + objetoUsuarioDelPerfil.estado;
-instrumentosUser.textContent = objetoUsuarioDelPerfil.instrumentosMusicales;
-generosMusicalesUser.textContent = objetoUsuarioDelPerfil.generosMusicales;
-//fotoPerfilUser.src = "./img/fotoPerfilVacio.jpg";
-    // Establecer atributos adicionales si es necesario
-    //fotoPerfilUser.alt = 'Foto Perfil de Usuario';
-    //fotoPerfilUser.width = 250; // Puedes ajustar el ancho y alto según sea necesario
-// https://www.youtube.com/watch?v=xXrs4j-p3yE
-// Agregar el nuevo elemento 'nombreUser' al contenedor 'contenedorNombreUser' mediante DOM
+function cargarInfoUserEnPerfil(post){
+  nombreUser.innerHTML = post.nombre;
+  ciudadUser.innerHTML = post.ciudad;
+  // estadoUser.innerHTML = post.address.estado;
+  //ubicacionUser.innerHTML = post.ciudad;
+  //instrumentosUser.innerHTML = post.e;
+  //generosMusicalesUser.innerHTML = post.username;
+
+// Agregar el elementos de la información de usuario
 contenedorNombreUser.appendChild(nombreUser);
 contenedorUbicacionUser.appendChild(ubicacionUser);
 contenedorInstrumentos.appendChild(instrumentosUser);
 contenedorGenerosMusicales.appendChild(generosMusicalesUser);
-contenedorFotoPerfil.appendChild(fotoPerfilUser);
 }
-//cargarInfoUserEnPerfil();
 
-//                            Editando Foto de perfil usuario
-// Obtener referencia al input "foto--perfilUser"
-const fotoPerfilUser = document.getElementById("foto--perfilUser");
-const formFotoPerfilUser = document.getElementById("formFotoPerfil");
-formFotoPerfilUser.addEventListener('submit', function(){
-  //objetoUsuarioDelPerfil.fotoPerfil = document.getElementById("foto--perfilUser");
-  contenedorFotoPerfil.src = URL.createObjectURL(fotoPerfilUser.files[0]);
+// ------------- funcion para tomar los valores del fetch e instanciar un objeto
+function instanciarObjetoUser(post){
+  // ----------------------   Instanciar un objeto con los valores recibidos de fetch
+  objetoUsuarioDelPerfil = new UserCreadoEnRegistro(post.name,post.address.city,post.address.city);  
+  //                      Instanciar un objeto desde la clase UserCreadoEnRegistro
+  //objetoUsuarioDelPerfil = new UserCreadoEnRegistro('Moises Reyes Orea', 'Guadalajara', 'Jalisco');
+  //const objetoUsuarioDelPerfil = new UserCreadoEnRegistro(objetoUsuarioLocalStorage.nombre,objetoUsuarioLocalStorage.ciudad,objetoUsuarioLocalStorage.estado,objetoUsuarioLocalStorage.instrumentosMusicales,objetoUsuarioLocalStorage.generosMusicales);
+}
+
+function mostrarDatosObjeto(){
+ // objetoUsuarioDelPerfil.mostrarAtributos();
+ console.log(objetoUsuarioDelPerfil.nombre);
+ console.log(objetoUsuarioDelPerfil.ciudad); 
+ console.log(objetoUsuarioDelPerfil.estado); 
+ console.log(objetoUsuarioDelPerfil.instrumentosMusicales);
+ console.log(objetoUsuarioDelPerfil.generosMusicales);
+ console.log(objetoUsuarioDelPerfil.fotoPerfil);
+}
+
+// objetoUsuarioDelPerfil.agregarInstrumento("teclado");
+
+// -----------------------     Editando Imagen de Portada en Perfil
+const changeImgPortada = document.getElementById("botonImgPortada");
+changeImgPortada.addEventListener('click', function(){
+  // Obtener referencia al input para cargar imagen "img--cover"
+  const imgPortadaUser = document.getElementById("img--cover");
+  // Llamando a funcion para enviar la imagen mediante Fetch
+  enviarImg(imgPortadaUser);
+  // Agregar el nuevo elemento al contenedor
+  contenedorImgPortada.src = URL.createObjectURL(imgPortadaUser.files[0]);
+  // Cerrar el modal utilizando el método de Bootstrap
+  const myModal = bootstrap.Modal.getOrCreateInstance('#headerPortadaModal');
+  myModal.hide();
 });
 
+function enviarImg(img) {
+  // crea un objeto FormData y agrega el archivo seleccionado
+  const formDataImg = new FormData();
+  formDataImg.append('image', img.files[0]);
+  console.log(formDataImg.get('image').name);
 
-//                            Formulario Edit Información de Usuario en Perfil
-//                            Formulario Edit Información de Usuario en Perfil
-const consformProfileInfo = document.querySelector('#formProfileInfo'); // Constante que contiene el elemento formulario mediante su ID(formProfileInfo)
-consformProfileInfo.addEventListener( 'submit' , function(event) {  // al objeto consformProfileInfo se le agrega un evento de escucha tipo "submit" y ejecuta la funcion anonima siguiente.
+  // Función Fetch para Enviar los imagenes al servidor usando fetch
+
+  // https://jsonplaceholder.typicode.com/users/5
+  // http://localhost:8081/api/v1/usuario
+  const urlPost = "http://localhost:8081/api/v1/usuario/1";
+  fetch(urlPost, {
+    method: "PUT", // PUT / POST
+    headers: {
+      "Content-Type": "application/json"},
+    // Definir el body que debe coincidir con mi API, para ello le paso un método stringify que permite transformar el objeto en formato JSON
+    body: {
+      formDataImg
+    }
+  })
+    .then((response) => response.json())
+    .then((response) => {
+      // Mostrar mensaje de éxito o error al usuario
+      if (response.success) {
+        console.log("Datos enviados con éxito");
+      }
+      else {
+        console.log("Error");
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      console.log("Error al actualizar los datos");
+    });
+}
+
+function enviarDatos(){
+// ---------   Función Fetch para Enviar los datos modificados del formulario al servidor usando fetch
+const urlPost = "https://jsonplaceholder.typicode.com/posts";
+fetch(urlPost, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8"},
+// Definir el body que debe coincidir con mi API, para ello le paso un método stringify que permite transformar el objeto en formato JSON
+  body: JSON.stringify({
+      userId: 1890,
+      id: 1,
+      title: "test",
+      body: 'bar',
+  }),
+})
+  .then((response) => response.json())
+  .then((response) => {
+    console.log(response);
+    // Mostrar mensaje de éxito o error al usuario
+    if (response.success) {
+      console.log("¡Datos enviados con éxito!");
+    } else {
+      console.log("Error al actualizar los datos. Inténtalo de nuevo.");
+    }
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+    console.log("Error al actualizar los datos. Inténtalo de nuevo.");
+    });
+
+}
+/////////////////////////////////
+// Enviar los datos del formulario al servidor usando fetch
+// fetch("/enviarPublicacionFotoVideo", {
+//   method: "POST",
+//   headers: {
+//     "Content-Type": "application/json",
+//   },
+//   body: JSON.stringify({
+//     publicacionTexto: publicacionTexto,
+//     publicacionMultimedia: publicacionMultimedia,
+//   }),
+// })
+//   .then((response) => response.json())
+//   .then((data) => {
+//     // Mostrar mensaje de éxito o error al usuario
+//     if (data.success) {
+//       publicacion.textContent = "¡Publicación enviada con éxito!";
+//     } else {
+//       publicacion.textContent =
+//         "Error al enviar la publicación. Por favor, inténtalo de nuevo.";
+//     }
+//   })
+//   .catch((error) => {
+//     console.error("Error:", error);
+//     publicacion.textContent =
+//       "Error al enviar la publicación. Por favor, inténtalo de nuevo.";
+//   });
+///////////////////////////////////////
+
+
+
+
+// ------------------------    Editando Foto de perfil usuario
+const changeFotoUser = document.getElementById("botonFotoPerfil");
+changeFotoUser.addEventListener('click', function () {
+  // Obtener referencia al input para cargar foto "foto--perfilUser"
+  const fotoPerfilUser = document.getElementById("foto--perfilUser");
+  // Agregar el nuevo elemento al contenedor
+  contenedorFotoPerfil.src = URL.createObjectURL(fotoPerfilUser.files[0]);
+  // Cerrar el modal utilizando el método de Bootstrap
+  const myModal = bootstrap.Modal.getOrCreateInstance('#headerFotoPerfilModal');
+  myModal.hide();
+});
+
+// Mostrando la información del usuario en los inputs del form editar información
+  const iconoEditInfoUser = document.getElementById('iconEdit-infoPerfil');
+  iconoEditInfoUser.addEventListener('click',function(){
+    const contenedorInputNombre = document.getElementById('nombrePerfil');
+    contenedorInputNombre.value = objetoUsuarioDelPerfil.nombre;
+    const contenedorInputCiudad = document.getElementById('ciudadPerfil');
+    contenedorInputCiudad.value = objetoUsuarioDelPerfil.ciudad;
+    const contenedorInputEstado = document.getElementById('estadoPerfil');
+    contenedorInputEstado.value = objetoUsuarioDelPerfil.estado;
+  });
+  
+
+// ----------------------  Función para Editar Información de Usuario en Perfil
+
+// Constante que contiene el elemento formulario mediante su ID(formProfileInfo)
+const consformProfileInfo = document.querySelector('#formProfileInfo');
+// al objeto consformProfileInfo se le agrega un evento de escucha tipo "submit" y ejecuta la funcion anonima siguiente.
+consformProfileInfo.addEventListener( 'submit' , function(event) {  
   event.preventDefault();
   // Leyendo valores de los inputs del formulario
   objetoUsuarioDelPerfil.nombre = document.getElementById('nombrePerfil').value; //Modifica el atributo nombre del objeto usuario
-  console.log(objetoUsuarioDelPerfil.nombre); 
+  console.log(objetoUsuarioDelPerfil.nombre);
   objetoUsuarioDelPerfil.ciudad = document.getElementById('ciudadPerfil').value;
   console.log(objetoUsuarioDelPerfil.ciudad);
   objetoUsuarioDelPerfil.estado = document.getElementById('estadoPerfil').value;
@@ -155,10 +313,10 @@ consformProfileInfo.addEventListener( 'submit' , function(event) {  // al objeto
     console.log(newInstrument);
     objetoUsuarioDelPerfil.instrumentosMusicales[i-1] = newInstrument;
   }
-  // Eliminando elementos sobrantes en el array 'objetoUsuarioDelPerfil.instrumentos'
+  // Eliminando elementos no deseados en el array 'objetoUsuarioDelPerfil.instrumentosMusicales'
   let tamanoArrayInstrumentos = objetoUsuarioDelPerfil.instrumentosMusicales.length;
   for(let i = numeroInputsInstrumentos.length; i < tamanoArrayInstrumentos; i++){
-      //objetoUsuarioDelPerfil.instrumentosMusicales.splice(i);
+      objetoUsuarioDelPerfil.instrumentosMusicales.splice(i);
   }
 
   // Leyendo valores de inputs generosMusicales y guardandolos en el atributo array 'objetoUsuarioDelPerfil.generosMusicales'
@@ -169,10 +327,10 @@ consformProfileInfo.addEventListener( 'submit' , function(event) {  // al objeto
     console.log(newGeneroMusical);
     objetoUsuarioDelPerfil.generosMusicales[i-1] = newGeneroMusical; // Modificando los elementos del atributo array 'generosMusicales'
   }
-  // Eliminando elementos sobrantes en el array 'objetoUsuarioDelPerfil.generosMusicales'
+  // Eliminando elementos no deseados en el array 'objetoUsuarioDelPerfil.generosMusicales'
   let tamanoArrayGenerosMusicales = objetoUsuarioDelPerfil.generosMusicales.length;
   for(let i = numeroInputsGenerosMusicales.length; i < tamanoArrayGenerosMusicales; i++){
-      //objetoUsuarioDelPerfil.generosMusicales.splice(i);
+      objetoUsuarioDelPerfil.generosMusicales.splice(i);
   }
   
   // Leyendo valores de inputs redesSociales y guardandolos en el atributo array 'objetoUsuarioDelPerfil.redesSociales'
@@ -189,18 +347,15 @@ consformProfileInfo.addEventListener( 'submit' , function(event) {  // al objeto
   contenedorUbicacionUser.appendChild(ubicacionUser);
   contenedorInstrumentos.appendChild(instrumentosUser);
   contenedorGenerosMusicales.appendChild(generosMusicalesUser);
+
+  enviarDatos();
+
+  // Cerrar el modal utilizando el método de Bootstrap
+  const myModal = bootstrap.Modal.getOrCreateInstance('#profileInfo');
+  myModal.hide();
   });
 
-  // Funcion test para verificar valores del objeto
-  function impr(){
-  console.log(objetoUsuarioDelPerfil.nombre);
-  console.log(objetoUsuarioDelPerfil.ciudad); 
-  console.log(objetoUsuarioDelPerfil.estado);
-  console.log(objetoUsuarioDelPerfil.instrumentos);
-  console.log(objetoUsuarioDelPerfil.generosMusicales);
-  }
-
-//                  Agregando Inputs en sección instrumentos de modal información personal
+// -----------------  Agregando Inputs en sección instrumentos de modal información personal
 
 // Variable para el total de elementos agregados
 let totalInputsIntrumentos = 1;
@@ -210,7 +365,7 @@ buttonAddInputInstruments.addEventListener('click', function(event){
   //crear elemento div
   const inputsInstrumentos = document.createElement("div");
   //agregar un input al elemento div
-  inputsInstrumentos.innerHTML = `<label>${totalInputsIntrumentos}</label> <input type="text" id="input${totalInputsIntrumentos}--instrumento" name="instrumento[]" placeholder="Añade instrumento" required><button onclick="eliminarInputsInstrumentos(this)">Eliminar</button>`;
+  inputsInstrumentos.innerHTML = `<label>${totalInputsIntrumentos}</label> <input type="text" class="InputsDinamicos"; id="input${totalInputsIntrumentos}--instrumento" name="instrumento[]" placeholder="Añade instrumento" required><button onclick="eliminarInputsInstrumentos(this)" class="btn-deleteInput">Eliminar</button>`;
   //agregar el elemento div a contenedor inputsInstrumentos
   contenedorInputsIntrumentos.appendChild(inputsInstrumentos);
   totalInputsIntrumentos++;
@@ -230,7 +385,7 @@ const actualizarContadorInputsInstrumentos = () => {
       divs[i].children[1].id = `input${totalInputsIntrumentos++}--instrumento`;
   }
 };
-//                  Agregando Inputs en sección generosMusicales de modal información personal
+// -----------------  Agregando Inputs en sección generosMusicales de modal información personal
 
 // Variable para el total de elementos agregados
 let totalInputsGenerosMusicales = 1;
@@ -240,7 +395,7 @@ buttonAddInputGeneroMusical.addEventListener('click', function(event){
   //crear elemento div
   const inputsGenerosMusicales = document.createElement("div");
   //agregar un input al elemento div
-  inputsGenerosMusicales.innerHTML = `<label>${totalInputsGenerosMusicales}</label> <input type="text" id="input${totalInputsGenerosMusicales}--generoMusical" name="generoMusical[]" placeholder="Añade género musical" required><button onclick="eliminarInputsGenerosMusicales(this)">Eliminar</button>`;
+  inputsGenerosMusicales.innerHTML = `<label>${totalInputsGenerosMusicales}</label> <input type="text" class="InputsDinamicos"; id="input${totalInputsGenerosMusicales}--generoMusical" name="generoMusical[]" placeholder="Añade género musical" required><button onclick="eliminarInputsGenerosMusicales(this)" class="btn-deleteInput">Eliminar</button>`;
   //agregar el elemento div a contenedor inputsInstrumentos
   contenedorInputsGenerosMusicales.appendChild(inputsGenerosMusicales);
   totalInputsGenerosMusicales++;
@@ -285,8 +440,6 @@ textAcercaDe.textContent = textAcercaDeForm; //textAcercaDeForm.textContent;
 const contenedorAcecaDe = document.getElementById('contenedor--acercaDe');
 // Agregar el nuevo elemento 'textAcercaDe' al contenedor 'contenedorAcercaDe' mediante DOM
 contenedorAcecaDe.appendChild(textAcercaDe);
-// Limpiar el contenido del textarea
-formAcercaDe.reset();
 // Cerrar el modal utilizando el método de Bootstrap
 const myModal = bootstrap.Modal.getOrCreateInstance('#acercaDeModal');
 myModal.hide();
@@ -294,6 +447,16 @@ myModal.hide();
 
   
   
+
+
+
+
+
+
+
+
+
+
 
 //---------------------------------------------------------------------
 // const exampleModal = document.getElementById('exampleModal')
@@ -314,3 +477,24 @@ myModal.hide();
 //     modalBodyInput.value = recipient
 //   })
 // }
+
+
+
+// Validación en vivo de input Nombre
+//validacionEnVivo("nombrePerfil",  //string del id del input
+//validarTexto);  //callback de una funcion de validacion
+// Validación en vivo de input Ciudad
+//validacionEnVivo("ciudadPerfil",  //string del id del input
+//validarTexto);  //callback de una funcion de validacion
+// Validación en vivo de input Estado
+//validacionEnVivo("estadoPerfil",  //string del id del input
+//validarTexto);  //callback de una funcion de validacion
+// Validación en vivo de input Instrumentos
+//validacionEnVivo("instrumentosPerfil",  //string del id del input
+//validarTexto);  //callback de una funcion de validacion
+// Validación en vivo de input Género musical
+//validacionEnVivo("generoMusicalPerfil",  //string del id del input
+//validarTexto);  //callback de una funcion de validacion
+// Validación en vivo de input Número de telefono
+//validacionEnVivo("numTelefono",  //string del id del input
+//  validaTelefonosValidacion);  //callback de una funcion de validacion
