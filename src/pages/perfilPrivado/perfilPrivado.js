@@ -2,15 +2,18 @@ document.addEventListener("DOMContentLoaded", function () {
   fetchGetInfoUser();
 });
 
+// ---------    Función Fetch para extraer datos, cargarlos en el HTML y guardarlos en un objeto
 function fetchGetInfoUser(){
-  // ---------    Función Fetch para extraer datos, cargarlos en los elementos HTML y guardarlos en un objeto
-  const url = 'https://jsonplaceholder.typicode.com/users/5';
+  // https://jsonplaceholder.typicode.com/users/5
+  // http://localhost:8081/api/v1/usuario
+  const url = 'http://localhost:8081/api/v1/usuario';
   let post;
   fetch(url)
     .then(response => response.json())
     .then(response => {
+      console.log("hola");
+      console.log(post);
       post = response;
-      //setTimeout(funcionAejecutarse, 1500);
       cargarInfoUserEnPerfil(post);
       instanciarObjetoUser(post);
       mostrarDatosObjeto();
@@ -108,17 +111,19 @@ const contenedorInputsIntrumentos = document.getElementById('contenedor--inputsI
 const contenedorGenerosMusicales = document.getElementById('contenedor--generosMusicales');
 // Obtener referencia al contenedor "inputsGenerosMusicales"
 const contenedorInputsGenerosMusicales = document.getElementById('contenedor--inputsGenerosMusicales');
+// Obtener referencia al contenedor "imgPortada"
+const contenedorImgPortada = document.getElementById('contenedor--imgPortada');
 // Obtener referencia al contenedor "fotoPerfil"
 const contenedorFotoPerfil = document.getElementById('contenedor--fotoPerfil');
 
 //                      Función para cargar información inicial del usuario a su perfil
 function cargarInfoUserEnPerfil(post){
-  nombreUser.innerHTML = post.name;
-  ciudadUser.innerHTML = post.address.city;
+  nombreUser.innerHTML = post.nombre;
+  ciudadUser.innerHTML = post.ciudad;
   // estadoUser.innerHTML = post.address.estado;
-  ubicacionUser.innerHTML = post.address.city;
-  instrumentosUser.innerHTML = post.email;
-  generosMusicalesUser.innerHTML = post.username;
+  //ubicacionUser.innerHTML = post.ciudad;
+  //instrumentosUser.innerHTML = post.e;
+  //generosMusicalesUser.innerHTML = post.username;
 
 // Agregar el elementos de la información de usuario
 contenedorNombreUser.appendChild(nombreUser);
@@ -143,21 +148,132 @@ function mostrarDatosObjeto(){
  console.log(objetoUsuarioDelPerfil.estado); 
  console.log(objetoUsuarioDelPerfil.instrumentosMusicales);
  console.log(objetoUsuarioDelPerfil.generosMusicales);
- //console.log(objetoUsuarioDelPerfil.fotoPerfil);
+ console.log(objetoUsuarioDelPerfil.fotoPerfil);
 }
 
 // objetoUsuarioDelPerfil.agregarInstrumento("teclado");
 
+// -----------------------     Editando Imagen de Portada en Perfil
+const changeImgPortada = document.getElementById("botonImgPortada");
+changeImgPortada.addEventListener('click', function(){
+  // Obtener referencia al input para cargar imagen "img--cover"
+  const imgPortadaUser = document.getElementById("img--cover");
+  // Llamando a funcion para enviar la imagen mediante Fetch
+  enviarImg(imgPortadaUser);
+  // Agregar el nuevo elemento al contenedor
+  contenedorImgPortada.src = URL.createObjectURL(imgPortadaUser.files[0]);
+  // Cerrar el modal utilizando el método de Bootstrap
+  const myModal = bootstrap.Modal.getOrCreateInstance('#headerPortadaModal');
+  myModal.hide();
+});
+
+function enviarImg(img) {
+  // crea un objeto FormData y agrega el archivo seleccionado
+  const formDataImg = new FormData();
+  formDataImg.append('image', img.files[0]);
+  console.log(formDataImg.get('image').name);
+
+  // Función Fetch para Enviar los imagenes al servidor usando fetch
+
+  // https://jsonplaceholder.typicode.com/users/5
+  // http://localhost:8081/api/v1/usuario
+  const urlPost = "http://localhost:8081/api/v1/usuario/1";
+  fetch(urlPost, {
+    method: "PUT", // PUT / POST
+    headers: {
+      "Content-Type": "application/json"},
+    // Definir el body que debe coincidir con mi API, para ello le paso un método stringify que permite transformar el objeto en formato JSON
+    body: {
+      formDataImg
+    }
+  })
+    .then((response) => response.json())
+    .then((response) => {
+      // Mostrar mensaje de éxito o error al usuario
+      if (response.success) {
+        console.log("Datos enviados con éxito");
+      }
+      else {
+        console.log("Error");
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      console.log("Error al actualizar los datos");
+    });
+}
+
+function enviarDatos(){
+// ---------   Función Fetch para Enviar los datos modificados del formulario al servidor usando fetch
+const urlPost = "https://jsonplaceholder.typicode.com/posts";
+fetch(urlPost, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8"},
+// Definir el body que debe coincidir con mi API, para ello le paso un método stringify que permite transformar el objeto en formato JSON
+  body: JSON.stringify({
+      userId: 1890,
+      id: 1,
+      title: "test",
+      body: 'bar',
+  }),
+})
+  .then((response) => response.json())
+  .then((response) => {
+    console.log(response);
+    // Mostrar mensaje de éxito o error al usuario
+    if (response.success) {
+      console.log("¡Datos enviados con éxito!");
+    } else {
+      console.log("Error al actualizar los datos. Inténtalo de nuevo.");
+    }
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+    console.log("Error al actualizar los datos. Inténtalo de nuevo.");
+    });
+
+}
+/////////////////////////////////
+// Enviar los datos del formulario al servidor usando fetch
+// fetch("/enviarPublicacionFotoVideo", {
+//   method: "POST",
+//   headers: {
+//     "Content-Type": "application/json",
+//   },
+//   body: JSON.stringify({
+//     publicacionTexto: publicacionTexto,
+//     publicacionMultimedia: publicacionMultimedia,
+//   }),
+// })
+//   .then((response) => response.json())
+//   .then((data) => {
+//     // Mostrar mensaje de éxito o error al usuario
+//     if (data.success) {
+//       publicacion.textContent = "¡Publicación enviada con éxito!";
+//     } else {
+//       publicacion.textContent =
+//         "Error al enviar la publicación. Por favor, inténtalo de nuevo.";
+//     }
+//   })
+//   .catch((error) => {
+//     console.error("Error:", error);
+//     publicacion.textContent =
+//       "Error al enviar la publicación. Por favor, inténtalo de nuevo.";
+//   });
+///////////////////////////////////////
 
 
-//                            Editando Foto de perfil usuario
-//Obtener referencia al input "foto--perfilUser"
-const botonAddFotoUser = document.getElementById("botonFotoPerfil");
-botonAddFotoUser.addEventListener('click', function(){
-   const fotoPerfilUser = document.getElementById("foto--perfilUser");
-  //         objetoUsuarioDelPerfil.fotoPerfil = document.getElementById("foto--perfilUser");
-   contenedorFotoPerfil.src = URL.createObjectURL(fotoPerfilUser.files[0]);
-   // Cerrar el modal utilizando el método de Bootstrap
+
+
+// ------------------------    Editando Foto de perfil usuario
+const changeFotoUser = document.getElementById("botonFotoPerfil");
+changeFotoUser.addEventListener('click', function () {
+  // Obtener referencia al input para cargar foto "foto--perfilUser"
+  const fotoPerfilUser = document.getElementById("foto--perfilUser");
+  // Agregar el nuevo elemento al contenedor
+  contenedorFotoPerfil.src = URL.createObjectURL(fotoPerfilUser.files[0]);
+  // Cerrar el modal utilizando el método de Bootstrap
   const myModal = bootstrap.Modal.getOrCreateInstance('#headerFotoPerfilModal');
   myModal.hide();
 });
@@ -174,10 +290,12 @@ botonAddFotoUser.addEventListener('click', function(){
   });
   
 
-//                            Formulario Edit Información de Usuario en Perfil
-//                            Formulario Edit Información de Usuario en Perfil
-const consformProfileInfo = document.querySelector('#formProfileInfo'); // Constante que contiene el elemento formulario mediante su ID(formProfileInfo)
-consformProfileInfo.addEventListener( 'submit' , function(event) {  // al objeto consformProfileInfo se le agrega un evento de escucha tipo "submit" y ejecuta la funcion anonima siguiente.
+// ----------------------  Función para Editar Información de Usuario en Perfil
+
+// Constante que contiene el elemento formulario mediante su ID(formProfileInfo)
+const consformProfileInfo = document.querySelector('#formProfileInfo');
+// al objeto consformProfileInfo se le agrega un evento de escucha tipo "submit" y ejecuta la funcion anonima siguiente.
+consformProfileInfo.addEventListener( 'submit' , function(event) {  
   event.preventDefault();
   // Leyendo valores de los inputs del formulario
   objetoUsuarioDelPerfil.nombre = document.getElementById('nombrePerfil').value; //Modifica el atributo nombre del objeto usuario
@@ -230,12 +348,14 @@ consformProfileInfo.addEventListener( 'submit' , function(event) {  // al objeto
   contenedorInstrumentos.appendChild(instrumentosUser);
   contenedorGenerosMusicales.appendChild(generosMusicalesUser);
 
+  enviarDatos();
+
   // Cerrar el modal utilizando el método de Bootstrap
   const myModal = bootstrap.Modal.getOrCreateInstance('#profileInfo');
   myModal.hide();
   });
 
-//                  Agregando Inputs en sección instrumentos de modal información personal
+// -----------------  Agregando Inputs en sección instrumentos de modal información personal
 
 // Variable para el total de elementos agregados
 let totalInputsIntrumentos = 1;
@@ -265,7 +385,7 @@ const actualizarContadorInputsInstrumentos = () => {
       divs[i].children[1].id = `input${totalInputsIntrumentos++}--instrumento`;
   }
 };
-//                  Agregando Inputs en sección generosMusicales de modal información personal
+// -----------------  Agregando Inputs en sección generosMusicales de modal información personal
 
 // Variable para el total de elementos agregados
 let totalInputsGenerosMusicales = 1;
