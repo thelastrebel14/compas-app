@@ -351,7 +351,7 @@ class NuevaPublicacionFotoVideo {
     // Contenido de la publicación
     var contenidoPublicacionContenedor = document.createElement("div");
     contenidoPublicacionContenedor.classList.add(
-      "publicacion-contenedor"
+      "contenido-publicacion-contenedor"
     );
     var contenidoPublicacion = document.createElement("p");
     contenidoPublicacion.textContent = datosPublicacion.descripcion.join('\n');
@@ -440,5 +440,4 @@ class NuevaPublicacionFotoVideo {
   
     // Agregar el nuevo elemento al contenedor
     contenedor.appendChild(publicacionContenedor);
-  }
-
+}

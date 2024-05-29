@@ -144,166 +144,273 @@
       </div>
     </section>
 
-    <!-- Modal para "Foto/Vídeo" -->
-    <section>
-      <div class="modal" id="modalFotoVideo">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h4 class="modal-title">Crear publicación</h4>
-              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <!-- Modal body -->
-            <div class="modal-body">
-              <div class="nueva--publicacion--modal--perfil">
-                <img src="../../pages/perfilPrivado/img/fotoPerfilVacio.jpg" class="img-fluid rounded-circle"
-                  alt="" id="imgPublicacion" />
-                <h4 id="modalNombre"></h4>
+      <!-- Modal para "Foto/Vídeo" -->
+      <section>
+        <div class="modal" id="modalFotoVideo">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Crear publicación</h4>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                ></button>
               </div>
-              <br />
-              <form class="row g-3 needs-validation" novalidate action="" id="formularioFotoVideo">
-                <div class="form-floating">
-                  <textarea class="form-control" id="publicacionTexto" name="publicacionTexto" required
-                    placeholder=""></textarea>
-                  <label for="publicacionTexto">¿Cómo va tu vibra hoy?</label>
+              <!-- Modal body -->
+              <div class="modal-body">
+                <div class="nueva--publicacion--modal--perfil">
+                  <img
+                    src="../../pages/perfilPrivado/img/fotoPerfilVacio.jpg"
+                    class="img-fluid rounded-circle"
+                    alt=""
+                    id="imgPublicacion"
+                  />
+                  <h4 id="modalNombre"></h4>
                 </div>
                 <br />
-                <p>Carga una imagen para tu publicación (opcional)</p>
-                <div>
-                  <input class="form-control" type="file" name="publicacionMultimedia" id="publicacionMultimedia" />
-                </div>
-                <br />
-                <!-- Modal footer -->
-                <div class="modal-alinear-botones">
-                  <button type="button" class="boton outlined" data-bs-dismiss="modal">
-                    Cerrar
-                  </button>
-                  <button type="submit" class="boton fiat" id="publicarFotoVideo" data-bs-dismiss="modal">
-                    Publicar
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Modal para "Estoy buscando artistas" -->
-    <section>
-      <div class="modal" id="modalBusquedaArtista">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h4 class="modal-title">Crear publicación</h4>
-              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <!-- Modal body -->
-            <div class="modal-body">
-              <div class="nueva--publicacion--modal--perfil">
-                <img src="../../pages/perfilPrivado/img/fotoPerfilVacio.jpg" class="img-fluid rounded-circle"
-                  alt="Carlos Santana" id="imgPublicacion" />
-                <h4 id="modalNombre"></h4>
-              </div>
-              <br />
-              <form class="row g-3 needs-validation" novalidate action="" id="formularioBusquedaArtista">
-                <fieldset>
+                <form
+                  class="row g-3 needs-validation"
+                  novalidate
+                  action=""
+                  id="formularioFotoVideo"
+                >
                   <div class="form-floating">
-                    <input type="text" class="form-control" name="tituloPublicacion" id="tituloPublicacion" required placeholder="" />
-                    <label for="tituloPublicacion">Título de la publicación</label>
-                  </div>
-                  <br />
-                  <div class="form-floating">
-                    <select class="form-select" id="artistaOEscenario" name="artistaOEscenario" required
-                      aria-label="Floating label select example">
-                      <option selected aria-placeholder=""></option>
-                      <option value="Artista" id="busquedaArtista" name="artistaOEscenario">
-                        Artista
-                      </option>
-                      <option value="Escenario" id="busquedaEscenario" name="artistaOEscenario">
-                        Escenario
-                      </option>
-                    </select>
-                    <label for="artistaOEscenario">Artista o escenario</label>
-                  </div>
-                  <br />
-                  <div class="form-floating">
-                    <select class="form-select" id="generoMusical" name="generoMusical"
-                      aria-label="Floating label select example">
-                      <option selected></option>
-                      <option value="Norteño" name="generoNorteno">Norteño</option>
-                      <option value="Cumbia" name="generoCumbia">Cumbia</option>
-                      <option value="Salsa" name="generoSalsa">Salsa</option>
-                      <option value="Mariachi" name="generoMariachi">Mariachi</option>
-                    </select>
-                    <label for="generoMusical">Géneros musicales</label>
-                  </div>
-                  <br />
-                  <div class="form-floating">
-                    <select class="form-select" id="instrumentoMusical" name="instrumentoMusical" aria-label="Floating label select example">
-                      <option selected></option>
-                      <option value="Guitarra" name="instrumentoGuitarra">
-                        Guitarra
-                      </option>
-                      <option value="Acordeón" name="instrumentoAcordeon">
-                        Acordeón
-                      </option>
-                      <option value="Batería" name="instrumentoBateria">
-                        Batería
-                      </option>
-                      <option value="Sintetizador" name="instrumentoSintetizador">
-                        Sintetizador
-                      </option>
-                    </select>
-                    <label for="instrumentoMusical">Instrumentos musicales</label>
-                  </div>
-                  <br />
-                  <div class="form-floating">
-                    <input type="text" class="form-control" name="ubicacionBusqueda" required id="ubicacionBusqueda" placeholder="" />
-                    <label for="ubicacionBusqueda">Ubicación</label>
-                  </div>
-                  <br />
-                  <div class="form-floating">
-                    <input type="number" class="form-control" name="codigoPostal" id="codigoPostal" required
-                      placeholder="" />
-                    <label for="codigoPostal">Código postal</label>
-                  </div>
-                  <br />
-                  <div class="form-floating">
-                    <textarea class="form-control" name="cuerpoPublicacion" id="cuerpoPublicacion" required
-                      placeholder=""></textarea>
-                      <label for="cuerpoPublicacion">Cuerpo de la publicación</label>
+                    <textarea
+                      class="form-control"
+                      id="publicacionTexto"
+                      name="publicacionTexto"
+                      required
+                      placeholder=""
+                    ></textarea>
+                    <label for="publicacionTexto">¿Cómo va tu vibra hoy?</label>
                   </div>
                   <br />
                   <p>Carga una imagen para tu publicación (opcional)</p>
-                  <div class="mb-3">
-                    <input class="form-control" type="file" name="multimediaBusqueda" id="multimediaBusqueda" />
+                  <div>
+                    <input
+                      class="form-control"
+                      type="file"
+                      name="publicacionMultimedia"
+                      id="publicacionMultimedia"
+                    />
                   </div>
                   <br />
-                </fieldset>
-                <!-- Modal footer -->
-                <div class="modal-alinear-botones">
-                  <button type="button" class="boton outlined" data-bs-dismiss="modal">
-                    Cerrar
-                  </button>
-                  <button type="submit" id="publicarBusquedaArtista" class="boton fiat" data-bs-dismiss="modal">
-                    Publicar
-                  </button>
-                </div>
-              </form>
+                  <!-- Modal footer -->
+                  <div class="modal-alinear-botones">
+                    <button
+                      type="button"
+                      class="boton outlined"
+                      data-bs-dismiss="modal"
+                    >
+                      Cerrar
+                    </button>
+                    <button
+                      type="submit"
+                      class="boton fiat"
+                      id="publicarFotoVideo"
+                      data-bs-dismiss="modal"
+                    >
+                      Publicar
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
+      <!-- Modal para "Estoy buscando artistas" -->
       <section>
-        <div
-          class="publicacionFotoVideo"
-          id="contenedorPublicacionFotoVideo"
-        ></div>
+        <div class="modal" id="modalBusquedaArtista">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Crear publicación</h4>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                ></button>
+              </div>
+              <!-- Modal body -->
+              <div class="modal-body">
+                <div class="nueva--publicacion--modal--perfil">
+                  <img
+                    src="../../pages/perfilPrivado/img/fotoPerfilVacio.jpg"
+                    class="img-fluid rounded-circle"
+                    alt=""
+                    id="imgPublicacion"
+                  />
+                  <h4 id="modalNombre"></h4>
+                </div>
+                <br />
+                <form
+                  class="row g-3 needs-validation"
+                  novalidate
+                  action=""
+                  id="formularioBusquedaArtista"
+                >
+                  <fieldset>
+                    <div class="form-floating">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="tituloPublicacion"
+                        id="tituloPublicacion"
+                        required
+                        placeholder=""
+                      />
+                      <label for="tituloPublicacion"
+                        >Título de la publicación</label
+                      >
+                    </div>
+                    <br />
+                    <div class="form-floating">
+                      <select
+                        class="form-select"
+                        id="artistaOEscenario"
+                        name="artistaOEscenario"
+                        required
+                        aria-label="Floating label select example"
+                      >
+                        <option selected aria-placeholder=""></option>
+                        <option
+                          value="Artista"
+                          id="busquedaArtista"
+                          name="artistaOEscenario"
+                        >
+                          Artista
+                        </option>
+                        <option
+                          value="Escenario"
+                          id="busquedaEscenario"
+                          name="artistaOEscenario"
+                        >
+                          Escenario
+                        </option>
+                      </select>
+                      <label for="artistaOEscenario">Artista o escenario</label>
+                    </div>
+                    <br />
+                    <div class="form-floating">
+                      <select
+                        class="form-select"
+                        id="generoMusical"
+                        name="generoMusical"
+                        aria-label="Floating label select example"
+                      >
+                        <option selected></option>
+                        <option value="Norteño" name="generoNorteno">Norteño</option>
+                        <option value="Cumbia" name="generoCumbia">Cumbia</option>
+                        <option value="Salsa" name="generoSalsa">Salsa</option>
+                        <option value="generoMariachi" name="generoMariachi">
+                          Mariachi
+                        </option>
+                      </select>
+                      <label for="generoMusical">Géneros musicales</label>
+                    </div>
+                    <br />
+                    <div class="form-floating">
+                      <select
+                        class="form-select"
+                        id="instrumentoMusical"
+                        name="instrumentoMusical"
+                        aria-label="Floating label select example"
+                      >
+                        <option selected></option>
+                        <option value="Guitarra" name="instrumentoGuitarra">
+                          Guitarra
+                        </option>
+                        <option value="Acordeón" name="instrumentoAcordeon">
+                          Acordeón
+                        </option>
+                        <option value="Batería" name="instrumentoBateria">
+                          Batería
+                        </option>
+                        <option value="Sintetizador" name="instrumentoSintetizador">
+                          Sintetizador
+                        </option>
+                      </select>
+                      <label for="instrumentoMusical"
+                        >Instrumentos musicales</label
+                      >
+                    </div>
+                    <br />
+                    <div class="form-floating">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="ubicacionBusqueda"
+                        required
+                        id="ubicacionBusqueda"
+                        placeholder=""
+                      />
+                      <label for="ubicacionBusqueda">Ubicación</label>
+                    </div>
+                    <br />
+                    <div class="form-floating">
+                      <input
+                        type="number"
+                        class="form-control"
+                        name="codigoPostal"
+                        id="codigoPostal"
+                        required
+                        placeholder=""
+                      />
+                      <label for="codigoPostal">Código postal</label>
+                    </div>
+                    <br />
+                    <div class="form-floating">
+                      <textarea
+                        class="form-control"
+                        name="cuerpoPublicacion"
+                        id="cuerpoPublicacion"
+                        required
+                        placeholder=""
+                      ></textarea>
+                      <label for="cuerpoPublicacion"
+                        >Cuerpo de la publicación</label
+                      >
+                    </div>
+                    <br />
+                    <p>Carga una imagen para tu publicación (opcional)</p>
+                    <div class="mb-3">
+                      <input
+                        class="form-control"
+                        type="file"
+                        name="multimediaBusqueda"
+                        id="multimediaBusqueda"
+                      />
+                    </div>
+                    <br />
+                  </fieldset>
+                  <!-- Modal footer -->
+                  <div class="modal-alinear-botones">
+                    <button
+                      type="button"
+                      class="boton outlined"
+                      data-bs-dismiss="modal"
+                    >
+                      Cerrar
+                    </button>
+                    <button
+                      type="submit"
+                      id="publicarBusquedaArtista"
+                      class="boton fiat"
+                      data-bs-dismiss="modal"
+                    >
+                      Publicar
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!--Cierra sección de nueva publicación-->

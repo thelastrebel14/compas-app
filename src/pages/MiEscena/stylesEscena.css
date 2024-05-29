@@ -401,7 +401,8 @@
 
 /*Tu Ritmo*/
 
-#publicacionesMiEscena-contenedor {
+#publicacionesMiEscena-contenedor, 
+#nuevaPublicacion-contenedor {
     display: flex;
     flex-direction: column;
     justify-content: center;
