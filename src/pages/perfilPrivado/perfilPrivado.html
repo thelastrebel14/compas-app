@@ -63,7 +63,7 @@
         <div class="header--portada">
             <!-- <div id="contenedor--imgPortada"></div>   -->
             <!--CONTENEDOR IMAGEN PORTADA-->
-            <img id="contenedor--imgPortada" class="header--imgPortada--img" src="./img/imgPortada1.jpg" style="">
+            <img id="contenedor--imgPortada" class="header--imgPortada--img" src="./img/imgPortada1.jpg">
             <span class="material-symbols-outlined header--portada--symbolEditCamera" id="edit-imgPortada" data-bs-toggle="modal" data-bs-target="#headerPortadaModal">
                 photo_camera
             </span>
@@ -584,13 +584,13 @@
               <form>
                 <div class="mb-3">
                     <label for="img--cover" class="col-form-label">Cargar foto</label>
-                    <input type="file" name="foto--cover" id="img--cover" accept="image/png, image/jpeg">
+                    <input type="file" name="foto--cover" id="img--cover" accept="image/png, image/jpeg, image/jpg">
                   </div>
               </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-form-secondary" data-bs-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn-form-primary">Cargar foto</button>
+              <button type="button" id="botonImgPortada" class="btn btn-form-primary">Cargar foto</button>
             </div>
           </div>
         </div>
