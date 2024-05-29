@@ -61,7 +61,9 @@
 <!-------------------------- FIN Navbar -------------------------->
     <header>
         <div class="header--portada">
-            <div id="contenedor--imgPortada"></div>  <!--CONTENEDOR IMAGEN PORTADA-->
+            <!-- <div id="contenedor--imgPortada"></div>   -->
+            <!--CONTENEDOR IMAGEN PORTADA-->
+            <img id="contenedor--imgPortada" class="header--imgPortada--img" src="./img/imgPortada1.jpg" style="">
             <span class="material-symbols-outlined header--portada--symbolEditCamera" id="edit-imgPortada" data-bs-toggle="modal" data-bs-target="#headerPortadaModal">
                 photo_camera
             </span>
@@ -638,18 +640,29 @@
                             <input type="text" class="form-control" id="estadoPerfil" placeholder="Estado">
                             <label for="estadoPerfil" class="col-form-label">Estado</label>
                         </div>
-                        <div class="form-floating mb-3">
+                        
+                        <div class="form-floating mb-3 ">
+                          <div class="titleInputsDinamicos">
                             <h5>Instrumentos</h5>
                             <!-- <input type="text" class="form-control" id="instrumentosPerfil" placeholder="Instrumentos"> -->
                             <!-- <label for="instrumentosPerfil" class="col-form-label">Instrumentos</label> -->
-                            <button type="button" id="button--AddInstrument" class="btn">+</button>
+                            <!-- <button type="button" id="button--AddInstrument" class="btn">+</button> -->
+                            <span id="button--AddInstrument" class="material-symbols-outlined iconAddInputs" >
+                              add_circle
+                              </span>
+                          </div>
                             <div id="contenedor--inputsInstrumentos"></div>
                         </div>
                         <div class="form-floating mb-3">
+                          <div class="titleInputsDinamicos">
                             <h5>Géneros musicales</h5>
                                     <!-- <input type="text" class="form-control" id="generoMusicalPerfil" placeholder="Género musical">
                                     <label for="generoMusicalPerfil" class="col-form-label">Género musical</label> -->
-                            <button type="button" id="button--AddGeneroMusical" class="btn">+</button>
+                            <!-- <button type="button" id="button--AddGeneroMusical" class="btn">+</button> -->
+                            <span id="button--AddGeneroMusical" class="material-symbols-outlined iconAddInputs" >
+                              add_circle
+                              </span>
+                            </div>
                             <div id="contenedor--inputsGenerosMusicales"></div>
                         </div>
                         <!-- <div class="form-floating mb-3">
