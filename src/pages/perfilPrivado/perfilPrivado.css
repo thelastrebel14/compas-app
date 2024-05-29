@@ -2,19 +2,20 @@
 @import "./../../assets/elementos/footer/footer.css";
 
 /* ------------Header (Portada y foto de perfil) ------------*/
-header{
+header {
     width: 100%;
     max-width: 100%;
     height: 538px;
     display: grid;
-    grid-template-columns: repeat(12,1fr);
-    grid-template-rows: repeat(10,1fr);
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(10, 1fr);
     margin-top: 60px;
 }
-.header--portada{
+
+.header--portada {
     display: grid;
-    grid-template-columns: repeat(14,1fr);
-    grid-template-rows: repeat(6,1fr);
+    grid-template-columns: repeat(14, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     width: 100%;
     max-width: 100%;
     height: 400px;
@@ -23,7 +24,9 @@ header{
     grid-column: 1/13;
     grid-row: 1/7;
 }
-.header--portada--symbolEditCamera{ /*-----------  header--portada--symbolEditCamera ------------------*/
+
+.header--portada--symbolEditCamera {
+    /*-----------  header--portada--symbolEditCamera ------------------*/
     height: 55px;
     width: 55px;
     display: flex;
@@ -42,9 +45,11 @@ header{
         'GRAD' 0,
         'opsz' 24
 }
-.header--portada--symbolEditCamera:hover{
+
+.header--portada--symbolEditCamera:hover {
     background-color: var(--hover-color);
 }
+
 /*------------------------------  FotoPerfil   -------------------------------- */
 .header--fotoPerfil {
     margin: 0px 20px;
@@ -53,23 +58,27 @@ header{
     width: 250px;
     height: 250px;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
 }
-.header--fotoPerfil--img{
+
+.header--fotoPerfil--img {
     width: 250px;
-    position: absolute; 
+    position: absolute;
     grid-column: 3/7;
     grid-row: 3/6;
-    
+
 }
-.header--fotoPerfil--img img{
+
+.header--fotoPerfil--img img {
     border-radius: 50%;
 }
+
 /* .rounded-circle {
     border-radius: 50% !important;
 } */
-.header--fotoPerfil--symbolEditCamera{  /*------------------ header--fotoPerfil--symbolEditCamera ------------------- */
+.header--fotoPerfil--symbolEditCamera {
+    /*------------------ header--fotoPerfil--symbolEditCamera ------------------- */
     z-index: 2;
     height: 60px;
     width: 60px;
@@ -89,163 +98,198 @@ header{
         'GRAD' 0,
         'opsz' 24
 }
-.header--fotoPerfil--symbolEditCamera:hover{
+
+.header--fotoPerfil--symbolEditCamera:hover {
     background-color: var(--hover-color);
 }
+
 /* ------------------------------  Información del perfil de usuario   ------------------------------*/
-main{
+main {
     padding-top: 0px !important;
 }
-.profile{
+
+.profile {
     display: grid;
-    grid-template-columns: repeat(12,1fr);
-    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     /* width: auto; */
     /* justify-content: space-between; */
 }
-.profile--info{
-     display: grid;
+
+.profile--info {
+    display: grid;
     /*grid-template-columns: repeat(8,1fr);
     grid-template-rows: repeat(4,1fr); */
     grid-column: 1/9;
     grid-row: 1/3;
 }
-.profile--info--nombreySeguidores{
+
+.profile--info--nombreySeguidores {
     display: flex;
     align-items: center;
     grid-row: 1/2;
 }
-.profile--info--nombreySeguidores--nombre{
+
+.profile--info--nombreySeguidores--nombre {
     margin-right: 14px;
     /* max-width: 372px; */
 }
-.profile--info--nombreySeguidores--nombre h1{
+
+.profile--info--nombreySeguidores--nombre h1 {
     font-weight: bold;
 }
-.profile--info--nombreySeguidores--seguidores h5{
+
+.profile--info--nombreySeguidores--seguidores h5 {
     font-weight: bold;
     color: var(--grey);
 }
-.profile--info--ubicacion{
+
+.profile--info--ubicacion {
     margin-top: 16px;
     grid-row: 2/3;
 }
-.profile--info--enfoque{
+
+.profile--info--enfoque {
     margin-top: 0px;
     display: flex;
 }
-.profile--info--enfoque--instrumentos{
+
+.profile--info--enfoque--instrumentos {
     margin-right: 60px;
 }
-.profile--info--enfoque--instrumentos h5{
+
+.profile--info--enfoque--instrumentos h5 {
     font-weight: 500;
 }
-.profile--info--enfoque--instrumentos p{
+
+.profile--info--enfoque--instrumentos p {
     font-weight: bold;
     color: var(--grey);
 }
-.profile--info--enfoque--generos{
+
+.profile--info--enfoque--generos {
     margin-right: 60px;
 }
-.profile--info--enfoque--generos h5{
+
+.profile--info--enfoque--generos h5 {
     font-weight: 500;
 }
-.profile--info--enfoque--generos p{
+
+.profile--info--enfoque--generos p {
     font-weight: bold;
     color: var(--grey);
 }
-.profile--info--demo{
+
+.profile--info--demo {
     margin: 15px;
     background-color: var(--black);
-    width: auto;  /* modified*/
+    width: auto;
+    /* modified*/
     height: 110px;
     border-radius: 10px;
     grid-column: 1/9;
     grid-row: 3/4;
 }
-.profile--info--demo{
+
+.profile--info--demo {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     align-items: center;
     padding: 15px 28px 15px 22px;
 }
-.profile--info--demo--img{
+
+.profile--info--demo--img {
     background-image: url('img/perfil-demo-img.jpg');
     background-size: cover;
     width: 80px;
     height: 80px;
     border-radius: 10px;
 }
+
 .profile--info--demo--titulo h3,
-.profile--info--demo--titulo h5{
+.profile--info--demo--titulo h5 {
     color: var(--white);
 }
-.profile--follow{
+
+.profile--follow {
     display: flex;
     justify-content: center;
     grid-column: 9/13;
     grid-row: 3/4;
 }
-.profile--follow--buttons{
+
+.profile--follow--buttons {
     display: flex;
     justify-content: end;
     align-items: center;
 }
-.profile--follow--buttons--seguidores{
+
+.profile--follow--buttons--seguidores {
     display: flex;
     justify-content: center;
     text-align: center;
     margin: 5px;
     width: 100px;
 }
-.profile--follow--buttons--siguiendo{
+
+.profile--follow--buttons--siguiendo {
     display: flex;
     justify-content: center;
     text-align: center;
     margin: 5px;
     width: 100px;
 }
-.profile--follow--buttons--donadores{
+
+.profile--follow--buttons--donadores {
     display: flex;
     justify-content: center;
     text-align: center;
     margin-left: 5px;
 }
-.profile--followMensaje{
+
+.profile--followMensaje {
     grid-column: 9/13;
     grid-row: 2/3;
 }
-.profile--follow--mensaje{
+
+.profile--follow--mensaje {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
 }
-h4{
+
+h4 {
     font-weight: bold;
     margin-left: 10px;
 }
-.profile--follow--redes{
+
+.profile--follow--redes {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.profile--follow--redes--icon{
+
+.profile--follow--redes--icon {
     margin: 5px;
 }
+
 /* img{
     cursor: pointer;
     border-radius: 50%; 
  } */
-.imagen--compasApp{
+.imagen--compasApp {
     cursor: pointer;
 }
-.profile--info--editSymbol{ /* ----------    Symbol Profile Info   --------------  */
+
+.profile--info--editSymbol {
+    /* ----------    Symbol Profile Info   --------------  */
     grid-column: 12/13;
     grid-row: 1/2;
 }
-.symbol-edit{
+
+.symbol-edit {
     color: var(--hover-color);
     background-color: var(--secondaryBg-color);
     margin: 25px;
@@ -258,7 +302,8 @@ h4{
     align-items: center;
     cursor: pointer;
 }
-.symbol-edit:hover{
+
+.symbol-edit:hover {
     background-color: var(--grey);
 }
 
@@ -269,12 +314,13 @@ h4{
         grid-template-rows: repeat(3,1fr);
     }
 } */
-@media screen and (max-width: 886px){
-    .profile{
+@media screen and (max-width: 886px) {
+    .profile {
         display: grid;
-        grid-template-columns: repeat(12,1fr);
-        grid-template-rows: repeat(3,1fr);
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(3, 1fr);
     }
+
     .boton {
         display: inline-block;
         padding: 8px 16px;
@@ -286,104 +332,131 @@ h4{
         cursor: pointer;
         transition: background-color 0.3s, border-color 0.3s; */
     }
-    .profile--info--demo{
+
+    .profile--info--demo {
         height: 100px;
     }
-    .profile--info--demo--titulo{
+
+    .profile--info--demo--titulo {
         height: 80px;
     }
+
     .profile--info--demo--titulo h3,
-    .profile--info--demo--titulo h5{
+    .profile--info--demo--titulo h5 {
         font-size: 16px;
     }
-    .profile--info--demo--play--icon{
+
+    .profile--info--demo--play--icon {
         width: 30px;
         margin-left: 5px;
     }
-    .profile--info--demo--img{
+
+    .profile--info--demo--img {
         width: 70px;
         height: 70px;
         margin: 0 5px 0 0;
     }
 }
-@media screen and (max-width: 668px){
-    header{
+
+@media screen and (max-width: 668px) {
+    header {
         width: 100%;
         max-width: 100%;
-        height: 250px; /*----------------------------*/
+        height: 250px;
+        /*----------------------------*/
         display: grid;
-        grid-template-columns: repeat(12,1fr);
-        grid-template-rows: repeat(10,1fr);
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(10, 1fr);
         margin-top: 60px;
     }
-    .header--portada{
+
+    .header--portada {
         display: grid;
-        grid-template-columns: repeat(14,1fr);
-        grid-template-rows: repeat(6,1fr);
+        grid-template-columns: repeat(14, 1fr);
+        grid-template-rows: repeat(6, 1fr);
         width: 100%;
         max-width: 100%;
-        height: 150px;   /*----------------------------*/
+        height: 150px;
+        /*----------------------------*/
         background-image: url("img/fotoPortada.png");
         background-size: cover;
         grid-column: 1/13;
         grid-row: 1/7;
     }
+
     .header--fotoPerfil {
-        grid-column: 1/5;  /*----------------------------*/
-        grid-row: 4/9;  /*----------------------------*/
-        width: 150px;  /*----------------------------*/
+        grid-column: 1/5;
+        /*----------------------------*/
+        grid-row: 4/9;
+        /*----------------------------*/
+        width: 150px;
+        /*----------------------------*/
         height: 150px;
         display: grid;
-        grid-template-columns: repeat(3,1fr);
-        grid-template-rows: repeat(3,1fr);
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
     }
-    .header--fotoPerfil--img{
-        width: 150px;   /*----------------------------*/
-        position: absolute; 
+
+    .header--fotoPerfil--img {
+        width: 150px;
+        /*----------------------------*/
+        position: absolute;
         grid-column: 3/7;
         grid-row: 3/6;
-        
+
     }
-    .header--portada--symbolEditCamera{ /*-----------  header--portada--symbolEditCamera ------------------*/
+
+    .header--portada--symbolEditCamera {
+        /*-----------  header--portada--symbolEditCamera ------------------*/
         height: 40px;
         width: 40px;
         font-size: 30px;
     }
-    .header--fotoPerfil--symbolEditCamera{
+
+    .header--fotoPerfil--symbolEditCamera {
         height: 40px;
         width: 40px;
         font-size: 30px;
     }
-    .profile{
+
+    .profile {
         display: grid;
-        grid-template-columns: repeat(6,1fr);
-        grid-template-rows: repeat(3,1fr) .5fr 1fr;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(3, 1fr) .5fr 1fr;
     }
-    .profile--info{
+
+    .profile--info {
         display: grid;
-       grid-column: 1/7;
-       grid-row: 1/3;
-   }
-   .profile--info--nombreySeguidores {
-    flex-direction: column;
-    align-items: start;
+        grid-column: 1/7;
+        grid-row: 1/3;
     }
-   .profile--info--enfoque--generos{
+
+    .profile--info--nombreySeguidores {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .profile--info--enfoque--generos {
         margin: 0 10px;
-   }
-   .profile--info--enfoque--instrumentos{
-    margin: 0 10px;
-   }
-   .profile--info--demo{
-    grid-column: 1/7;
-    grid-row: 5/6;
-    height: 80px;
-   }
-    .profile--info--editSymbol{ /* ----------    Symbol Profile Info   --------------  */
+    }
+
+    .profile--info--enfoque--instrumentos {
+        margin: 0 10px;
+    }
+
+    .profile--info--demo {
+        grid-column: 1/7;
+        grid-row: 5/6;
+        height: 80px;
+    }
+
+    .profile--info--editSymbol {
+        /* ----------    Symbol Profile Info   --------------  */
         grid-column: 6/7;
         grid-row: 1/2;
     }
-    .symbol-edit{
+
+    .symbol-edit {
         color: var(--hover-color);
         background-color: var(--secondaryBg-color);
         margin: 5px;
@@ -396,55 +469,66 @@ h4{
         align-items: center;
         cursor: pointer;
     }
-    .profile--follow--buttons{
+
+    .profile--follow--buttons {
         margin-top: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .profile--follow--buttons--seguidores{
+
+    .profile--follow--buttons--seguidores {
         margin: 5px;
         /* width: 80px; */
     }
-    .profile--follow--buttons--siguiendo{
+
+    .profile--follow--buttons--siguiendo {
         display: flex;
         justify-content: center;
         text-align: center;
         margin: 5px;
         /* width: 80px; */
     }
-    .profile--follow--buttons--donadores{
+
+    .profile--follow--buttons--donadores {
         margin-left: 5px;
         width: 80px;
     }
-    .profile--followMensaje{
+
+    .profile--followMensaje {
         grid-column: 1/7;
         grid-row: 3/4;
     }
-    .profile--follow{
+
+    .profile--follow {
         display: flex;
         justify-content: center;
         grid-column: 1/7;
         grid-row: 4/5;
         height: 80px;
     }
-.profile--follow--redes--icon{
+
+    .profile--follow--redes--icon {
         height: 30px;
         width: 30px;
     }
+
     .profile--info--demo--titulo h3,
-    .profile--info--demo--titulo h5{
-    color: var(--white);
-    font-size: 16px;
+    .profile--info--demo--titulo h5 {
+        color: var(--white);
+        font-size: 16px;
     }
-    .profile--info--demo--play--icon{
+
+    .profile--info--demo--play--icon {
         width: 30px;
         margin-left: 5px;
     }
-    .profile--info--demo{
+
+    .profile--info--demo {
         padding: 2px;
     }
-    .profile--info--demo--img{
+
+    .profile--info--demo--img {
         width: 55px;
         height: 60%;
         margin: 0 5px 0 5px;
@@ -539,10 +623,6 @@ h4{
 }
 
 @media screen and (max-width: 768px) {
-    .escenarios hr,
-    .demos hr {
-        margin-bottom: 0px
-    }
 
     .escenarios--cards,
     .demos--cards {
@@ -617,62 +697,73 @@ h4{
 }
 
 /* ------------------------------------   Acerca de    ------------------------------- */
-.acerca{
+.acerca {
     margin-top: 50px;
 }
-.acerca--encabezado{
+
+.acerca--encabezado {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.acerca .linea{
+
+.acerca .linea {
     margin: 16px 0 32px 0;
 }
+
 .acerca--info {
     width: auto;
-    
-} 
-.acerca--info p:nth-child(2){
+
+}
+
+.acerca--info p:nth-child(2) {
     font-weight: bold;
     color: var(--grey);
     cursor: pointer;
 }
-.btn-form-acercaDe-primary{
+
+.btn-form-acercaDe-primary {
     color: #fff;
     background-color: var(--main-color);
     border: 2px solid var(--main-color);
 }
-.btn-form-acercaDe-primary:hover{
+
+.btn-form-acercaDe-primary:hover {
     color: #fff;
     background-color: var(--hover-color);
-    border: 2px solid var(--hover-color); 
+    border: 2px solid var(--hover-color);
 }
-.btn-form-acercaDe-primary:active{
+
+.btn-form-acercaDe-primary:active {
     background-color: var(--active-color) !important;
     border: 2px solid var(--active-color) !important;
 }
-.btn-form-acercaDe-secondary{
+
+.btn-form-acercaDe-secondary {
     color: var(--main-color);
     background-color: transparent;
     border: 2px solid var(--main-color);
 }
-.btn-form-acercaDe-secondary:hover{
+
+.btn-form-acercaDe-secondary:hover {
     color: var(--hover-color);
     background-color: transparent;
-    border: 2px solid var(--hover-color); 
+    border: 2px solid var(--hover-color);
 }
-.btn-form-acercaDe-secondary:active{
+
+.btn-form-acercaDe-secondary:active {
     color: var(--active-color) !important;
     background-color: transparent !important;
     border: 2px solid var(--active-color) !important;
 }
-.form-control{
+
+.form-control {
     height: 300px;
 }
 
 /*----------------------------- Sección Recomendaciones -----------------------------------*/
- /* Sección Reseñas */
- .carousel {
+/* Sección Reseñas */
+.carousel {
     margin-top: 82px;
 }
 
@@ -829,7 +920,7 @@ h4{
     width: 80%;
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: space-evenly;
     gap: 30px;
     overflow-x: hidden;
 }
@@ -850,14 +941,18 @@ h4{
         overflow-x: scroll;
         width: 100%;
     }
-    .carousel--cards::-webkit-scrollbar{
+
+    .carousel--cards::-webkit-scrollbar {
         width: 8px;
+
+        height: 5px;
     }
+
     .carousel--cards::-webkit-scrollbar-track {
         background: transparent;
         /* color of the tracking area */
     }
-    
+
     .carousel--cards::-webkit-scrollbar-thumb {
         background-color: var(--main-color);
         /* color of the scroll thumb */
@@ -865,5 +960,6 @@ h4{
         /* roundness of the scroll thumb */
         border: 3px solid transparent;
         /* creates padding around scroll thumb */
+
     }
 }
