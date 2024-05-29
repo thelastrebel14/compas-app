@@ -52,3 +52,44 @@ nextArrowAnuncios.addEventListener("click", () => {
   carouselCardsContainerAnuncios.scrollLeft += 250;
   // alert("next");
 });
+
+// ------------------Carrusel de sección de Eventos--------------------
+const prevArrowEventos = document.querySelector("#carouselPrevArrowEventos");
+const nextArrowEventos = document.querySelector("#carouselNextArrowEventos");
+const carouselCardsContainerEventos = document.querySelector(
+  "#carouselCardsEventos"
+);
+
+const autoScrollEventos = () => {
+  if (
+    carouselCardsContainerEventos.scrollLeft +
+      carouselCardsContainerEventos.clientWidth >=
+    carouselCardsContainerEventos.scrollWidth
+  ) {
+    carouselCardsContainerEventos.scrollLeft = 0;
+  } else {
+    carouselCardsContainerEventos.scrollLeft += 1;
+  }
+};
+
+let intervalEventos = setInterval(autoScrollEventos, 10);
+
+prevArrowEventos.addEventListener("click", () => {
+  clearInterval(intervalEventos);
+  carouselCardsContainerEventos.scrollLeft -= 250;
+  intervalEventos = setInterval(autoScrollEventos, 10);
+});
+
+nextArrowEventos.addEventListener("click", () => {
+  clearInterval(intervalEventos);
+  carouselCardsContainerEventos.scrollLeft += 250;
+  intervalEventos = setInterval(autoScrollEventos, 10);
+});
+
+carouselCardsContainerEventos.addEventListener("mouseover", () => {
+  clearInterval(intervalEventos);
+});
+
+carouselCardsContainerEventos.addEventListener("mouseout", () => {
+  intervalEventos = setInterval(autoScrollEventos, 10);
+});

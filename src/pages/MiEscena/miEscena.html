@@ -77,80 +77,51 @@
     <main>
       <h1>Mi Escena</h1>
       <h3>Encuentra músicos y escenarios cerca de ti</h3>
-      <!--Carusel de publicidad-->
-      <div
-        id="demo"
-        class="carousel carousel-principal slide"
-        data-bs-ride="carousel"
-      >
-        <!-- Indicators/dots -->
-        <div
-          id="bannerIndicadoresCarousel-contenedor"
-          class="carousel-indicators"
-        >
-          <button
-            type="button"
-            data-bs-target="#demo"
-            data-bs-slide-to="0"
-            class="active"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#demo"
-            data-bs-slide-to="1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#demo"
-            data-bs-slide-to="2"
-          ></button>
+
+      <section class="escenarios">
+        <h2>Podría interesarte</h2>
+        <hr />
+
+        <div class="carousel">
+          <img
+            id="carouselPrevArrowEventos"
+            class="carousel--prevArrow"
+            src="img/prev.png"
+            alt=""
+          />
+          <div id="carouselCardsEventos" class="carousel--cards">
+            <div class="carousel--cards--item">
+              <div class="card escenarios--item evento">
+                <img
+                  src="../../assets/miEscena/banner_1.jpg"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <div class="carousel--cards--item">
+              <div class="card escenarios--item evento">
+                <img
+                  src="../../assets/miEscena/banner_2.jpg"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <div class="carousel--cards--item">
+              <div class="card escenarios--item evento">
+                <img
+                  src="../../assets/miEscena/banner_3.jpg"
+                  alt="..."
+                />
+              </div>
+            </div>
         </div>
-        <!-- The slideshow/carousel -->
-        <div id="bannerElementosCarousel-contenedor" class="carousel-inner">
-          <div class="carousel-item active">
-            <img
-              src="../../assets/miEscena/banner_1.jpg"
-              alt="Banner"
-              class="carousel-img carousel-principal-img d-block w-100"
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              src="../../assets/miEscena/banner_2.jpg"
-              alt="Banner"
-              class="carousel-img carousel-principal-img d-block w-100"
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              src="../../assets/miEscena/banner_3.jpg"
-              alt="Banner"
-              class="carousel-img carousel-principal-img d-block w-100"
-            />
-          </div>
-        </div>
-        <!-- Left and right controls/icons -->
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#demo"
-          data-bs-slide="prev"
-        >
-          <span class="material-symbols-outlined custom-arrow"
-            >arrow_back_ios</span
-          >
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#demo"
-          data-bs-slide="next"
-        >
-          <span class="material-symbols-outlined custom-arrow"
-            >arrow_forward_ios</span
-          >
-        </button>
-      </div>
+        <img
+            id="carouselNextArrowEventos"
+            src="img/next.png"
+            alt=""
+            class="carousel--nextArrow"
+          />
+      </section>
 
       <!--Comienza sección de nueva publicación-->
       <section class="nueva--publicacion">
@@ -467,8 +438,6 @@
 
       <section class="dashboard-container">
         <div class="publicaciones-contenedor">
-          <!-- Tu Ritmo-->
-          <h2 class="boldTx">Tu Ritmo</h2>
           <!-- Sección de los Escenarios -->
           <section class="escenarios">
             <h2>Podría interesarte</h2>
@@ -514,6 +483,13 @@
                 class="carousel--nextArrow"
               />
           </section>
+
+          <!-- Tu Ritmo-->
+          <h2 class="boldTx">Tu Ritmo</h2>
+          <hr/>
+          <div id="nuevaPublicacion-contenedor"></div>
+          <div id="publicacionesMiEscena-contenedor"></div>
+
           <section class="escenarios">
             <h2>Se busca talento cerca de ti</h2>
             <hr/>
@@ -621,93 +597,6 @@
                 class="carousel--nextArrow"
               />
           </section>
-          <div id="nuevaPublicacion-contenedor"></div>
-          <div id="publicacionesMiEscena-contenedor"></div>
-        </div>
-
-        <div class="prueba">
-          <!-- Anuncios-->
-          <h2>Anuncios</h2>
-          <div class="anuncios-element">
-            <!-- Escenarios -->
-            <h3>Escenarios</h3>
-            <div
-              id="carouselExampleEscenarios"
-              class="carousel carousel-anuncios slide"
-            >
-              <div
-                id="escenariosIndicadoresCarousel-contenedor"
-                class="carousel-indicators"
-              >
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleEscenarios"
-                  data-bs-slide-to="0"
-                  class="active"
-                  aria-current="true"
-                  aria-label="Slide 1"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleEscenarios"
-                  data-bs-slide-to="1"
-                  aria-label="Slide 2"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleEscenarios"
-                  data-bs-slide-to="2"
-                  aria-label="Slide 3"
-                ></button>
-              </div>
-              <div
-                id="escenariosElementosCarousel-contenedor"
-                class="carousel-inner"
-              >
-                <div class="carousel-item active">
-                  <img
-                    src="https://www.decoforevents.com/wp-content/uploads/2019/01/tarima-de-escenario-premios-pimec.jpg"
-                    class="carousel-img carousel-anuncios-img d-block w-100"
-                    alt="..."
-                  />
-                </div>
-                <div class="carousel-item">
-                  <img
-                    src="https://hypeabis.id/assets/content/20230904115005000000fdafdf.jpg"
-                    class="carousel-img carousel-anuncios-img d-block w-100"
-                    alt="..."
-                  />
-                </div>
-                <div class="carousel-item">
-                  <img
-                    src="https://www.alwatan.com.sa/uploads/images/2023/01/09/887527.png"
-                    class="carousel-img carousel-anuncios-img d-block w-100"
-                    alt="..."
-                  />
-                </div>
-              </div>
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselExampleEscenarios"
-                data-bs-slide="prev"
-              >
-                <span class="material-symbols-outlined custom-arrow"
-                  >arrow_back_ios</span
-                >
-              </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExampleEscenarios"
-                data-bs-slide="next"
-              >
-                <span class="material-symbols-outlined custom-arrow"
-                  >arrow_forward_ios</span
-                >
-              </button>
-            </div>
-          </div>
         </div>
       </section>
     </main>
