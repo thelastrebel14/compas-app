@@ -382,7 +382,8 @@ function crearElementoPublicacion(datosPublicacion) {
   inputComentario.classList.add("form-control", "input-comentario");
   inputComentario.placeholder = "Comentar";
   inputComentario.name = "comentario";
-  inputComentario.id = "comentario";
+  inputComentario.id = `${datosPublicacion.idPublicacion}-comentarioInput-${datosPublicacion.idAutor}`;
+
   var comentarioLabel = document.createElement("label");
   comentarioLabel.setAttribute("for", "comentario");
   comentarioLabel.classList.add("form-label");
@@ -396,6 +397,7 @@ function crearElementoPublicacion(datosPublicacion) {
   // Contenedor de comentarios
   var comentariosContenedor = document.createElement("div");
   comentariosContenedor.classList.add("comentarios-contenedor");
+  comentariosContenedor.id = `${datosPublicacion.idPublicacion}-comentarios-contenedor-${datosPublicacion.idAutor}`;
 
   // Agregar elementos al contenedor principal
   publicacionContenedor.appendChild(autorContenedor);
@@ -463,7 +465,6 @@ const myModal = bootstrap.Modal.getOrCreateInstance('modalFotoVideo');
 myModal.hide();
 });
 */
-
 
 /*
 // Editar publicación
@@ -638,3 +639,8 @@ function eliminarTodasPublicaciones() {
 
 // IMPORTANTE: Definan si usar localStorage o fetch en todas las funciones, sería uno o el otro en todas las funciones.
 // El ejemplo de fetch ya lo tienen, es modificar el method a GET o POST según corresponda, apóyense de documentación.
+
+const modalNombre = document.getElementById("modalNombre");
+modalNombre.textContent = JSON.parse(
+  localStorage.getItem("usuarioJSON")
+).nombre;
