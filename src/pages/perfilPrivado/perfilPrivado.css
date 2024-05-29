@@ -459,6 +459,12 @@ h4{
     align-items: center;
 }
 
+/*--------------------------Sección de sólo los escenarios----------------*/
+.escenarios--header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
 /* ----------Sección de demos   /   Sección de Escenarios------------- */
 /* ----------Sección de demos   /   Sección de Escenarios------------- */
 .escenarios,
