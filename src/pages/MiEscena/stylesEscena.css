@@ -80,7 +80,8 @@
     margin-left: 10px;
 
 }
-.material-symbols-outlined:hover{
+
+.material-symbols-outlined:hover {
     color: var(--active-color);
 }
 
@@ -99,8 +100,8 @@
 
 
 
-@media screen and (max-width:1100px ) {
-    .material-symbols-outlined{
+@media screen and (max-width:1100px) {
+    .material-symbols-outlined {
         color: var(--main-color);
     }
 
@@ -487,4 +488,230 @@
 
 .anuncios-element {
     margin-bottom: 16px;
+}
+
+/* ---------CARRUSEL----------- */
+.carousel {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.carousel--prevArrow,
+.carousel--nextArrow {
+    cursor: pointer;
+}
+
+
+.carousel--cards {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 30px;
+    overflow-x: hidden;
+}
+
+@media screen and (max-width: 768px) {
+    .carousel {
+        justify-content: center;
+    }
+
+    .carousel--prevArrow,
+    .carousel--nextArrow {
+        /* visibility: hidden; */
+        display: none;
+    }
+
+    .carousel--cards {
+        padding-bottom: 20px;
+        overflow-x: scroll;
+        width: 100%;
+    }
+
+    .carousel--cards::-webkit-scrollbar {
+        width: 8px;
+
+        height: 5px;
+    }
+
+    .carousel--cards::-webkit-scrollbar-track {
+        background: transparent;
+        /* color of the tracking area */
+    }
+
+    .carousel--cards::-webkit-scrollbar-thumb {
+        background-color: var(--main-color);
+        /* color of the scroll thumb */
+        border-radius: 20px;
+        /* roundness of the scroll thumb */
+        border: 3px solid transparent;
+        /* creates padding around scroll thumb */
+    }
+}
+
+/* ----------Sección de demos   /   Sección de Escenarios------------- */
+/* ----------Sección de demos   /   Sección de Escenarios------------- */
+.escenarios,
+.demos {
+    margin-top: 90px;
+    /* display: none; */
+}
+
+.escenarios hr,
+.demos hr {
+    margin-top: 16px;
+    margin-bottom: 32px;
+}
+
+.escenarios--cards,
+.demos--cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.escenarios--cards--item,
+.demos--cards--item {
+    width: 286px;
+    max-width: 286px;
+    height: 286px;
+    max-height: 286px;
+}
+
+.escenarios--cards--item img,
+.demos--cards--item img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.escenarios--item,
+.demos--item {
+    width: 286px;
+    height: 286px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.escenarios--item img,
+.demos--item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+.escenarios--item--info,
+.demos--item--info {
+    border-radius: 10px;
+    position: absolute;
+    text-align: center;
+    color: var(--white);
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.escenarios--item--info .card-title,
+.demos--item--info .card-title {
+    margin: 0;
+    padding: 0;
+}
+
+.escenarios--item--info h4 {
+    margin-top: 4px;
+    margin-bottom: 6px;
+}
+
+.escenarios--item--info button,
+.demos--item--info button {
+    margin-top: 18px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .escenarios--cards,
+    .demos--cards {
+        align-items: start;
+        justify-content: left;
+    }
+
+    .escenarios--cards--item,
+    .demos--cards--item {
+        width: 200px;
+        max-width: 200px;
+        height: 200px;
+        max-height: 200px;
+    }
+
+    .escenarios--item,
+    .demos--item {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .escenarios--cards--item,
+    .demos--cards--item {
+        width: 300px;
+        max-width: 300px;
+        height: 300px;
+        max-height: 300px;
+    }
+
+    .escenarios--item,
+    .demos--item {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+
+    .escenarios--cards--item,
+    .demos--cards--item {
+        width: 250px;
+        max-width: 250px;
+        height: 250px;
+        max-height: 250px;
+    }
+
+    .escenarios--item,
+    .demos--item {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 324px) {
+
+    .escenarios--cards--item,
+    .demos--cards--item {
+        width: 210px;
+        max-width: 210px;
+        height: 210px;
+        max-height: 210px;
+    }
+
+    .escenarios--item,
+    .demos--item {
+        width: 210px;
+        height: 210px;
+    }
+}
+
+.publicaciones-contenedor {
+    width: 100%;
 }
