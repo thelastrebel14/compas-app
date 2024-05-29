@@ -11,6 +11,10 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,100..700,0..1,-50..200"
+    />
     <link rel="stylesheet" href="registroDeUsuario.css" />
   </head>
   <body>
@@ -159,7 +163,11 @@
               </div>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="direccionCheckbox">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="direccionCheckbox"
+              />
               <label class="form-check-label" for="direccionCheckbox">
                 Si no encuentras tu estado, da click aquí!
               </label>
@@ -167,44 +175,38 @@
             <!-- linea divisora del contenido -->
             <hr />
             <!-- Seleccion de tipo de usuario con radio buttons -->
-            <label>Selecciona el tipo de usuario que eres</label>
+            <label>Muestranos tus talentos!</label>
             <section id="seleccionUsuario">
               <!-- Radio Soy músico -->
               <section class="column-gap-3" id="seleccionMusico">
-                <div class="col-md-6 form-check m-3">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="flexRadioDefault"
-                    id="soyMusico"
-                    checked
-                  />
-                  <label class="form-check-label" for="soyMusico">
-                    Soy músico
-                  </label>
-                </div>
                 <section id="musicoInputs">
-                  <div class="col-md-6 form-floating m-3">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="inputInstrumentos"
-                      placeholder="Instrumentos músicales"
-                    />
-                    <label for="inputInstrumentos" class="form-label"
-                      >Instrumentos músicales</label
-                    >
+                  <div id="instrumentosMusicalesContainer">
+                    <label>Introduce los instrumentos que tocas</label>
+                    <div class="col-md-6 form-floating m-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputInstrumentos"
+                        placeholder="Instrumentos músicales"
+                      />
+                      <label for="inputInstrumentos" class="form-label"
+                        >Instrumentos músicales</label
+                      >
+                    </div>
                   </div>
-                  <div class="col-md-6 form-floating m-3">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="inputGenerosMusicales"
-                      placeholder="Géneros músicales"
-                    />
-                    <label for="inputGenerosMusicales" class="form-label"
-                      >Géneros músicales</label
-                    >
+                  <div id="generosMusicalesContainer">
+                    <label>Introduce tus géneros músicales</label>
+                    <div class="col-md-6 form-floating m-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inputGenerosMusicales"
+                        placeholder="Géneros músicales"
+                      />
+                      <label for="inputGenerosMusicales" class="form-label"
+                        >Géneros músicales</label
+                      >
+                    </div>
                   </div>
                 </section>
               </section>
@@ -212,11 +214,11 @@
               <!-- Radio Soy escenario -->
               <section class="column-gap-3" id="usuarioChips">
                 <section class="d-flex m-3 row" id="instrumentosChips">
-                    <label>Tus instrumentos músicales</label>
-                  </section>
-                  <section class="col-md-6 m-3 row" id="generosChips">
-                      <label>Tus generos músicales</label>
-                    </section>
+                  <label>Tus instrumentos músicales</label>
+                </section>
+                <section class="col-md-6 m-3 row" id="generosChips">
+                  <label>Tus generos músicales</label>
+                </section>
               </section>
             </section>
             <hr />
@@ -237,6 +239,17 @@
       </form>
       <!-- fin del formulario de registro -->
     </main>
+    <footer class="footer">
+      <a href="../../../index.html">Acerca de</a>
+      <a href="#">Términos y condiciones</a>
+      <a href="#">Seguridad y privacidad</a>
+      <div class="footer--copyright">
+        <span class="material-symbols-outlined" style="font-size: 22px">
+          copyright
+        </span>
+        <a href="#">Compás App 2024</a>
+      </div>
+    </footer>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

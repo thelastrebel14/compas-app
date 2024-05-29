@@ -1,10 +1,10 @@
 //modelo de objetos del formulario
 
 //selecion de elementos del documento
-const radioSoyMusico = document.getElementById("soyMusico");
+//const radioSoyMusico = document.getElementById("soyMusico");
 //const radioSoyEscenario = document.getElementById("soyEscenario");
-const musicoInputs = document.getElementById("musicoInputs");
-const escenarioInputs = document.getElementById("escenarioInputs");
+//const musicoInputs = document.getElementById("musicoInputs");
+//const escenarioInputs = document.getElementById("escenarioInputs");
 
 //funcionalidad dinamica para los radio buttons
 /*radioSoyEscenario.addEventListener(
@@ -17,15 +17,15 @@ const escenarioInputs = document.getElementById("escenarioInputs");
   })
 );*/
 
-radioSoyMusico.addEventListener(
-  "click",
-  (mostrarInputs = () => {
-    if (radioSoyMusico.checked) {
-      musicoInputs.hidden = false;
-      escenarioInputs.hidden = true;
-    }
-  })
-);
+// radioSoyMusico.addEventListener(
+//   "click",
+//   (mostrarInputs = () => {
+//     if (radioSoyMusico.checked) {
+//       musicoInputs.hidden = false;
+//       escenarioInputs.hidden = true;
+//     }
+//   })
+// );
 
 const cp = () => {
   if (!direccionCheckbox.checked) {
@@ -70,7 +70,7 @@ class RegistroDeUsuario {
     estado,
     ciudad,
     codigoPostal,
-    isMusico,
+    //isMusico,
     instrumentosMusicales,
     generosMusicales //,
     //isEscenario,
@@ -88,15 +88,16 @@ class RegistroDeUsuario {
         (this.ciudad = ciudad),
         (this.codigoPostal = codigoPostal);
     }
-    tipoUsuario: {
-      (this.isMusico = isMusico),
-        (this.instrumentosMusicales = instrumentosMusicales),
+    artista: {
+      //(this.isMusico = isMusico),
+      (this.instrumentosMusicales = instrumentosMusicales),
         (this.generosMusicales = generosMusicales); //,
       //(this.isEscenario = isEscenario),
       // (this.tipoDeEscenario = tipoDeEscenario);
     }
   }
 }
+
 const botonRegistro = document.getElementById("registrarme");
 
 botonRegistro.addEventListener("click", (e) => {
@@ -107,13 +108,22 @@ botonRegistro.addEventListener("click", (e) => {
   const registroEmail = document.getElementById("inputEmail").value;
   const registroContrasena = document.getElementById("inputPassword").value;
   const registroCodigoPostal = document.getElementById("inputCP").value;
-  const inputEstado = document.getElementById("inputEstado");
-  const selectedEstado = inputEstado?.options[inputEstado.selectedIndex];
-  const estadoValue = selectedEstado ? selectedEstado.value : "";
-  const inputCiudad = document.getElementById("inputCiudad");
-  const selectedCiudad = inputCiudad?.options[inputCiudad.selectedIndex];
-  const ciudadValue = selectedCiudad ? selectedCiudad.value : "";
-  const registroIsMusico = document.getElementById("soyMusico").checked;
+  let estadoValue;
+  let ciudadValue;
+  if (!document.getElementById("direccionCheckbox").checked) {
+    const inputEstado = document.getElementById("inputEstado");
+    const inputCiudad = document.getElementById("inputCiudad");
+    const selectedEstado = inputEstado?.options[inputEstado.selectedIndex];
+    estadoValue = selectedEstado ? selectedEstado.value : "";
+    const selectedCiudad = inputCiudad?.options[inputCiudad.selectedIndex];
+    ciudadValue = selectedCiudad ? selectedCiudad.value : "";
+  } else {
+    const inputEstado = document.getElementById("inputTextEstado");
+    const inputCiudad = document.getElementById("inputTextCiudad");
+    estadoValue = inputEstado.value;
+    ciudadValue = inputCiudad.value;
+  }
+  //const registroIsMusico = document.getElementById("soyMusico").checked;
   const registroInstrumentos =
     document.getElementById("inputInstrumentos").value;
   const registroGenerosMusicales = document.getElementById(
@@ -133,9 +143,9 @@ botonRegistro.addEventListener("click", (e) => {
     registroCodigoPostal.trim() === "" ||
     estadoValue.trim() === "" ||
     ciudadValue.trim() === "" ||
-    (registroIsMusico &&
-      (registroInstrumentos.trim() === "" ||
-        registroGenerosMusicales.trim() === "")) //||
+    //(registroIsMusico &&
+    registroInstrumentos.trim() === "" ||
+    registroGenerosMusicales.trim() === "" //||
     // (registroIsEscenario && registroTipoDeEscenario.trim() === "")
   ) {
     //alert("Por favor completa todos los campos obligatorios.");
@@ -154,23 +164,23 @@ botonRegistro.addEventListener("click", (e) => {
     return; // Detener la ejecución si algún campo está incompleto
   } else {
     let usuario;
-    if (registroIsMusico) {
-      usuario = new RegistroDeUsuario(
-        registroNombre.trim(),
-        registroEdad,
-        registroGenero,
-        registroEmail.trim(),
-        registroContrasena,
-        estadoValue,
-        ciudadValue,
-        registroCodigoPostal,
-        registroIsMusico,
-        registroInstrumentos.trim(),
-        registroGenerosMusicales.trim(),
-        false, // No es escenario, por lo tanto false
-        "" // No aplica tipo de escenario
-      );
-    } else {
+    //if (registroIsMusico) {
+    usuario = new RegistroDeUsuario(
+      registroNombre.trim(),
+      registroEdad,
+      registroGenero,
+      registroEmail.trim(),
+      registroContrasena,
+      estadoValue,
+      ciudadValue,
+      registroCodigoPostal,
+      //registroIsMusico,
+      registroInstrumentos.trim(),
+      registroGenerosMusicales.trim() //,
+      //false, // No es escenario, por lo tanto false
+      //"" // No aplica tipo de escenario
+    );
+    /*} else {
       usuario = new RegistroDeUsuario(
         registroNombre.trim(),
         registroEdad,
@@ -186,11 +196,11 @@ botonRegistro.addEventListener("click", (e) => {
         // registroIsEscenario,
         // registroTipoDeEscenario.trim()
       );
-    }
+    }*/
 
     console.log({ usuario });
     const usuarioJSON = JSON.stringify(usuario);
-    window.location.href = "../inicioDeSesion/inicioDeSesion.html";
+    //window.location.href = "../inicioDeSesion/inicioDeSesion.html";
     localStorage.setItem("usuario", usuario.email);
     localStorage.setItem("contraseña", usuario.contrasena);
     localStorage.setItem("usuarioCompleto", usuarioJSON);
@@ -469,11 +479,11 @@ direccionCheckbox.addEventListener("click", function (event) {
 
       //asigna clases y atributos a los elementos
       divEstado.classList.add("form-floating");
-      divEstado.id = "inputTextEstado";
+      divEstado.id = "textEstado";
 
       inputEstado.classList.add("form-control");
       inputEstado.type = "text";
-      inputEstado.id = "inputEstado";
+      inputEstado.id = "inputTextEstado";
       inputEstado.placeholder = "Estado";
       inputEstado.required = true;
 
@@ -493,11 +503,11 @@ direccionCheckbox.addEventListener("click", function (event) {
 
       //asigna clases y atributos a los elementos
       divCiudad.classList.add("form-floating");
-      divCiudad.id = "inputTextCiudad";
+      divCiudad.id = "textCiudad";
 
       inputCiudad.classList.add("form-control");
       inputCiudad.type = "text";
-      inputCiudad.id = "inputCiudad";
+      inputCiudad.id = "inputTextCiudad";
       inputCiudad.placeholder = "Ciudad";
       inputCiudad.required = true;
 
@@ -531,30 +541,47 @@ const inputGenerosMusicales = document.getElementById("inputGenerosMusicales");
 const instrumentosChipContainer = document.getElementById("instrumentosChips");
 const generosChipContainer = document.getElementById("generosChips");
 
-function crearChip(text, container) {
+let instrumento = [];
+let gen = [];
+
+function crearChip(text, container, array) {
+  const lowerText = text.toLowerCase();
+  if (array.includes(lowerText)) {
+    return;
+  }
+  array.push(lowerText);
   const chip = document.createElement("div");
   const chipClose = document.createElement("span");
   chipClose.innerHTML = "&times;";
   chipClose.id = "removeChip";
   chip.classList.add("chip");
+  text = text[0].toUpperCase() + text.slice(1).toLowerCase();
+  console.log(array);
   chip.textContent = text;
   chip.append(chipClose);
   container.append(chip);
   chipClose.addEventListener("click", function (event) {
+    const chipText =
+      event.target.parentElement.firstChild.nodeValue.toLowerCase();
     event.target.parentElement.remove();
+    array.splice(array.indexOf(chipText), 1);
   });
 }
 
-inputInstrumentos.addEventListener("keydown", function (event) {
+function handleInput(event, container, array) {
   if (event.key === "Enter") {
-    let text = event.target.value;
-    crearChip(text, instrumentosChipContainer);
+    let text = event.target.value.trim();
+    if (text !== "") {
+      crearChip(text, container, array);
+      event.target.value = "";
+    }
   }
+}
+
+inputInstrumentos.addEventListener("keydown", function (event) {
+  handleInput(event, instrumentosChipContainer, instrumento);
 });
 
 inputGenerosMusicales.addEventListener("keydown", function (event) {
-  if (event.key === "Enter") {
-    let text = event.target.value;
-    crearChip(text, generosChipContainer);
-  }
+  handleInput(event, generosChipContainer, gen);
 });

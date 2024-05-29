@@ -1,5 +1,6 @@
 @import url(../../../Styles/main.css);
 @import "bootstrap/scss/variables";
+@import url("../../assets/elementos/footer/footer.css");
 
 /* alinea el titulo al centro y le da margin */
 .registroDeUsuario--heading {
@@ -60,17 +61,12 @@
   cursor: pointer;
 }
 #removeChip:hover{
-  color: #fff;
+  color: white;
   transition: 400ms;
 }
 
-.badge{
-  position: relative;
-  color: black;
-  background-color: #ED8413;
-  font-size: 16px;
-  padding: 0.25rem 1.8rem 0.25rem 0.8rem;
-}
+
+
 
 @media screen and (max-width: 768px) {
   #seleccionUsuario {
