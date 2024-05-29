@@ -102,6 +102,9 @@
 @media screen and (max-width:1100px ) {
     .material-symbols-outlined{
         color: var(--main-color);
+        color: black;
+        
+        
     }
 
 
@@ -121,12 +124,10 @@
 
 }
 
-
-
-
 @media (max-width: 1100px){
     .flat{
-        display: none;
+        display: none;}
+}
 
 @media (max-width: 1100px) {
     .boton.flat {
