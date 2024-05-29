@@ -123,309 +123,181 @@
           />
       </section>
 
-      <!--Comienza sección de nueva publicación-->
-      <section class="nueva--publicacion">
-        <div class="nueva--publicacion--alinear">
-          <img
-            src="../../pages/perfilPrivado/img/fotoPerfilVacio.jpg"
-            class="img-fluid rounded-circle"
-            alt="Foto de Perfil"
-            id="imgPublicacion"
-          />
-          <div class="form-floating-principal">
-            <input
-              type="text"
-              data-bs-toggle="modal"
-              data-bs-target="#modalFotoVideo"
-              class="form-control"
-              id=""
-              placeholder="¿Cómo va tu vibra hoy?"
-            />
-          </div>
+    <!--Comienza sección de nueva publicación-->
+    <section class="nueva--publicacion">
+      <div class="nueva--publicacion--alinear">
+        <img src="../../pages/perfilPrivado/img/fotoPerfilVacio.jpg" class="img-fluid rounded-circle"
+          alt="Foto de Perfil" id="imgPublicacion" />
+        <div class="form-floating-principal">
+          <input type="text" data-bs-toggle="modal" data-bs-target="#modalFotoVideo" class="form-control" id=""
+            placeholder="¿Cómo va tu vibra hoy?" />
         </div>
-        <hr />
-        <div class="botones--publicacion">
-          <button data-bs-toggle="modal" data-bs-target="#modalFotoVideo">
-            Foto/Vídeo
-          </button>
-          <button
-            type="button"
-            data-bs-toggle="modal"
-            data-bs-target="#modalArtistas"
-          >
-            Estoy buscando artistas
-          </button>
-        </div>
-      </section>
+      </div>
+      <hr />
+      <div class="botones--publicacion">
+        <button data-bs-toggle="modal" data-bs-target="#modalFotoVideo">
+          Foto/Vídeo
+        </button>
+        <button type="button" data-bs-toggle="modal" data-bs-target="#modalBusquedaArtista">
+          Estoy buscando artistas
+        </button>
+      </div>
+    </section>
 
-      <!-- Modal para "Foto/Vídeo" -->
-      <section>
-        <div class="modal" id="modalFotoVideo">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <!-- Modal Header -->
-              <div class="modal-header">
-                <h4 class="modal-title">Crear publicación</h4>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                ></button>
+    <!-- Modal para "Foto/Vídeo" -->
+    <section>
+      <div class="modal" id="modalFotoVideo">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Crear publicación</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+              <div class="nueva--publicacion--modal--perfil">
+                <img src="../../pages/perfilPrivado/img/fotoPerfilVacio.jpg" class="img-fluid rounded-circle"
+                  alt="" id="imgPublicacion" />
+                <h4 id="modalNombre"></h4>
               </div>
-              <!-- Modal body -->
-              <div class="modal-body">
-                <div class="nueva--publicacion--modal--perfil">
-                  <img
-                    src="../../pages/perfilPrivado/img/fotoPerfilVacio.jpg"
-                    class="img-fluid rounded-circle"
-                    alt="Carlos Santana"
-                    id="imgPublicacion"
-                  />
-                  <h4 id="modalNombre"></h4>
+              <br />
+              <form class="row g-3 needs-validation" novalidate action="" id="formularioFotoVideo">
+                <div class="form-floating">
+                  <textarea class="form-control" id="publicacionTexto" name="publicacionTexto" required
+                    placeholder=""></textarea>
+                  <label for="publicacionTexto">¿Cómo va tu vibra hoy?</label>
                 </div>
                 <br />
-                <form
-                  class="row g-3 needs-validation"
-                  novalidate
-                  action=""
-                  id="formularioFotoVideo"
-                >
+                <p>Carga una imagen para tu publicación (opcional)</p>
+                <div>
+                  <input class="form-control" type="file" name="publicacionMultimedia" id="publicacionMultimedia" />
+                </div>
+                <br />
+                <!-- Modal footer -->
+                <div class="modal-alinear-botones">
+                  <button type="button" class="boton outlined" data-bs-dismiss="modal">
+                    Cerrar
+                  </button>
+                  <button type="submit" class="boton fiat" id="publicarFotoVideo" data-bs-dismiss="modal">
+                    Publicar
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal para "Estoy buscando artistas" -->
+    <section>
+      <div class="modal" id="modalBusquedaArtista">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Crear publicación</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+              <div class="nueva--publicacion--modal--perfil">
+                <img src="../../pages/perfilPrivado/img/fotoPerfilVacio.jpg" class="img-fluid rounded-circle"
+                  alt="Carlos Santana" id="imgPublicacion" />
+                <h4 id="modalNombre"></h4>
+              </div>
+              <br />
+              <form class="row g-3 needs-validation" novalidate action="" id="formularioBusquedaArtista">
+                <fieldset>
                   <div class="form-floating">
-                    <textarea
-                      class="form-control"
-                      id="publicacionTexto"
-                      name="publicacionTexto"
-                      required
-                      placeholder=""
-                    ></textarea>
-                    <label for="publicacionTexto">¿Cómo va tu vibra hoy?</label>
+                    <input type="text" class="form-control" name="tituloPublicacion" id="tituloPublicacion" required placeholder="" />
+                    <label for="tituloPublicacion">Título de la publicación</label>
+                  </div>
+                  <br />
+                  <div class="form-floating">
+                    <select class="form-select" id="artistaOEscenario" name="artistaOEscenario" required
+                      aria-label="Floating label select example">
+                      <option selected aria-placeholder=""></option>
+                      <option value="Artista" id="busquedaArtista" name="artistaOEscenario">
+                        Artista
+                      </option>
+                      <option value="Escenario" id="busquedaEscenario" name="artistaOEscenario">
+                        Escenario
+                      </option>
+                    </select>
+                    <label for="artistaOEscenario">Artista o escenario</label>
+                  </div>
+                  <br />
+                  <div class="form-floating">
+                    <select class="form-select" id="generoMusical" name="generoMusical"
+                      aria-label="Floating label select example">
+                      <option selected></option>
+                      <option value="Norteño" name="generoNorteno">Norteño</option>
+                      <option value="Cumbia" name="generoCumbia">Cumbia</option>
+                      <option value="Salsa" name="generoSalsa">Salsa</option>
+                      <option value="Mariachi" name="generoMariachi">Mariachi</option>
+                    </select>
+                    <label for="generoMusical">Géneros musicales</label>
+                  </div>
+                  <br />
+                  <div class="form-floating">
+                    <select class="form-select" id="instrumentoMusical" name="instrumentoMusical" aria-label="Floating label select example">
+                      <option selected></option>
+                      <option value="Guitarra" name="instrumentoGuitarra">
+                        Guitarra
+                      </option>
+                      <option value="Acordeón" name="instrumentoAcordeon">
+                        Acordeón
+                      </option>
+                      <option value="Batería" name="instrumentoBateria">
+                        Batería
+                      </option>
+                      <option value="Sintetizador" name="instrumentoSintetizador">
+                        Sintetizador
+                      </option>
+                    </select>
+                    <label for="instrumentoMusical">Instrumentos musicales</label>
+                  </div>
+                  <br />
+                  <div class="form-floating">
+                    <input type="text" class="form-control" name="ubicacionBusqueda" required id="ubicacionBusqueda" placeholder="" />
+                    <label for="ubicacionBusqueda">Ubicación</label>
+                  </div>
+                  <br />
+                  <div class="form-floating">
+                    <input type="number" class="form-control" name="codigoPostal" id="codigoPostal" required
+                      placeholder="" />
+                    <label for="codigoPostal">Código postal</label>
+                  </div>
+                  <br />
+                  <div class="form-floating">
+                    <textarea class="form-control" name="cuerpoPublicacion" id="cuerpoPublicacion" required
+                      placeholder=""></textarea>
+                      <label for="cuerpoPublicacion">Cuerpo de la publicación</label>
                   </div>
                   <br />
                   <p>Carga una imagen para tu publicación (opcional)</p>
-                  <div>
-                    <input
-                      class="form-control"
-                      type="file"
-                      name="publicacionMultimedia"
-                      id="publicacionMultimedia"
-                    />
+                  <div class="mb-3">
+                    <input class="form-control" type="file" name="multimediaBusqueda" id="multimediaBusqueda" />
                   </div>
                   <br />
-                  <!-- Modal footer -->
-                  <div class="modal-alinear-botones">
-                    <button
-                      type="button"
-                      class="boton outlined"
-                      data-bs-dismiss="modal"
-                    >
-                      Cerrar
-                    </button>
-                    <button
-                      type="submit"
-                      class="boton fiat"
-                      id="publicarFotoVideo"
-                      data-bs-dismiss="modal"
-                    >
-                      Publicar
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Modal para "Estoy buscando artistas" -->
-      <section>
-        <div class="modal" id="modalBusquedaArtista">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <!-- Modal Header -->
-              <div class="modal-header">
-                <h4 class="modal-title">Crear publicación</h4>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                ></button>
-              </div>
-              <!-- Modal body -->
-              <div class="modal-body">
-                <div class="nueva--publicacion--modal--perfil">
-                  <img
-                    src="../../pages/perfilPrivado/img/fotoPerfilVacio.jpg"
-                    class="img-fluid rounded-circle"
-                    alt="Carlos Santana"
-                    id="imgPublicacion"
-                  />
-                  <h4 id="modalNombre"></h4>
+                </fieldset>
+                <!-- Modal footer -->
+                <div class="modal-alinear-botones">
+                  <button type="button" class="boton outlined" data-bs-dismiss="modal">
+                    Cerrar
+                  </button>
+                  <button type="submit" id="publicarBusquedaArtista" class="boton fiat" data-bs-dismiss="modal">
+                    Publicar
+                  </button>
                 </div>
-                <br />
-                <form
-                  class="row g-3 needs-validation"
-                  novalidate
-                  action=""
-                  id="formularioBusquedaArtista"
-                >
-                  <fieldset>
-                    <div class="form-floating">
-                      <input
-                        type="text"
-                        class="form-control"
-                        name="tituloPublicacion"
-                        id="tituloPublicacion"
-                        required
-                        placeholder=""
-                      />
-                      <label for="tituloPublicacion"
-                        >Título de la publicación</label
-                      >
-                    </div>
-                    <br />
-                    <div class="form-floating">
-                      <select
-                        class="form-select"
-                        id="artistaOEscenario"
-                        name="artistaOEscenario"
-                        required
-                        aria-label="Floating label select example"
-                      >
-                        <option selected aria-placeholder=""></option>
-                        <option
-                          value="1"
-                          id="busquedaArtista"
-                          name="artistaOEscenario"
-                        >
-                          Artista
-                        </option>
-                        <option
-                          value="2"
-                          id="busquedaEscenario"
-                          name="artistaOEscenario"
-                        >
-                          Escenario
-                        </option>
-                      </select>
-                      <label for="artistaOEscenario">Artista o escenario</label>
-                    </div>
-                    <br />
-                    <div class="form-floating">
-                      <select
-                        class="form-select"
-                        id="generoMusical"
-                        name="generoMusical"
-                        aria-label="Floating label select example"
-                      >
-                        <option selected></option>
-                        <option value="1" name="generoNorteno">Norteño</option>
-                        <option value="2" name="generoCumbia">Cumbia</option>
-                        <option value="3" name="generoSalsa">Salsa</option>
-                        <option value="4" name="generoMariachi">
-                          Mariachi
-                        </option>
-                      </select>
-                      <label for="generoMusical">Géneros musicales</label>
-                    </div>
-                    <br />
-                    <div class="form-floating">
-                      <select
-                        class="form-select"
-                        id="instrumentoMusical"
-                        name="instrumentoMusical"
-                        aria-label="Floating label select example"
-                      >
-                        <option selected></option>
-                        <option value="1" name="instrumentoGuitarra">
-                          Guitarra
-                        </option>
-                        <option value="2" name="instrumentoAcordeon">
-                          Acordeón
-                        </option>
-                        <option value="3" name="instrumentoBateria">
-                          Batería
-                        </option>
-                        <option value="4" name="instrumentoSintetizador">
-                          Sintetizador
-                        </option>
-                      </select>
-                      <label for="instrumentoMusical"
-                        >Instrumentos musicales</label
-                      >
-                    </div>
-                    <br />
-                    <div class="form-floating">
-                      <input
-                        type="text"
-                        class="form-control"
-                        name="ubicacionBusqueda"
-                        required
-                        id="ubicacionBusqueda"
-                        placeholder=""
-                      />
-                      <label for="ubicacionBusqueda">Ubicación</label>
-                    </div>
-                    <br />
-                    <div class="form-floating">
-                      <input
-                        type="number"
-                        class="form-control"
-                        name="codigoPostal"
-                        id="codigoPostal"
-                        required
-                        placeholder=""
-                      />
-                      <label for="codigoPostal">Código postal</label>
-                    </div>
-                    <br />
-                    <div class="form-floating">
-                      <textarea
-                        class="form-control"
-                        name="cuerpoPublicacion"
-                        id="cuerpoPublicacion"
-                        required
-                        placeholder=""
-                      ></textarea>
-                      <label for="cuerpoPublicacion"
-                        >Cuerpo de la publicación</label
-                      >
-                    </div>
-                    <br />
-                    <p>Carga una imagen para tu publicación (opcional)</p>
-                    <div class="mb-3">
-                      <input
-                        class="form-control"
-                        type="file"
-                        name="multimediaBusqueda"
-                        id="multimediaBusqueda"
-                      />
-                    </div>
-                    <br />
-                  </fieldset>
-                  <!-- Modal footer -->
-                  <div class="modal-alinear-botones">
-                    <button
-                      type="button"
-                      class="boton outlined"
-                      data-bs-dismiss="modal"
-                    >
-                      Cerrar
-                    </button>
-                    <button
-                      type="submit"
-                      id="publicarBusquedaArtista"
-                      class="boton fiat"
-                      data-bs-dismiss="modal"
-                    >
-                      Publicar
-                    </button>
-                  </div>
-                </form>
-              </div>
+              </form>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       <section>
         <div
@@ -436,45 +308,66 @@
 
       <!--Cierra sección de nueva publicación-->
 
-      <section class="dashboard-container">
-        <div class="publicaciones-contenedor">
-          <!-- Sección de los Escenarios -->
-          <section class="escenarios">
-            <h2>Podría interesarte</h2>
-            <hr />
-
-            <div class="carousel">
-              <img
-                id="carouselPrevArrowAnuncios"
-                class="carousel--prevArrow"
-                src="img/prev.png"
-                alt=""
-              />
-              <div id="carouselCardsAnuncios" class="carousel--cards">
-                <div class="carousel--cards--item">
-                  <div class="card escenarios--item">
-                    <img
-                      src="https://es.rollingstone.com/wp-content/uploads/2023/07/APERTURA-WEB-Milo-J-Gentileza-Milo-JMILO-J_01-Editar.jpg"
-                      alt="..."
-                    />
-                  </div>
-                </div>
-                <div class="carousel--cards--item">
-                  <div class="card escenarios--item">
-                    <img
-                      src="https://th.bing.com/th/id/OIP.-SOegfVqop3mnvrFNVIqmQHaEv?w=253&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
-                      alt="..."
-                    />
-                  </div>
-                </div>
-                <div class="carousel--cards--item">
-                  <div class="card escenarios--item">
-                    <img
-                      src="https://th.bing.com/th/id/OIP.PxMulZkadwr_0ajeskSlygAAAA?rs=1&pid=ImgDetMain"
-                      alt="..."
-                    />
-                  </div>
-                </div>
+    <section class="dashboard-container">
+      <div>
+        <!-- Tu Ritmo-->
+        <h2>Tu Ritmo</h2>
+        <div id="multimediaSubida"></div>
+        <div id="nuevaPublicacion-contenedor"></div>
+        <div id="publicacionesMiEscena-contenedor"></div>
+      </div>
+      <div class="prueba">
+        <!-- Anuncios-->
+        <h2>Anuncios</h2>
+        <div class="anuncios-element">
+          <!-- Artistas -->
+          <h3>Artistas</h3>
+          <div id="carouselExampleArtistas" class="carousel carousel-anuncios slide">
+            <div id="artistasIndicadoresCarousel-contenedor" class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleArtistas" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleArtistas" data-bs-slide-to="1"
+                aria-label="slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleArtistas" data-bs-slide-to="2"
+                aria-label="3"></button>
+            </div>
+            <div id="artistasElementosCarousel-contenedor" class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="https://es.rollingstone.com/wp-content/uploads/2023/07/APERTURA-WEB-Milo-J-Gentileza-Milo-JMILO-J_01-Editar.jpg"
+                  class="carousel-img carousel-anuncios-img d-block w-100" alt="..." />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://th.bing.com/th/id/OIP.-SOegfVqop3mnvrFNVIqmQHaEv?w=253&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                  class="carousel-img carousel-anuncios-img d-block w-100" alt="..." />
+              </div>
+              <div class="carousel-item">
+                <img src="https://th.bing.com/th/id/OIP.PxMulZkadwr_0ajeskSlygAAAA?rs=1&pid=ImgDetMain"
+                  class="carousel-img carousel-anuncios-img d-block w-100" alt="..." />
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleArtistas"
+              data-bs-slide="prev">
+              <span class="material-symbols-outlined custom-arrow">arrow_back_ios</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleArtistas"
+              data-bs-slide="next">
+              <span class="material-symbols-outlined custom-arrow">arrow_forward_ios</span>
+            </button>
+          </div>
+        </div>
+        <div class="anuncios-element">
+          <!-- Se busca -->
+          <h3>Se busca</h3>
+          <div id="carouselExampleSeBusca" class="carousel carousel-anuncios slide">
+            <div id="seBuscaIndicadoresCarousel-contenedor" class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleSeBusca" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleSeBusca" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleSeBusca" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
             </div>
             <img
                 id="carouselNextArrowAnuncios"
