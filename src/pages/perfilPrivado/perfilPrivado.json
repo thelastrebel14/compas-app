@@ -1,0 +1,21 @@
+[
+    {
+        "datos": {
+            "nombre": "",
+            "edad": 18,
+            "genero": "",
+            "correo": "",
+            "contraseña": ""
+        },
+        "localizacion":{
+            "estado": "",
+            "cuidad": "",
+            "coodigoPostal": 1 
+        },
+        "esMusico":{
+            "esMusico": true,
+            "instrumentosMusicales": ["batería", "guitarra"],
+            "generosMusicales": ["rock", "pop"],
+        }
+    }
+]
