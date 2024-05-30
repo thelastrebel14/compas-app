@@ -7,25 +7,24 @@ class NuevaPublicacionFotoVideo {
       }
     }
   }
-  
+
   const botonPublicarFotoVideo = document.getElementById("publicarFotoVideo");
   
   botonPublicarFotoVideo.addEventListener("click", (e) => {
     const publicacionTexto = document.getElementById("publicacionTexto").value;
-    const publicacionMultimedia = document.querySelector("#publicacionMultimedia");
-    var multimediaSubida = "";
-    
-    publicacionMultimedia.addEventListener("change", function() {
-      const reader = new FileReader();
-      reader.addEventListener("load", () => {
-        multimediaSubida = reader.result;
-        document.querySelector("#multimediaSubida") = `url(${multimediaSubida})`;
-      });
-      reader.readAsDataURL(this.files[0]);
-    });
+    const inputMultimedia = document.getElementById("publicacionMultimedia");
+    document.getElementById("publicacionMultimedia");
+    inputMultimedia.src = URL.createObjectURL(inputMultimedia.files[0]);
+    console.log(inputMultimedia);
+
+    const srcRegex = /src="(.*?)"/;
+    match = srcRegex.exec(inputMultimedia.outerHTML); 
+    console.log(match);
+    const publicacionMultimedia = match[1]; 
+    console.log(publicacionMultimedia);
 
     crearPublicacionFotoVideo(publicacionTexto, publicacionMultimedia);
-    
+
     if (publicacionTexto.trim() === "") {
       if (document.querySelector(".alert")) {
         return;
@@ -44,6 +43,7 @@ class NuevaPublicacionFotoVideo {
       publicacion = new NuevaPublicacionFotoVideo(
         publicacionTexto.trim(),
         publicacionMultimedia
+        // formDataImg.get('image').name
       );
   
       console.log({publicacion});
@@ -129,7 +129,15 @@ class NuevaPublicacionFotoVideo {
     const ubicacionBusqueda = document.getElementById("ubicacionBusqueda").value;
     const codigoPostal = document.getElementById("codigoPostal").value;
     const cuerpoPublicacion = document.getElementById("cuerpoPublicacion").value;
-    const multimediaBusqueda = document.getElementById("multimediaBusqueda").value;
+    const inputMultimediaBusqueda = document.getElementById("multimediaBusqueda");
+    inputMultimediaBusqueda.src = URL.createObjectURL(inputMultimediaBusqueda.files[0]);
+    console.log(inputMultimediaBusqueda);
+
+    const srcRegexBusq = /src="(.*?)"/;
+    matchBusq = srcRegexBusq.exec(inputMultimediaBusqueda.outerHTML); 
+    console.log(matchBusq);
+    const multimediaBusqueda = matchBusq[1]; 
+    console.log(multimediaBusqueda);
   
     crearPublicacionBusquedaArtista(tituloPublicacion, artistaOEscenario, generoMusical, instrumentoMusical, ubicacionBusqueda, codigoPostal, cuerpoPublicacion, multimediaBusqueda);
   
@@ -311,7 +319,7 @@ class NuevaPublicacionFotoVideo {
       titulo: "test",
       tipoPublicacion: "texto",
       tipoPublicacion: "multimedia",
-      descripcion: [tituloPublicacion, artistaOEscenario, generoMusical, instrumentoMusical, ubicacionBusqueda, codigoPostal, cuerpoPublicacion],
+      descripcion: [tituloPublicacion, '\n', artistaOEscenario, '\n', generoMusical, '\n', instrumentoMusical, '\n', ubicacionBusqueda, '\n', codigoPostal, '\n', cuerpoPublicacion],
       archivoMultimedia: multimediaBusqueda,
       createdAt: "2024-05-27T08:15:00Z",
     };
@@ -354,7 +362,7 @@ class NuevaPublicacionFotoVideo {
       "contenido-publicacion-contenedor"
     );
     var contenidoPublicacion = document.createElement("p");
-    contenidoPublicacion.textContent = datosPublicacion.descripcion.join('\n');
+    contenidoPublicacion.textContent = datosPublicacion.descripcion.join("\n");
     if (datosPublicacion.tipoPublicacion === "multimedia") {
       var imgPublicacion = document.createElement("img");
       imgPublicacion.src = datosPublicacion.archivoMultimedia;
