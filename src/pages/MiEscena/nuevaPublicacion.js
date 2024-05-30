@@ -8,83 +8,21 @@ class NuevaPublicacionFotoVideo {
     }
   }
 
-
-/*
-// -----------------------     Editando Imagen de Portada en Perfil
-const changeImgPortada = document.getElementById("botonImgPortada");
-changeImgPortada.addEventListener('click', function(){
-  // Obtener referencia al input para cargar imagen "img--cover"
-  const imgPortadaUser = document.getElementById("img--cover");
-  // Llamando a funcion para enviar la imagen mediante Fetch
-  enviarImg(imgPortadaUser);
-  // Agregar el nuevo elemento al contenedor
-  contenedorImgPortada.src = URL.createObjectURL(imgPortadaUser.files[0]);
-  // Cerrar el modal utilizando el método de Bootstrap
-  const myModal = bootstrap.Modal.getOrCreateInstance('#headerPortadaModal');
-  myModal.hide();
-});
-
-function enviarImg(img) {
-  // crea un objeto FormData y agrega el archivo seleccionado
-  const formDataImg = new FormData();
-  formDataImg.append('image', img.files[0]);
-  console.log(formDataImg.get('image').name);
-}
-*/
-
-
-
-/*
-function enviarImg(img) {
-console.log(img);
-const imagen = img.files[0];
-const formDataImg = new FormData();
-formDataImg.append("image", imagen);
-console.log(imagen);
-console.log(formDataImg);
-console.log(formDataImg.get('image').name);
-}
-*/
-
-
-/*
-function subirImagen(img) {
-  console.log("Primero = " + img);
-  const imagen = img.files[0];
-  const subirImagen = new FormData();
-  subirImagen.append("image", imagen);
-  console.log("Segundo = " + imagen);
-  console.log("Tercero = " + subirImagen);
-  console.log("Cuarto = " + subirImagen.get('image').name);
-}
-*/
-
-
-
   const botonPublicarFotoVideo = document.getElementById("publicarFotoVideo");
   
   botonPublicarFotoVideo.addEventListener("click", (e) => {
     const publicacionTexto = document.getElementById("publicacionTexto").value;
-    var publicacionMultimedia = document.getElementById("publicacionMultimedia");
+    const inputMultimedia = document.getElementById("publicacionMultimedia");
+    document.getElementById("publicacionMultimedia");
+    inputMultimedia.src = URL.createObjectURL(inputMultimedia.files[0]);
+    console.log(inputMultimedia);
+
+    const srcRegex = /src="(.*?)"/;
+    match = srcRegex.exec(inputMultimedia.outerHTML); 
+    console.log(match);
+    const publicacionMultimedia = match[1]; 
     console.log(publicacionMultimedia);
-    publicacionMultimedia.src = URL.createObjectURL(publicacionMultimedia.files[0]);
-    console.log(publicacionMultimedia);
 
-    /*
-    const formDataImg = new FormData();
-
-    function enviarImg(img) {
-
-      formDataImg.append('image', img.files[0]);
-      formDataImg.get('image').name;
-      console.log(formDataImg.get('image').name);
-      }
-      //
-      enviarImg(publicacionMultimedia)
-
-    crearPublicacionFotoVideo(publicacionTexto, formDataImg.get('image').name);
-    */
-    
     crearPublicacionFotoVideo(publicacionTexto, publicacionMultimedia);
 
     if (publicacionTexto.trim() === "") {
@@ -191,7 +129,15 @@ function subirImagen(img) {
     const ubicacionBusqueda = document.getElementById("ubicacionBusqueda").value;
     const codigoPostal = document.getElementById("codigoPostal").value;
     const cuerpoPublicacion = document.getElementById("cuerpoPublicacion").value;
-    const multimediaBusqueda = document.getElementById("multimediaBusqueda").value;
+    const inputMultimediaBusqueda = document.getElementById("multimediaBusqueda");
+    inputMultimediaBusqueda.src = URL.createObjectURL(inputMultimediaBusqueda.files[0]);
+    console.log(inputMultimediaBusqueda);
+
+    const srcRegexBusq = /src="(.*?)"/;
+    matchBusq = srcRegexBusq.exec(inputMultimediaBusqueda.outerHTML); 
+    console.log(matchBusq);
+    const multimediaBusqueda = matchBusq[1]; 
+    console.log(multimediaBusqueda);
   
     crearPublicacionBusquedaArtista(tituloPublicacion, artistaOEscenario, generoMusical, instrumentoMusical, ubicacionBusqueda, codigoPostal, cuerpoPublicacion, multimediaBusqueda);
   
@@ -352,7 +298,7 @@ function subirImagen(img) {
       instrumentosAutor: ["Guitarra", "Teclado", "Batería"],
       avatarAutor: "../../pages/perfilPrivado/img/fotoPerfilVacio.jpg",
       titulo: "test" ,
-      // tipoPublicacion: "texto",
+      tipoPublicacion: "texto",
       tipoPublicacion: "multimedia",
       descripcion: [publicacionTexto],
       archivoMultimedia: publicacionMultimedia,
@@ -372,8 +318,8 @@ function subirImagen(img) {
       avatarAutor: "../../pages/perfilPrivado/img/fotoPerfilVacio.jpg",
       titulo: "test",
       tipoPublicacion: "texto",
-      // tipoPublicacion: "multimedia",
-      descripcion: [tituloPublicacion, artistaOEscenario, generoMusical, instrumentoMusical, ubicacionBusqueda, codigoPostal, cuerpoPublicacion],
+      tipoPublicacion: "multimedia",
+      descripcion: [tituloPublicacion, '\n', artistaOEscenario, '\n', generoMusical, '\n', instrumentoMusical, '\n', ubicacionBusqueda, '\n', codigoPostal, '\n', cuerpoPublicacion],
       archivoMultimedia: multimediaBusqueda,
       createdAt: "2024-05-27T08:15:00Z",
     };
