@@ -1,52 +1,43 @@
-document.addEventListener("DOMContentLoaded", function () {
-  fetchGetInfoUser();
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//   fetchGetInfoUser();
+// });
 
 // ---------    Función Fetch para extraer datos, cargarlos en el HTML y guardarlos en un objeto
-function fetchGetInfoUser(){
-  // https://jsonplaceholder.typicode.com/users/5
-  // http://localhost:8081/api/v1/usuario
-  const url = 'http://localhost:8081/api/v1/usuario';
-  let post;
-  fetch(url)
-    .then(response => response.json())
-    .then(response => {
-      console.log("hola");
-      console.log(post);
-      post = response;
-      cargarInfoUserEnPerfil(post);
-      instanciarObjetoUser(post);
-      mostrarDatosObjeto();
-    })
-    .catch(error => console.error("error en la petición", error));
-}
+// function fetchGetInfoUser(){
+//   // https://jsonplaceholder.typicode.com/users/5
+//   // http://localhost:8081/api/v1/usuario
+//   const url = 'http://localhost:8081/api/v1/usuario';
+//   let post;
+//   fetch(url)
+//     .then(response => response.json())
+//     .then(response => {
+//       console.log("hola");
+//       console.log(post);
+//       post = response;
+//       cargarInfoUserEnPerfil(post);
+//       instanciarObjetoUser(post);
+//       mostrarDatosObjeto();
+//     })
+//     .catch(error => console.error("error en la petición", error));
+// }
 
-// ---------   Función Fetch para Enviar los datos modificados del formulario al servidor usando fetch
-// const urlPost = "";
-// fetch(urlPost, {
-//   method: "POST",
-//   headers: {
-//     "Content-Type": "application/json; charset=UTF-8"},
-// // Definir el body que debe coincidir con mi API, para ello le paso un método stringify que permite transformar el objeto en formato JSON
-//   body: JSON.stringify({
-//     nombre: nombreUser,
-//     ciudad: ciudadUser,
-//     estado: estadoUser
-//   }),
-// })
-//   .then((response) => response.json())
-//   .then((data) => {
-//     // Mostrar mensaje de éxito o error al usuario
-//     if (data.success) {
-//       console.log("¡Datos enviados con éxito!");
-//     } else {
-//       console.log("Error al actualizar los datos. Inténtalo de nuevo.");
-//     }
-//   })
-//   .catch((error) => {
-//     console.error("Error:", error);
-//     console.log("Error al actualizar los datos. Inténtalo de nuevo.");
-//     });
+// ---------    Función Fetch para extraer datos, cargarlos en el HTML y guardarlos en un objeto
+// function fetchGetInfoUser(){
+//   // https://jsonplaceholder.typicode.com/users/5
+//   // http://localhost:8081/api/v1/usuario
+//   const url = 'http://localhost:8081/api/v1/usuario';
+//   let post;
+//   fetch(url)
+//     .then(response => response.json())
+//     .then(response => {
+//       console.log("hola");
+//       console.log(post);
+//       post = response;
+//       cargarInfoUserEnPerfil(post);
+//       // instanciarObjetoUser(post);
+//     })
+//     .catch(error => console.error("error en la petición", error));
+// }
 
 //-------------------  Clase con la información del perfil del usuario
 class UserCreadoEnRegistro {
@@ -136,9 +127,6 @@ contenedorGenerosMusicales.appendChild(generosMusicalesUser);
 function instanciarObjetoUser(post){
   // ----------------------   Instanciar un objeto con los valores recibidos de fetch
   objetoUsuarioDelPerfil = new UserCreadoEnRegistro(post.name,post.address.city,post.address.city);  
-  //                      Instanciar un objeto desde la clase UserCreadoEnRegistro
-  //objetoUsuarioDelPerfil = new UserCreadoEnRegistro('Moises Reyes Orea', 'Guadalajara', 'Jalisco');
-  //const objetoUsuarioDelPerfil = new UserCreadoEnRegistro(objetoUsuarioLocalStorage.nombre,objetoUsuarioLocalStorage.ciudad,objetoUsuarioLocalStorage.estado,objetoUsuarioLocalStorage.instrumentosMusicales,objetoUsuarioLocalStorage.generosMusicales);
 }
 
 function mostrarDatosObjeto(){
@@ -168,39 +156,62 @@ changeImgPortada.addEventListener('click', function(){
 });
 
 function enviarImg(img) {
-  // crea un objeto FormData y agrega el archivo seleccionado
-  const formDataImg = new FormData();
-  formDataImg.append('image', img.files[0]);
-  console.log(formDataImg.get('image').name);
+  const imagen = img.files[0];
+   console.log(imagen);
+  const urlPost = "http://localhost:8081/api/v1/usuario/1"
+  const reader = new FileReader();
+            reader.onloadend = async () => {
+                // Se convierte la imagen a base 64 bits
+                const base64String = reader.result.replace('data:', '').replace(/^.+,/, '');
+                const user = {
+                    foto_portada: base64String
+                };
+                try {
+                    const response = await fetch(urlPost, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(user)
+                    });
+                    if (response.ok) {
+                        alert('Usuario subido exitosamente');
+                    } else {
+                        alert('Error al subir el usuario');
+                    }
+                } catch (error) {
+                    console.error('Error al enviar el usuario:', error);
+                    alert('Error al subir el usuario');
+                }
+            };
+            reader.readAsDataURL(imagen); 
 
-  // Función Fetch para Enviar los imagenes al servidor usando fetch
 
-  // https://jsonplaceholder.typicode.com/users/5
-  // http://localhost:8081/api/v1/usuario
-  const urlPost = "http://localhost:8081/api/v1/usuario/1";
-  fetch(urlPost, {
-    method: "PUT", // PUT / POST
-    headers: {
-      "Content-Type": "application/json"},
-    // Definir el body que debe coincidir con mi API, para ello le paso un método stringify que permite transformar el objeto en formato JSON
-    body: {
-      formDataImg
-    }
-  })
-    .then((response) => response.json())
-    .then((response) => {
-      // Mostrar mensaje de éxito o error al usuario
-      if (response.success) {
-        console.log("Datos enviados con éxito");
-      }
-      else {
-        console.log("Error");
-      }
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-      console.log("Error al actualizar los datos");
-    });
+  // fetch(urlPost, {
+  //   method: "PUT", // PUT / POST
+  //   headers: {
+  //     "Content-Type": ""
+  //   },
+    
+  //   // Definir el body que debe coincidir con mi API, para ello le paso un método stringify que permite transformar el objeto en formato JSON
+  //   body: {
+  //     "foto_portada": formDataImg
+  //   }
+  // })
+  //   .then((response) => response.json())
+  //   .then((response) => {
+  //     // Mostrar mensaje de éxito o error al usuario
+  //     if (response.success) {
+  //       console.log("Datos enviados con éxito");
+  //     }
+  //     else {
+  //       console.log("Error");
+  //     }
+  //   })
+  //   .catch((error) => {
+  //     console.error("Error:", error);
+  //     console.log("Error al actualizar los datos");
+  //   });
 }
 
 function enviarDatos(){
@@ -498,3 +509,35 @@ myModal.hide();
 // Validación en vivo de input Número de telefono
 //validacionEnVivo("numTelefono",  //string del id del input
 //  validaTelefonosValidacion);  //callback de una funcion de validacion
+
+
+
+
+
+
+// ---------   Función Fetch para Enviar los datos modificados del formulario al servidor usando fetch
+// const urlPost = "";
+// fetch(urlPost, {
+//   method: "POST",
+//   headers: {
+//     "Content-Type": "application/json; charset=UTF-8"},
+// // Definir el body que debe coincidir con mi API, para ello le paso un método stringify que permite transformar el objeto en formato JSON
+//   body: JSON.stringify({
+//     nombre: nombreUser,
+//     ciudad: ciudadUser,
+//     estado: estadoUser
+//   }),
+// })
+//   .then((response) => response.json())
+//   .then((data) => {
+//     // Mostrar mensaje de éxito o error al usuario
+//     if (data.success) {
+//       console.log("¡Datos enviados con éxito!");
+//     } else {
+//       console.log("Error al actualizar los datos. Inténtalo de nuevo.");
+//     }
+//   })
+//   .catch((error) => {
+//     console.error("Error:", error);
+//     console.log("Error al actualizar los datos. Inténtalo de nuevo.");
+//     });
