@@ -7,25 +7,86 @@ class NuevaPublicacionFotoVideo {
       }
     }
   }
-  
+
+
+/*
+// -----------------------     Editando Imagen de Portada en Perfil
+const changeImgPortada = document.getElementById("botonImgPortada");
+changeImgPortada.addEventListener('click', function(){
+  // Obtener referencia al input para cargar imagen "img--cover"
+  const imgPortadaUser = document.getElementById("img--cover");
+  // Llamando a funcion para enviar la imagen mediante Fetch
+  enviarImg(imgPortadaUser);
+  // Agregar el nuevo elemento al contenedor
+  contenedorImgPortada.src = URL.createObjectURL(imgPortadaUser.files[0]);
+  // Cerrar el modal utilizando el método de Bootstrap
+  const myModal = bootstrap.Modal.getOrCreateInstance('#headerPortadaModal');
+  myModal.hide();
+});
+
+function enviarImg(img) {
+  // crea un objeto FormData y agrega el archivo seleccionado
+  const formDataImg = new FormData();
+  formDataImg.append('image', img.files[0]);
+  console.log(formDataImg.get('image').name);
+}
+*/
+
+
+
+/*
+function enviarImg(img) {
+console.log(img);
+const imagen = img.files[0];
+const formDataImg = new FormData();
+formDataImg.append("image", imagen);
+console.log(imagen);
+console.log(formDataImg);
+console.log(formDataImg.get('image').name);
+}
+*/
+
+
+/*
+function subirImagen(img) {
+  console.log("Primero = " + img);
+  const imagen = img.files[0];
+  const subirImagen = new FormData();
+  subirImagen.append("image", imagen);
+  console.log("Segundo = " + imagen);
+  console.log("Tercero = " + subirImagen);
+  console.log("Cuarto = " + subirImagen.get('image').name);
+}
+*/
+
+
+
   const botonPublicarFotoVideo = document.getElementById("publicarFotoVideo");
   
   botonPublicarFotoVideo.addEventListener("click", (e) => {
     const publicacionTexto = document.getElementById("publicacionTexto").value;
-    const publicacionMultimedia = document.querySelector("#publicacionMultimedia");
-    var multimediaSubida = "";
-    
-    publicacionMultimedia.addEventListener("change", function() {
-      const reader = new FileReader();
-      reader.addEventListener("load", () => {
-        multimediaSubida = reader.result;
-        document.querySelector("#multimediaSubida") = `url(${multimediaSubida})`;
-      });
-      reader.readAsDataURL(this.files[0]);
-    });
+    var publicacionMultimedia = document.getElementById("publicacionMultimedia");
+    console.log(publicacionMultimedia);
+    publicacionMultimedia.src = URL.createObjectURL(publicacionMultimedia.files[0]);
+    console.log(publicacionMultimedia);
 
-    crearPublicacionFotoVideo(publicacionTexto, publicacionMultimedia);
+    /*
+    const formDataImg = new FormData();
+
+    function enviarImg(img) {
+
+      formDataImg.append('image', img.files[0]);
+      formDataImg.get('image').name;
+      console.log(formDataImg.get('image').name);
+      }
+      //
+      enviarImg(publicacionMultimedia)
+
+    crearPublicacionFotoVideo(publicacionTexto, formDataImg.get('image').name);
+    */
     
+    crearPublicacionFotoVideo(publicacionTexto, publicacionMultimedia);
+
     if (publicacionTexto.trim() === "") {
       if (document.querySelector(".alert")) {
         return;
@@ -44,6 +105,7 @@ class NuevaPublicacionFotoVideo {
       publicacion = new NuevaPublicacionFotoVideo(
         publicacionTexto.trim(),
         publicacionMultimedia
+        // formDataImg.get('image').name
       );
   
       console.log({publicacion});
@@ -290,7 +352,7 @@ class NuevaPublicacionFotoVideo {
       instrumentosAutor: ["Guitarra", "Teclado", "Batería"],
       avatarAutor: "../../pages/perfilPrivado/img/fotoPerfilVacio.jpg",
       titulo: "test" ,
-      tipoPublicacion: "texto",
+      // tipoPublicacion: "texto",
       tipoPublicacion: "multimedia",
       descripcion: [publicacionTexto],
       archivoMultimedia: publicacionMultimedia,
@@ -310,7 +372,7 @@ class NuevaPublicacionFotoVideo {
       avatarAutor: "../../pages/perfilPrivado/img/fotoPerfilVacio.jpg",
       titulo: "test",
       tipoPublicacion: "texto",
-      tipoPublicacion: "multimedia",
+      // tipoPublicacion: "multimedia",
       descripcion: [tituloPublicacion, artistaOEscenario, generoMusical, instrumentoMusical, ubicacionBusqueda, codigoPostal, cuerpoPublicacion],
       archivoMultimedia: multimediaBusqueda,
       createdAt: "2024-05-27T08:15:00Z",
@@ -354,7 +416,7 @@ class NuevaPublicacionFotoVideo {
       "contenido-publicacion-contenedor"
     );
     var contenidoPublicacion = document.createElement("p");
-    contenidoPublicacion.textContent = datosPublicacion.descripcion.join('\n');
+    contenidoPublicacion.textContent = datosPublicacion.descripcion.join("\n");
     if (datosPublicacion.tipoPublicacion === "multimedia") {
       var imgPublicacion = document.createElement("img");
       imgPublicacion.src = datosPublicacion.archivoMultimedia;
