@@ -63,10 +63,11 @@ async function rellenoCodigoPostal() {
 class RegistroDeUsuario {
   constructor(
     nombre,
+    apellidos,
     edad,
     genero,
     email,
-    contrasena,
+    password,
     estado,
     ciudad,
     codigoPostal,
@@ -78,10 +79,11 @@ class RegistroDeUsuario {
   ) {
     datos: {
       (this.nombre = nombre),
+        (this.apellidos = apellidos),
         (this.edad = edad),
         (this.genero = genero),
         (this.email = email),
-        (this.contrasena = contrasena);
+        (this.password = password);
     }
     localizacion: {
       (this.estado = estado),
@@ -102,6 +104,7 @@ const botonRegistro = document.getElementById("registrarme");
 botonRegistro.addEventListener("click", (e) => {
   e.preventDefault();
   const registroNombre = document.getElementById("inputName").value;
+  const registroApellido = document.getElementById("inputApellido").value;
   const registroEdad = document.getElementById("inputAge").value;
   const registroGenero = document.getElementById("inputGender").value;
   const registroEmail = document.getElementById("inputEmail").value;
@@ -126,6 +129,7 @@ botonRegistro.addEventListener("click", (e) => {
   // Verificar si algún campo está vacío o tiene valor no permitido
   if (
     registroNombre.trim() === "" ||
+    registroApellido.trim() === "" ||
     registroEdad.trim() === "" ||
     registroGenero.trim() === "" ||
     registroEmail.trim() === "" ||
@@ -157,6 +161,7 @@ botonRegistro.addEventListener("click", (e) => {
     if (registroIsMusico) {
       usuario = new RegistroDeUsuario(
         registroNombre.trim(),
+        registroApellido.trim(),
         registroEdad,
         registroGenero,
         registroEmail.trim(),
@@ -173,6 +178,7 @@ botonRegistro.addEventListener("click", (e) => {
     } else {
       usuario = new RegistroDeUsuario(
         registroNombre.trim(),
+        registroApellido.trim(),
         registroEdad,
         registroGenero,
         registroEmail.trim(),
@@ -188,12 +194,28 @@ botonRegistro.addEventListener("click", (e) => {
       );
     }
 
-    console.log({ usuario });
     const usuarioJSON = JSON.stringify(usuario);
-    window.location.href = "../inicioDeSesion/inicioDeSesion.html";
-    localStorage.setItem("usuario", usuario.email);
-    localStorage.setItem("contraseña", usuario.contrasena);
-    localStorage.setItem("usuarioCompleto", usuarioJSON);
+
+    fetch("http://localhost:8081/api/v1/usuario/add-usuario", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: usuarioJSON,
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error en la red:  " + response.statusText);
+        }
+        window.location.href = "../inicioDeSesion/inicioDeSesion.html";
+        return response.json();
+      })
+      .then((data) => {
+        window.location.href = "../inicioDeSesion/inicioDeSesion.html";
+      })
+      .catch((error) => {
+        console.error("Hubo un problema con la operación fetch:", error);
+      });
   }
 });
 
@@ -414,7 +436,6 @@ const form = document.querySelector(".needs-validation");
 form.addEventListener(
   "submit",
   (event) => {
-    console.log(form.children);
     if (!form.checkValidity()) {
       event.preventDefault();
       event.stopPropagation();
