@@ -1,10 +1,10 @@
 //modelo de objetos del formulario
 
 //selecion de elementos del documento
-const radioSoyMusico = document.getElementById("soyMusico");
+// const radioSoyMusico = document.getElementById("soyMusico");
 //const radioSoyEscenario = document.getElementById("soyEscenario");
 const musicoInputs = document.getElementById("musicoInputs");
-const escenarioInputs = document.getElementById("escenarioInputs");
+// const escenarioInputs = document.getElementById("escenarioInputs");
 
 //funcionalidad dinamica para los radio buttons
 /*radioSoyEscenario.addEventListener(
@@ -17,27 +17,25 @@ const escenarioInputs = document.getElementById("escenarioInputs");
   })
 );*/
 
-radioSoyMusico.addEventListener(
-  "click",
-  (mostrarInputs = () => {
-    if (radioSoyMusico.checked) {
-      musicoInputs.hidden = false;
-      escenarioInputs.hidden = true;
-    }
-  })
-);
+// radioSoyMusico.addEventListener(
+//   "click",
+//   (mostrarInputs = () => {
+//     if (radioSoyMusico.checked) {
+//       musicoInputs.hidden = false;
+//       escenarioInputs.hidden = true;
+//     }
+//   })
+// );
 
 const cp = () => {
-  if (!direccionCheckbox.checked) {
-    rellenoCodigoPostal();
-  }
+  rellenoCodigoPostal();
   return;
 };
 async function rellenoCodigoPostal() {
   try {
     const codigoPostal = document.getElementById("inputCP").value;
     const response = await fetch(
-      `https://api.copomex.com/query/info_cp/${codigoPostal}?token=4d481f50-19e7-4e38-8d07-870975872307`
+      `https://api.copomex.com/query/info_cp/${codigoPostal}?token=201768c9-47bc-43a0-a2fe-f1fd7462a119`
     );
     if (!response.ok) {
       throw new Error("No se encontró");
@@ -63,25 +61,28 @@ async function rellenoCodigoPostal() {
 class RegistroDeUsuario {
   constructor(
     nombre,
+    apellidos,
     edad,
     genero,
     email,
-    contrasena,
+    password,
     estado,
     ciudad,
     codigoPostal,
-    isMusico,
     instrumentosMusicales,
-    generosMusicales //,
+    generosMusicales,
+    foto_perfil,
+    foto_portada //,
     //isEscenario,
     //tipoDeEscenario
   ) {
     datos: {
       (this.nombre = nombre),
+        (this.apellidos = apellidos),
         (this.edad = edad),
         (this.genero = genero),
         (this.email = email),
-        (this.contrasena = contrasena);
+        (this.password = password);
     }
     localizacion: {
       (this.estado = estado),
@@ -89,9 +90,9 @@ class RegistroDeUsuario {
         (this.codigoPostal = codigoPostal);
     }
     tipoUsuario: {
-      (this.isMusico = isMusico),
-        (this.instrumentosMusicales = instrumentosMusicales),
-        (this.generosMusicales = generosMusicales); //,
+      (this.instrumentosMusicales = instrumentosMusicales),
+        (this.generosMusicales = generosMusicales);
+      (this.foto_perfil = ""), (this.foto_portada = ""); //,
       //(this.isEscenario = isEscenario),
       // (this.tipoDeEscenario = tipoDeEscenario);
     }
@@ -102,6 +103,7 @@ const botonRegistro = document.getElementById("registrarme");
 botonRegistro.addEventListener("click", (e) => {
   e.preventDefault();
   const registroNombre = document.getElementById("inputName").value;
+  const registroApellido = document.getElementById("inputApellido").value;
   const registroEdad = document.getElementById("inputAge").value;
   const registroGenero = document.getElementById("inputGender").value;
   const registroEmail = document.getElementById("inputEmail").value;
@@ -113,12 +115,12 @@ botonRegistro.addEventListener("click", (e) => {
   const inputCiudad = document.getElementById("inputCiudad");
   const selectedCiudad = inputCiudad?.options[inputCiudad.selectedIndex];
   const ciudadValue = selectedCiudad ? selectedCiudad.value : "";
-  const registroIsMusico = document.getElementById("soyMusico").checked;
   const registroInstrumentos =
     document.getElementById("inputInstrumentos").value;
   const registroGenerosMusicales = document.getElementById(
     "inputGenerosMusicales"
   ).value;
+  let usuario;
   // const registroIsEscenario = document.getElementById("soyEscenario").checked;
   // const registroTipoDeEscenario =
   //   document.getElementById("inputEscenario").value;
@@ -126,6 +128,7 @@ botonRegistro.addEventListener("click", (e) => {
   // Verificar si algún campo está vacío o tiene valor no permitido
   if (
     registroNombre.trim() === "" ||
+    registroApellido.trim() === "" ||
     registroEdad.trim() === "" ||
     registroGenero.trim() === "" ||
     registroEmail.trim() === "" ||
@@ -133,9 +136,8 @@ botonRegistro.addEventListener("click", (e) => {
     registroCodigoPostal.trim() === "" ||
     estadoValue.trim() === "" ||
     ciudadValue.trim() === "" ||
-    (registroIsMusico &&
-      (registroInstrumentos.trim() === "" ||
-        registroGenerosMusicales.trim() === "")) //||
+    registroInstrumentos.trim() === "" ||
+    registroGenerosMusicales.trim() === "" //||
     // (registroIsEscenario && registroTipoDeEscenario.trim() === "")
   ) {
     //alert("Por favor completa todos los campos obligatorios.");
@@ -153,48 +155,44 @@ botonRegistro.addEventListener("click", (e) => {
 
     return; // Detener la ejecución si algún campo está incompleto
   } else {
-    let usuario;
-    if (registroIsMusico) {
-      usuario = new RegistroDeUsuario(
-        registroNombre.trim(),
-        registroEdad,
-        registroGenero,
-        registroEmail.trim(),
-        registroContrasena,
-        estadoValue,
-        ciudadValue,
-        registroCodigoPostal,
-        registroIsMusico,
-        registroInstrumentos.trim(),
-        registroGenerosMusicales.trim(),
-        false, // No es escenario, por lo tanto false
-        "" // No aplica tipo de escenario
-      );
-    } else {
-      usuario = new RegistroDeUsuario(
-        registroNombre.trim(),
-        registroEdad,
-        registroGenero,
-        registroEmail.trim(),
-        registroContrasena,
-        estadoValue,
-        ciudadValue,
-        registroCodigoPostal,
-        registroIsMusico,
-        "", // No aplica instrumentos
-        "" // No aplica géneros musicales
-        // registroIsEscenario,
-        // registroTipoDeEscenario.trim()
-      );
-    }
-
-    console.log({ usuario });
-    const usuarioJSON = JSON.stringify(usuario);
-    window.location.href = "../inicioDeSesion/inicioDeSesion.html";
-    localStorage.setItem("usuario", usuario.email);
-    localStorage.setItem("contraseña", usuario.contrasena);
-    localStorage.setItem("usuarioCompleto", usuarioJSON);
+    usuario = new RegistroDeUsuario(
+      registroNombre.trim(),
+      registroApellido.trim(),
+      registroEdad,
+      registroGenero,
+      registroEmail.trim(),
+      registroContrasena,
+      estadoValue,
+      ciudadValue,
+      registroCodigoPostal,
+      registroInstrumentos.trim(),
+      registroGenerosMusicales.trim()
+    );
   }
+
+  const usuarioJSON = JSON.stringify(usuario);
+  console.log(usuario);
+
+  fetch("http://localhost:8081/api/v1/usuario/add-usuario", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: usuarioJSON,
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Error en la red:  " + response.statusText);
+      }
+      window.location.href = "../inicioDeSesion/inicioDeSesion.html";
+      return response.json();
+    })
+    .then((data) => {
+      window.location.href = "../inicioDeSesion/inicioDeSesion.html";
+    })
+    .catch((error) => {
+      console.error("Hubo un problema con la operación fetch:", error);
+    });
 });
 
 //funciones a utilizar
@@ -414,7 +412,6 @@ const form = document.querySelector(".needs-validation");
 form.addEventListener(
   "submit",
   (event) => {
-    console.log(form.children);
     if (!form.checkValidity()) {
       event.preventDefault();
       event.stopPropagation();
@@ -445,7 +442,7 @@ inputContraseñaConfirmar.addEventListener("keydown", function (event) {
 });
 
 // implementacion del checkbox
-
+/*
 const direccionCheckbox = document.getElementById("direccionCheckbox");
 const selectEstado = document.getElementById("selectEstado");
 const selectCiudad = document.getElementById("selectCiudad");
@@ -525,36 +522,36 @@ direccionCheckbox.addEventListener("click", function (event) {
     document.getElementById("inputTextEstado").hidden = true;
   }
 });
+*/
+// const inputInstrumentos = document.getElementById("inputInstrumentos");
+// const inputGenerosMusicales = document.getElementById("inputGenerosMusicales");
+// const instrumentosChipContainer = document.getElementById("instrumentosChips");
+// const generosChipContainer = document.getElementById("generosChips");
 
-const inputInstrumentos = document.getElementById("inputInstrumentos");
-const inputGenerosMusicales = document.getElementById("inputGenerosMusicales");
-const instrumentosChipContainer = document.getElementById("instrumentosChips");
-const generosChipContainer = document.getElementById("generosChips");
+// function crearChip(text, container) {
+//   const chip = document.createElement("div");
+//   const chipClose = document.createElement("span");
+//   chipClose.innerHTML = "&times;";
+//   chipClose.id = "removeChip";
+//   chip.classList.add("chip");
+//   chip.textContent = text;
+//   chip.append(chipClose);
+//   container.append(chip);
+//   chipClose.addEventListener("click", function (event) {
+//     event.target.parentElement.remove();
+//   });
+// }
 
-function crearChip(text, container) {
-  const chip = document.createElement("div");
-  const chipClose = document.createElement("span");
-  chipClose.innerHTML = "&times;";
-  chipClose.id = "removeChip";
-  chip.classList.add("chip");
-  chip.textContent = text;
-  chip.append(chipClose);
-  container.append(chip);
-  chipClose.addEventListener("click", function (event) {
-    event.target.parentElement.remove();
-  });
-}
+// inputInstrumentos.addEventListener("keydown", function (event) {
+//   if (event.key === "Enter") {
+//     let text = event.target.value;
+//     crearChip(text, instrumentosChipContainer);
+//   }
+// });
 
-inputInstrumentos.addEventListener("keydown", function (event) {
-  if (event.key === "Enter") {
-    let text = event.target.value;
-    crearChip(text, instrumentosChipContainer);
-  }
-});
-
-inputGenerosMusicales.addEventListener("keydown", function (event) {
-  if (event.key === "Enter") {
-    let text = event.target.value;
-    crearChip(text, generosChipContainer);
-  }
-});
+// inputGenerosMusicales.addEventListener("keydown", function (event) {
+//   if (event.key === "Enter") {
+//     let text = event.target.value;
+//     crearChip(text, generosChipContainer);
+//   }
+// });

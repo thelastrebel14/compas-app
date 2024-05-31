@@ -34,12 +34,23 @@
                   type="text"
                   class="form-control"
                   id="inputName"
-                  placeholder="Nombre completo"
+                  placeholder="Nombres"
                   required
                 />
-                <label for="inputName" class="form-label"
-                  >Nombre completo</label
-                >
+                <label for="inputName" class="form-label">Nombres</label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputApellido"
+                  placeholder="Apellidos"
+                  required
+                />
+                <label for="inputApellido" class="form-label">Apellidos</label>
               </div>
             </div>
 
@@ -158,11 +169,6 @@
                 <label for="inputCiudad">Ciudad</label>
               </div>
             </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="direccionCheckbox">
-              <label class="form-check-label" for="direccionCheckbox">
-                Si no encuentras tu estado, da click aquí!
-              </label>
             </div>
             <!-- linea divisora del contenido -->
             <hr />
@@ -171,20 +177,8 @@
             <section id="seleccionUsuario">
               <!-- Radio Soy músico -->
               <section class="column-gap-3" id="seleccionMusico">
-                <div class="col-md-6 form-check m-3">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="flexRadioDefault"
-                    id="soyMusico"
-                    checked
-                  />
-                  <label class="form-check-label" for="soyMusico">
-                    Soy músico
-                  </label>
-                </div>
                 <section id="musicoInputs">
-                  <div class="col-md-6 form-floating m-3">
+                  <div class="col-md-12 form-floating m-3">
                     <input
                       type="text"
                       class="form-control"
@@ -195,7 +189,7 @@
                       >Instrumentos músicales</label
                     >
                   </div>
-                  <div class="col-md-6 form-floating m-3">
+                  <div class="col-md-12 form-floating m-3">
                     <input
                       type="text"
                       class="form-control"
@@ -207,16 +201,6 @@
                     >
                   </div>
                 </section>
-              </section>
-
-              <!-- Radio Soy escenario -->
-              <section class="column-gap-3" id="usuarioChips">
-                <section class="d-flex m-3 row" id="instrumentosChips">
-                    <label>Tus instrumentos músicales</label>
-                  </section>
-                  <section class="col-md-6 m-3 row" id="generosChips">
-                      <label>Tus generos músicales</label>
-                    </section>
               </section>
             </section>
             <hr />
