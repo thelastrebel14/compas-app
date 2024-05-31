@@ -37,7 +37,7 @@ async function rellenoCodigoPostal() {
   try {
     const codigoPostal = document.getElementById("inputCP").value;
     const response = await fetch(
-      `https://api.copomex.com/query/info_cp/${codigoPostal}?token=4d481f50-19e7-4e38-8d07-870975872307`
+      `https://api.copomex.com/query/info_cp/${codigoPostal}?token=201768c9-47bc-43a0-a2fe-f1fd7462a119`
     );
     if (!response.ok) {
       throw new Error("No se encontró");
@@ -547,35 +547,35 @@ direccionCheckbox.addEventListener("click", function (event) {
   }
 });
 
-const inputInstrumentos = document.getElementById("inputInstrumentos");
-const inputGenerosMusicales = document.getElementById("inputGenerosMusicales");
-const instrumentosChipContainer = document.getElementById("instrumentosChips");
-const generosChipContainer = document.getElementById("generosChips");
+// const inputInstrumentos = document.getElementById("inputInstrumentos");
+// const inputGenerosMusicales = document.getElementById("inputGenerosMusicales");
+// const instrumentosChipContainer = document.getElementById("instrumentosChips");
+// const generosChipContainer = document.getElementById("generosChips");
 
-function crearChip(text, container) {
-  const chip = document.createElement("div");
-  const chipClose = document.createElement("span");
-  chipClose.innerHTML = "&times;";
-  chipClose.id = "removeChip";
-  chip.classList.add("chip");
-  chip.textContent = text;
-  chip.append(chipClose);
-  container.append(chip);
-  chipClose.addEventListener("click", function (event) {
-    event.target.parentElement.remove();
-  });
-}
+// function crearChip(text, container) {
+//   const chip = document.createElement("div");
+//   const chipClose = document.createElement("span");
+//   chipClose.innerHTML = "&times;";
+//   chipClose.id = "removeChip";
+//   chip.classList.add("chip");
+//   chip.textContent = text;
+//   chip.append(chipClose);
+//   container.append(chip);
+//   chipClose.addEventListener("click", function (event) {
+//     event.target.parentElement.remove();
+//   });
+// }
 
-inputInstrumentos.addEventListener("keydown", function (event) {
-  if (event.key === "Enter") {
-    let text = event.target.value;
-    crearChip(text, instrumentosChipContainer);
-  }
-});
+// inputInstrumentos.addEventListener("keydown", function (event) {
+//   if (event.key === "Enter") {
+//     let text = event.target.value;
+//     crearChip(text, instrumentosChipContainer);
+//   }
+// });
 
-inputGenerosMusicales.addEventListener("keydown", function (event) {
-  if (event.key === "Enter") {
-    let text = event.target.value;
-    crearChip(text, generosChipContainer);
-  }
-});
+// inputGenerosMusicales.addEventListener("keydown", function (event) {
+//   if (event.key === "Enter") {
+//     let text = event.target.value;
+//     crearChip(text, generosChipContainer);
+//   }
+// });
