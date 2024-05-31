@@ -1,10 +1,10 @@
 //modelo de objetos del formulario
 
 //selecion de elementos del documento
-const radioSoyMusico = document.getElementById("soyMusico");
+// const radioSoyMusico = document.getElementById("soyMusico");
 //const radioSoyEscenario = document.getElementById("soyEscenario");
 const musicoInputs = document.getElementById("musicoInputs");
-const escenarioInputs = document.getElementById("escenarioInputs");
+// const escenarioInputs = document.getElementById("escenarioInputs");
 
 //funcionalidad dinamica para los radio buttons
 /*radioSoyEscenario.addEventListener(
@@ -17,20 +17,18 @@ const escenarioInputs = document.getElementById("escenarioInputs");
   })
 );*/
 
-radioSoyMusico.addEventListener(
-  "click",
-  (mostrarInputs = () => {
-    if (radioSoyMusico.checked) {
-      musicoInputs.hidden = false;
-      escenarioInputs.hidden = true;
-    }
-  })
-);
+// radioSoyMusico.addEventListener(
+//   "click",
+//   (mostrarInputs = () => {
+//     if (radioSoyMusico.checked) {
+//       musicoInputs.hidden = false;
+//       escenarioInputs.hidden = true;
+//     }
+//   })
+// );
 
 const cp = () => {
-  if (!direccionCheckbox.checked) {
-    rellenoCodigoPostal();
-  }
+  rellenoCodigoPostal();
   return;
 };
 async function rellenoCodigoPostal() {
@@ -71,9 +69,10 @@ class RegistroDeUsuario {
     estado,
     ciudad,
     codigoPostal,
-    isMusico,
     instrumentosMusicales,
-    generosMusicales //,
+    generosMusicales,
+    foto_perfil,
+    foto_portada //,
     //isEscenario,
     //tipoDeEscenario
   ) {
@@ -91,9 +90,9 @@ class RegistroDeUsuario {
         (this.codigoPostal = codigoPostal);
     }
     tipoUsuario: {
-      (this.isMusico = isMusico),
-        (this.instrumentosMusicales = instrumentosMusicales),
-        (this.generosMusicales = generosMusicales); //,
+      (this.instrumentosMusicales = instrumentosMusicales),
+        (this.generosMusicales = generosMusicales);
+      (this.foto_perfil = ""), (this.foto_portada = ""); //,
       //(this.isEscenario = isEscenario),
       // (this.tipoDeEscenario = tipoDeEscenario);
     }
@@ -116,12 +115,12 @@ botonRegistro.addEventListener("click", (e) => {
   const inputCiudad = document.getElementById("inputCiudad");
   const selectedCiudad = inputCiudad?.options[inputCiudad.selectedIndex];
   const ciudadValue = selectedCiudad ? selectedCiudad.value : "";
-  const registroIsMusico = document.getElementById("soyMusico").checked;
   const registroInstrumentos =
     document.getElementById("inputInstrumentos").value;
   const registroGenerosMusicales = document.getElementById(
     "inputGenerosMusicales"
   ).value;
+  let usuario;
   // const registroIsEscenario = document.getElementById("soyEscenario").checked;
   // const registroTipoDeEscenario =
   //   document.getElementById("inputEscenario").value;
@@ -137,9 +136,8 @@ botonRegistro.addEventListener("click", (e) => {
     registroCodigoPostal.trim() === "" ||
     estadoValue.trim() === "" ||
     ciudadValue.trim() === "" ||
-    (registroIsMusico &&
-      (registroInstrumentos.trim() === "" ||
-        registroGenerosMusicales.trim() === "")) //||
+    registroInstrumentos.trim() === "" ||
+    registroGenerosMusicales.trim() === "" //||
     // (registroIsEscenario && registroTipoDeEscenario.trim() === "")
   ) {
     //alert("Por favor completa todos los campos obligatorios.");
@@ -157,66 +155,44 @@ botonRegistro.addEventListener("click", (e) => {
 
     return; // Detener la ejecución si algún campo está incompleto
   } else {
-    let usuario;
-    if (registroIsMusico) {
-      usuario = new RegistroDeUsuario(
-        registroNombre.trim(),
-        registroApellido.trim(),
-        registroEdad,
-        registroGenero,
-        registroEmail.trim(),
-        registroContrasena,
-        estadoValue,
-        ciudadValue,
-        registroCodigoPostal,
-        registroIsMusico,
-        registroInstrumentos.trim(),
-        registroGenerosMusicales.trim(),
-        false, // No es escenario, por lo tanto false
-        "" // No aplica tipo de escenario
-      );
-    } else {
-      usuario = new RegistroDeUsuario(
-        registroNombre.trim(),
-        registroApellido.trim(),
-        registroEdad,
-        registroGenero,
-        registroEmail.trim(),
-        registroContrasena,
-        estadoValue,
-        ciudadValue,
-        registroCodigoPostal,
-        registroIsMusico,
-        "", // No aplica instrumentos
-        "" // No aplica géneros musicales
-        // registroIsEscenario,
-        // registroTipoDeEscenario.trim()
-      );
-    }
-
-    const usuarioJSON = JSON.stringify(usuario);
-
-    fetch("http://localhost:8081/api/v1/usuario/add-usuario", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: usuarioJSON,
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Error en la red:  " + response.statusText);
-        }
-        window.location.href = "../inicioDeSesion/inicioDeSesion.html";
-        return response.json();
-      })
-      .then((data) => {
-        window.location.href = "../inicioDeSesion/inicioDeSesion.html";
-      })
-      .catch((error) => {
-        console.error("Hubo un problema con la operación fetch:", error);
-      });
+    usuario = new RegistroDeUsuario(
+      registroNombre.trim(),
+      registroApellido.trim(),
+      registroEdad,
+      registroGenero,
+      registroEmail.trim(),
+      registroContrasena,
+      estadoValue,
+      ciudadValue,
+      registroCodigoPostal,
+      registroInstrumentos.trim(),
+      registroGenerosMusicales.trim()
+    );
   }
+
+  const usuarioJSON = JSON.stringify(usuario);
+  console.log(usuario);
+
+  fetch("http://localhost:8081/api/v1/usuario/add-usuario", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: usuarioJSON,
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Error en la red:  " + response.statusText);
+      }
+      window.location.href = "../inicioDeSesion/inicioDeSesion.html";
+      return response.json();
+    })
+    .then((data) => {
+      window.location.href = "../inicioDeSesion/inicioDeSesion.html";
+    })
+    .catch((error) => {
+      console.error("Hubo un problema con la operación fetch:", error);
+    });
 });
 
 //funciones a utilizar
@@ -466,7 +442,7 @@ inputContraseñaConfirmar.addEventListener("keydown", function (event) {
 });
 
 // implementacion del checkbox
-
+/*
 const direccionCheckbox = document.getElementById("direccionCheckbox");
 const selectEstado = document.getElementById("selectEstado");
 const selectCiudad = document.getElementById("selectCiudad");
@@ -546,7 +522,7 @@ direccionCheckbox.addEventListener("click", function (event) {
     document.getElementById("inputTextEstado").hidden = true;
   }
 });
-
+*/
 // const inputInstrumentos = document.getElementById("inputInstrumentos");
 // const inputGenerosMusicales = document.getElementById("inputGenerosMusicales");
 // const instrumentosChipContainer = document.getElementById("instrumentosChips");
