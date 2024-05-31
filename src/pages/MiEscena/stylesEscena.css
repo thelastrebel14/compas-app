@@ -48,13 +48,13 @@
 }
 
 .comment {
-    width: 85%;
+    width:100%;
     font-size: 20.5px;
 }
 
-.material-symbols-outlined {
-    margin-left: 10px;
-}
+
+
+
 
 .artistas {
     height: 100%;
@@ -66,6 +66,7 @@
     background-color: var(--background-color);
     align-items: center;
     padding-right: 10px;
+
 }
 
 /* Media queries para ajustar tamaños */
@@ -76,25 +77,32 @@
     }
 }
 
+
 @media (max-width: 1100px) {
     .mejora {
         background: none;
         border: none;
         padding: 0;
         color: transparent;
+        /* Hace el texto invisible */
     }
 
-    .mejora .material-symbols-outlined {
+    .boton.flat .material-symbols-outlined {
         color: black;
         position: relative;
         left: -10px;
+        /* Ajusta la posición del icono si es necesario */
     }
+
 
     #publicarFotoVideo,
     #publicarBusquedaArtista {
         display: block;
     }
 }
+
+
+
 
 /* Carousel */
 .carousel-img1 {
@@ -229,6 +237,25 @@
     }
 }
 
+.fiat {
+    color: #fff;
+    background-color: var(--main-color);
+    border: 2px solid var(--main-color);
+}
+
+@media (max-width: 1100px){
+.boton.flat:hover {
+    background-color:var(--secondaryBg-color);
+    border: 2px;
+}
+}
+@media (max-width: 1100px){
+.boton.flat:active {
+    background-color: var(--secondaryBg-color);
+    /* border:  solid var(--secondaryBg-color); */
+}
+}
+
 .botones--publicacion button {
     border: none;
     font-weight: bold;
@@ -282,13 +309,16 @@
     width: 100%;
 }
 
-/* Tu Ritmo */
+/*Tu Ritmo*/
+
 .publicacion-contenedor {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
+    /* Centra los elementos verticalmente */
     width: 100%;
+    /* Ancho del contenedor */
     height: auto;
     background-color: var(--secondaryBg-color);
     padding: 16px;
@@ -365,25 +395,4 @@
 /* Anuncios */
 .anuncios-element {
     margin-bottom: 16px;
-}
-
-/* Estilos específicos para botones en pantallas menores a 600px */
-@media (max-width: 1100px) {
-    .botones-publicacion-contenedor {
-        justify-content: center;
-    }
-
-    .boton {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .icono {
-        margin-right: 0;
-    }
-
-    .texto {
-        display: none;
-    }
 }
