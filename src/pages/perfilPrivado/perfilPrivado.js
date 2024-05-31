@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-  //fetchGetInfoUser();
-  obtenerDatosLocal();
+  fetchGetInfoUser();
+  //obtenerDatosLocal();
 });
 // En inicio de sesión buscar el usuario mediante su email para traer sus datos
 function obtenerDatosLocal(){
@@ -125,10 +125,10 @@ const contenedorFotoPerfil = document.getElementById('contenedor--fotoPerfil');
 
 //       Función para cargar información inicial del usuario a su perfil (LOCALSTORAGE)
 function cargarInfoUserEnPerfil(post){
-  nombreUser.innerHTML = post.nombre + " " + post.apellidos;
-  ciudadUser.innerHTML = post.ciudad;
-  estadoUser.innerHTML = post.estado;
-  ubicacionUser.innerHTML = post.ciudad + ", " + post.estado;
+  nombreUser.innerHTML = post[0].nombre + " " + post[0].apellidos;
+  ciudadUser.innerHTML = post[0].ciudad;
+  estadoUser.innerHTML = post[0].estado;
+  ubicacionUser.innerHTML = post[0].ciudad + ", " + post[0].estado;
   //console.log(post[0].nombre);
   //instrumentosUser.innerHTML = post.e;
   //generosMusicalesUser.innerHTML = post.username;
@@ -209,7 +209,7 @@ contenedorGenerosMusicales.appendChild(generosMusicalesUser);
 // ------------- funcion para tomar los valores del fetch e instanciar un objeto
 function instanciarObjetoUser(post){
   // ----------------------   Instanciar un objeto con los valores recibidos de fetch
-  objetoUsuarioDelPerfil = new UserCreadoEnRegistro(post.id_usuario, post.nombre, post.apellidos, post.ciudad, post.estado);  
+  objetoUsuarioDelPerfil = new UserCreadoEnRegistro(post[0].id_usuario, post[0].nombre, post[0].apellidos, post[0].ciudad, post[0].estado);  
   console.log(objetoUsuarioDelPerfil.idUsuario);
 }
 
