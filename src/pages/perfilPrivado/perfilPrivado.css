@@ -627,6 +627,20 @@ main {
     }
 }
 
+
+/*-----------------------Sección de sólo los demos-----------------*/
+.demos--header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*--------------------------Sección de sólo los escenarios----------------*/
+.escenarios--header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
 /* ----------Sección de demos   /   Sección de Escenarios------------- */
 /* ----------Sección de demos   /   Sección de Escenarios------------- */
 .escenarios,
@@ -709,8 +723,8 @@ main {
     margin-bottom: 6px;
 }
 
-.escenarios--item--info button,
-.demos--item--info button {
+.escenarios--item--info a,
+.demos--item--info a {
     margin-top: 18px;
 }
 
