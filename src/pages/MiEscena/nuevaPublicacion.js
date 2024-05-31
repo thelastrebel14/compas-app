@@ -14,16 +14,23 @@ class NuevaPublicacionFotoVideo {
     const publicacionTexto = document.getElementById("publicacionTexto").value;
     const inputMultimedia = document.getElementById("publicacionMultimedia");
     document.getElementById("publicacionMultimedia");
-    inputMultimedia.src = URL.createObjectURL(inputMultimedia.files[0]);
-    console.log(inputMultimedia);
 
     const srcRegex = /src="(.*?)"/;
+    var match = "";
+    var publicacionMultimedia = "";
+
+    if (inputMultimedia.files.length > 0) {
+    inputMultimedia.src = URL.createObjectURL(inputMultimedia.files[0]);
+    console.log(inputMultimedia);
     match = srcRegex.exec(inputMultimedia.outerHTML); 
     console.log(match);
-    const publicacionMultimedia = match[1]; 
+    publicacionMultimedia = match[1]; 
     console.log(publicacionMultimedia);
+    }
 
     crearPublicacionFotoVideo(publicacionTexto, publicacionMultimedia);
+
+    // enviarMultimedia(inputMultimedia);
 
     if (publicacionTexto.trim() === "") {
       if (document.querySelector(".alert")) {
@@ -43,7 +50,6 @@ class NuevaPublicacionFotoVideo {
       publicacion = new NuevaPublicacionFotoVideo(
         publicacionTexto.trim(),
         publicacionMultimedia
-        // formDataImg.get('image').name
       );
   
       console.log({publicacion});
@@ -95,58 +101,63 @@ class NuevaPublicacionFotoVideo {
   
   class NuevaPublicacionBusquedaArtista {
     constructor(
-      tituloPublicacion,
+      titulo,
       artistaOEscenario,
       generoMusical,
       instrumentoMusical,
       ubicacionBusqueda,
       codigoPostal,
-      cuerpoPublicacion,
+      descripcion,
       multimediaBusqueda
     ) {
       {
-        (this.tituloPublicacion = tituloPublicacion),
+        (this.titulo = titulo),
           (this.artistaOEscenario = artistaOEscenario),
           (this.generoMusical = generoMusical),
           (this.instrumentoMusical = instrumentoMusical),
           (this.ubicacionBusqueda = ubicacionBusqueda),
           (this.codigoPostal = codigoPostal),
-          (this.cuerpoPublicacion = cuerpoPublicacion),
+          (this.descripcion = descripcion),
           (this.multimediaBusqueda = multimediaBusqueda);
       }
     }
   }
   
-  const botonPublicarBusquedaArtista = document.getElementById(
-    "publicarBusquedaArtista"
-  );
+  const botonPublicarBusquedaArtista = document.getElementById("publicarBusquedaArtista");
   
   botonPublicarBusquedaArtista.addEventListener("click", (e) => {
-    const tituloPublicacion = document.getElementById("tituloPublicacion").value;
+    const titulo = document.getElementById("titulo").value;
     const artistaOEscenario = document.getElementById("artistaOEscenario").value;
     const generoMusical = document.getElementById("generoMusical").value;
     const instrumentoMusical = document.getElementById("instrumentoMusical").value;
     const ubicacionBusqueda = document.getElementById("ubicacionBusqueda").value;
     const codigoPostal = document.getElementById("codigoPostal").value;
-    const cuerpoPublicacion = document.getElementById("cuerpoPublicacion").value;
+    const descripcion = document.getElementById("descripcion").value;
     const inputMultimediaBusqueda = document.getElementById("multimediaBusqueda");
+    
+    const srcRegexBusq = /src="(.*?)"/;
+    var matchBusq = "";
+    var multimediaBusqueda = "";
+
+    if (inputMultimediaBusqueda.files.length > 0) {
     inputMultimediaBusqueda.src = URL.createObjectURL(inputMultimediaBusqueda.files[0]);
     console.log(inputMultimediaBusqueda);
-
-    const srcRegexBusq = /src="(.*?)"/;
     matchBusq = srcRegexBusq.exec(inputMultimediaBusqueda.outerHTML); 
     console.log(matchBusq);
-    const multimediaBusqueda = matchBusq[1]; 
+    multimediaBusqueda = matchBusq[1]; 
     console.log(multimediaBusqueda);
-  
-    crearPublicacionBusquedaArtista(tituloPublicacion, artistaOEscenario, generoMusical, instrumentoMusical, ubicacionBusqueda, codigoPostal, cuerpoPublicacion, multimediaBusqueda);
+    }
+
+    crearPublicacionBusquedaArtista(titulo, artistaOEscenario, generoMusical, instrumentoMusical, ubicacionBusqueda, codigoPostal, descripcion, multimediaBusqueda);
+
+    // enviarMultimedia(inputMultimediaBusqueda);
   
     if (
-      tituloPublicacion.trim() === "" ||
+      titulo.trim() === "" ||
       artistaOEscenario === "" ||
       ubicacionBusqueda === "" ||
       codigoPostal === "" ||
-      cuerpoPublicacion === ""
+      descripcion === ""
     ) {
       if (document.querySelector(".alert")) {
         return;
@@ -165,13 +176,13 @@ class NuevaPublicacionFotoVideo {
     } else {
       let publicacion;
       publicacion = new NuevaPublicacionBusquedaArtista(
-        tituloPublicacion.trim(),
+        titulo.trim(),
         artistaOEscenario,
         generoMusical,
         instrumentoMusical,
         ubicacionBusqueda,
         codigoPostal,
-        cuerpoPublicacion,
+        descripcion,
         multimediaBusqueda
       );
   
@@ -185,13 +196,13 @@ class NuevaPublicacionFotoVideo {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          tituloPublicacion: tituloPublicacion,
+          titulo: titulo,
           artistaOEscenario: artistaOEscenario,
           generoMusical: generoMusical,
           instrumentoMusical: instrumentoMusical,
           ubicacionBusqueda: ubicacionBusqueda,
           codigoPostal: codigoPostal,
-          cuerpoPublicacion: cuerpoPublicacion,
+          descripcion: descripcion,
           multimediaBusqueda: multimediaBusqueda,
         }),
       })
@@ -224,6 +235,40 @@ class NuevaPublicacionFotoVideo {
     }
     form.addEventListener("submit", handleForm);
 
+
+/*
+// Función para enviar los archivos multimedia al backend
+
+function enviarMultimedia(img) {
+  const imagen = img.files[0];
+    console.log(imagen);
+  const urlEnviar = "http://localhost:8081/api/v1/usuario/1";
+  const reader = new FileReader();
+    reader.onloadend = async() => {
+      const base64String = reader.result.replace('data:', '').replace(/^.+,/, '');
+      const image = {
+        inputMultimedia: base64String
+      };
+      try {
+        const response = await fetch(urlEnviar, {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(image)
+        });
+      if (response.ok) {
+          alert('Multimedia enviada exitosamente');
+      } else {
+          alert('Error al enviar la multimedia');
+      }
+      } catch (error) {
+          console.error('Error al enviar la multimedia: ', error);
+          alert('Error al enviar la multimedia');
+  }};
+reader.readAsDataURL(imagen); 
+}
+*/
 
 
   // FUNCIONES DE VALIDACIÓN
@@ -308,7 +353,7 @@ class NuevaPublicacionFotoVideo {
    crearNuevaPublicacion(publicacionFotoVideo);
   }
 
-  function crearPublicacionBusquedaArtista (tituloPublicacion, artistaOEscenario, generoMusical, instrumentoMusical, ubicacionBusqueda, codigoPostal, cuerpoPublicacion, multimediaBusqueda){
+  function crearPublicacionBusquedaArtista (titulo, artistaOEscenario, generoMusical, instrumentoMusical, ubicacionBusqueda, codigoPostal, descripcion, multimediaBusqueda){
     const publicacionBusquedaArtista = 
     {
       idPublicacion: 12,
@@ -319,7 +364,7 @@ class NuevaPublicacionFotoVideo {
       titulo: "test",
       tipoPublicacion: "texto",
       tipoPublicacion: "multimedia",
-      descripcion: [tituloPublicacion, '\n', artistaOEscenario, '\n', generoMusical, '\n', instrumentoMusical, '\n', ubicacionBusqueda, '\n', codigoPostal, '\n', cuerpoPublicacion],
+      descripcion: [`Título: ${titulo} \u000A | Busco: ${artistaOEscenario} \u000A | Me interesa: ${generoMusical} \u000A | Con: ${instrumentoMusical} \u000A | Ubicación: ${ubicacionBusqueda} \u000A | Código postal: ${codigoPostal} \u000A | Descripción: ${descripcion}`],
       archivoMultimedia: multimediaBusqueda,
       createdAt: "2024-05-27T08:15:00Z",
     };
