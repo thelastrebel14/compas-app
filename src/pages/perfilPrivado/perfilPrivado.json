@@ -15,7 +15,7 @@
         "esMusico":{
             "esMusico": true,
             "instrumentosMusicales": ["batería", "guitarra"],
-            "generosMusicales": ["rock", "pop"],
+            "generosMusicales": ["rock", "pop"]
         }
     }
 ]

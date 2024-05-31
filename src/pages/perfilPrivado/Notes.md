@@ -31,6 +31,38 @@
 
 
 
+
+
+
+// fetch(urlPost, {
+  //   method: "PUT", // PUT / POST
+  //   headers: {
+  //     "Content-Type": ""
+  //   },
+    
+  //   // Definir el body que debe coincidir con mi API, para ello le paso un método stringify que permite transformar el objeto en formato JSON
+  //   body: {
+  //     "foto_portada": formDataImg
+  //   }
+  // })
+  //   .then((response) => response.json())
+  //   .then((response) => {
+  //     // Mostrar mensaje de éxito o error al usuario
+  //     if (response.success) {
+  //       console.log("Datos enviados con éxito");
+  //     }
+  //     else {
+  //       console.log("Error");
+  //     }
+  //   })
+  //   .catch((error) => {
+  //     console.error("Error:", error);
+  //     console.log("Error al actualizar los datos");
+  //   });
+
+
+
+
   //   --- function cargarInfoUserEnPerfil(post){  *NOTE: lo siguiente estba dentro de la funcion cargarInfoUserEnPerfil(post)
 
 

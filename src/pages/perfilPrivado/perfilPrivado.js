@@ -1,43 +1,23 @@
-// document.addEventListener("DOMContentLoaded", function () {
-//   fetchGetInfoUser();
-// });
+document.addEventListener("DOMContentLoaded", function () {
+  fetchGetInfoUser();
+});
+// En inicio de sesión buscar el usuario mediante su email para traer sus datos
 
 // ---------    Función Fetch para extraer datos, cargarlos en el HTML y guardarlos en un objeto
-// function fetchGetInfoUser(){
-//   // https://jsonplaceholder.typicode.com/users/5
-//   // http://localhost:8081/api/v1/usuario
-//   const url = 'http://localhost:8081/api/v1/usuario';
-//   let post;
-//   fetch(url)
-//     .then(response => response.json())
-//     .then(response => {
-//       console.log("hola");
-//       console.log(post);
-//       post = response;
-//       cargarInfoUserEnPerfil(post);
-//       instanciarObjetoUser(post);
-//       mostrarDatosObjeto();
-//     })
-//     .catch(error => console.error("error en la petición", error));
-// }
-
-// ---------    Función Fetch para extraer datos, cargarlos en el HTML y guardarlos en un objeto
-// function fetchGetInfoUser(){
-//   // https://jsonplaceholder.typicode.com/users/5
-//   // http://localhost:8081/api/v1/usuario
-//   const url = 'http://localhost:8081/api/v1/usuario';
-//   let post;
-//   fetch(url)
-//     .then(response => response.json())
-//     .then(response => {
-//       console.log("hola");
-//       console.log(post);
-//       post = response;
-//       cargarInfoUserEnPerfil(post);
-//       // instanciarObjetoUser(post);
-//     })
-//     .catch(error => console.error("error en la petición", error));
-// }
+function fetchGetInfoUser(){
+  //const url = 'http://localhost:8081/api/v1/instrumentos';
+  //const url = 'http://localhost:8081/api/v1/usuario';
+  const url = 'http://localhost:8081/api/v1/usuario';
+  fetch(url)
+    .then(response => response.json())
+    .then(response => {
+      console.log(response);
+      instanciarObjetoUser(response);
+      cargarInfoUserEnPerfil(response);
+      //mostrarDatosObjeto();
+    })
+    .catch(error => console.error("error en la petición", error));
+}
 
 //-------------------  Clase con la información del perfil del usuario
 class UserCreadoEnRegistro {
@@ -46,8 +26,10 @@ class UserCreadoEnRegistro {
   instrumentosMusicales = [];
   generosMusicales = [];
   fotoPerfil;
-  constructor(nombre, ciudad, estado,instrumentosMusicales,generosMusicales){
+  constructor(idUsuario, nombre, apellidos, ciudad, estado,instrumentosMusicales,generosMusicales){
+    this.idUsuario = idUsuario;
     this.nombre = nombre;
+    this.apellidos = apellidos;
     this.ciudad = ciudad;
     this.estado = estado;
     //this.fotoPerfil = fotoPerfil;
@@ -109,24 +91,92 @@ const contenedorFotoPerfil = document.getElementById('contenedor--fotoPerfil');
 
 //                      Función para cargar información inicial del usuario a su perfil
 function cargarInfoUserEnPerfil(post){
-  nombreUser.innerHTML = post.nombre;
-  ciudadUser.innerHTML = post.ciudad;
-  // estadoUser.innerHTML = post.address.estado;
-  //ubicacionUser.innerHTML = post.ciudad;
+  nombreUser.innerHTML = post[0].nombre + " " + post[0].apellidos;
+  ciudadUser.innerHTML = post[0].ciudad;
+  estadoUser.innerHTML = post[0].estado;
+  ubicacionUser.innerHTML = post[0].ciudad + ", " + post[0].estado;
+  //console.log(post[0].nombre);
   //instrumentosUser.innerHTML = post.e;
   //generosMusicalesUser.innerHTML = post.username;
+  //fotoPerfilUser = post[];
+  //imgPortadaUser = post[];
+  //cargarImgPortadaEnPerfil(post);  // Función para cargar img en perfil
+  //cargarFotoEnPerfil(post); // Función para cargar foto en perfil
 
 // Agregar el elementos de la información de usuario
 contenedorNombreUser.appendChild(nombreUser);
 contenedorUbicacionUser.appendChild(ubicacionUser);
 contenedorInstrumentos.appendChild(instrumentosUser);
 contenedorGenerosMusicales.appendChild(generosMusicalesUser);
+
 }
+
+// // async function mostrarImagenEnBase64() {
+//  const url = 'http://localhost:8081/api/v1/usuario/1'; // Cambia esto a la URL de tu API
+
+//   try {
+//     // Realiza la solicitud fetch para obtener la cadena en formato base64
+//     const response = await fetch(url);
+//     if (!response.ok) {
+//       throw new Error('Error al obtener la imagen');
+//     }
+
+//     // Obtiene el texto de la respuesta que es la cadena en formato base64
+//     const base64String = await response.text();
+
+//     // Encuentra el elemento img y establece su src a la cadena base64
+//     const imgElement = document.getElementById('imagen');
+//     imgElement.src = `data:image/png;base64,${base64String}`; // Ajusta el tipo de imagen si es necesario
+//   } catch (error) {
+//     console.error('Error al mostrar la imagen:', error);
+//   }
+
+// function cargarImgPortadaEnPerfil(post){ 
+
+// const blob = post[0].foto_perfil.blob();
+
+// // Convierte el BLOB en una cadena en formato base64
+// const reader = new FileReader();
+// reader.onloadend = () => {
+//   const base64String = reader.result.replace(/^data:.+;base64,/, '');
+
+//   // Encuentra el elemento img y establece su src a la cadena base64
+//   const imgElement = document.getElementById('contenedor--imgPortada');
+//   imgElement.src = `data:image/png;base64,${base64String}`; // Ajusta el tipo de imagen si es necesario
+// };
+
+// // Lee el BLOB como una URL de datos en base64
+// reader.readAsDataURL(blob);
+// }
+
+// function cargarImgPortadaEnPerfil(post){ 
+// // async function mostrarImagenEnBase64() {
+//  // const url = 'http://localhost:8081/api/v1/usuario/1'; // Cambia esto a la URL de tu API
+
+
+//     // Obtiene el texto de la respuesta que es la cadena en formato base64
+//     const base64String = post[1].foto_portada();
+
+//     // Encuentra el elemento img y establece su src a la cadena base64
+//     const imgElement = document.getElementById('contenedor--imgPortada');
+//     imgElement.src = `data:image/png;base64,${base64String}`; // Ajusta el tipo de imagen si es necesario
+//   //imgElement.src = base64String;
+//   console.log(base64String);
+// // Agregar el img portada al contenedor
+// //contenedorImgPortada.src = URL.createObjectURL(imgPortadaUser.files[0]);
+// }
+
+// function cargarFotoEnPerfil(post){
+
+// // Agregar la foto perfil al contenedor
+// contenedorFotoPerfil.src = URL.createObjectURL(fotoPerfilUser.files[0]);
+// }
 
 // ------------- funcion para tomar los valores del fetch e instanciar un objeto
 function instanciarObjetoUser(post){
   // ----------------------   Instanciar un objeto con los valores recibidos de fetch
-  objetoUsuarioDelPerfil = new UserCreadoEnRegistro(post.name,post.address.city,post.address.city);  
+  objetoUsuarioDelPerfil = new UserCreadoEnRegistro(post[0].id_usuario, post[0].nombre, post[0].apellidos, post[0].ciudad, post[0].estado);  
+  console.log(objetoUsuarioDelPerfil.idUsuario);
 }
 
 function mostrarDatosObjeto(){
@@ -147,7 +197,7 @@ changeImgPortada.addEventListener('click', function(){
   // Obtener referencia al input para cargar imagen "img--cover"
   const imgPortadaUser = document.getElementById("img--cover");
   // Llamando a funcion para enviar la imagen mediante Fetch
-  enviarImg(imgPortadaUser);
+  enviarImgPortada(imgPortadaUser);
   // Agregar el nuevo elemento al contenedor
   contenedorImgPortada.src = URL.createObjectURL(imgPortadaUser.files[0]);
   // Cerrar el modal utilizando el método de Bootstrap
@@ -155,10 +205,10 @@ changeImgPortada.addEventListener('click', function(){
   myModal.hide();
 });
 
-function enviarImg(img) {
+function enviarImgPortada(img) {
   const imagen = img.files[0];
-   console.log(imagen);
-  const urlPost = "http://localhost:8081/api/v1/usuario/1"
+   //console.log(imagen);
+  const urlPost = `http://localhost:8081/api/v1/usuario/${objetoUsuarioDelPerfil.idUsuario}`
   const reader = new FileReader();
             reader.onloadend = async () => {
                 // Se convierte la imagen a base 64 bits
@@ -175,65 +225,85 @@ function enviarImg(img) {
                         body: JSON.stringify(user)
                     });
                     if (response.ok) {
-                        alert('Usuario subido exitosamente');
+                        alert('Imagen enviada exitosamente');
                     } else {
-                        alert('Error al subir el usuario');
+                        alert('Error al enviar la imagen');
                     }
                 } catch (error) {
-                    console.error('Error al enviar el usuario:', error);
-                    alert('Error al subir el usuario');
+                    console.error('Error al enviar imagen:', error);
+                    alert('Error al subir la imagen');
                 }
             };
             reader.readAsDataURL(imagen); 
+    }
 
+// ------------------------    Editando Foto de perfil usuario
+const changeFotoUser = document.getElementById("botonFotoPerfil");
+changeFotoUser.addEventListener('click', function () {
+  // Obtener referencia al input para cargar foto "foto--perfilUser"
+  const fotoPerfilUser = document.getElementById("foto--perfilUser");
+  // Llamando a funcion para enviar la imagen mediante Fetch
+  enviarFotoPerfil(fotoPerfilUser);
+  // Agregar el nuevo elemento al contenedor
+  contenedorFotoPerfil.src = URL.createObjectURL(fotoPerfilUser.files[0]);
+  // Cerrar el modal utilizando el método de Bootstrap
+  const myModal = bootstrap.Modal.getOrCreateInstance('#headerFotoPerfilModal');
+  myModal.hide();
+});
 
-  // fetch(urlPost, {
-  //   method: "PUT", // PUT / POST
-  //   headers: {
-  //     "Content-Type": ""
-  //   },
-    
-  //   // Definir el body que debe coincidir con mi API, para ello le paso un método stringify que permite transformar el objeto en formato JSON
-  //   body: {
-  //     "foto_portada": formDataImg
-  //   }
-  // })
-  //   .then((response) => response.json())
-  //   .then((response) => {
-  //     // Mostrar mensaje de éxito o error al usuario
-  //     if (response.success) {
-  //       console.log("Datos enviados con éxito");
-  //     }
-  //     else {
-  //       console.log("Error");
-  //     }
-  //   })
-  //   .catch((error) => {
-  //     console.error("Error:", error);
-  //     console.log("Error al actualizar los datos");
-  //   });
-}
+function enviarFotoPerfil(img) {
+  const imagen = img.files[0];
+   //console.log(imagen);
+  const urlPost = `http://localhost:8081/api/v1/usuario/${objetoUsuarioDelPerfil.idUsuario}`
+  const reader = new FileReader();
+            reader.onloadend = async () => {
+                // Se convierte la imagen a base 64 bits
+                const base64String = reader.result.replace('data:', '').replace(/^.+,/, '');
+                const user = {
+                    foto_perfil: base64String
+                };
+                try {
+                    const response = await fetch(urlPost, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(user)
+                    });
+                    if (response.ok) {
+                        alert('Foto de perfil enviada exitosamente');
+                    } else {
+                        alert('Error al enviar la foto de perfil');
+                    }
+                } catch (error) {
+                    console.error('Error en la petición:', error);
+                    alert('Error al Enviar');
+                }
+            };
+            reader.readAsDataURL(imagen); 
+    }
+
 
 function enviarDatos(){
 // ---------   Función Fetch para Enviar los datos modificados del formulario al servidor usando fetch
-const urlPost = "https://jsonplaceholder.typicode.com/posts";
+const urlPost = `http://localhost:8081/api/v1/usuario/${objetoUsuarioDelPerfil.idUsuario}`
 fetch(urlPost, {
-  method: "POST",
+  method: "PUT",
   headers: {
     "Content-Type": "application/json; charset=UTF-8"},
 // Definir el body que debe coincidir con mi API, para ello le paso un método stringify que permite transformar el objeto en formato JSON
   body: JSON.stringify({
-      userId: 1890,
-      id: 1,
-      title: "test",
-      body: 'bar',
+      nombre: objetoUsuarioDelPerfil.nombre,
+      apellidos: objetoUsuarioDelPerfil.apellidos,
+      ciudad: objetoUsuarioDelPerfil.ciudad,
+      estado: objetoUsuarioDelPerfil.estado,
   }),
 })
   .then((response) => response.json())
   .then((response) => {
     console.log(response);
     // Mostrar mensaje de éxito o error al usuario
-    if (response.success) {
+    if (response.ok) {
       console.log("¡Datos enviados con éxito!");
     } else {
       console.log("Error al actualizar los datos. Inténtalo de nuevo.");
@@ -243,8 +313,8 @@ fetch(urlPost, {
     console.error("Error:", error);
     console.log("Error al actualizar los datos. Inténtalo de nuevo.");
     });
-
 }
+
 /////////////////////////////////
 // Enviar los datos del formulario al servidor usando fetch
 // fetch("/enviarPublicacionFotoVideo", {
@@ -275,25 +345,13 @@ fetch(urlPost, {
 ///////////////////////////////////////
 
 
-
-
-// ------------------------    Editando Foto de perfil usuario
-const changeFotoUser = document.getElementById("botonFotoPerfil");
-changeFotoUser.addEventListener('click', function () {
-  // Obtener referencia al input para cargar foto "foto--perfilUser"
-  const fotoPerfilUser = document.getElementById("foto--perfilUser");
-  // Agregar el nuevo elemento al contenedor
-  contenedorFotoPerfil.src = URL.createObjectURL(fotoPerfilUser.files[0]);
-  // Cerrar el modal utilizando el método de Bootstrap
-  const myModal = bootstrap.Modal.getOrCreateInstance('#headerFotoPerfilModal');
-  myModal.hide();
-});
-
 // Mostrando la información del usuario en los inputs del form editar información
   const iconoEditInfoUser = document.getElementById('iconEdit-infoPerfil');
   iconoEditInfoUser.addEventListener('click',function(){
     const contenedorInputNombre = document.getElementById('nombrePerfil');
     contenedorInputNombre.value = objetoUsuarioDelPerfil.nombre;
+    const contenedorInputApellido = document.getElementById('apellidosPerfil');
+    contenedorInputApellido.value = objetoUsuarioDelPerfil.apellidos;
     const contenedorInputCiudad = document.getElementById('ciudadPerfil');
     contenedorInputCiudad.value = objetoUsuarioDelPerfil.ciudad;
     const contenedorInputEstado = document.getElementById('estadoPerfil');
@@ -311,6 +369,8 @@ consformProfileInfo.addEventListener( 'submit' , function(event) {
   // Leyendo valores de los inputs del formulario
   objetoUsuarioDelPerfil.nombre = document.getElementById('nombrePerfil').value; //Modifica el atributo nombre del objeto usuario
   console.log(objetoUsuarioDelPerfil.nombre);
+  objetoUsuarioDelPerfil.apellidos = document.getElementById("apellidosPerfil").value;
+  console.log(objetoUsuarioDelPerfil.apellidos);
   objetoUsuarioDelPerfil.ciudad = document.getElementById('ciudadPerfil').value;
   console.log(objetoUsuarioDelPerfil.ciudad);
   objetoUsuarioDelPerfil.estado = document.getElementById('estadoPerfil').value;
@@ -349,7 +409,7 @@ consformProfileInfo.addEventListener( 'submit' , function(event) {
 
   //                   Manipulación del DOM para informacion del perfil
   // Configurando el nuevo elemento, estableciendole atributos, contenido, etc.
-  nombreUser.textContent = objetoUsuarioDelPerfil.nombre;
+  nombreUser.textContent = objetoUsuarioDelPerfil.nombre + " " + objetoUsuarioDelPerfil.apellidos;
   ubicacionUser.textContent = objetoUsuarioDelPerfil.ciudad + ", " + objetoUsuarioDelPerfil.estado;
   instrumentosUser.textContent = objetoUsuarioDelPerfil.instrumentosMusicales;
   generosMusicalesUser.textContent = objetoUsuarioDelPerfil.generosMusicales;
