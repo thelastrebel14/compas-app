@@ -364,8 +364,13 @@ function crearElementoPublicacion(datosPublicacion) {
   var boton3 = document.createElement("button");
   boton3.classList.add("boton", "flat");
   boton3.textContent = "Colaborar";
+  var artistaIcono = document.createElement("span");
+  artistaIcono.classList.add("material-symbols-outlined");
+  artistaIcono.hidden = true;
+  artistaIcono.textContent = "artist";
   boton1.appendChild(icono1);
   reaccionesContenedor1.appendChild(boton1);
+  reaccionesContenedor1.appendChild(artistaIcono)
   boton2.appendChild(icono2);
   reaccionesContenedor2.appendChild(boton2);
   boton3.appendChild(icono3);
@@ -375,14 +380,31 @@ function crearElementoPublicacion(datosPublicacion) {
   botonesPublicacionContenedor.appendChild(reaccionesContenedor3);
 
   // Input de comentario
+  var comentarioFlex = document.createElement("div");
+  comentarioFlex.classList.add("d-flex" , "justify-content-center", "align-item-center");
+
+
   var comentarioFormContainer = document.createElement("div");
-  comentarioFormContainer.classList.add("form-floating");
+  comentarioFormContainer.classList.add("form-floating","col-md-11");
   var inputComentario = document.createElement("input");
   inputComentario.type = "text";
   inputComentario.classList.add("form-control", "input-comentario");
   inputComentario.placeholder = "Comentar";
   inputComentario.name = "comentario";
-  inputComentario.id = "comentario";
+  inputComentario.id = `${datosPublicacion.idPublicacion}-comentarioInput-${datosPublicacion.idAutor}`
+
+
+  var botonComentario = document.createElement("span");
+  botonComentario.classList.add("material-symbols-outlined");
+  botonComentario.textContent = "send";
+  botonComentario.id = "enviarComentario";
+  botonComentario.onclick = function() {
+  }
+  
+
+
+
+
   var comentarioLabel = document.createElement("label");
   comentarioLabel.setAttribute("for", "comentario");
   comentarioLabel.classList.add("form-label");
@@ -391,11 +413,17 @@ function crearElementoPublicacion(datosPublicacion) {
   comentarioFormContainer.appendChild(comentarioLabel);
   var comentarioContainer = document.createElement("div");
   comentarioContainer.classList.add("col-md-12");
-  comentarioContainer.appendChild(comentarioFormContainer);
-
+  comentarioFlex.appendChild(comentarioFormContainer);
+  comentarioFlex.appendChild(botonComentario);
+  comentarioContainer.appendChild(comentarioFlex);
+  
   // Contenedor de comentarios
   var comentariosContenedor = document.createElement("div");
   comentariosContenedor.classList.add("comentarios-contenedor");
+  comentariosContenedor.id = `${datosPublicacion.idPublicacion}-comentarios-contenedor-${datosPublicacion.idAutor}`
+
+  
+
 
   // Agregar elementos al contenedor principal
   publicacionContenedor.appendChild(autorContenedor);
@@ -638,3 +666,15 @@ function eliminarTodasPublicaciones() {
 
 // IMPORTANTE: Definan si usar localStorage o fetch en todas las funciones, sería uno o el otro en todas las funciones.
 // El ejemplo de fetch ya lo tienen, es modificar el method a GET o POST según corresponda, apóyense de documentación.
+
+
+  const modalNombre = document.getElementById("modalNombre");
+  modalNombre.textContent = JSON.parse(
+    localStorage.getItem("usuarioJSON")
+  ).nombre;
+
+
+
+
+  
+  

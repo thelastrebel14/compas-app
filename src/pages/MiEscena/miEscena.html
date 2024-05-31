@@ -151,7 +151,7 @@
           <button
             type="button"
             data-bs-toggle="modal"
-            data-bs-target="#modalArtistas"
+            data-bs-target="#modalBusquedaArtista"
           >
             Estoy buscando artistas
           </button>
@@ -178,10 +178,10 @@
                   <img
                     src="../../pages/perfilPrivado/img/fotoPerfilVacio.jpg"
                     class="img-fluid rounded-circle"
-                    alt="Carlos Santana"
+                    alt=""
                     id="imgPublicacion"
                   />
-                  <h4 id="modalNombre"></h4>
+                  <h4 id="modalNombre">Moisés Reyes Orea</h4>
                 </div>
                 <br />
                 <form
@@ -207,7 +207,8 @@
                       class="form-control"
                       type="file"
                       name="publicacionMultimedia"
-                      id="publicacionMultimedia"
+                      id="publicacionMultimedia" 
+                      accept="image/*"
                     />
                   </div>
                   <br />
@@ -256,10 +257,10 @@
                   <img
                     src="../../pages/perfilPrivado/img/fotoPerfilVacio.jpg"
                     class="img-fluid rounded-circle"
-                    alt="Carlos Santana"
+                    alt=""
                     id="imgPublicacion"
                   />
-                  <h4 id="modalNombre"></h4>
+                  <h4 id="modalNombre">Moisés Reyes Orea</h4>
                 </div>
                 <br />
                 <form
@@ -273,13 +274,13 @@
                       <input
                         type="text"
                         class="form-control"
-                        name="tituloPublicacion"
-                        id="tituloPublicacion"
+                        name="titulo"
+                        id="titulo"
                         required
                         placeholder=""
                       />
-                      <label for="tituloPublicacion"
-                        >Título de la publicación</label
+                      <label for="titulo"
+                        >Título</label
                       >
                     </div>
                     <br />
@@ -293,14 +294,14 @@
                       >
                         <option selected aria-placeholder=""></option>
                         <option
-                          value="1"
+                          value="Artista"
                           id="busquedaArtista"
                           name="artistaOEscenario"
                         >
                           Artista
                         </option>
                         <option
-                          value="2"
+                          value="Escenario"
                           id="busquedaEscenario"
                           name="artistaOEscenario"
                         >
@@ -318,12 +319,10 @@
                         aria-label="Floating label select example"
                       >
                         <option selected></option>
-                        <option value="1" name="generoNorteno">Norteño</option>
-                        <option value="2" name="generoCumbia">Cumbia</option>
-                        <option value="3" name="generoSalsa">Salsa</option>
-                        <option value="4" name="generoMariachi">
-                          Mariachi
-                        </option>
+                        <option value="Norteño" name="generoNorteno">Norteño</option>
+                        <option value="Cumbia" name="generoCumbia">Cumbia</option>
+                        <option value="Salsa" name="generoSalsa">Salsa</option>
+                        <option value="Mariachi" name="generoMariachi">Mariachi</option>
                       </select>
                       <label for="generoMusical">Géneros musicales</label>
                     </div>
@@ -336,16 +335,16 @@
                         aria-label="Floating label select example"
                       >
                         <option selected></option>
-                        <option value="1" name="instrumentoGuitarra">
+                        <option value="Guitarra" name="instrumentoGuitarra">
                           Guitarra
                         </option>
-                        <option value="2" name="instrumentoAcordeon">
+                        <option value="Acordeón" name="instrumentoAcordeon">
                           Acordeón
                         </option>
-                        <option value="3" name="instrumentoBateria">
+                        <option value="Batería" name="instrumentoBateria">
                           Batería
                         </option>
-                        <option value="4" name="instrumentoSintetizador">
+                        <option value="Sintetizador" name="instrumentoSintetizador">
                           Sintetizador
                         </option>
                       </select>
@@ -381,13 +380,13 @@
                     <div class="form-floating">
                       <textarea
                         class="form-control"
-                        name="cuerpoPublicacion"
-                        id="cuerpoPublicacion"
+                        name="descripcion"
+                        id="descripcion"
                         required
                         placeholder=""
                       ></textarea>
-                      <label for="cuerpoPublicacion"
-                        >Cuerpo de la publicación</label
+                      <label for="descripcion"
+                        >Descripción</label
                       >
                     </div>
                     <br />
@@ -396,6 +395,7 @@
                       <input
                         class="form-control"
                         type="file"
+                        accept="image/*"
                         name="multimediaBusqueda"
                         id="multimediaBusqueda"
                       />
@@ -426,14 +426,6 @@
           </div>
         </div>
       </section>
-
-      <section>
-        <div
-          class="publicacionFotoVideo"
-          id="contenedorPublicacionFotoVideo"
-        ></div>
-      </section>
-
       <!--Cierra sección de nueva publicación-->
 
       <section class="dashboard-container">
