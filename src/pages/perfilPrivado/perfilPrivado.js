@@ -1,8 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
-  fetchGetInfoUser();
+  //fetchGetInfoUser();
+  obtenerDatosLocal();
 });
 // En inicio de sesión buscar el usuario mediante su email para traer sus datos
-
+function obtenerDatosLocal(){
+  // Recuperar una cadena de texto
+const objeto1 = JSON.parse(localStorage.getItem('usuario'));
+console.log(objeto1);
+console.log(objeto1.id_usuario);
+console.log(objeto1.nombre);
+console.log(objeto1.apellidos);
+console.log(objeto1.ciudad);
+console.log(objeto1.estado);
+instanciarObjetoUser(objeto1);
+cargarInfoUserEnPerfil(objeto1);
+}
 // ---------    Función Fetch para extraer datos, cargarlos en el HTML y guardarlos en un objeto
 function fetchGetInfoUser(){
   //const url = 'http://localhost:8081/api/v1/instrumentos';
@@ -89,12 +101,34 @@ const contenedorImgPortada = document.getElementById('contenedor--imgPortada');
 // Obtener referencia al contenedor "fotoPerfil"
 const contenedorFotoPerfil = document.getElementById('contenedor--fotoPerfil');
 
-//                      Función para cargar información inicial del usuario a su perfil
+// //     Función para cargar información inicial del usuario a su perfil (DATABASE)
+// function cargarInfoUserEnPerfil(post){
+//   nombreUser.innerHTML = post[0].nombre + " " + post[0].apellidos;
+//   ciudadUser.innerHTML = post[0].ciudad;
+//   estadoUser.innerHTML = post[0].estado;
+//   ubicacionUser.innerHTML = post[0].ciudad + ", " + post[0].estado;
+//   //console.log(post[0].nombre);
+//   //instrumentosUser.innerHTML = post.e;
+//   //generosMusicalesUser.innerHTML = post.username;
+//   //fotoPerfilUser = post[];
+//   //imgPortadaUser = post[];
+//   //cargarImgPortadaEnPerfil(post);  // Función para cargar img en perfil
+//   //cargarFotoEnPerfil(post); // Función para cargar foto en perfil
+
+// // Agregar el elementos de la información de usuario
+// contenedorNombreUser.appendChild(nombreUser);
+// contenedorUbicacionUser.appendChild(ubicacionUser);
+// contenedorInstrumentos.appendChild(instrumentosUser);
+// contenedorGenerosMusicales.appendChild(generosMusicalesUser);
+
+// }
+
+//       Función para cargar información inicial del usuario a su perfil (LOCALSTORAGE)
 function cargarInfoUserEnPerfil(post){
-  nombreUser.innerHTML = post[0].nombre + " " + post[0].apellidos;
-  ciudadUser.innerHTML = post[0].ciudad;
-  estadoUser.innerHTML = post[0].estado;
-  ubicacionUser.innerHTML = post[0].ciudad + ", " + post[0].estado;
+  nombreUser.innerHTML = post.nombre + " " + post.apellidos;
+  ciudadUser.innerHTML = post.ciudad;
+  estadoUser.innerHTML = post.estado;
+  ubicacionUser.innerHTML = post.ciudad + ", " + post.estado;
   //console.log(post[0].nombre);
   //instrumentosUser.innerHTML = post.e;
   //generosMusicalesUser.innerHTML = post.username;
@@ -175,7 +209,7 @@ contenedorGenerosMusicales.appendChild(generosMusicalesUser);
 // ------------- funcion para tomar los valores del fetch e instanciar un objeto
 function instanciarObjetoUser(post){
   // ----------------------   Instanciar un objeto con los valores recibidos de fetch
-  objetoUsuarioDelPerfil = new UserCreadoEnRegistro(post[0].id_usuario, post[0].nombre, post[0].apellidos, post[0].ciudad, post[0].estado);  
+  objetoUsuarioDelPerfil = new UserCreadoEnRegistro(post.id_usuario, post.nombre, post.apellidos, post.ciudad, post.estado);  
   console.log(objetoUsuarioDelPerfil.idUsuario);
 }
 
@@ -295,8 +329,16 @@ fetch(urlPost, {
   body: JSON.stringify({
       nombre: objetoUsuarioDelPerfil.nombre,
       apellidos: objetoUsuarioDelPerfil.apellidos,
-      ciudad: objetoUsuarioDelPerfil.ciudad,
+      edad: 25,
+      email: "moa@gmail.com",
+      password: " ",
+      genero: Masculino,
+      codigoPostal: 76177,
       estado: objetoUsuarioDelPerfil.estado,
+      ciudad: objetoUsuarioDelPerfil.ciudad,
+      foto_perfil: " ",
+      foto_portada: " "
+
   }),
 })
   .then((response) => response.json())
