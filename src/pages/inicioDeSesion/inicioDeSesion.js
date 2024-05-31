@@ -13,9 +13,7 @@ function redirigirMiEscena(userData) {
 }
 
 const correo = document.getElementById("correoInput");
-console.log(correo);
 const contraseña = document.getElementById("passwordInput");
-console.log(contraseña);
 const submitButton = document.getElementById("submitButton");
 
 submitButton.addEventListener("click", (e) => {
@@ -51,11 +49,10 @@ submitButton.addEventListener("click", (e) => {
         return response.json();
       })
       .then((data) => {
-        console.log("User authenticated:", data);
         redirigirMiEscena(data);
       })
       .catch((error) => {
-        console.error("There was a problem with the fetch operation:", error);
+        console.error("Hubo un problema con la operación fetch:", error);
       });
   }
 });
