@@ -202,7 +202,7 @@ botonRegistro.addEventListener("click", (e) => {
         // registroIsEscenario,
         // registroTipoDeEscenario.trim()
       );
-    }*/
+    }
 
     const usuarioJSON = JSON.stringify(usuario);
 
