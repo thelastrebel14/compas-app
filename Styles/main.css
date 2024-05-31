@@ -87,33 +87,31 @@ label {
 }
 
 h1 {
-    font-weight: 400;
-    /* <weight>: Use a value from 200 to 800 */
-    font-size: 48px;
+    font-size: 32.44px;
 }
 
 h2 {
     font-weight: 400;
     /* <weight>: Use a value from 200 to 800 */
-    font-size: 39.06px;
+    font-size: 28.83px;
 }
 
 h3 {
     font-weight: 400;
     /* <weight>: Use a value from 200 to 800 */
-    font-size: 31.25px;
+    font-size: 25.63px;
 }
 
 h4 {
     font-weight: 400;
     /* <weight>: Use a value from 200 to 800 */
-    font-size: 25px;
+    font-size: 22.78px;
 }
 
 h5 {
     font-weight: 400;
     /* <weight>: Use a value from 200 to 800 */
-    font-size: 20px;
+    font-size: 20.25px;
 }
 
 p {

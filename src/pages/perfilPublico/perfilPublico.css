@@ -133,7 +133,7 @@ header {
 
 .profile--follow--buttons button {
     width: 180px;
-    font-size: 25px;
+    font-size: 20.25px;
 }
 
 .profile--follow--buttons {
@@ -478,8 +478,7 @@ header {
     }
 
     .acerca--info {
-        width: 600px;
-        max-width: 600px;
+        padding:  0 35px;
     }
 
     .acerca--info p:nth-child(1) {
@@ -549,11 +548,9 @@ header {
         .resenas--item {
             padding: 0 140px 0 140px;
         }
-    }
-
-    @media screen and (max-width: 886px) {
-        .resenas--item {
-            padding: 0 50px 0 50px;
+        .carousel-control-prev,
+        .carousel-control-next{
+            display: block;
         }
     }
 
@@ -566,6 +563,14 @@ header {
     @media screen and (max-width: 480px) {
         .resenas--item {
             padding: 0 0 0 0;
+        }
+    }
+
+    @media screen and (max-width: 324px){
+        .resenas--item--info-movil{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
     }
 
@@ -679,7 +684,7 @@ header {
             width: 100%;
         }
         .carousel--cards::-webkit-scrollbar{
-            width: 8px;
+            height: 8px;
         }
         .carousel--cards::-webkit-scrollbar-track {
             background: transparent;
