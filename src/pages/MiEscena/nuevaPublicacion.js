@@ -14,16 +14,12 @@ class NuevaPublicacionFotoVideo {
     const publicacionTexto = document.getElementById("publicacionTexto").value;
     const inputMultimedia = document.getElementById("publicacionMultimedia");
     document.getElementById("publicacionMultimedia");
-    
-    inputMultimedia.src = URL.createObjectURL(inputMultimedia.files[0]);
-    console.log(inputMultimedia);
 
     const srcRegex = /src="(.*?)"/;
     var match = "";
-    console.log(match);
     var publicacionMultimedia = "";
 
-    if (inputMultimedia) {
+    if (inputMultimedia.files.length > 0) {
     inputMultimedia.src = URL.createObjectURL(inputMultimedia.files[0]);
     console.log(inputMultimedia);
     match = srcRegex.exec(inputMultimedia.outerHTML); 
@@ -34,7 +30,7 @@ class NuevaPublicacionFotoVideo {
 
     crearPublicacionFotoVideo(publicacionTexto, publicacionMultimedia);
 
-    enviarMultimedia(inputMultimedia);
+    // enviarMultimedia(inputMultimedia);
 
     if (publicacionTexto.trim() === "") {
       if (document.querySelector(".alert")) {
@@ -138,18 +134,23 @@ class NuevaPublicacionFotoVideo {
     const codigoPostal = document.getElementById("codigoPostal").value;
     const descripcion = document.getElementById("descripcion").value;
     const inputMultimediaBusqueda = document.getElementById("multimediaBusqueda");
+    
+    const srcRegexBusq = /src="(.*?)"/;
+    var matchBusq = "";
+    var multimediaBusqueda = "";
+
+    if (inputMultimediaBusqueda.files.length > 0) {
     inputMultimediaBusqueda.src = URL.createObjectURL(inputMultimediaBusqueda.files[0]);
     console.log(inputMultimediaBusqueda);
-
-    const srcRegexBusq = /src="(.*?)"/;
     matchBusq = srcRegexBusq.exec(inputMultimediaBusqueda.outerHTML); 
     console.log(matchBusq);
-    const multimediaBusqueda = matchBusq[1]; 
+    multimediaBusqueda = matchBusq[1]; 
     console.log(multimediaBusqueda);
-  
+    }
+
     crearPublicacionBusquedaArtista(titulo, artistaOEscenario, generoMusical, instrumentoMusical, ubicacionBusqueda, codigoPostal, descripcion, multimediaBusqueda);
 
-    enviarMultimedia(inputMultimediaBusqueda);
+    // enviarMultimedia(inputMultimediaBusqueda);
   
     if (
       titulo.trim() === "" ||
@@ -237,6 +238,7 @@ class NuevaPublicacionFotoVideo {
 
 /*
 // Función para enviar los archivos multimedia al backend
+
 function enviarMultimedia(img) {
   const imagen = img.files[0];
     console.log(imagen);
@@ -245,7 +247,7 @@ function enviarMultimedia(img) {
     reader.onloadend = async() => {
       const base64String = reader.result.replace('data:', '').replace(/^.+,/, '');
       const image = {
-        foto_portada: base64String
+        inputMultimedia: base64String
       };
       try {
         const response = await fetch(urlEnviar, {
@@ -333,42 +335,21 @@ reader.readAsDataURL(imagen);
 
 
   function crearPublicacionFotoVideo (publicacionTexto, publicacionMultimedia){
-    var publicacionFotoVideo;
-    console.log({publicacionTexto, publicacionMultimedia})
-    if (publicacionMultimedia) {
-      publicacionFotoVideo = 
-      {
-        idPublicacion: 11,
-        idAutor: 111,
-        nombreAutor: "Moisés Reyes Orea",
-        instrumentosAutor: ["Guitarra", "Teclado", "Batería"],
-        avatarAutor: "../../pages/perfilPrivado/img/fotoPerfilVacio.jpg",
-        titulo: "test" ,
-        tipoPublicacion: "texto",
-        tipoPublicacion: "multimedia",
-        descripcion: [publicacionTexto],
-        archivoMultimedia: publicacionMultimedia,
-        createdAt: "2024-05-27T06:15:00Z",
-      };
-    } 
-
-    if (publicacionTexto) {
-      publicacionFotoVideo = 
-      {
-        idPublicacion: 11,
-        idAutor: 111,
-        nombreAutor: "Moisés Reyes Orea",
-        instrumentosAutor: ["Guitarra", "Teclado", "Batería"],
-        avatarAutor: "../../pages/perfilPrivado/img/fotoPerfilVacio.jpg",
-        titulo: "test" ,
-        tipoPublicacion: "texto",
-        tipoPublicacion: "multimedia",
-        descripcion: [publicacionTexto],
-        createdAt: "2024-05-27T06:15:00Z",
-      };
-    } 
-    console.log(publicacionFotoVideo);
-
+    const publicacionFotoVideo = 
+    {
+      idPublicacion: 11,
+      idAutor: 111,
+      nombreAutor: "Moisés Reyes Orea",
+      instrumentosAutor: ["Guitarra", "Teclado", "Batería"],
+      avatarAutor: "../../pages/perfilPrivado/img/fotoPerfilVacio.jpg",
+      titulo: "test" ,
+      tipoPublicacion: "texto",
+      tipoPublicacion: "multimedia",
+      descripcion: [publicacionTexto],
+      archivoMultimedia: publicacionMultimedia,
+      createdAt: "2024-05-27T06:15:00Z",
+    };
+  
    crearNuevaPublicacion(publicacionFotoVideo);
   }
 
