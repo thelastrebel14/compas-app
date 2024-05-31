@@ -722,3 +722,10 @@
 .publicaciones-contenedor {
     width: 100%;
 }
+
+#enviarComentario{
+    padding-top: 15px;
+    display: flex;
+    margin-right: 5px;
+    margin-left: 5px;
+}
