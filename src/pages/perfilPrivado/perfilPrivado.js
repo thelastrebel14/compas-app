@@ -319,7 +319,7 @@ consformProfileInfo.addEventListener( 'submit' , function(event) {
   // Leyendo valores de inputs instrumentos y guardandolos en el atributo array 'objetoUsuarioDelPerfil.instrumentos'
   let numeroInputsInstrumentos = contenedorInputsIntrumentos.children;
   //console.log(numeroInputsInstrumentos.length);
-  for(let i=1; i <= numeroInputsInstrumentos.length; i++){
+  for (let i = 1; i <= numeroInputsInstrumentos.length; i++) {
     const newInstrument = document.getElementById(`input${i}--instrumento`).value;
     console.log(newInstrument);
     objetoUsuarioDelPerfil.instrumentosMusicales[i-1] = newInstrument;
@@ -333,17 +333,17 @@ consformProfileInfo.addEventListener( 'submit' , function(event) {
   // Leyendo valores de inputs generosMusicales y guardandolos en el atributo array 'objetoUsuarioDelPerfil.generosMusicales'
   let numeroInputsGenerosMusicales = contenedorInputsGenerosMusicales.children;
   //console.log(numeroInputsGenerosMusicales.length);
-  for(let i=1; i <= numeroInputsGenerosMusicales.length; i++){
+  for (let i = 1; i <= numeroInputsGenerosMusicales.length; i++) {
     const newGeneroMusical = document.getElementById(`input${i}--generoMusical`).value;
     console.log(newGeneroMusical);
-    objetoUsuarioDelPerfil.generosMusicales[i-1] = newGeneroMusical; // Modificando los elementos del atributo array 'generosMusicales'
+    objetoUsuarioDelPerfil.generosMusicales[i - 1] = newGeneroMusical; // Modificando los elementos del atributo array 'generosMusicales'
   }
   // Eliminando elementos no deseados en el array 'objetoUsuarioDelPerfil.generosMusicales'
   let tamanoArrayGenerosMusicales = objetoUsuarioDelPerfil.generosMusicales.length;
   for(let i = numeroInputsGenerosMusicales.length; i < tamanoArrayGenerosMusicales; i++){
       objetoUsuarioDelPerfil.generosMusicales.splice(i);
   }
-  
+
   // Leyendo valores de inputs redesSociales y guardandolos en el atributo array 'objetoUsuarioDelPerfil.redesSociales'
 
 
@@ -372,7 +372,7 @@ consformProfileInfo.addEventListener( 'submit' , function(event) {
 let totalInputsIntrumentos = 1;
 // Bloque de código que agrega inputs en modal
 const buttonAddInputInstruments = document.getElementById("button--AddInstrument");
-buttonAddInputInstruments.addEventListener('click', function(event){
+buttonAddInputInstruments.addEventListener('click', function (event) {
   //crear elemento div
   const inputsInstrumentos = document.createElement("div");
   //agregar un input al elemento div
@@ -393,7 +393,7 @@ const actualizarContadorInputsInstrumentos = () => {
   totalInputsIntrumentos = 1;
   for (let i = 0; i < divs.length; i++) {
     divs[i].children[0].innerHTML = totalInputsIntrumentos;
-      divs[i].children[1].id = `input${totalInputsIntrumentos++}--instrumento`;
+    divs[i].children[1].id = `input${totalInputsIntrumentos++}--instrumento`;
   }
 };
 // -----------------  Agregando Inputs en sección generosMusicales de modal información personal
@@ -402,7 +402,7 @@ const actualizarContadorInputsInstrumentos = () => {
 let totalInputsGenerosMusicales = 1;
 // Bloque de código que agrega inputs en modal
 const buttonAddInputGeneroMusical = document.getElementById("button--AddGeneroMusical");
-buttonAddInputGeneroMusical.addEventListener('click', function(event){
+buttonAddInputGeneroMusical.addEventListener('click', function (event) {
   //crear elemento div
   const inputsGenerosMusicales = document.createElement("div");
   //agregar un input al elemento div
@@ -423,7 +423,7 @@ const actualizarContadorInputsGenerosMusicales = () => {
   totalInputsGenerosMusicales = 1;
   for (let i = 0; i < divs.length; i++) {
     divs[i].children[0].innerHTML = totalInputsGenerosMusicales;
-      divs[i].children[1].id = `input${totalInputsGenerosMusicales++}--generoMusical`;
+    divs[i].children[1].id = `input${totalInputsGenerosMusicales++}--generoMusical`;
   }
 };
 
@@ -440,7 +440,7 @@ const textAcercaDe = document.createElement("p");
 
 // ----------------------    Capturando texto de formularios --------------------
 const textUsuarioAcercaDe = document.querySelector('#formAcercaDe');
-textUsuarioAcercaDe.addEventListener('submit', function(event1){
+textUsuarioAcercaDe.addEventListener('submit', function (event1) {
   event1.preventDefault();
   const textAcercaDeForm = document.getElementById("message-text").value;
   console.log(textAcercaDeForm);

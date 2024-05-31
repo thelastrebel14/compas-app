@@ -151,7 +151,7 @@
           <button
             type="button"
             data-bs-toggle="modal"
-            data-bs-target="#modalArtistas"
+            data-bs-target="#modalBusquedaArtista"
           >
             Estoy buscando artistas
           </button>
@@ -181,7 +181,7 @@
                     alt=""
                     id="imgPublicacion"
                   />
-                  <h4 id="modalNombre"></h4>
+                  <h4 id="modalNombre">Moisés Reyes Orea</h4>
                 </div>
                 <br />
                 <form
@@ -207,7 +207,8 @@
                       class="form-control"
                       type="file"
                       name="publicacionMultimedia"
-                      id="publicacionMultimedia"
+                      id="publicacionMultimedia" 
+                      accept="image/*"
                     />
                   </div>
                   <br />
@@ -259,7 +260,7 @@
                     alt=""
                     id="imgPublicacion"
                   />
-                  <h4 id="modalNombre"></h4>
+                  <h4 id="modalNombre">Moisés Reyes Orea</h4>
                 </div>
                 <br />
                 <form
@@ -273,13 +274,13 @@
                       <input
                         type="text"
                         class="form-control"
-                        name="tituloPublicacion"
-                        id="tituloPublicacion"
+                        name="titulo"
+                        id="titulo"
                         required
                         placeholder=""
                       />
-                      <label for="tituloPublicacion"
-                        >Título de la publicación</label
+                      <label for="titulo"
+                        >Título</label
                       >
                     </div>
                     <br />
@@ -321,7 +322,7 @@
                         <option value="Norteño" name="generoNorteno">Norteño</option>
                         <option value="Cumbia" name="generoCumbia">Cumbia</option>
                         <option value="Salsa" name="generoSalsa">Salsa</option>
-                        <option value="Mariachi" name="generoMariachi"> Mariachi</option>
+                        <option value="Mariachi" name="generoMariachi">Mariachi</option>
                       </select>
                       <label for="generoMusical">Géneros musicales</label>
                     </div>
@@ -379,13 +380,13 @@
                     <div class="form-floating">
                       <textarea
                         class="form-control"
-                        name="cuerpoPublicacion"
-                        id="cuerpoPublicacion"
+                        name="descripcion"
+                        id="descripcion"
                         required
                         placeholder=""
                       ></textarea>
-                      <label for="cuerpoPublicacion"
-                        >Cuerpo de la publicación</label
+                      <label for="descripcion"
+                        >Descripción</label
                       >
                     </div>
                     <br />
@@ -394,6 +395,7 @@
                       <input
                         class="form-control"
                         type="file"
+                        accept="image/*"
                         name="multimediaBusqueda"
                         id="multimediaBusqueda"
                       />
@@ -424,7 +426,6 @@
           </div>
         </div>
       </section>
-
       <!--Cierra sección de nueva publicación-->
 
       <section class="dashboard-container">
