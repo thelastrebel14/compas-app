@@ -1,25 +1,13 @@
 @import url("../../../Styles/main.css");
 @import "./../../assets/elementos/footer/footer.css";
 
-/* 
-.title{
-    margin-left: 5%;
-    font-size: 39.06px;
-    font-family: var(label);
-} */
-
+/* Estilos generales */
 .contenedor {
     display: flex;
     align-items: center;
-    /* Centra los elementos verticalmente */
     width: 35%;
-    /* Ancho del contenedor */
     margin-left: 5%;
-    /* Margen izquierdo para centrar el contenedor horizontalmente */
     background-color: var(--background-color);
-    /* Color de fondo del contenedor */
-    /*border: 1px solid  var(--main-color); /* Borde del contenedor */
-    align-items: flex-start;
     padding-bottom: 2px;
     display: flow-root;
     margin-bottom: 5%;
@@ -29,37 +17,26 @@
     border-radius: 20px;
     width: 8%;
     height: 8%;
-    float: inline-start;
-    /* Establece el elemento como bloque en línea */
     margin: 10px;
-
 }
 
 .name {
     font-size: 15px;
     margin: 8px 0 5px 0;
-    font-style: bold;
     display: flex;
-
 }
 
 .instruments {
-
     font-size: 10px;
-    font-style: bold;
     margin: 1px 0 15px 0;
     display: flex;
-
 }
 
 .linea {
     width: 100%;
     height: 2px;
     background-color: #d6d6d6;
-
 }
-
-
 
 .descript {
     margin-left: 8px;
@@ -70,7 +47,6 @@
     width: 80%;
 }
 
-
 .comment {
     width: 85%;
     font-size: 20.5px;
@@ -78,7 +54,6 @@
 
 .material-symbols-outlined {
     margin-left: 10px;
-
 }
 
 .artistas {
@@ -91,44 +66,29 @@
     background-color: var(--background-color);
     align-items: center;
     padding-right: 10px;
-
 }
 
-@media (max-width:800px) {
-    .anuncios-element .carousel-inner .carousel-anuncios-img {
-        height: 30vh;
-    }
-}
-
-@media (max-width:800px) {
+/* Media queries para ajustar tamaños */
+@media (max-width: 800px) {
+    .anuncios-element .carousel-inner .carousel-anuncios-img,
     .anuncios-element .carousel-anuncios {
         height: 30vh;
     }
-
 }
 
-
 @media (max-width: 1100px) {
-    .boton.flat {
+    .mejora {
         background: none;
-        /* Si el botón tiene fondo, lo eliminamos */
         border: none;
-        /* Si el botón tiene borde, lo eliminamos */
         padding: 0;
-        /* Elimina el padding para reducir el tamaño */
         color: transparent;
-        /* Hace el texto invisible */
     }
 
-    .boton.flat .material-symbols-outlined {
+    .mejora .material-symbols-outlined {
         color: black;
-        /* Asegura que el icono sea visible */
         position: relative;
-        /* Asegura que el icono se mantenga en su lugar */
         left: -10px;
-        /* Ajusta la posición del icono si es necesario */
     }
-
 
     #publicarFotoVideo,
     #publicarBusquedaArtista {
@@ -136,44 +96,27 @@
     }
 }
 
-/* #carouselExampleSeBusca{
-    padding: 10px;
-    height: 30%;
-} */
-
-/* #carouselExampleEscenarios{
-    height: 30%;
-} */
+/* Carousel */
 .carousel-img1 {
-
     align-items: center;
     width: 100%;
     padding-top: 5px;
 }
 
-
 .comment {
     width: 95%;
-    margin: 5px 5px 5px 5px;
+    margin: 5px;
     border-radius: 5px;
     display: flex;
 }
 
-/* Carusel personalizado*/
-
-.carousel-principal {
-    height: 60vh;
-}
-
-.carousel-principal-img {
-    height: 60vh;
-}
-
+.carousel-principal,
 .carousel-anuncios {
     height: 60vh;
     width: 100%;
 }
 
+.carousel-principal-img,
 .carousel-anuncios-img {
     height: 60vh;
 }
@@ -194,9 +137,7 @@
     background-color: var(--active-color);
 }
 
-
 /* Nueva publicación */
-
 .nueva--publicacion {
     width: 100%;
     background-color: var(--secondaryBg-color);
@@ -268,10 +209,7 @@
 }
 
 .nueva--publicacion img {
-    padding-top: 4px;
-    padding-right: 4px;
-    padding-bottom: 4px;
-    padding-left: 4px;
+    padding: 4px;
 }
 
 #imgPublicacion {
@@ -286,7 +224,6 @@
 
 @media (min-width: 480px) {
     .botones--publicacion {
-        display: flex;
         flex-direction: row;
         justify-content: space-evenly;
     }
@@ -300,10 +237,7 @@
 }
 
 .nueva--publicacion--alinear {
-    padding-top: 20px;
-    padding-right: 70px;
-    padding-bottom: 20px;
-    padding-left: 70px;
+    padding: 20px 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -311,13 +245,7 @@
 
 @media (min-width: 480px) {
     .nueva--publicacion--alinear {
-        padding-top: 20px;
-        padding-right: 70px;
-        padding-bottom: 20px;
-        padding-left: 70px;
-        display: flex;
         flex-direction: row;
-        align-items: center;
     }
 }
 
@@ -332,10 +260,7 @@
 }
 
 .nueva--publicacion--modal--perfil img {
-    padding-top: 4px;
-    padding-right: 4px;
-    padding-bottom: 4px;
-    padding-left: 4px;
+    padding: 4px;
 }
 
 .col-md-4 textarea {
@@ -348,15 +273,7 @@
     justify-content: space-evenly;
 }
 
-
-/* Dashboard, contiene las siguientes secciones:
-    Tu Ritmo
-    Anuncios
-        Artistas
-        Se busca
-        Escenarios
-*/
-
+/* Dashboard */
 .dashboard-container {
     display: flex;
     flex-direction: column;
@@ -365,19 +282,15 @@
     width: 100%;
 }
 
-/*Tu Ritmo*/
-
+/* Tu Ritmo */
 .publicacion-contenedor {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    /* Centra los elementos verticalmente */
     width: 100%;
-    /* Ancho del contenedor */
     height: auto;
     background-color: var(--secondaryBg-color);
-    /* Color de fondo del contenedor */
     padding: 16px;
     border-radius: 20px;
     margin-bottom: 16px;
@@ -449,8 +362,28 @@
     margin-left: 16px;
 }
 
-/* Anuncios*/
-
+/* Anuncios */
 .anuncios-element {
     margin-bottom: 16px;
+}
+
+/* Estilos específicos para botones en pantallas menores a 600px */
+@media (max-width: 1100px) {
+    .botones-publicacion-contenedor {
+        justify-content: center;
+    }
+
+    .boton {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .icono {
+        margin-right: 0;
+    }
+
+    .texto {
+        display: none;
+    }
 }
