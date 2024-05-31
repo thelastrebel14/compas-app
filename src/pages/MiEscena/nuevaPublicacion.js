@@ -30,7 +30,7 @@ class NuevaPublicacionFotoVideo {
 
     crearPublicacionFotoVideo(publicacionTexto, publicacionMultimedia);
 
-    // enviarMultimedia(inputMultimedia);
+    enviarMultimedia(inputMultimedia);
 
     if (publicacionTexto.trim() === "") {
       if (document.querySelector(".alert")) {
@@ -55,8 +55,8 @@ class NuevaPublicacionFotoVideo {
       console.log({publicacion});
       const publicacionJSON = JSON.stringify(publicacion);
   
-      // Enviar los datos del formulario al servidor usando fetch
-      fetch("/enviarPublicacionFotoVideo", {
+      // Enviar los datos de la publicación al servidor usando fetch
+      fetch("http://localhost:8081/api/v1/publicacion/add-publicacion", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -81,6 +81,60 @@ class NuevaPublicacionFotoVideo {
           publicacion.textContent =
             "Error al enviar la publicación. Por favor, inténtalo de nuevo.";
         });
+
+      // Editar los datos de la publicación al servidor usando fetch
+        fetch("http://localhost:8081/api/v1/publicacion/add-publicacion", {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            publicacionTexto: publicacionTexto,
+            publicacionMultimedia: publicacionMultimedia,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            // Mostrar mensaje de éxito o error al usuario
+            if (data.success) {
+              publicacion.textContent = "¡Publicación editada con éxito!";
+            } else {
+              publicacion.textContent =
+                "Error al editar la publicación. Por favor, inténtalo de nuevo.";
+            }
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            publicacion.textContent =
+              "Error al editar la publicación. Por favor, inténtalo de nuevo.";
+          });
+
+      // Eliminar los datos de la publicación del servidor usando fetch
+          fetch("http://localhost:8081/api/v1/publicacion/add-publicacion", {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              publicacionTexto: publicacionTexto,
+              publicacionMultimedia: publicacionMultimedia,
+            }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              // Mostrar mensaje de éxito o error al usuario
+              if (data.success) {
+                publicacion.textContent = "¡Publicación eliminada con éxito!";
+              } else {
+                publicacion.textContent =
+                  "Error al eliminar la publicación. Por favor, inténtalo de nuevo.";
+              }
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              publicacion.textContent =
+                "Error al eliminar la publicación. Por favor, inténtalo de nuevo.";
+            });
     }
     // Limpiar y cerrar el modal
     formularioFotoVideo.reset();
@@ -150,7 +204,7 @@ class NuevaPublicacionFotoVideo {
 
     crearPublicacionBusquedaArtista(titulo, artistaOEscenario, generoMusical, instrumentoMusical, ubicacionBusqueda, codigoPostal, descripcion, multimediaBusqueda);
 
-    // enviarMultimedia(inputMultimediaBusqueda);
+    enviarMultimedia(inputMultimediaBusqueda);
   
     if (
       titulo.trim() === "" ||
@@ -189,8 +243,8 @@ class NuevaPublicacionFotoVideo {
       console.log({publicacion});
       const publicacionJSON = JSON.stringify(publicacion);
   
-      // Enviar los datos del formulario al servidor usando fetch
-      fetch("/enviarPublicacionBusquedaArtista", {
+      // Enviar los datos de la publicación al servidor usando fetch
+      fetch("http://localhost:8081/api/v1/publicacion/add-publicacion", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -221,6 +275,72 @@ class NuevaPublicacionFotoVideo {
           publicacion.textContent =
             "Error al enviar la publicación. Por favor, inténtalo de nuevo.";
         });
+
+        // Editar los datos de la publicación al servidor usando fetch
+      fetch("http://localhost:8081/api/v1/publicacion/add-publicacion", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          titulo: titulo,
+          artistaOEscenario: artistaOEscenario,
+          generoMusical: generoMusical,
+          instrumentoMusical: instrumentoMusical,
+          ubicacionBusqueda: ubicacionBusqueda,
+          codigoPostal: codigoPostal,
+          descripcion: descripcion,
+          multimediaBusqueda: multimediaBusqueda,
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          // Mostrar mensaje de éxito o error al usuario
+          if (data.success) {
+            publicacion.textContent = "¡Publicación editada con éxito!";
+          } else {
+            publicacion.textContent =
+              "Error al editar la publicación. Por favor, inténtalo de nuevo.";
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          publicacion.textContent =
+            "Error al editar la publicación. Por favor, inténtalo de nuevo.";
+        });
+
+        // Eliminar los datos de la publicación del servidor usando fetch
+      fetch("http://localhost:8081/api/v1/publicacion/add-publicacion", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          titulo: titulo,
+          artistaOEscenario: artistaOEscenario,
+          generoMusical: generoMusical,
+          instrumentoMusical: instrumentoMusical,
+          ubicacionBusqueda: ubicacionBusqueda,
+          codigoPostal: codigoPostal,
+          descripcion: descripcion,
+          multimediaBusqueda: multimediaBusqueda,
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          // Mostrar mensaje de éxito o error al usuario
+          if (data.success) {
+            publicacion.textContent = "¡Publicación eliminada con éxito!";
+          } else {
+            publicacion.textContent =
+              "Error al eliminar la publicación. Por favor, inténtalo de nuevo.";
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          publicacion.textContent =
+            "Error al eliminar la publicación. Por favor, inténtalo de nuevo.";
+        });
     }
     // Limpiar y cerrar el modal
     formularioBusquedaArtista.reset();
@@ -236,13 +356,12 @@ class NuevaPublicacionFotoVideo {
     form.addEventListener("submit", handleForm);
 
 
-/*
 // Función para enviar los archivos multimedia al backend
 
 function enviarMultimedia(img) {
   const imagen = img.files[0];
     console.log(imagen);
-  const urlEnviar = "http://localhost:8081/api/v1/usuario/1";
+  const urlEnviar = "http://localhost:8081/api/v1/publicacion/add-publicacion";
   const reader = new FileReader();
     reader.onloadend = async() => {
       const base64String = reader.result.replace('data:', '').replace(/^.+,/, '');
@@ -258,17 +377,16 @@ function enviarMultimedia(img) {
           body: JSON.stringify(image)
         });
       if (response.ok) {
-          alert('Multimedia enviada exitosamente');
+        console.log('Multimedia enviada exitosamente');
       } else {
-          alert('Error al enviar la multimedia');
+        console.log('Error al enviar la multimedia');
       }
       } catch (error) {
           console.error('Error al enviar la multimedia: ', error);
-          alert('Error al enviar la multimedia');
+          console.log('Error al enviar la multimedia');
   }};
 reader.readAsDataURL(imagen); 
 }
-*/
 
 
   // FUNCIONES DE VALIDACIÓN
