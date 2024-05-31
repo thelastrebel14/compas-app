@@ -398,7 +398,10 @@ function crearElementoPublicacion(datosPublicacion) {
   botonComentario.classList.add("material-symbols-outlined");
   botonComentario.textContent = "send";
   botonComentario.id = "enviarComentario";
- 
+  botonComentario.onclick = function() {
+  }
+  
+
 
 
 
