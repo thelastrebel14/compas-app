@@ -5,8 +5,10 @@
 //   contraseña,
 // };
 
-function redirigirMiEscena() {
+function redirigirMiEscena(userData) {
+  // Guardar userData en localstorage
   window.location.href = "../MiEscena/miEscena.html";
+
 }
 
 const correo = document.getElementById("correoInput");
@@ -20,11 +22,13 @@ submitButton.addEventListener("click", (e) => {
   if (correo.value == "" && contraseña.value == "") {
     alert("Por favor llena todos los campos");
   } else {
+    // Validar ante la base de datos user y contraseña
     if (
+      // Mover a consulta a base de datos
       correo.value === localStorage.getItem("usuario") &&
       contraseña.value === localStorage.getItem("contraseña")
     ) {
-      redirigirMiEscena();
+      redirigirMiEscena(userData);
     } else {
       if (document.querySelector(".alert")) {
         return;

@@ -13,7 +13,8 @@
     
     
     <link rel="stylesheet" href="./perfilPrivado.css">
-    <link rel="stylesheet" href="../../assets/elementos/navbar/navbar.css">
+    <!-- <link rel="stylesheet" href="./navbarPerfilPrivado.css">
+    <link rel="stylesheet" href="./footer.css"> -->
     <link rel="shortcut icon" href="../../assets/img/logo.ico" image="/x-icon"> 
     <title>Compás</title>
 </head>
@@ -60,8 +61,10 @@
 <!-------------------------- FIN Navbar -------------------------->
     <header>
         <div class="header--portada">
-            <div id="contenedor--imgPortada"></div>  <!--CONTENEDOR IMAGEN PORTADA-->
-            <span class="material-symbols-outlined header--portada--symbolEditCamera" data-bs-toggle="modal" data-bs-target="#headerPortadaModal">
+            <!-- <div id="contenedor--imgPortada"></div>   -->
+            <!--CONTENEDOR IMAGEN PORTADA-->
+            <img id="contenedor--imgPortada" class="header--imgPortada--img" src="./img/imgPortada1.jpg">
+            <span class="material-symbols-outlined header--portada--symbolEditCamera" id="edit-imgPortada" data-bs-toggle="modal" data-bs-target="#headerPortadaModal">
                 photo_camera
             </span>
         </div>
@@ -69,7 +72,7 @@
             <!-- <img loading="lazy" class="header--fotoPerfil--img" src="./img/fotoPerfil.png" alt="fotoPerfil"> -->
             <!-- <div id="contenedor--fotoPerfil" class="header--fotoPerfil--img" style="border-radius: 50%;"></div> CONTENEDOR FOTO PERFIL-->
             <img id="contenedor--fotoPerfil" class="header--fotoPerfil--img" src="./img/fotoPerfilVacio.jpg" style="border-radius: 50%;">
-            <span class="material-symbols-outlined header--fotoPerfil--symbolEditCamera" data-bs-toggle="modal" data-bs-target="#headerFotoPerfilModal">
+            <span class="material-symbols-outlined header--fotoPerfil--symbolEditCamera" id="edit-fotoPerfil" data-bs-toggle="modal" data-bs-target="#headerFotoPerfilModal">
                 photo_camera
             </span>
         </div>
@@ -99,7 +102,7 @@
                         <div id="contenedor--instrumentos"></div>
                     </div>
                     <div class="profile--info--enfoque--generos">
-                        <h5>Géneros musicales</h5>
+                        <h5>Géneros</h5>
                         <!-- <p>Rock | Cumbia | Metal</p> -->
                         <div id="contenedor--generosMusicales"></div>
                     </div>
@@ -127,18 +130,18 @@
             </div>
             <div class="profile--info--editSymbol">
                 <!-------------------------------    EDIT ICON    ------------------------>
-                <span class="material-symbols-outlined symbol-edit" data-bs-toggle="modal" data-bs-target="#profileInfo">
+                <span class="material-symbols-outlined symbol-edit" id="iconEdit-infoPerfil" data-bs-toggle="modal" data-bs-target="#profileInfo">
                     stylus
                 </span>
             </div>
             <div class="profile--followMensaje">
                 <div class="profile--follow--buttons">
                     <button class="profile--follow--buttons--seguidores boton flat">Seguidores</button>
-                    <button class="profile--follow--buttons--siguiendo boton flat">Siguiendo</button>
-                    <!-- <button class="profile--follow--buttons--donadores boton flat">Donadores</button> -->
+                    <!-- <button class="profile--follow--buttons--siguiendo boton flat">Siguiendo</button> -->
+                    <button class="profile--follow--buttons--donadores boton outlined">Donadores</button>
                 </div>
                 <div class="profile--follow--mensaje">
-                    <h4>Mensajes<img loading="lazy" src="./img/mensaje-icon.png" alt=""></h4>
+                    <h4>Mensajes<img loading="lazy" class="profile--follow--mensaje--img" src="./img/mensaje-icon.png" alt=""></h4>
                 </div>
             </div>
             <div class="profile--follow">        
@@ -581,13 +584,13 @@
               <form>
                 <div class="mb-3">
                     <label for="img--cover" class="col-form-label">Cargar foto</label>
-                    <input type="file" name="foto--cover" id="img--cover" accept="image/png, image/jpeg">
+                    <input type="file" name="foto--cover" id="img--cover" accept="image/png, image/jpeg, image/jpg">
                   </div>
               </form>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn-primary">Cargar foto</button>
+              <button type="button" class="btn btn-form-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" id="botonImgPortada" class="btn btn-form-primary">Cargar foto</button>
             </div>
           </div>
         </div>
@@ -603,17 +606,15 @@
             <div class="modal-body">
               <form id="formFotoPerfil">
                 <div class="mb-3">
-                    <label for="img--cover" class="col-form-label">Cargar foto</label>
-                    <input type="file" name="foto--cover" id="foto--perfilUser" accept="image/png, image/jpeg, image/jpg">
-                  </div>
-                  
+                  <label for="img--cover" class="col-form-label">Cargar foto</label>
+                  <input type="file" name="foto--cover" id="foto--perfilUser" accept="image/png, image/jpeg, image/jpg">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-form-secondary" data-bs-dismiss="modal">Cancelar</button>
+                  <button type="button" id="botonFotoPerfil" class="btn btn-form-primary">Cargar foto</button>
+                </div>
               </form>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Cargar foto</button>
-              </div>
-              </div>
-            
+            </div>
           </div>
         </div>
       </div>
@@ -639,18 +640,29 @@
                             <input type="text" class="form-control" id="estadoPerfil" placeholder="Estado">
                             <label for="estadoPerfil" class="col-form-label">Estado</label>
                         </div>
-                        <div class="form-floating mb-3">
+                        
+                        <div class="form-floating mb-3 ">
+                          <div class="titleInputsDinamicos">
                             <h5>Instrumentos</h5>
                             <!-- <input type="text" class="form-control" id="instrumentosPerfil" placeholder="Instrumentos"> -->
                             <!-- <label for="instrumentosPerfil" class="col-form-label">Instrumentos</label> -->
-                            <button type="button" id="button--AddInstrument" class="btn">+</button>
+                            <!-- <button type="button" id="button--AddInstrument" class="btn">+</button> -->
+                            <span id="button--AddInstrument" class="material-symbols-outlined iconAddInputs" >
+                              add_circle
+                              </span>
+                          </div>
                             <div id="contenedor--inputsInstrumentos"></div>
                         </div>
                         <div class="form-floating mb-3">
+                          <div class="titleInputsDinamicos">
                             <h5>Géneros musicales</h5>
                                     <!-- <input type="text" class="form-control" id="generoMusicalPerfil" placeholder="Género musical">
                                     <label for="generoMusicalPerfil" class="col-form-label">Género musical</label> -->
-                            <button type="button" id="button--AddGeneroMusical" class="btn">+</button>
+                            <!-- <button type="button" id="button--AddGeneroMusical" class="btn">+</button> -->
+                            <span id="button--AddGeneroMusical" class="material-symbols-outlined iconAddInputs" >
+                              add_circle
+                              </span>
+                            </div>
                             <div id="contenedor--inputsGenerosMusicales"></div>
                         </div>
                         <!-- <div class="form-floating mb-3">
@@ -662,8 +674,8 @@
                             <label for="numTelefono" class="col-form-label">Número de Telefono</label>
                         </div> -->
                         <div class="modal-footer">  <!-- Button debe ser type="submit" y estar dentro de <form> --- </form>-->
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-primary" id="submitFormulario">Aceptar</button>
+                            <button type="button" class="btn btn-form-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-form-primary" id="submitFormulario">Aceptar</button>
                         </div> 
                     </form>
                 </div>
@@ -689,8 +701,8 @@
                     <textarea class="form-control" id="message-text"></textarea>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-form-acercaDe-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-form-acercaDe-primary">Aceptar</button>
+                    <button type="button" class="btn btn-form-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-form-primary">Aceptar</button>
                 </div>
             </form>
             </div>
